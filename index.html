@@ -17,7 +17,7 @@
             --gold2:    #e8c98a;
             --cream:    #f5f0e8;
             --cream2:   #ede7d9;
-            --stone:    #8a8070;
+            --stone:    #4a4540;
             --white:    #ffffff;
             --ease:     cubic-bezier(0.16, 1, 0.3, 1);
         }
@@ -93,7 +93,7 @@
             display: flex; align-items: center; gap: 40px;
         }
         .nav-links a {
-            color: rgba(255,255,255,0.65);
+            color: rgba(255,255,255,0.88);
             font-size: 11px; font-weight: 500;
             letter-spacing: 2.5px; text-transform: uppercase;
             transition: color 0.3s;
@@ -174,16 +174,28 @@
 
         .hero-inner {
             position: relative; z-index: 2;
-            width: 100%; padding: 0 6% 100px;
+            width: 100%; padding: 0 6% 110px;
+            display: flex; flex-direction: column;
+            align-items: flex-start; gap: 0;
+        }
+        .hero-photo {
+            position: absolute; right: calc(6% + 2cm); top: 50%; transform: translateY(-50%);
+            width: clamp(168px, 19.2vw, 312px);
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: grayscale(20%);
+            border: 2px solid rgba(201,168,108,0.5);
+            z-index: 3;
         }
 
         .hero-eyebrow {
             display: flex; align-items: center; gap: 16px;
-            margin-bottom: 24px;
+            margin-top: 20px; margin-bottom: 32px;
         }
         .hero-eyebrow::before {
             content: '';
-            display: block; width: 50px; height: 1px;
+            display: block; width: 40px; height: 1px;
             background: var(--gold);
         }
         .hero-eyebrow span {
@@ -196,32 +208,17 @@
             font-family: 'Cormorant Garamond', serif;
             font-weight: 300;
             line-height: 0.88;
-            margin-bottom: 28px;
+            margin-bottom: 0;
         }
         .hero-name .line1 {
-            font-size: clamp(68px, 10vw, 148px);
+            font-size: clamp(72px, 11vw, 160px);
             color: var(--white);
             display: block; letter-spacing: -2px;
         }
         .hero-name .line2 {
-            font-size: clamp(68px, 10vw, 148px);
+            font-size: clamp(72px, 11vw, 160px);
             display: block; letter-spacing: -2px;
-            color: transparent;
-            -webkit-text-stroke: 1px rgba(255,255,255,0.5);
-        }
-
-        .hero-meta {
-            display: flex; align-items: center; gap: 48px;
-            flex-wrap: wrap;
-        }
-        .hero-desc-text {
-            font-size: clamp(13px, 1.2vw, 15px);
-            color: rgba(255,255,255,0.5);
-            line-height: 1.8; max-width: 400px;
-            font-weight: 300;
-        }
-        .hero-actions {
-            display: flex; gap: 16px; flex-wrap: wrap;
+            color: var(--gold);
         }
         .btn-gold {
             background: var(--gold); color: var(--ink);
@@ -237,7 +234,7 @@
         }
         .btn-outline {
             border: 1px solid rgba(255,255,255,0.25);
-            color: rgba(255,255,255,0.7);
+            color: rgba(255,255,255,0.9);
             padding: 16px 36px; border-radius: 2px;
             font-size: 11px; font-weight: 500; letter-spacing: 2px;
             text-transform: uppercase;
@@ -248,26 +245,7 @@
             color: var(--gold);
         }
 
-        /* Stats bar */
-        .hero-stats {
-            position: absolute; right: 6%; bottom: 100px;
-            display: flex; flex-direction: column; gap: 24px;
-            z-index: 2; text-align: right;
-        }
-        .hero-stat-num {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 42px; font-weight: 300;
-            color: var(--gold); line-height: 1;
-        }
-        .hero-stat-label {
-            font-size: 9px; letter-spacing: 2.5px; text-transform: uppercase;
-            color: rgba(255,255,255,0.35); margin-top: 2px;
-        }
-        .hero-stat-sep {
-            width: 1px; height: 32px;
-            background: rgba(201,168,108,0.2);
-            margin-left: auto;
-        }
+        .hero-stats { display: none; }
 
         .scroll-hint {
             position: absolute; bottom: 40px; left: 50%;
@@ -278,7 +256,7 @@
         }
         .scroll-hint span {
             font-size: 8px; letter-spacing: 3px; text-transform: uppercase;
-            color: rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.7);
             writing-mode: vertical-rl;
         }
         .scroll-hint-line {
@@ -364,42 +342,36 @@
             display: grid; grid-template-columns: 1fr 1fr;
             gap: 100px; align-items: center;
         }
+        .about-grid--single {
+            grid-template-columns: 1fr;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .about-grid--single .about-features {
+            align-items: flex-start;
+        }
+        .about-grid--single .feature-row {
+            justify-content: flex-start;
+        }
 
-        .about-img-wrap { position: relative; }
+        .about-img-wrap {
+            position: relative;
+            display: flex; justify-content: center; align-items: center;
+        }
         .about-img {
-            width: 100%; aspect-ratio: 3/4;
+            width: 50%; aspect-ratio: 1/1;
             object-fit: cover;
             filter: grayscale(20%);
+            border-radius: 50%;
         }
-        .about-img-frame {
-            position: absolute; inset: -20px -20px 20px 20px;
-            border: 1px solid rgba(201,168,108,0.2);
-            pointer-events: none; z-index: 0;
-        }
+        .about-img-frame { display: none; }
         .about-img-wrap > * { position: relative; z-index: 1; }
-        .about-badge {
-            position: absolute; bottom: -36px; right: -36px;
-            width: 130px; height: 130px; border-radius: 50%;
-            background: var(--gold);
-            display: flex; flex-direction: column;
-            align-items: center; justify-content: center;
-            z-index: 2;
-        }
-        .about-badge strong {
-            font-family: 'Cormorant Garamond', serif;
-            font-size: 36px; font-weight: 700; color: var(--ink);
-            line-height: 1;
-        }
-        .about-badge span {
-            font-size: 8px; font-weight: 600;
-            letter-spacing: 1.5px; text-transform: uppercase;
-            color: var(--ink); opacity: 0.7;
-        }
+        .about-badge { display: none; }
 
         .about-content { padding-top: 20px; }
         .about-content .section-heading { margin-bottom: 32px; }
         .about-lead {
-            font-size: 16px; color: rgba(255,255,255,0.5);
+            font-size: 16px; color: rgba(255,255,255,0.85);
             line-height: 1.85; margin-bottom: 40px; font-weight: 300;
         }
         .about-features { display: flex; flex-direction: column; gap: 0; margin-bottom: 48px; }
@@ -407,7 +379,7 @@
             display: flex; align-items: center; gap: 20px;
             padding: 20px 0;
             border-bottom: 1px solid rgba(255,255,255,0.06);
-            font-size: 14px; color: rgba(255,255,255,0.6); font-weight: 300;
+            font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 300;
         }
         .feature-row:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
         .feature-row i { color: var(--gold); width: 16px; text-align: center; flex-shrink: 0; }
@@ -431,7 +403,9 @@
             cursor: default;
             transition: background 0.5s var(--ease);
         }
+        .service-card:nth-child(4n),
         .service-card:last-child { border-right: none; }
+        .service-card { border-bottom: 1px solid rgba(14,13,11,0.12); }
         .service-card::after {
             content: '';
             position: absolute; top: 0; left: 0; right: 0; height: 2px;
@@ -445,12 +419,12 @@
         .service-num {
             font-family: 'Cormorant Garamond', serif;
             font-size: 80px; font-weight: 300;
-            color: rgba(14,13,11,0.06);
+            color: rgba(14,13,11,0.25);
             line-height: 1; margin-bottom: 32px;
             transition: color 0.5s;
             user-select: none;
         }
-        .service-card:hover .service-num { color: rgba(201,168,108,0.1); }
+        .service-card:hover .service-num { color: rgba(201,168,108,0.35); }
 
         .service-icon {
             font-size: 20px; color: var(--gold);
@@ -470,7 +444,7 @@
             color: var(--stone); font-weight: 300;
             transition: color 0.5s;
         }
-        .service-card:hover p { color: rgba(255,255,255,0.45); }
+        .service-card:hover p { color: rgba(255,255,255,0.85); }
 
         .service-link {
             position: absolute; bottom: 36px; left: 40px;
@@ -509,7 +483,7 @@
         }
         .coverage-content .section-heading { margin-bottom: 32px; }
         .coverage-lead {
-            font-size: 15px; color: rgba(255,255,255,0.45);
+            font-size: 15px; color: rgba(255,255,255,0.85);
             line-height: 1.85; margin-bottom: 56px; font-weight: 300;
         }
         .coverage-cards {
@@ -533,7 +507,7 @@
             color: var(--white); margin-bottom: 6px;
         }
         .cov-card p {
-            font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.6;
+            font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.6;
         }
 
         .coverage-right {
@@ -554,7 +528,7 @@
             font-size: 14px; color: var(--white); font-weight: 500; margin-bottom: 4px;
         }
         .coverage-stat-text p {
-            font-size: 12px; color: rgba(255,255,255,0.35); line-height: 1.6;
+            font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.6;
         }
 
         .region-tags {
@@ -611,6 +585,63 @@
         }
         .step p { font-size: 13px; color: var(--stone); line-height: 1.75; font-weight: 300; }
 
+        /* ===== PROJECTS ===== */
+        .projects-section { background: var(--ink2); }
+        .projects-header {
+            display: flex; justify-content: space-between; align-items: flex-end;
+            margin-bottom: 80px; flex-wrap: wrap; gap: 24px;
+        }
+        .projects-grid {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 2px;
+        }
+        .project-card {
+            position: relative; overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--ink); cursor: pointer;
+        }
+        .project-card img {
+            width: 100%; height: 100%;
+            object-fit: cover;
+            filter: grayscale(40%);
+            transition: transform 0.7s var(--ease), filter 0.5s;
+        }
+        .project-card:hover img {
+            transform: scale(1.06);
+            filter: grayscale(10%);
+        }
+        .project-card-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(to top, rgba(14,13,11,0.85) 0%, rgba(14,13,11,0.1) 60%);
+            transition: background 0.4s;
+        }
+        .project-card:hover .project-card-overlay {
+            background: linear-gradient(to top, rgba(14,13,11,0.92) 0%, rgba(14,13,11,0.3) 100%);
+        }
+        .project-card-info {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            padding: 32px 28px;
+        }
+        .project-cat {
+            font-size: 9px; font-weight: 600;
+            letter-spacing: 2.5px; text-transform: uppercase;
+            color: var(--gold); margin-bottom: 8px;
+        }
+        .project-card-info h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px; font-weight: 600;
+            color: var(--white); line-height: 1.2;
+        }
+        .project-card-info p {
+            font-size: 12px; color: rgba(255,255,255,0.75);
+            margin-top: 6px; line-height: 1.5;
+            opacity: 0; transform: translateY(6px);
+            transition: all 0.4s var(--ease);
+        }
+        .project-card:hover .project-card-info p {
+            opacity: 1; transform: translateY(0);
+        }
+
         /* ===== CONTACT ===== */
         .contact-section { background: var(--ink); }
         .contact-grid {
@@ -620,7 +651,7 @@
 
         .contact-info .section-heading { margin-bottom: 24px; }
         .contact-lead {
-            font-size: 15px; color: rgba(255,255,255,0.4);
+            font-size: 15px; color: rgba(255,255,255,0.85);
             line-height: 1.85; margin-bottom: 48px; font-weight: 300;
         }
 
@@ -655,7 +686,7 @@
             display: flex; align-items: center; gap: 20px;
             padding: 20px 0;
             border-bottom: 1px solid rgba(255,255,255,0.06);
-            font-size: 14px; color: rgba(255,255,255,0.55); font-weight: 300;
+            font-size: 14px; color: rgba(255,255,255,0.85); font-weight: 300;
             transition: color 0.3s;
         }
         .contact-detail:first-child { border-top: 1px solid rgba(255,255,255,0.06); }
@@ -673,14 +704,14 @@
             margin-bottom: 8px;
         }
         .contact-form-wrap .sub {
-            color: rgba(255,255,255,0.3); font-size: 12px;
+            color: rgba(255,255,255,0.7); font-size: 12px;
             letter-spacing: 1.5px; margin-bottom: 48px;
         }
         .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
         .field { display: flex; flex-direction: column; gap: 10px; }
         .field label {
             font-size: 9px; font-weight: 600;
-            color: rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.75);
             letter-spacing: 2.5px; text-transform: uppercase;
         }
         .field input, .field textarea, .field select {
@@ -695,7 +726,7 @@
         }
         .field select option { background: var(--ink); }
         .field input::placeholder,
-        .field textarea::placeholder { color: rgba(255,255,255,0.2); }
+        .field textarea::placeholder { color: rgba(255,255,255,0.55); }
         .field input:focus,
         .field textarea:focus,
         .field select:focus { border-bottom-color: var(--gold); }
@@ -756,7 +787,7 @@
             flex-wrap: wrap; gap: 16px;
         }
         .footer-copy {
-            color: rgba(255,255,255,0.18); font-size: 11px; letter-spacing: 0.5px;
+            color: rgba(255,255,255,0.6); font-size: 11px; letter-spacing: 0.5px;
         }
         .footer-socials { display: flex; gap: 12px; }
         .social-link {
@@ -827,7 +858,7 @@
         <div class="nav-links" id="navLinks">
             <a href="#about">Σχετικά</a>
             <a href="#services">Υπηρεσίες</a>
-            <a href="#coverage">Αττική</a>
+            <a href="#projects">Έργα</a>
             <a href="#contact" class="nav-cta">Επικοινωνία</a>
         </div>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
@@ -842,43 +873,16 @@
         <div class="hero-overlay"></div>
         <div class="hero-lines"></div>
 
+        <img src="photo.jpeg" alt="Βάϊος Λιάπης" class="hero-photo"
+             onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600&h=800'">
+
         <div class="hero-inner">
-            <div class="hero-eyebrow">
-                <span>Διαθέσιμος σε Αθήνα &amp; Αττική</span>
-            </div>
             <h1 class="hero-name">
                 <span class="line1">ΒΑΪΟΣ</span>
                 <span class="line2">ΛΙΑΠΗΣ</span>
             </h1>
-            <div class="hero-meta">
-                <p class="hero-desc-text">
-                    Διπλωματούχος Πολιτικός Μηχανικός ΑΠΘ.<br>
-                    Εξειδίκευση σε ηλεκτρονική ταυτότητα, αυθαίρετα,<br>
-                    ΠΕΑ και οικοδομικές άδειες.
-                </p>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn-gold">Άμεση Επικοινωνία</a>
-                    <a href="#services" class="btn-outline">Οι Υπηρεσίες μας</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- Right stats -->
-        <div class="hero-stats">
-            <div>
-                <div class="hero-stat-num">10+</div>
-                <div class="hero-stat-label">Χρόνια Εμπειρίας</div>
-            </div>
-            <div class="hero-stat-sep"></div>
-            <div>
-                <div class="hero-stat-num">500+</div>
-                <div class="hero-stat-label">Ολοκληρωμένα Έργα</div>
-            </div>
-            <div class="hero-stat-sep"></div>
-            <div>
-                <div class="hero-stat-num">100%</div>
-                <div class="hero-stat-label">Αξιοπιστία</div>
-            </div>
+            <div class="hero-eyebrow"><span>Πολιτικός Μηχανικός ΑΠΘ</span></div>
+            <a href="#contact" class="btn-gold">Επικοινωνία</a>
         </div>
 
         <div class="scroll-hint">
@@ -908,30 +912,16 @@
 
     <!-- ===== ABOUT ===== -->
     <section class="about-section" id="about">
-        <div class="about-grid">
-            <div class="about-img-wrap" data-reveal>
-                <div class="about-img-frame"></div>
-                <img src="photo.jpeg" alt="Βάϊος Λιάπης" class="about-img"
-                     onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600&h=800'">
-                <div class="about-badge">
-                    <strong>ΑΠΘ</strong>
-                    <span>Μηχανικός</span>
-                </div>
-            </div>
+        <div class="about-grid about-grid--single">
             <div class="about-content" data-reveal>
-                <div class="eyebrow"><span>Σχετικά με εμάς</span></div>
                 <h2 class="section-heading light">
-                    Εμπειρία &amp;<br><em>Εξειδίκευση</em>
+                  <em>  Εμπειρία & <em>Εξειδίκευση</em>
                 </h2>
                 <p class="about-lead">
                     Διπλωματούχος Πολιτικός Μηχανικός του Αριστοτέλειου Πανεπιστημίου Θεσσαλονίκης, με πολυετή εμπειρία στην αντιμετώπιση πολεοδομικών, κτηματολογικών και κατασκευαστικών θεμάτων για ιδιώτες και επαγγελματίες σε όλη την Αττική.
                 </p>
                 <div class="about-features">
-                    <div class="feature-row" data-reveal>
-                        <i class="fa-solid fa-shield-halved"></i>
-                        <strong>Νομική Κάλυψη</strong>
-                        Πλήρης νομική κάλυψη κάθε έργου
-                    </div>
+
                     <div class="feature-row" data-reveal>
                         <i class="fa-solid fa-clock"></i>
                         <strong>Χρονοδιάγραμμα</strong>
@@ -944,11 +934,10 @@
                     </div>
                     <div class="feature-row" data-reveal>
                         <i class="fa-solid fa-map-location-dot"></i>
-                        <strong>Πανελλαδική</strong>
+                        <strong>Αμεση</strong>
                         Εξυπηρέτηση σε ολόκληρη την Αττική
                     </div>
                 </div>
-                <a href="#contact" class="btn-gold">Κλείστε Ραντεβού</a>
             </div>
         </div>
     </section>
@@ -960,137 +949,168 @@
                 <div class="eyebrow"><span>Τι προσφέρουμε</span></div>
                 <h2 class="section-heading">Οι <em>Υπηρεσίες</em> μας</h2>
             </div>
-            <a href="#contact" class="btn-gold" data-reveal>Ζητήστε Προσφορά</a>
         </div>
 
         <div class="services-grid">
             <div class="service-card" data-reveal>
                 <div class="service-num">01</div>
-                <i class="fa-solid fa-file-signature service-icon"></i>
-                <h3>Ηλεκτρονική Ταυτότητα Κτιρίου</h3>
-                <p>Σύνταξη και υποβολή πλήρους φακέλου ΗΤΚ για ασφαλείς μεταβιβάσεις και πωλήσεις ακινήτων.</p>
-                <div class="service-link">Μάθετε Περισσότερα</div>
+                <i class="fa-solid fa-map-location-dot service-icon"></i>
+                <h3>Δήλωση στο Κτηματολόγιο</h3>
+                <p>Αναλαμβάνουμε την ηλεκτρονική υποβολή της δήλωσής σας ώστε η διαδικασία να ολοκληρωθεί με ορθότητα και να κατοχυρώσετε την ιδιοκτησία σας.</p>
+                <div class="service-link">Μάθε Περισσότερα</div>
             </div>
             <div class="service-card" data-reveal>
                 <div class="service-num">02</div>
-                <i class="fa-solid fa-house-circle-exclamation service-icon"></i>
-                <h3>Νομιμοποίηση Αυθαιρέτων</h3>
-                <p>Τακτοποίηση αυθαίρετων κατασκευών, έκδοση βεβαιώσεων μηχανικού και υποβολή δηλώσεων.</p>
-                <div class="service-link">Μάθετε Περισσότερα</div>
+                <i class="fa-solid fa-city service-icon"></i>
+                <h3>Πολεοδομικές Άδειες</h3>
+                <p>Οι πολεοδομικές άδειες εκδίδονται ηλεκτρονικά. Ο μηχανικός, εξουσιοδοτημένος από τον κύριο του έργου, αναλαμβάνει ως πιστοποιημένος χρήστης όλη τη διαδικασία.</p>
+                <div class="service-link">Μάθε Περισσότερα</div>
             </div>
             <div class="service-card" data-reveal>
                 <div class="service-num">03</div>
-                <i class="fa-solid fa-bolt-lightning service-icon"></i>
-                <h3>Ενεργειακά Πιστοποιητικά ΠΕΑ</h3>
-                <p>Έκδοση Πιστοποιητικού Ενεργειακής Απόδοσης άμεσα, αναγκαίου για κάθε συναλλαγή ακινήτου.</p>
-                <div class="service-link">Μάθετε Περισσότερα</div>
+                <i class="fa-solid fa-right-left service-icon"></i>
+                <h3>Μεταφορά Αυθαιρέτων στο Ν.4495/17</h3>
+                <p>Σύμφωνα με την ισχύουσα νομοθεσία (άρθρο 88, Ν.4495/2017), αναλαμβάνουμε τη μεταφορά αυθαίρετων κατασκευών που έχουν υπαχθεί σε παλαιότερους νόμους.</p>
+                <div class="service-link">Μάθε Περισσότερα</div>
             </div>
             <div class="service-card" data-reveal>
                 <div class="service-num">04</div>
-                <i class="fa-solid fa-compass-drafting service-icon"></i>
-                <h3>Οικοδομικές Άδειες</h3>
-                <p>Ολοκληρωμένη μελέτη, αρχιτεκτονικός σχεδιασμός και αδειοδότηση νέων κτιριακών έργων.</p>
-                <div class="service-link">Μάθετε Περισσότερα</div>
+                <i class="fa-solid fa-certificate service-icon"></i>
+                <h3>Βεβαιώσεις Μηχανικού Ν.4495/2017</h3>
+                <p>Σε συμβολαιογραφικές πράξεις επί ακινήτων όπως αγοραπωλησία, μεταβίβαση, γονική παροχή, απαιτείται η βεβαίωση του μηχανικού που αναλαμβάνουμε άμεσα.</p>
+                <div class="service-link">Μάθε Περισσότερα</div>
+            </div>
+            <div class="service-card" data-reveal>
+                <div class="service-num">05</div>
+                <i class="fa-solid fa-helmet-safety service-icon"></i>
+                <h3>Επίβλεψη Κατασκευών &amp; Έργων</h3>
+                <p>Ως φυσικό επακόλουθο μιας οικοδομικής άδειας, αναλαμβάνουμε την επίβλεψη της κατασκευής για την ομαλή λειτουργία του εργοταξίου.</p>
+                <div class="service-link">Μάθε Περισσότερα</div>
+            </div>
+            <div class="service-card" data-reveal>
+                <div class="service-num">06</div>
+                <i class="fa-solid fa-house-circle-exclamation service-icon"></i>
+                <h3>Νομιμοποίηση &amp; Τακτοποίηση Αυθαιρέτων</h3>
+                <p>Αναλαμβάνουμε την τακτοποίηση αυθαίρετων κατασκευών και χρήσεων σύμφωνα με τον ισχύοντα νόμο 4495/2017.</p>
+                <div class="service-link">Μάθε Περισσότερα</div>
+            </div>
+            <div class="service-card" data-reveal>
+                <div class="service-num">07</div>
+                <i class="fa-solid fa-file-signature service-icon"></i>
+                <h3>Ηλεκτρονική Ταυτότητα Κτιρίων</h3>
+                <p>Στόχος της ΗΤΚ είναι η λεπτομερής αποτύπωση της υφιστάμενης κατάστασης κάθε κτιρίου και των οικοδομικών αδειών του για ασφαλείς μεταβιβάσεις.</p>
+                <div class="service-link">Μάθε Περισσότερα</div>
+            </div>
+            <div class="service-card" data-reveal>
+                <div class="service-num">08</div>
+                <i class="fa-solid fa-handshake service-icon"></i>
+                <h3>Υπηρεσία Μιας Στάσης</h3>
+                <p>Το γραφείο μας και οι συνεργάτες αναλαμβάνουν κάθε υπόθεση από την αρχή μέχρι το τέλος, εξασφαλίζοντας πλήρη συνέπεια και αποτελεσματικότητα.</p>
+                <div class="service-link">Μάθε Περισσότερα</div>
+            </div>
+            <div class="service-card" data-reveal>
+                <div class="service-num">09</div>
+                <i class="fa-solid fa-screwdriver-wrench service-icon"></i>
+                <h3>Ανακαινίσεις &amp; Επισκευές &amp; Μονώσεις</h3>
+                <p>Η ανακαίνιση εξασφαλίζει κάλυψη λειτουργικών αναγκών και εκσυγχρονισμό των υφιστάμενων κατασκευών σύμφωνα με τις σύγχρονες απαιτήσεις.</p>
+                <div class="service-link">Μάθε Περισσότερα</div>
+            </div>
+            <div class="service-card" data-reveal>
+                <div class="service-num">10</div>
+                <i class="fa-solid fa-bolt-lightning service-icon"></i>
+                <h3>Ενεργειακά Πιστοποιητικά</h3>
+                <p>Αναλαμβάνουμε την ενεργειακή επιθεώρηση σε κτίρια κάθε χρήσης (κατοικίες, καταστήματα, ξενοδοχεία) σύμφωνα με τη νεώτερη νομοθεσία.</p>
+                <div class="service-link">Μάθε Περισσότερα</div>
+            </div>
+            <div class="service-card" data-reveal>
+                <div class="service-num">11</div>
+                <i class="fa-solid fa-store service-icon"></i>
+                <h3>Άδειες Λειτουργίας</h3>
+                <p>Αναλαμβάνουμε όλη τη διαδικασία για την επιτυχή έκδοση της άδειας λειτουργίας της επιχείρησής σας σε κάθε τύπο εμπορικής δραστηριότητας.</p>
+                <div class="service-link">Μάθε Περισσότερα</div>
+            </div>
+            <div class="service-card" data-reveal>
+                <div class="service-num">12</div>
+                <i class="fa-solid fa-map service-icon"></i>
+                <h3>Τοπογραφικά Διαγράμματα</h3>
+                <p>Σχέδιο που αναπαριστά το περίγραμμα του κτιρίου και τα όρια του οικοπέδου με ακριβείς συντεταγμένες στο Ελληνικό Γεωδαιτικό Σύστημα Αναφοράς.</p>
+                <div class="service-link">Μάθε Περισσότερα</div>
             </div>
         </div>
     </section>
 
-    <!-- ===== COVERAGE ===== -->
-    <section class="coverage-section" id="coverage">
-        <div class="coverage-inner">
-            <div class="coverage-content" data-reveal>
-                <div class="eyebrow"><span>Περιοχή Εξυπηρέτησης</span></div>
-                <h2 class="section-heading light">Σε όλη<br><em>την Αττική</em></h2>
-                <p class="coverage-lead">
-                    Παρέχουμε άμεση αυτοψία και τεχνική υποστήριξη σε κάθε γωνιά της Αττικής — από το κέντρο της Αθήνας έως τα προάστια και τις παράκτιες περιοχές, χωρίς επιπλέον επιβάρυνση.
-                </p>
-                <div class="coverage-cards">
-                    <div class="cov-card">
-                        <i class="fa-solid fa-building-columns"></i>
-                        <h4>Αθήνα &amp; Κέντρο</h4>
-                        <p>Πλήρης κάλυψη του λεκανοπεδίου</p>
-                    </div>
-                    <div class="cov-card">
-                        <i class="fa-solid fa-sun"></i>
-                        <h4>Νότια Προάστια</h4>
-                        <p>Γλυφάδα, Βούλα, Βάρη, Μεσόγεια</p>
-                    </div>
-                    <div class="cov-card">
-                        <i class="fa-solid fa-tree-city"></i>
-                        <h4>Βόρεια Προάστια</h4>
-                        <p>Κηφισιά, Μαρούσι, Εκάλη</p>
-                    </div>
-                    <div class="cov-card">
-                        <i class="fa-solid fa-water"></i>
-                        <h4>Δυτική Αττική</h4>
-                        <p>Περιστέρι, Αιγάλεω, Ελευσίνα</p>
-                    </div>
-                </div>
-                <div class="region-tags">
-                    <span class="region-tag">Κέντρο Αθήνας</span>
-                    <span class="region-tag">Πειραιάς</span>
-                    <span class="region-tag">Γλυφάδα</span>
-                    <span class="region-tag">Μαρούσι</span>
-                    <span class="region-tag">Κηφισιά</span>
-                    <span class="region-tag">Χαλάνδρι</span>
-                    <span class="region-tag">Βούλα</span>
-                    <span class="region-tag">Ελευσίνα</span>
-                    <span class="region-tag">Μεσόγεια</span>
-                </div>
-            </div>
 
-            <div class="coverage-right" data-reveal-r>
-                <div class="coverage-stat">
-                    <div class="coverage-stat-num">10+</div>
-                    <div class="coverage-stat-text">
-                        <h4>Χρόνια Εμπειρίας</h4>
-                        <p>Πολυετής παρουσία στην αγορά της Αττικής</p>
-                    </div>
-                </div>
-                <div class="coverage-stat">
-                    <div class="coverage-stat-num">500+</div>
-                    <div class="coverage-stat-text">
-                        <h4>Ολοκληρωμένα Έργα</h4>
-                        <p>Επιτυχημένες αδειοδοτήσεις &amp; τακτοποιήσεις</p>
-                    </div>
-                </div>
-                <div class="coverage-stat">
-                    <div class="coverage-stat-num">48h</div>
-                    <div class="coverage-stat-text">
-                        <h4>Μέγιστος Χρόνος Απόκρισης</h4>
-                        <p>Άμεση ανταπόκριση σε κάθε αίτημα</p>
-                    </div>
-                </div>
+
+
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="projects-section section-pad" id="projects">
+        <div class="projects-header">
+            <div data-reveal>
+                <div class="eyebrow"><span>Το χαρτοφυλάκιό μας</span></div>
+                <h2 class="section-heading light">Επιλεγμένα <em>Έργα</em></h2>
             </div>
         </div>
-    </section>
-
-    <!-- ===== PROCESS ===== -->
-    <section class="process-section">
-        <div class="process-header" data-reveal>
-            <div class="eyebrow" style="justify-content:center"><span>Πώς Δουλεύουμε</span></div>
-            <h2 class="section-heading">Η <em>Διαδικασία</em> μας</h2>
-        </div>
-        <div class="process-steps">
-            <div class="step" data-reveal>
-                <div class="step-num">01</div>
-                <h4>Επικοινωνία</h4>
-                <p>Αποστέλλετε το αίτημά σας τηλεφωνικά ή μέσω της φόρμας. Απαντάμε άμεσα.</p>
+        <div class="projects-grid">
+            <div class="project-card" data-reveal>
+                <img src="cover_photo.jpg" alt="Έργο 1"
+                     onerror="this.src='https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=800'">
+                <div class="project-card-overlay"></div>
+                <div class="project-card-info">
+                    <div class="project-cat">Ηλεκτρονική Ταυτότητα</div>
+                    <h3>Κατοικία Αθήνα</h3>
+                    <p>Πλήρης ΗΤΚ &amp; βεβαίωση μηχανικού για μεταβίβαση</p>
+                </div>
             </div>
-            <div class="step" data-reveal>
-                <div class="step-num">02</div>
-                <h4>Αυτοψία</h4>
-                <p>Μεταβαίνουμε επιτόπου για πλήρη εκτίμηση της κατάστασης του ακινήτου.</p>
+            <div class="project-card" data-reveal>
+                <img src="cover_photo_2.jpg" alt="Έργο 2"
+                     onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800'">
+                <div class="project-card-overlay"></div>
+                <div class="project-card-info">
+                    <div class="project-cat">Οικοδομική Άδεια</div>
+                    <h3>Νέα Κατασκευή Πειραιάς</h3>
+                    <p>Αρχιτεκτονική μελέτη &amp; αδειοδότηση</p>
+                </div>
             </div>
-            <div class="step" data-reveal>
-                <div class="step-num">03</div>
-                <h4>Μελέτη &amp; Σχέδιο</h4>
-                <p>Εκπονούμε πλήρη τεχνική μελέτη και αναλαμβάνουμε την αδειοδότηση.</p>
+            <div class="project-card" data-reveal>
+                <img src="cover_photo.jpg" alt="Έργο 3"
+                     onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800'">
+                <div class="project-card-overlay"></div>
+                <div class="project-card-info">
+                    <div class="project-cat">Τακτοποίηση Αυθαίρετου</div>
+                    <h3>Μονοκατοικία Γλυφάδα</h3>
+                    <p>Νομιμοποίηση κατά Ν.4495/2017</p>
+                </div>
             </div>
-            <div class="step" data-reveal>
-                <div class="step-num">04</div>
-                <h4>Παράδοση</h4>
-                <p>Παραδίδουμε το έργο έτοιμο, νόμιμο και εντός χρονοδιαγράμματος.</p>
+            <div class="project-card" data-reveal>
+                <img src="cover_photo_2.jpg" alt="Έργο 4"
+                     onerror="this.src='https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&q=80&w=800'">
+                <div class="project-card-overlay"></div>
+                <div class="project-card-info">
+                    <div class="project-cat">Ενεργειακό Πιστοποιητικό</div>
+                    <h3>Εμπορικό Κτίριο Μαρούσι</h3>
+                    <p>ΠΕΑ &amp; ενεργειακή αναβάθμιση</p>
+                </div>
+            </div>
+            <div class="project-card" data-reveal>
+                <img src="cover_photo.jpg" alt="Έργο 5"
+                     onerror="this.src='https://images.unsplash.com/photo-1590725121839-892b458a74fe?auto=format&fit=crop&q=80&w=800'">
+                <div class="project-card-overlay"></div>
+                <div class="project-card-info">
+                    <div class="project-cat">Scan to BIM</div>
+                    <h3>Βιομηχανικό Κτίριο Ελαιώνας</h3>
+                    <p>3D Laser Scanning &amp; ψηφιακή αποτύπωση</p>
+                </div>
+            </div>
+            <div class="project-card" data-reveal>
+                <img src="cover_photo_2.jpg" alt="Έργο 6"
+                     onerror="this.src='https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&q=80&w=800'">
+                <div class="project-card-overlay"></div>
+                <div class="project-card-info">
+                    <div class="project-cat">Ανακαίνιση</div>
+                    <h3>Διαμέρισμα Κολωνάκι</h3>
+                    <p>Πλήρης ανακαίνιση &amp; επίβλεψη</p>
+                </div>
             </div>
         </div>
     </section>
@@ -1185,7 +1205,7 @@
             <div class="footer-links">
                 <a href="#about">Σχετικά</a>
                 <a href="#services">Υπηρεσίες</a>
-                <a href="#coverage">Αττική</a>
+                <a href="#projects">Έργα</a>
                 <a href="#contact">Επικοινωνία</a>
             </div>
         </div>
