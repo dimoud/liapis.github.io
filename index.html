@@ -4,305 +4,1288 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Βάϊος Λιάπης | Πολιτικός Μηχανικός Αθήνα</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <meta name="description" content="Διπλωματούχος Πολιτικός Μηχανικός ΑΠΘ – Αθήνα & Αττική. Ηλεκτρονική ταυτότητα, αυθαίρετα, ΠΕΑ, οικοδομικές άδειες.">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
     <style>
+        /* ===== VARIABLES ===== */
         :root {
-            --primary: #050a14;
-            --accent: #2563eb;
-            --white: #ffffff;
-            --slate: #94a3b8;
-            --transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+            --primary:  #050a14;
+            --accent:   #2563eb;
+            --accent2:  #3b82f6;
+            --white:    #ffffff;
+            --light:    #f0f4ff;
+            --slate:    #94a3b8;
+            --text:     #334155;
+            --border:   #e2e8f0;
+            --ease:     cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; }
-        body { font-family: 'Inter', sans-serif; background-color: var(--white); color: var(--primary); overflow-x: hidden; }
+        /* ===== RESET ===== */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; font-size: 16px; }
+        body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--primary); overflow-x: hidden; }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
 
-        /* --- VL LOGO SVG DESIGN --- */
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            text-decoration: none;
-        }
-        .vl-svg {
-            width: 50px;
-            height: 50px;
-            fill: none;
-            stroke: var(--accent);
-            stroke-width: 2.5;
-            transition: 0.3s;
-        }
-        .logo-container:hover .vl-svg { stroke: var(--primary); transform: rotate(-5deg); }
+        /* ===== SCROLLBAR ===== */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: var(--primary); }
+        ::-webkit-scrollbar-thumb { background: var(--accent); }
 
-        /* --- NAVIGATION --- */
+        /* ===== PROGRESS BAR ===== */
+        #progress {
+            position: fixed; top: 0; left: 0; height: 3px;
+            background: var(--accent); width: 0%; z-index: 9999;
+            transition: width 0.1s linear;
+        }
+
+        /* ===== NAVIGATION ===== */
         nav {
-            position: fixed; width: 100%; top: 0; padding: 15px 8%;
-            display: flex; justify-content: space-between; align-items: center;
-            z-index: 1000; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px);
-            border-bottom: 1px solid #f1f5f9;
+            position: fixed; top: 0; width: 100%; z-index: 1000;
+            padding: 0 6%;
+            height: 80px;
+            display: flex; align-items: center; justify-content: space-between;
+            background: rgba(5, 10, 20, 0.92);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            transition: all 0.4s var(--ease);
         }
-        .nav-links a { color: var(--primary); text-decoration: none; margin-left: 30px; font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
-        .nav-links a:hover { color: var(--accent); }
+        nav.scrolled {
+            height: 68px;
+            background: rgba(5, 10, 20, 0.98);
+        }
 
-        /* --- HERO SECTION --- */
+        /* Circle Logo */
+        .nav-logo {
+            display: flex; align-items: center; gap: 14px;
+        }
+        .logo-circle {
+            width: 50px; height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2.5px solid var(--accent);
+            flex-shrink: 0;
+            transition: transform 0.4s var(--ease), box-shadow 0.4s;
+        }
+        .logo-circle img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        .nav-logo:hover .logo-circle {
+            transform: scale(1.08);
+            box-shadow: 0 0 0 5px rgba(37,99,235,0.25);
+        }
+        .logo-text {
+            display: flex; flex-direction: column; line-height: 1.15;
+        }
+        .logo-text span:first-child {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900; font-size: 18px;
+            color: var(--white); letter-spacing: 0.5px;
+        }
+        .logo-text span:last-child {
+            font-size: 10px; font-weight: 600;
+            color: var(--accent); letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex; align-items: center; gap: 36px;
+        }
+        .nav-links a {
+            color: rgba(255,255,255,0.7);
+            font-size: 12px; font-weight: 600;
+            letter-spacing: 2px; text-transform: uppercase;
+            position: relative; transition: color 0.3s;
+        }
+        .nav-links a::after {
+            content: ''; position: absolute; bottom: -4px; left: 0;
+            width: 0; height: 2px; background: var(--accent);
+            transition: width 0.3s var(--ease);
+        }
+        .nav-links a:hover { color: var(--white); }
+        .nav-links a:hover::after { width: 100%; }
+        .nav-cta {
+            background: var(--accent); color: var(--white) !important;
+            padding: 10px 24px; border-radius: 4px;
+            font-weight: 700 !important; letter-spacing: 1.5px !important;
+            transition: background 0.3s, transform 0.3s !important;
+        }
+        .nav-cta:hover { background: #1d4ed8 !important; transform: translateY(-1px); }
+        .nav-cta::after { display: none !important; }
+
+        /* Mobile menu */
+        .hamburger {
+            display: none; flex-direction: column; gap: 5px;
+            cursor: pointer; padding: 4px;
+        }
+        .hamburger span {
+            width: 26px; height: 2px; background: var(--white);
+            transition: all 0.3s;
+        }
+
+        /* ===== HERO ===== */
         .hero {
-            height: 100vh;
-            display: flex;
-            background: #fff;
+            min-height: 100vh;
+            background: var(--primary);
             position: relative;
+            display: flex; align-items: center;
             overflow: hidden;
         }
 
-        .hero-left {
-            width: 60%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 8%;
-            background: var(--primary);
-            color: white;
-            position: relative;
-            clip-path: polygon(0 0, 100% 0, 92% 100%, 0% 100%);
-            z-index: 2;
+        /* Geometric background pattern */
+        .hero-bg {
+            position: absolute; inset: 0;
+            background:
+                linear-gradient(135deg, rgba(37,99,235,0.08) 0%, transparent 50%),
+                url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=1800') center/cover no-repeat;
+            opacity: 0.25;
         }
 
-        .hero-right {
-            width: 50%;
-            position: absolute;
-            right: 0;
-            height: 100%;
-            background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80') center/cover;
-            filter: brightness(0.7);
+        /* Grid overlay */
+        .hero-grid {
+            position: absolute; inset: 0;
+            background-image:
+                linear-gradient(rgba(37,99,235,0.07) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(37,99,235,0.07) 1px, transparent 1px);
+            background-size: 60px 60px;
         }
 
-        /* SHINY ANIMATED NAME */
-        .hero-title {
-            position: relative;
-            margin-bottom: 10px;
+        /* Glow orbs */
+        .orb {
+            position: absolute; border-radius: 50%;
+            filter: blur(80px); opacity: 0.15; pointer-events: none;
         }
-        .name-vaios, .name-liapis {
-            display: block;
+        .orb-1 { width: 600px; height: 600px; background: var(--accent); top: -200px; right: -100px; }
+        .orb-2 { width: 300px; height: 300px; background: #818cf8; bottom: -50px; left: 10%; }
+
+        .hero-inner {
+            position: relative; z-index: 2;
+            width: 100%; padding: 140px 6% 100px;
+            display: grid; grid-template-columns: 1fr 1fr;
+            align-items: center; gap: 60px;
+        }
+
+        .hero-content {}
+
+        .hero-tag {
+            display: inline-flex; align-items: center; gap: 10px;
+            background: rgba(37,99,235,0.15);
+            border: 1px solid rgba(37,99,235,0.3);
+            color: var(--accent2);
+            padding: 8px 18px; border-radius: 100px;
+            font-size: 12px; font-weight: 600; letter-spacing: 2px;
+            text-transform: uppercase; margin-bottom: 32px;
+            opacity: 0; animation: fadeUp 0.8s 0.2s var(--ease) forwards;
+        }
+        .hero-tag span { width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: pulse 2s infinite; }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(0.6); }
+        }
+
+        .hero-name {
+            font-family: 'Playfair Display', serif;
             font-weight: 900;
-            text-transform: uppercase;
-            line-height: 0.82;
-            letter-spacing: -4px;
-            background: linear-gradient(120deg, #fff 30%, #555 50%, #fff 70%);
+            line-height: 0.9;
+            margin-bottom: 28px;
+            opacity: 0; animation: fadeUp 0.9s 0.35s var(--ease) forwards;
+        }
+        .hero-name .line1 {
+            font-size: clamp(52px, 7vw, 96px);
+            color: var(--white);
+            display: block;
+        }
+        .hero-name .line2 {
+            font-size: clamp(52px, 7vw, 96px);
+            display: block;
+            background: linear-gradient(135deg, #2563eb, #60a5fa, #2563eb);
             background-size: 200% auto;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: shine 4s linear infinite;
+            animation: gradientShift 4s linear infinite, fadeUp 0.9s 0.35s var(--ease) forwards;
         }
-        .name-vaios { font-size: clamp(60px, 8vw, 110px); }
-        .name-liapis { font-size: clamp(80px, 12vw, 160px); color: var(--accent); }
-
-        @keyframes shine {
-            to { background-position: 200% center; }
-        }
+        @keyframes gradientShift { to { background-position: 200% center; } }
 
         .hero-subtitle {
-            font-size: clamp(14px, 2.5vw, 24px);
-            color: var(--accent);
-            font-weight: 700;
+            font-size: clamp(13px, 1.4vw, 16px);
+            color: var(--accent2);
+            font-weight: 600; letter-spacing: 3px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 10px;
+            margin-bottom: 24px;
+            opacity: 0; animation: fadeUp 0.9s 0.5s var(--ease) forwards;
         }
 
-        .hero-description {
-            color: var(--slate);
-            font-size: clamp(16px, 1.8vw, 19px);
-            max-width: 600px;
+        .hero-desc {
+            font-size: clamp(15px, 1.5vw, 17px);
+            color: rgba(255,255,255,0.55);
+            line-height: 1.75; max-width: 520px;
+            margin-bottom: 48px;
+            opacity: 0; animation: fadeUp 0.9s 0.65s var(--ease) forwards;
+        }
+
+        .hero-actions {
+            display: flex; align-items: center; gap: 20px; flex-wrap: wrap;
+            opacity: 0; animation: fadeUp 0.9s 0.8s var(--ease) forwards;
+        }
+        .btn-primary {
+            background: var(--accent); color: var(--white);
+            padding: 16px 40px; border-radius: 6px;
+            font-weight: 700; font-size: 13px; letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s var(--ease);
+            box-shadow: 0 8px 30px rgba(37,99,235,0.4);
+        }
+        .btn-primary:hover {
+            background: #1d4ed8; transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(37,99,235,0.5);
+        }
+        .btn-ghost {
+            color: rgba(255,255,255,0.7);
+            padding: 16px 32px; border-radius: 6px;
+            border: 1px solid rgba(255,255,255,0.15);
+            font-weight: 600; font-size: 13px; letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        .btn-ghost:hover { border-color: var(--accent); color: var(--white); background: rgba(37,99,235,0.1); }
+
+        /* Hero right – circle logo + stats */
+        .hero-visual {
+            display: flex; flex-direction: column; align-items: center; gap: 40px;
+            opacity: 0; animation: fadeIn 1.2s 0.5s var(--ease) forwards;
+        }
+
+        .hero-logo-ring {
+            position: relative; width: 280px; height: 280px;
+        }
+        .hero-logo-ring svg.ring {
+            position: absolute; inset: 0; width: 100%; height: 100%;
+            animation: spin 20s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .hero-logo-inner {
+            position: absolute; inset: 20px;
+            border-radius: 50%; overflow: hidden;
+            border: 4px solid rgba(37,99,235,0.4);
+        }
+        .hero-logo-inner img {
+            width: 100%; height: 100%; object-fit: cover;
+        }
+        /* Fallback initials */
+        .hero-logo-inner .initials {
+            width: 100%; height: 100%;
+            background: linear-gradient(135deg, #0f1f3d, #1e3a8a);
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 64px; font-weight: 900;
+            color: var(--white);
+        }
+
+        .hero-stats {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 2px; width: 100%; max-width: 340px;
+        }
+        .stat {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.07);
+            padding: 22px 16px; text-align: center;
+            transition: background 0.3s;
+        }
+        .stat:first-child { border-radius: 8px 0 0 8px; }
+        .stat:last-child { border-radius: 0 8px 8px 0; }
+        .stat:hover { background: rgba(37,99,235,0.12); }
+        .stat-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 30px; font-weight: 900;
+            color: var(--accent2); line-height: 1;
+            margin-bottom: 4px;
+        }
+        .stat-label {
+            font-size: 10px; font-weight: 600;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 1.5px; text-transform: uppercase;
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; } to { opacity: 1; }
+        }
+
+        /* Scroll arrow */
+        .scroll-hint {
+            position: absolute; bottom: 36px; left: 50%;
+            transform: translateX(-50%);
+            display: flex; flex-direction: column; align-items: center; gap: 8px;
+            color: rgba(255,255,255,0.3); font-size: 10px; letter-spacing: 2px;
+            text-transform: uppercase; z-index: 2;
+            animation: bounce 2s infinite;
+        }
+        .scroll-hint i { font-size: 18px; }
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(8px); }
+        }
+
+        /* ===== DIVIDER BAND ===== */
+        .band {
+            background: var(--accent);
+            padding: 22px 6%;
+            display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;
+            overflow: hidden; position: relative;
+        }
+        .band::before {
+            content: '';
+            position: absolute; top: 0; left: -10px;
+            width: 60px; height: 100%;
+            background: rgba(255,255,255,0.1);
+            transform: skewX(-15deg);
+        }
+        .band-items {
+            display: flex; align-items: center; gap: 40px; flex-wrap: wrap;
+        }
+        .band-item {
+            display: flex; align-items: center; gap: 10px;
+            color: var(--white); font-size: 13px; font-weight: 600;
+            letter-spacing: 1px; text-transform: uppercase;
+        }
+        .band-item i { font-size: 16px; opacity: 0.85; }
+        .band-phone {
+            color: var(--white); font-size: 20px; font-weight: 900;
+            font-family: 'Playfair Display', serif;
+            letter-spacing: 1px;
+        }
+
+        /* ===== SECTION BASE ===== */
+        section { padding: 120px 6%; }
+
+        .label {
+            display: inline-block;
+            font-size: 11px; font-weight: 700;
+            letter-spacing: 3px; text-transform: uppercase;
+            color: var(--accent); margin-bottom: 16px;
+        }
+        .section-heading {
+            font-family: 'Playfair Display', serif;
+            font-weight: 900; font-size: clamp(36px, 5vw, 60px);
+            line-height: 1.05; color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .section-heading em { font-style: normal; color: var(--accent); }
+        .section-lead {
+            font-size: 17px; color: var(--text);
+            line-height: 1.75; max-width: 620px;
+        }
+
+        /* AOS simulate */
+        [data-reveal] {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+        }
+        [data-reveal].visible {
+            opacity: 1; transform: translateY(0);
+        }
+        [data-reveal-scale] {
+            opacity: 0; transform: scale(0.92);
+            transition: opacity 0.8s var(--ease), transform 0.8s var(--ease);
+        }
+        [data-reveal-scale].visible {
+            opacity: 1; transform: scale(1);
+        }
+
+        /* ===== ABOUT / INTRO ===== */
+        .about-section {
+            background: var(--light);
+        }
+        .about-grid {
+            display: grid; grid-template-columns: 1fr 1.2fr;
+            gap: 80px; align-items: center;
+        }
+        .about-img-wrap {
+            position: relative;
+        }
+        .about-img {
+            width: 100%; aspect-ratio: 4/5;
+            object-fit: cover; border-radius: 16px;
+            box-shadow: 0 40px 80px rgba(5,10,20,0.12);
+        }
+        .about-badge {
+            position: absolute; bottom: -24px; right: -24px;
+            background: var(--primary); color: var(--white);
+            padding: 28px 32px; border-radius: 12px;
+            box-shadow: 0 20px 60px rgba(5,10,20,0.3);
+            border-left: 5px solid var(--accent);
+        }
+        .about-badge strong {
+            font-family: 'Playfair Display', serif;
+            font-size: 42px; font-weight: 900; color: var(--accent);
+            display: block; line-height: 1;
+        }
+        .about-badge span {
+            font-size: 12px; font-weight: 600; letter-spacing: 1.5px;
+            text-transform: uppercase; color: rgba(255,255,255,0.6);
+        }
+        .about-content h2 { margin-bottom: 24px; }
+        .about-content .section-lead { margin-bottom: 32px; }
+        .about-features {
+            display: flex; flex-direction: column; gap: 16px; margin-bottom: 40px;
+        }
+        .feature-row {
+            display: flex; align-items: center; gap: 14px;
+            font-size: 15px; font-weight: 500; color: var(--text);
+        }
+        .feature-row i {
+            width: 36px; height: 36px;
+            background: rgba(37,99,235,0.1); border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent); font-size: 14px; flex-shrink: 0;
+        }
+
+        /* ===== SERVICES ===== */
+        .services-section { background: var(--white); }
+        .services-header { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 64px; flex-wrap: wrap; gap: 20px; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: 16px; overflow: hidden;
+        }
+        .service-card {
+            background: var(--white);
+            padding: 48px 36px;
+            position: relative; overflow: hidden;
+            transition: background 0.4s var(--ease);
+        }
+        .service-card::before {
+            content: ''; position: absolute;
+            top: 0; left: 0; width: 100%; height: 3px;
+            background: var(--accent);
+            transform: scaleX(0); transform-origin: left;
+            transition: transform 0.4s var(--ease);
+        }
+        .service-card:hover { background: var(--primary); }
+        .service-card:hover::before { transform: scaleX(1); }
+        .service-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 64px; font-weight: 900;
+            color: rgba(37,99,235,0.08);
+            line-height: 1; margin-bottom: 20px;
+            transition: color 0.4s;
+            user-select: none;
+        }
+        .service-card:hover .service-num { color: rgba(37,99,235,0.2); }
+        .service-icon {
+            width: 52px; height: 52px;
+            background: var(--light);
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 22px; color: var(--accent);
+            margin-bottom: 24px;
+            transition: background 0.4s;
+        }
+        .service-card:hover .service-icon { background: rgba(37,99,235,0.2); }
+        .service-card h3 {
+            font-size: 17px; font-weight: 700;
+            margin-bottom: 12px; color: var(--primary);
+            transition: color 0.4s;
+        }
+        .service-card:hover h3 { color: var(--white); }
+        .service-card p {
+            font-size: 14px; line-height: 1.7;
+            color: var(--slate); transition: color 0.4s;
+        }
+        .service-card:hover p { color: rgba(255,255,255,0.55); }
+        .service-arrow {
+            position: absolute; bottom: 28px; right: 28px;
+            width: 36px; height: 36px;
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 13px; color: var(--slate);
+            transition: all 0.4s;
+        }
+        .service-card:hover .service-arrow {
+            background: var(--accent); border-color: var(--accent);
+            color: var(--white); transform: rotate(45deg);
+        }
+
+        /* ===== ATTICA / COVERAGE ===== */
+        .coverage-section {
+            background: var(--primary);
+            position: relative; overflow: hidden;
+        }
+        .coverage-section::before {
+            content: '';
+            position: absolute; inset: 0;
+            background:
+                linear-gradient(135deg, rgba(37,99,235,0.1) 0%, transparent 60%),
+                url('https://images.unsplash.com/photo-1555636222-cae831e670b3?auto=format&fit=crop&q=80&w=1600') center/cover no-repeat;
+            opacity: 0.08;
+        }
+        .coverage-grid {
+            position: relative; z-index: 1;
+            display: grid; grid-template-columns: 1.2fr 1fr;
+            gap: 80px; align-items: center;
+        }
+        .coverage-content .label { color: var(--accent2); }
+        .coverage-content .section-heading { color: var(--white); }
+        .coverage-content .section-lead { color: rgba(255,255,255,0.55); margin-bottom: 48px; }
+
+        .coverage-cards {
+            display: grid; grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+        .cov-card {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px; padding: 28px 24px;
+            transition: background 0.3s, border-color 0.3s;
+        }
+        .cov-card:hover {
+            background: rgba(37,99,235,0.15);
+            border-color: rgba(37,99,235,0.4);
+        }
+        .cov-card i {
+            font-size: 24px; color: var(--accent);
+            margin-bottom: 14px; display: block;
+        }
+        .cov-card h4 {
+            font-size: 15px; font-weight: 700;
+            color: var(--white); margin-bottom: 6px;
+        }
+        .cov-card p {
+            font-size: 13px; color: rgba(255,255,255,0.4);
             line-height: 1.6;
-            margin-top: 30px;
+        }
+        .coverage-map {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 20px; padding: 48px;
+            text-align: center;
+        }
+        .coverage-map i {
+            font-size: 80px; color: var(--accent);
+            opacity: 0.8; display: block; margin-bottom: 24px;
+        }
+        .coverage-map h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 28px; color: var(--white);
+            margin-bottom: 12px;
+        }
+        .coverage-map p {
+            color: rgba(255,255,255,0.45);
+            font-size: 14px; line-height: 1.6;
+        }
+        .coverage-map .region-list {
+            display: flex; flex-wrap: wrap; gap: 8px;
+            justify-content: center; margin-top: 28px;
+        }
+        .region-tag {
+            background: rgba(37,99,235,0.15);
+            border: 1px solid rgba(37,99,235,0.25);
+            color: var(--accent2); font-size: 12px; font-weight: 600;
+            padding: 6px 14px; border-radius: 100px;
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== PROCESS ===== */
+        .process-section { background: var(--light); }
+        .process-steps {
+            display: grid; grid-template-columns: repeat(4, 1fr);
+            gap: 0; position: relative; margin-top: 64px;
+        }
+        .process-steps::before {
+            content: '';
+            position: absolute; top: 32px; left: 12.5%; right: 12.5%;
+            height: 2px; background: var(--border);
+            z-index: 0;
+        }
+        .step {
+            text-align: center; position: relative; z-index: 1;
+            padding: 0 20px;
+        }
+        .step-dot {
+            width: 64px; height: 64px;
+            border-radius: 50%;
+            background: var(--white);
+            border: 3px solid var(--border);
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 24px;
+            font-family: 'Playfair Display', serif;
+            font-size: 22px; font-weight: 900;
+            color: var(--text);
+            transition: all 0.4s;
+            position: relative;
+        }
+        .step:hover .step-dot {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: var(--white);
+            box-shadow: 0 0 0 8px rgba(37,99,235,0.1);
+        }
+        .step h4 { font-size: 16px; font-weight: 700; margin-bottom: 10px; }
+        .step p { font-size: 13px; color: var(--text); line-height: 1.65; }
+
+        /* ===== CONTACT ===== */
+        .contact-section { background: var(--white); }
+        .contact-grid {
+            display: grid; grid-template-columns: 1fr 1.5fr;
+            gap: 60px; align-items: start;
+        }
+        .contact-info {}
+        .contact-info .section-heading { margin-bottom: 20px; }
+        .contact-info .section-lead { margin-bottom: 40px; }
+
+        /* Person card */
+        .person-card {
+            background: var(--primary); border-radius: 20px;
+            padding: 40px; display: flex; align-items: center; gap: 24px;
+            margin-bottom: 32px; position: relative; overflow: hidden;
+        }
+        .person-card::after {
+            content: '';
+            position: absolute; bottom: 0; left: 0; right: 0; height: 3px;
+            background: linear-gradient(90deg, var(--accent), transparent);
+        }
+        .person-photo {
+            width: 90px; height: 90px; border-radius: 50%;
+            object-fit: cover; border: 3px solid var(--accent);
+            flex-shrink: 0;
+        }
+        .person-details h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px; color: var(--white); font-weight: 900;
+            margin-bottom: 4px;
+        }
+        .person-details p {
+            color: var(--accent2); font-size: 12px; font-weight: 600;
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+
+        .contact-detail-list {
+            display: flex; flex-direction: column; gap: 16px;
+        }
+        .contact-detail {
+            display: flex; align-items: center; gap: 16px;
+            padding: 18px 22px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            font-size: 15px; font-weight: 500; color: var(--text);
+            transition: all 0.3s;
+        }
+        .contact-detail:hover {
+            border-color: var(--accent);
+            background: var(--light);
+            transform: translateX(4px);
+        }
+        .contact-detail i {
+            width: 40px; height: 40px;
+            background: var(--light);
+            border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            color: var(--accent); font-size: 15px; flex-shrink: 0;
+        }
+        .contact-detail a { color: inherit; }
+
+        /* Form */
+        .contact-form-wrap {
+            background: var(--primary);
+            border-radius: 20px; padding: 56px 48px;
+        }
+        .contact-form-wrap h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px; color: var(--white);
+            margin-bottom: 8px;
+        }
+        .contact-form-wrap .sub {
+            color: rgba(255,255,255,0.4); font-size: 14px;
+            margin-bottom: 36px;
+        }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .field { display: flex; flex-direction: column; gap: 8px; }
+        .field label {
+            font-size: 11px; font-weight: 700;
+            color: rgba(255,255,255,0.4);
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+        .field input, .field textarea, .field select {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--white); padding: 16px 18px;
+            border-radius: 8px; font-family: 'Inter', sans-serif;
+            font-size: 15px; outline: none;
+            transition: border-color 0.3s, background 0.3s;
+        }
+        .field input::placeholder,
+        .field textarea::placeholder { color: rgba(255,255,255,0.25); }
+        .field input:focus,
+        .field textarea:focus {
+            border-color: var(--accent);
+            background: rgba(37,99,235,0.08);
+        }
+        .field textarea { resize: vertical; min-height: 130px; }
+        .form-fields { display: flex; flex-direction: column; gap: 16px; }
+        .btn-submit {
+            background: var(--accent); color: var(--white);
+            padding: 18px 48px; border: none; border-radius: 8px;
+            font-family: 'Inter', sans-serif;
+            font-size: 13px; font-weight: 700;
+            letter-spacing: 2px; text-transform: uppercase;
+            cursor: pointer; width: 100%;
+            transition: background 0.3s, transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 8px 30px rgba(37,99,235,0.4);
+            margin-top: 8px;
+        }
+        .btn-submit:hover {
+            background: #1d4ed8; transform: translateY(-2px);
+            box-shadow: 0 14px 40px rgba(37,99,235,0.5);
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: #020610;
+            padding: 60px 6% 40px;
+        }
+        .footer-top {
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 30px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
             margin-bottom: 40px;
         }
-
-        /* --- ATTICA FOCUS BANNER --- */
-        .attica-focus {
-            background: #f8fafc;
-            padding: 80px 8%;
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            align-items: center;
-            border-bottom: 1px solid #e2e8f0;
+        .footer-brand {
+            display: flex; align-items: center; gap: 16px;
         }
-        .attica-text h2 { font-weight: 900; font-size: 32px; color: var(--primary); margin-bottom: 15px; text-transform: uppercase;}
-        .attica-text p { font-size: 18px; color: #475569; max-width: 800px; }
-        .attica-badge {
-            background: var(--primary);
-            color: white;
-            padding: 40px;
-            text-align: center;
-            border-left: 10px solid var(--accent);
+        .footer-logo-circle {
+            width: 56px; height: 56px; border-radius: 50%;
+            overflow: hidden; border: 2px solid rgba(37,99,235,0.5);
         }
-        .attica-badge h3 { font-size: 24px; letter-spacing: 1px; margin-bottom: 10px; }
-        .attica-badge p { color: var(--accent); font-weight: 700; }
+        .footer-logo-circle img { width: 100%; height: 100%; object-fit: cover; }
+        .footer-brand-text {}
+        .footer-brand-text p:first-child {
+            font-family: 'Playfair Display', serif;
+            font-size: 20px; font-weight: 900; color: var(--white);
+        }
+        .footer-brand-text p:last-child {
+            font-size: 11px; color: var(--slate); letter-spacing: 1.5px; margin-top: 2px;
+        }
+        .footer-links {
+            display: flex; gap: 32px; flex-wrap: wrap;
+        }
+        .footer-links a {
+            color: var(--slate); font-size: 12px; font-weight: 600;
+            letter-spacing: 1.5px; text-transform: uppercase;
+            transition: color 0.3s;
+        }
+        .footer-links a:hover { color: var(--accent); }
+        .footer-bottom {
+            display: flex; justify-content: space-between; align-items: center;
+            flex-wrap: wrap; gap: 16px;
+        }
+        .footer-copy {
+            color: rgba(255,255,255,0.25); font-size: 12px; letter-spacing: 1px;
+        }
+        .footer-socials {
+            display: flex; gap: 12px;
+        }
+        .social-link {
+            width: 38px; height: 38px; border-radius: 8px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.07);
+            display: flex; align-items: center; justify-content: center;
+            color: var(--slate); font-size: 14px;
+            transition: all 0.3s;
+        }
+        .social-link:hover {
+            background: var(--accent); border-color: var(--accent);
+            color: var(--white);
+        }
 
-        /* --- SECTIONS --- */
-        .section { padding: 120px 8%; }
-        .section-title { font-size: 45px; font-weight: 900; text-transform: uppercase; margin-bottom: 60px; }
-
-        /* --- SERVICES CARDS --- */
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card { padding: 50px 40px; background: #fff; border: 1px solid #f1f5f9; transition: var(--transition); border-radius: 4px; }
-        .card:hover { border-color: var(--accent); transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
-        .card i { font-size: 40px; color: var(--accent); margin-bottom: 25px; }
-        .card h3 { margin-bottom: 15px; text-transform: uppercase; letter-spacing: 1px; }
-
-        /* --- PROJECTS (ΕΡΓΑ) --- */
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 40px; }
-        .project-item { position: relative; height: 500px; overflow: hidden; background: #000; cursor: pointer; border-radius: 8px; }
-        .project-item img { width: 100%; height: 100%; object-fit: cover; opacity: 0.6; transition: var(--transition); }
-        .project-item:hover img { opacity: 0.3; transform: scale(1.05); }
-        .project-content { position: absolute; bottom: 40px; left: 40px; color: white; }
-        .project-content h4 { font-size: 28px; font-weight: 900; margin-bottom: 5px; }
-
-        /* --- CONTACT --- */
-        .contact-layout { display: grid; grid-template-columns: 1fr 1.2fr; background: var(--primary); color: white; border-radius: 20px; overflow: hidden; }
-        .contact-meta { padding: 80px; display: flex; flex-direction: column; align-items: center; text-align: center; border-right: 1px solid rgba(255,255,255,0.05); }
-        .contact-photo { width: 220px; height: 220px; border-radius: 50%; border: 6px solid var(--accent); object-fit: cover; margin-bottom: 30px; }
-        .contact-form { padding: 80px; display: flex; flex-direction: column; gap: 20px; background: #0a0f1d; }
-        .contact-form input, .contact-form textarea { padding: 20px; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); color: white; outline: none; transition: 0.3s; }
-        .contact-form input:focus { border-color: var(--accent); background: rgba(255,255,255,0.05); }
-        .btn-send { background: var(--accent); color: white; padding: 20px; border: none; font-weight: 900; cursor: pointer; text-transform: uppercase; }
-        .btn-send:hover { background: #fff; color: var(--primary); }
-
+        /* ===== MOBILE ===== */
         @media (max-width: 1100px) {
-            .hero-left { width: 100%; clip-path: none; padding-top: 120px; align-items: center; text-align: center;}
-            .hero-right { display: none; }
-            .attica-focus { grid-template-columns: 1fr; gap: 40px; text-align: center; }
-            .contact-layout { grid-template-columns: 1fr; }
+            .hero-inner { grid-template-columns: 1fr; padding-top: 120px; }
+            .hero-visual { flex-direction: row; justify-content: center; }
+            .hero-logo-ring { width: 180px; height: 180px; }
+            .about-grid { grid-template-columns: 1fr; }
+            .about-img-wrap { max-width: 480px; margin: 0 auto; }
+            .about-badge { right: 0; }
+            .services-grid { grid-template-columns: 1fr 1fr; }
+            .coverage-grid { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
+            .process-steps::before { display: none; }
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 768px) {
+            section { padding: 80px 5%; }
+            .nav-links { display: none; }
+            .nav-links.open {
+                display: flex; flex-direction: column;
+                position: fixed; inset: 0;
+                background: var(--primary);
+                justify-content: center; align-items: center;
+                gap: 40px; z-index: 999;
+            }
+            .nav-links.open a { font-size: 18px; }
+            .hamburger { display: flex; }
+            .hero-name .line1, .hero-name .line2 { font-size: clamp(44px, 14vw, 72px); }
+            .services-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .contact-form-wrap { padding: 36px 28px; }
+            .coverage-cards { grid-template-columns: 1fr; }
+            .process-steps { grid-template-columns: 1fr; }
+            .hero-stats { grid-template-columns: repeat(3, 1fr); max-width: 100%; }
+            .band-items { gap: 20px; }
+            .footer-top { flex-direction: column; align-items: flex-start; }
         }
     </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#" class="logo-container">
-            <svg class="vl-svg" viewBox="0 0 100 100">
-                <path d="M20 20 L40 80 L60 20" /> <path d="M70 20 L70 80 L90 80" /> <line x1="20" y1="85" x2="90" y2="85" /> </svg>
-            <div style="font-weight: 900; font-size: 22px; color: var(--primary); letter-spacing: -1px;">Β.ΛΙΑΠΗΣ</div>
+    <!-- Progress bar -->
+    <div id="progress"></div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="nav">
+        <a href="#" class="nav-logo">
+            <div class="logo-circle">
+                <img src="logo.peg.jpg" alt="Λιάπης Λογότυπο"
+                     onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,#0f1f3d,#1e3a8a);display:flex;align-items:center;justify-content:center;font-family:serif;font-size:20px;font-weight:900;color:white\'>ΒΛ</div>'">
+            </div>
+            <div class="logo-text">
+                <span>Β. ΛΙΑΠΗΣ</span>
+                <span>Πολιτικός Μηχανικός</span>
+            </div>
         </a>
-        <div class="nav-links">
-            <a href="#services">Υπηρεσιες</a>
-            <a href="#projects">Εργα</a>
-            <a href="#contact">Επικοινωνια</a>
+        <div class="nav-links" id="navLinks">
+            <a href="#about">Σχετικά</a>
+            <a href="#services">Υπηρεσίες</a>
+            <a href="#coverage">Αττική</a>
+            <a href="#contact" class="nav-cta">Επικοινωνία</a>
+        </div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span><span></span><span></span>
         </div>
     </nav>
 
+    <!-- ===== HERO ===== -->
     <header class="hero">
-        <div class="hero-left">
-            <h1 class="hero-title">
-                <span class="name-vaios">ΒΑΪΟΣ</span>
-                <span class="name-liapis">ΛΙΑΠΗΣ</span>
-            </h1>
-            <div class="hero-subtitle" data-aos="fade-up">Διπλωματούχος Πολιτικός Μηχανικός ΑΠΘ</div>
-            
-            <p class="hero-description" data-aos="fade-up" data-aos-delay="200">
-                Τεχνικό γραφείο που δραστηριοποιείται σε όλη την Αττική, αναλαμβάνοντας πάσης φύσεως θέματα Πολιτικού Μηχανικού με συνέπεια και αξιοπιστία.
-            </p>
-            
-            <div data-aos="fade-up" data-aos-delay="400">
-                <a href="#contact" class="btn-send" style="text-decoration: none; padding: 18px 50px; border-radius: 5px;">ΕΠΙΚΟΙΝΩΝΙΑ</a>
+        <div class="hero-bg"></div>
+        <div class="hero-grid"></div>
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+
+        <div class="hero-inner">
+            <div class="hero-content">
+                <div class="hero-tag">
+                    <span></span>
+                    Διαθέσιμος σε Αθήνα &amp; Αττική
+                </div>
+                <h1 class="hero-name">
+                    <span class="line1">ΒΑΪΟΣ</span>
+                    <span class="line2">ΛΙΑΠΗΣ</span>
+                </h1>
+                <p class="hero-subtitle">Διπλωματούχος Πολιτικός Μηχανικός ΑΠΘ</p>
+                <p class="hero-desc">
+                    Τεχνικό γραφείο με εξειδίκευση σε πολεοδομικά, κτηματολογικά και κατασκευαστικά θέματα. Άμεση εξυπηρέτηση, αξιοπιστία και αποτελεσματικές λύσεις για κάθε ανάγκη.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn-primary">Άμεση Επικοινωνία</a>
+                    <a href="#services" class="btn-ghost">Οι Υπηρεσίες μας</a>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <!-- Spinning ring + circle logo -->
+                <div class="hero-logo-ring">
+                    <svg class="ring" viewBox="0 0 280 280" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="140" cy="140" r="130" stroke="rgba(37,99,235,0.2)" stroke-width="1"/>
+                        <circle cx="140" cy="140" r="130"
+                            stroke="url(#ring-grad)" stroke-width="2"
+                            stroke-dasharray="200 620"
+                            stroke-linecap="round"/>
+                        <defs>
+                            <linearGradient id="ring-grad" x1="0" y1="0" x2="280" y2="280" gradientUnits="userSpaceOnUse">
+                                <stop stop-color="#2563eb"/>
+                                <stop offset="1" stop-color="transparent"/>
+                            </linearGradient>
+                        </defs>
+                        <!-- Dots on ring -->
+                        <circle cx="140" cy="10" r="4" fill="#2563eb"/>
+                        <circle cx="270" cy="140" r="3" fill="rgba(37,99,235,0.5)"/>
+                        <circle cx="140" cy="270" r="3" fill="rgba(37,99,235,0.3)"/>
+                    </svg>
+                    <div class="hero-logo-inner">
+                        <img src="logo.peg.jpg" alt="Λιάπης Λογότυπο"
+                             onerror="this.parentElement.innerHTML='<div class=\'initials\'>ΒΛ</div>'">
+                    </div>
+                </div>
+
+                <!-- Stats -->
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-num">10+</div>
+                        <div class="stat-label">Χρόνια</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">500+</div>
+                        <div class="stat-label">Έργα</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-num">100%</div>
+                        <div class="stat-label">Αξιοπιστία</div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="hero-right"></div>
+
+        <div class="scroll-hint">
+            <span>Κύλιση</span>
+            <i class="fa-solid fa-chevron-down"></i>
+        </div>
     </header>
 
-    <section class="attica-focus">
-        <div class="attica-text" data-aos="fade-right">
-            <h2>ΕΞΥΠΗΡΕΤΗΣΗ ΣΕ ΟΛΗ ΤΗΝ ΑΤΤΙΚΗ</h2>
-            <p>Παρέχουμε ολοκληρωμένες τεχνικές λύσεις για ιδιώτες και επαγγελματίες, με απόλυτη εξειδίκευση σε πολεοδομικά και κατασκευαστικά θέματα.</p>
+    <!-- ===== BAND ===== -->
+    <div class="band">
+        <div class="band-items">
+            <div class="band-item"><i class="fa-solid fa-check-circle"></i> Άμεση Αυτοψία</div>
+            <div class="band-item"><i class="fa-solid fa-check-circle"></i> Ηλεκτρονική Ταυτότητα</div>
+            <div class="band-item"><i class="fa-solid fa-check-circle"></i> ΠΕΑ &amp; Αυθαίρετα</div>
+            <div class="band-item"><i class="fa-solid fa-check-circle"></i> Οικοδομικές Άδειες</div>
         </div>
-        <div class="attica-badge" data-aos="zoom-in">
-            <h3>ΑΜΕΣΗ ΑΥΤΟΨΙΑ</h3>
-            <p>& ΤΕΧΝΙΚΗ ΥΠΟΣΤΗΡΙΞΗ</p>
+        <a href="tel:6948675267" class="band-phone">694 867 5267</a>
+    </div>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about-section" id="about">
+        <div class="about-grid">
+            <div class="about-img-wrap" data-reveal>
+                <img src="photo.jpeg" alt="Βάϊος Λιάπης" class="about-img"
+                     onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600&h=750'">
+                <div class="about-badge">
+                    <strong>ΑΠΘ</strong>
+                    <span>Πολιτικός Μηχανικός</span>
+                </div>
+            </div>
+            <div class="about-content" data-reveal>
+                <span class="label">Σχετικά με εμάς</span>
+                <h2 class="section-heading">
+                    Εμπειρία &amp; <em>Εξειδίκευση</em> στην υπηρεσία σας
+                </h2>
+                <p class="section-lead">
+                    Διπλωματούχος Πολιτικός Μηχανικός του Αριστοτέλειου Πανεπιστημίου Θεσσαλονίκης, με πολυετή εμπειρία στην αντιμετώπιση πολεοδομικών, κτηματολογικών και κατασκευαστικών θεμάτων για ιδιώτες και επαγγελματίες σε όλη την Αττική.
+                </p>
+                <div class="about-features">
+                    <div class="feature-row" data-reveal>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Πλήρης νομική κάλυψη κάθε έργου
+                    </div>
+                    <div class="feature-row" data-reveal>
+                        <i class="fa-solid fa-clock"></i>
+                        Γρήγορη ανταπόκριση &amp; τήρηση χρονοδιαγραμμάτων
+                    </div>
+                    <div class="feature-row" data-reveal>
+                        <i class="fa-solid fa-handshake"></i>
+                        Διαφάνεια &amp; σαφής ενημέρωση σε κάθε βήμα
+                    </div>
+                    <div class="feature-row" data-reveal>
+                        <i class="fa-solid fa-map-location-dot"></i>
+                        Εξυπηρέτηση σε ολόκληρη την Αττική
+                    </div>
+                </div>
+                <a href="#contact" class="btn-primary">Κλείστε Ραντεβού</a>
+            </div>
         </div>
     </section>
 
-    <section class="section" id="services">
-        <h2 class="section-title" data-aos="fade-right">Υπηρεσιες<span style="color:var(--accent)">.</span></h2>
+    <!-- ===== SERVICES ===== -->
+    <section class="services-section" id="services">
+        <div class="services-header">
+            <div data-reveal>
+                <span class="label">Τι προσφέρουμε</span>
+                <h2 class="section-heading">Οι <em>Υπηρεσίες</em> μας</h2>
+            </div>
+            <a href="#contact" class="btn-primary" data-reveal>Ζητήστε Προσφορά</a>
+        </div>
+
         <div class="services-grid">
-            <div class="card" data-aos="fade-up">
-                <i class="fa-solid fa-file-signature"></i>
-                <h3>Ηλεκτρονική Ταυτότητα</h3>
-                <p>Σύνταξη και υποβολή φακέλου ΗΤΚ για ασφαλείς μεταβιβάσεις.</p>
+            <div class="service-card" data-reveal-scale>
+                <div class="service-num">01</div>
+                <div class="service-icon"><i class="fa-solid fa-file-signature"></i></div>
+                <h3>Ηλεκτρονική Ταυτότητα Κτιρίου</h3>
+                <p>Σύνταξη και υποβολή πλήρους φακέλου ΗΤΚ για ασφαλείς μεταβιβάσεις και πωλήσεις ακινήτων.</p>
+                <div class="service-arrow"><i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="100">
-                <i class="fa-solid fa-house-circle-exclamation"></i>
+            <div class="service-card" data-reveal-scale>
+                <div class="service-num">02</div>
+                <div class="service-icon"><i class="fa-solid fa-house-circle-exclamation"></i></div>
                 <h3>Νομιμοποίηση Αυθαιρέτων</h3>
-                <p>Τακτοποίηση αυθαιρεσιών και έκδοση βεβαιώσεων μηχανικού.</p>
+                <p>Τακτοποίηση αυθαίρετων κατασκευών, έκδοση βεβαιώσεων μηχανικού και υποβολή δηλώσεων.</p>
+                <div class="service-arrow"><i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fa-solid fa-bolt-lightning"></i>
-                <h3>Ενεργειακά ΠΕΑ</h3>
-                <p>Έκδοση Πιστοποιητικών Ενεργειακής Απόδοσης άμεσα.</p>
+            <div class="service-card" data-reveal-scale>
+                <div class="service-num">03</div>
+                <div class="service-icon"><i class="fa-solid fa-bolt-lightning"></i></div>
+                <h3>Ενεργειακά Πιστοποιητικά ΠΕΑ</h3>
+                <p>Έκδοση Πιστοποιητικού Ενεργειακής Απόδοσης άμεσα, αναγκαίου για κάθε συναλλαγή ακινήτου.</p>
+                <div class="service-arrow"><i class="fa-solid fa-arrow-right"></i></div>
             </div>
-            <div class="card" data-aos="fade-up" data-aos-delay="300">
-                <i class="fa-solid fa-compass-drafting"></i>
+            <div class="service-card" data-reveal-scale>
+                <div class="service-num">04</div>
+                <div class="service-icon"><i class="fa-solid fa-compass-drafting"></i></div>
                 <h3>Οικοδομικές Άδειες</h3>
-                <p>Μελέτη, σχεδιασμός και αδειοδότηση κτιριακών έργων.</p>
+                <p>Ολοκληρωμένη μελέτη, αρχιτεκτονικός σχεδιασμός και αδειοδότηση νέων κτιριακών έργων.</p>
+                <div class="service-arrow"><i class="fa-solid fa-arrow-right"></i></div>
             </div>
         </div>
     </section>
 
-    <section class="section" id="projects" style="background: #050a14; color: white;">
-        <h2 class="section-title" data-aos="fade-right" style="color: white;">ΕΡΓΑ<span>.</span></h2>
-        <div class="projects-grid">
-            <div class="project-item" data-aos="zoom-in">
-                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80" alt="Project 1">
-                <div class="project-content">
-                    <p style="color: var(--accent); font-weight: 700;">ΜΕΛΕΤΗ & ΕΠΙΒΛΕΨΗ</p>
-                    <h4>Ανακαίνιση Πολυκατοικίας</h4>
+    <!-- ===== COVERAGE ===== -->
+    <section class="coverage-section" id="coverage">
+        <div class="coverage-grid">
+            <div class="coverage-content" data-reveal>
+                <span class="label">Περιοχή Εξυπηρέτησης</span>
+                <h2 class="section-heading">Σε όλη <em>την Αττική</em></h2>
+                <p class="section-lead">
+                    Παρέχουμε άμεση αυτοψία και τεχνική υποστήριξη σε κάθε γωνιά της Αττικής — από το κέντρο της Αθήνας έως τα προάστια και τις παράκτιες περιοχές.
+                </p>
+                <div class="coverage-cards">
+                    <div class="cov-card">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <h4>Αθήνα &amp; Κέντρο</h4>
+                        <p>Πλήρης κάλυψη του λεκανοπεδίου</p>
+                    </div>
+                    <div class="cov-card">
+                        <i class="fa-solid fa-sun"></i>
+                        <h4>Νότια Προάστια</h4>
+                        <p>Γλυφάδα, Βούλα, Βάρη και περιοχές Μεσογείων</p>
+                    </div>
+                    <div class="cov-card">
+                        <i class="fa-solid fa-tree-city"></i>
+                        <h4>Βόρεια Προάστια</h4>
+                        <p>Κηφισιά, Μαρούσι, Εκάλη</p>
+                    </div>
+                    <div class="cov-card">
+                        <i class="fa-solid fa-water"></i>
+                        <h4>Δυτική Αττική</h4>
+                        <p>Περιστέρι, Αιγάλεω, Ελευσίνα</p>
+                    </div>
                 </div>
             </div>
-            <div class="project-item" data-aos="zoom-in" data-aos-delay="200">
-                <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&q=80" alt="Project 2">
-                <div class="project-content">
-                    <p style="color: var(--accent); font-weight: 700;">ΤΑΚΤΟΠΟΙΗΣΗ</p>
-                    <h4>Βιομηχανικός Χώρος</h4>
+            <div class="coverage-map" data-reveal-scale>
+                <i class="fa-solid fa-location-dot"></i>
+                <h3>Αθήνα &amp; Αττική</h3>
+                <p>Άμεση μετάβαση για αυτοψία σε όλη την Αττική — χωρίς επιπλέον επιβάρυνση</p>
+                <div class="region-list">
+                    <span class="region-tag">Κέντρο Αθήνας</span>
+                    <span class="region-tag">Πειραιάς</span>
+                    <span class="region-tag">Γλυφάδα</span>
+                    <span class="region-tag">Μαρούσι</span>
+                    <span class="region-tag">Κηφισιά</span>
+                    <span class="region-tag">Χαλάνδρι</span>
+                    <span class="region-tag">Βούλα</span>
+                    <span class="region-tag">Ελευσίνα</span>
+                    <span class="region-tag">Μεσόγεια</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section" id="contact">
-        <div class="contact-layout" data-aos="fade-up">
-            <div class="contact-meta">
-                <img src="photo.jpeg" alt="Βάϊος Λιάπης" class="contact-photo" onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'">
-                <h2 style="font-size: 32px; margin-bottom: 5px;">Βάϊος Λιάπης</h2>
-                <p style="color: var(--accent); font-weight: 700; margin-bottom: 40px; letter-spacing: 2px;">ΠΟΛΙΤΙΚΟΣ ΜΗΧΑΝΙΚΟΣ ΑΠΘ</p>
-                
-                <div style="text-align: left; width: 100%; display: flex; flex-direction: column; gap: 20px;">
-                    <p><i class="fa-solid fa-phone" style="color:var(--accent); margin-right: 15px;"></i> 694 867 5267</p>
-                    <p><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right: 15px;"></i> vaioliap93@gmail.com</p>
-                    <p><i class="fa-solid fa-location-dot" style="color:var(--accent); margin-right: 15px;"></i> Αθήνα & Όλη η Αττική</p>
-                </div>
+    <!-- ===== PROCESS ===== -->
+    <section class="process-section">
+        <div style="text-align:center; margin-bottom: 16px;" data-reveal>
+            <span class="label">Πώς Δουλεύουμε</span>
+            <h2 class="section-heading">Η <em>Διαδικασία</em> μας</h2>
+        </div>
+        <div class="process-steps">
+            <div class="step" data-reveal>
+                <div class="step-dot">1</div>
+                <h4>Επικοινωνία</h4>
+                <p>Αποστέλλετε το αίτημά σας τηλεφωνικά ή μέσω φόρμας. Απαντάμε άμεσα.</p>
             </div>
-            
-            <form class="contact-form">
-                <h2 style="font-size: 35px; margin-bottom: 30px;">ΕΠΙΚΟΙΝΩΝΙΑ</h2>
-                <input type="text" placeholder="Ονοματεπώνυμο" required>
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                    <input type="email" placeholder="Email" required>
-                    <input type="tel" placeholder="Τηλέφωνο" required>
-                </div>
-                <textarea rows="5" placeholder="Περιγράψτε το αίτημά σας..." required></textarea>
-                <button type="submit" class="btn-send">ΑΠΟΣΤΟΛΗ ΜΗΝΥΜΑΤΟΣ</button>
-            </form>
+            <div class="step" data-reveal>
+                <div class="step-dot">2</div>
+                <h4>Αυτοψία</h4>
+                <p>Μεταβαίνουμε επιτόπου για πλήρη εκτίμηση της κατάστασης του ακινήτου.</p>
+            </div>
+            <div class="step" data-reveal>
+                <div class="step-dot">3</div>
+                <h4>Μελέτη &amp; Σχέδιο</h4>
+                <p>Εκπονούμε πλήρη τεχνική μελέτη και αναλαμβάνουμε την αδειοδότηση.</p>
+            </div>
+            <div class="step" data-reveal>
+                <div class="step-dot">4</div>
+                <h4>Παράδοση</h4>
+                <p>Παραδίδουμε το έργο έτοιμο, νόμιμο και εντός χρονοδιαγράμματος.</p>
+            </div>
         </div>
     </section>
 
-    <footer style="text-align: center; padding: 50px; background: #020617; color: #475569; font-size: 13px; letter-spacing: 1px;">
-        &copy; 2026 ΒΑΪΟΣ ΛΙΑΠΗΣ | ΔΙΠΛΩΜΑΤΟΥΧΟΣ ΠΟΛΙΤΙΚΟΣ ΜΗΧΑΝΙΚΟΣ ΑΠΘ
+    <!-- ===== CONTACT ===== -->
+    <section class="contact-section" id="contact">
+        <div class="contact-grid">
+            <div class="contact-info" data-reveal>
+                <span class="label">Επικοινωνία</span>
+                <h2 class="section-heading">Μιλήστε <em>μαζί μας</em></h2>
+                <p class="section-lead">
+                    Είμαστε εδώ για κάθε ερώτηση ή ανάγκη. Επικοινωνήστε μαζί μας σήμερα για δωρεάν αρχική ενημέρωση.
+                </p>
+
+                <div class="person-card">
+                    <img src="photo.jpeg" alt="Βάϊος Λιάπης" class="person-photo"
+                         onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'">
+                    <div class="person-details">
+                        <h3>Βάϊος Λιάπης</h3>
+                        <p>Πολιτικός Μηχανικός ΑΠΘ</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail-list">
+                    <a href="tel:6948675267" class="contact-detail">
+                        <i class="fa-solid fa-phone"></i>
+                        694 867 5267
+                    </a>
+                    <a href="mailto:vaioliap93@gmail.com" class="contact-detail">
+                        <i class="fa-solid fa-envelope"></i>
+                        vaioliap93@gmail.com
+                    </a>
+                    <div class="contact-detail">
+                        <i class="fa-solid fa-location-dot"></i>
+                        Αθήνα &amp; Όλη η Αττική
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-wrap" data-reveal>
+                <h3>Στείλτε μήνυμα</h3>
+                <p class="sub">Απαντάμε εντός 24 ωρών</p>
+                <form class="form-fields" onsubmit="handleSubmit(event)">
+                    <div class="form-row">
+                        <div class="field">
+                            <label>Ονοματεπώνυμο</label>
+                            <input type="text" placeholder="Το όνομά σας" required>
+                        </div>
+                        <div class="field">
+                            <label>Τηλέφωνο</label>
+                            <input type="tel" placeholder="69X XXX XXXX" required>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label>Email</label>
+                        <input type="email" placeholder="email@example.gr" required>
+                    </div>
+                    <div class="field">
+                        <label>Αντικείμενο</label>
+                        <select>
+                            <option value="" disabled selected style="color:#999">Επιλέξτε υπηρεσία</option>
+                            <option>Ηλεκτρονική Ταυτότητα Κτιρίου</option>
+                            <option>Νομιμοποίηση Αυθαιρέτων</option>
+                            <option>Ενεργειακό Πιστοποιητικό (ΠΕΑ)</option>
+                            <option>Οικοδομική Άδεια</option>
+                            <option>Άλλο</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label>Μήνυμα</label>
+                        <textarea placeholder="Περιγράψτε σύντομα το αίτημά σας..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Αποστολή Μηνύματος</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo-circle">
+                    <img src="logo.peg.jpg" alt="Logo"
+                         onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,#0f1f3d,#1e3a8a);display:flex;align-items:center;justify-content:center;font-family:serif;font-size:18px;font-weight:900;color:white\'>ΒΛ</div>'">
+                </div>
+                <div class="footer-brand-text">
+                    <p>Βάϊος Λιάπης</p>
+                    <p>Διπλωματούχος Πολιτικός Μηχανικός ΑΠΘ</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="#about">Σχετικά</a>
+                <a href="#services">Υπηρεσίες</a>
+                <a href="#coverage">Αττική</a>
+                <a href="#contact">Επικοινωνία</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="footer-copy">&copy; 2026 Βάϊος Λιάπης &mdash; Πολιτικός Μηχανικός Αθήνα</p>
+            <div class="footer-socials">
+                <a href="mailto:vaioliap93@gmail.com" class="social-link"><i class="fa-solid fa-envelope"></i></a>
+                <a href="tel:6948675267" class="social-link"><i class="fa-solid fa-phone"></i></a>
+            </div>
+        </div>
     </footer>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script> AOS.init({ duration: 1000, once: true }); </script>
+    <script>
+        // ===== SCROLL PROGRESS =====
+        window.addEventListener('scroll', () => {
+            const total = document.documentElement.scrollHeight - window.innerHeight;
+            const pct   = (window.scrollY / total) * 100;
+            document.getElementById('progress').style.width = pct + '%';
+
+            // Nav scroll state
+            document.getElementById('nav').classList.toggle('scrolled', window.scrollY > 60);
+        });
+
+        // ===== REVEAL ON SCROLL =====
+        const revealEls = document.querySelectorAll('[data-reveal], [data-reveal-scale]');
+        const delays = [0, 100, 200, 300];
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, i) => {
+                if (entry.isIntersecting) {
+                    const siblings = [...entry.target.parentElement.querySelectorAll('[data-reveal],[data-reveal-scale]')];
+                    const idx = siblings.indexOf(entry.target);
+                    const delay = delays[idx] || 0;
+                    setTimeout(() => entry.target.classList.add('visible'), delay);
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12 });
+
+        revealEls.forEach(el => observer.observe(el));
+
+        // ===== MOBILE MENU =====
+        function toggleMenu() {
+            document.getElementById('navLinks').classList.toggle('open');
+        }
+        document.querySelectorAll('#navLinks a').forEach(a => {
+            a.addEventListener('click', () => {
+                document.getElementById('navLinks').classList.remove('open');
+            });
+        });
+
+        // ===== FORM =====
+        function handleSubmit(e) {
+            e.preventDefault();
+            const btn = e.target.querySelector('.btn-submit');
+            btn.textContent = 'Στάλθηκε! ✓';
+            btn.style.background = '#16a34a';
+            setTimeout(() => {
+                btn.textContent = 'Αποστολή Μηνύματος';
+                btn.style.background = '';
+                e.target.reset();
+            }, 3000);
+        }
+    </script>
 </body>
 </html>
