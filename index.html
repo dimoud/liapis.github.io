@@ -1,247 +1,401 @@
 <!DOCTYPE html>
 <html lang="el">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Βάϊος Λιάπης | Πολιτικός Μηχανικός</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Βάϊος Λιάπης | Πολιτικός Μηχανικός Αθήνα</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1e3a8a; /* Σκούρο μπλε εμπιστοσύνης */
+            --primary-hover: #1d4ed8;
+            --secondary: #0f172a;
+            --accent: #3b82f6;
+            --light: #f8fafc;
+            --text-main: #334155;
+            --text-heading: #0f172a;
+            --white: #ffffff;
+            --transition: all 0.3s ease;
+        }
 
-<style>
-:root{
---main:#0f172a;
---accent:#2563eb;
---light:#f8fafc;
---text:#111827;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-*{box-sizing:border-box;margin:0;padding:0;}
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-body{
-font-family:'Inter',sans-serif;
-background:white;
-color:var(--text);
-line-height:1.6;
-}
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--white);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
 
-header{
-min-height:90vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:40px;
-background:linear-gradient(120deg,#0f172a,#1e293b);
-color:white;
-}
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+        }
 
-header h1{
-font-size:52px;
-font-weight:700;
-letter-spacing:-1px;
-}
+        .logo {
+            font-size: 22px;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
 
-header p{
-margin-top:15px;
-font-size:20px;
-opacity:0.9;
-}
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-heading);
+            margin-left: 30px;
+            font-weight: 500;
+            font-size: 15px;
+            transition: var(--transition);
+        }
 
-.cta{
-margin-top:30px;
-padding:15px 35px;
-background:var(--accent);
-border:none;
-border-radius:8px;
-color:white;
-font-size:18px;
-cursor:pointer;
-transition:0.3s;
-}
+        .nav-links a:hover {
+            color: var(--accent);
+        }
 
-.cta:hover{
-transform:translateY(-3px);
-box-shadow:0 10px 30px rgba(0,0,0,0.2);
-}
+        /* --- Header / Hero Section --- */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80') center/cover;
+            color: var(--white);
+            margin-top: 60px; /* Offset for fixed nav */
+        }
 
-nav{
-position:fixed;
-width:100%;
-top:0;
-background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
-padding:15px 40px;
-display:flex;
-justify-content:space-between;
-z-index:999;
-}
+        header h1 {
+            font-size: clamp(40px, 5vw, 64px);
+            font-weight: 800;
+            margin-bottom: 15px;
+            animation: fadeInDown 1s ease;
+        }
 
-nav a{
-text-decoration:none;
-color:var(--main);
-margin-left:25px;
-font-weight:600;
-}
+        header p {
+            font-size: clamp(18px, 2vw, 24px);
+            font-weight: 300;
+            max-width: 600px;
+            margin-bottom: 30px;
+            color: #e2e8f0;
+            animation: fadeInUp 1s ease;
+        }
 
-.section{
-max-width:1200px;
-margin:auto;
-padding:100px 25px;
-}
+        .btn {
+            display: inline-block;
+            padding: 16px 40px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
 
-.intro{
-display:flex;
-gap:60px;
-align-items:center;
-flex-wrap:wrap;
-}
+        .btn-primary {
+            background-color: var(--accent);
+            color: var(--white);
+            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+        }
 
-.intro img{
-width:320px;
-border-radius:20px;
-box-shadow:0 30px 60px rgba(0,0,0,0.15);
-}
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+        }
 
-.services{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-margin-top:40px;
-}
+        /* --- Global Section Style --- */
+        .section {
+            padding: 100px 5%;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-.card{
-padding:30px;
-border-radius:18px;
-background:var(--light);
-transition:0.3s;
-}
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--text-heading);
+            margin-bottom: 60px;
+            position: relative;
+        }
 
-.card:hover{
-transform:translateY(-8px);
-box-shadow:0 25px 50px rgba(0,0,0,0.08);
-}
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
 
-.contact{
-background:var(--main);
-color:white;
-text-align:center;
-padding:80px 20px;
-}
+        /* --- About Section --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+        }
 
-.contact button{
-margin:10px;
-padding:14px 30px;
-border:none;
-border-radius:8px;
-font-size:16px;
-cursor:pointer;
-background:var(--accent);
-color:white;
-transition:0.3s;
-}
+        .about-img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
 
-.contact button:hover{
-transform:scale(1.05);
-}
+        .about-text h3 {
+            font-size: 28px;
+            color: var(--text-heading);
+            margin-bottom: 20px;
+        }
 
-footer{
-text-align:center;
-padding:30px;
-font-size:14px;
-background:#020617;
-color:white;
-}
-</style>
+        .about-text p {
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .features {
+            list-style: none;
+            margin-top: 25px;
+        }
+
+        .features li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+            color: var(--text-heading);
+        }
+
+        .features i {
+            color: var(--accent);
+            margin-right: 12px;
+            font-size: 18px;
+        }
+
+        /* --- Services Section --- */
+        .bg-light {
+            background-color: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+            transition: var(--transition);
+            text-align: center;
+            border: 1px solid #e2e8f0;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-color: var(--accent);
+        }
+
+        .service-icon {
+            font-size: 40px;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            color: var(--text-heading);
+            margin-bottom: 15px;
+        }
+
+        /* --- Contact Section --- */
+        .contact-section {
+            background-color: var(--secondary);
+            color: var(--white);
+            text-align: center;
+            padding: 80px 5%;
+        }
+
+        .contact-section h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .contact-section p {
+            font-size: 18px;
+            margin-bottom: 40px;
+            color: #cbd5e1;
+        }
+
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--accent);
+            color: var(--white);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #020617;
+            color: #94a3b8;
+            text-align: center;
+            padding: 25px;
+            font-size: 14px;
+        }
+
+        /* --- Animations & Media Queries --- */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none; /* In a real scenario, you'd add a hamburger menu here */
+            }
+            nav {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<nav>
-<div><strong>Β. Λιάπης</strong></div>
-<div>
-<a href="#about">Σχετικά</a>
-<a href="#services">Υπηρεσίες</a>
-<a href="#contact">Επικοινωνία</a>
-</div>
-</nav>
+    <nav>
+        <a href="#" class="logo">Β. Λιάπης.</a>
+        <div class="nav-links">
+            <a href="#about">Σχετικά</a>
+            <a href="#services">Υπηρεσίες</a>
+            <a href="#contact">Επικοινωνία</a>
+        </div>
+    </nav>
 
-<header>
-<h1>Βάϊος Λιάπης</h1>
-<p>Πολιτικός Μηχανικός | Αθήνα</p>
-<button class="cta" onclick="scrollToContact()">Επικοινωνία</button>
-</header>
+    <header>
+        <h1>Βάϊος Λιάπης</h1>
+        <p>Ολοκληρωμένες Υπηρεσίες Πολιτικού Μηχανικού στην Αθήνα</p>
+        <a href="#contact" class="btn btn-primary">Επικοινωνήστε Μαζί Μου</a>
+    </header>
 
-<section class="section intro" id="about">
-<img src="photo.jpg" alt="Φωτογραφία">
-<div>
-<h2>Προσωπική Παρουσίαση</h2>
-<p>
-Ο Βάϊος Λιάπης είναι Πολιτικός Μηχανικός με έδρα την Αθήνα και εμπειρία σε τεχνικές μελέτες,
-αδειοδοτήσεις και ενεργειακές υπηρεσίες. Απόφοιτος Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης (ΑΠΘ).
-</p>
-<p>
-Στόχος είναι η άμεση εξυπηρέτηση, η αξιοπιστία και η πλήρης τεχνική καθοδήγηση σε κάθε στάδιο έργου.
-</p>
-</div>
-</section>
+    <section class="section" id="about">
+        <div class="about-grid">
+            <img src="photo.jpg" alt="Βάϊος Λιάπης - Πολιτικός Μηχανικός" class="about-img" onerror="this.src='https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&q=80'">
+            
+            <div class="about-text">
+                <h3>Προσωπική Παρουσίαση</h3>
+                <p>Ο <strong>Βάϊος Λιάπης</strong> είναι Πολιτικός Μηχανικός, απόφοιτος του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης (ΑΠΘ), με έδρα την Αθήνα. Διαθέτει εκτενή εμπειρία σε τεχνικές μελέτες, αδειοδοτήσεις και ενεργειακές υπηρεσίες.</p>
+                <p>Στόχος μας είναι η άμεση εξυπηρέτηση, η αξιοπιστία και η πλήρης τεχνική καθοδήγηση σε κάθε στάδιο του έργου σας, από την αρχική μελέτη μέχρι την τελική υλοποίηση.</p>
+                
+                <ul class="features">
+                    <li><i class="fa-solid fa-check-circle"></i> Συνέπεια & Αξιοπιστία</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Πλήρης Τεχνική Υποστήριξη</li>
+                    <li><i class="fa-solid fa-check-circle"></i> Άμεση Εξυπηρέτηση</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-<section class="section" id="services">
-<h2>Υπηρεσίες</h2>
+    <section class="bg-light" id="services">
+        <div class="section">
+            <h2 class="section-title">Οι Υπηρεσίες Μου</h2>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fa-solid fa-file-signature service-icon"></i>
+                    <h3>Ηλεκτρονική Ταυτότητα</h3>
+                    <p>Ολοκληρωμένη διαχείριση φακέλου και καταχώρηση στοιχείων στο σύστημα ΗΤΚ σύμφωνα με την ισχύουσα νομοθεσία.</p>
+                </div>
 
-<div class="services">
+                <div class="service-card">
+                    <i class="fa-solid fa-house-circle-check service-icon"></i>
+                    <h3>Νομιμοποίηση Αυθαιρέτων</h3>
+                    <p>Τακτοποίηση και νομιμοποίηση αυθαιρεσιών γρήγορα και υπεύθυνα, αποφεύγοντας μελλοντικά πρόστιμα.</p>
+                </div>
 
-<div class="card">
-<h3>Ηλεκτρονική Ταυτότητα Κτιρίου</h3>
-<p>Ολοκληρωμένη διαχείριση φακέλου και καταχώρηση στοιχείων.</p>
-</div>
+                <div class="service-card">
+                    <i class="fa-solid fa-leaf service-icon"></i>
+                    <h3>Πιστοποιητικά Ενεργειακής Απόδοσης</h3>
+                    <p>Άμεση έκδοση ΠΕΑ, απαραίτητο για κάθε διαδικασία πώλησης, ενοικίασης ή ένταξης σε προγράμματα ανακαίνισης.</p>
+                </div>
 
-<div class="card">
-<h3>Νομιμοποίηση Αυθαιρέτων</h3>
-<p>Τακτοποίηση αυθαιρεσιών με βάση την ισχύουσα νομοθεσία.</p>
-</div>
+                <div class="service-card">
+                    <i class="fa-solid fa-pencil-ruler service-icon"></i>
+                    <h3>Οικοδομικές Άδειες</h3>
+                    <p>Αναλαμβάνουμε την πλήρη μελέτη και έκδοση οικοδομικών αδειών, εξασφαλίζοντας την ομαλή έναρξη του έργου σας.</p>
+                </div>
 
-<div class="card">
-<h3>Πιστοποιητικά Ενεργειακής Απόδοσης</h3>
-<p>Έκδοση ΠΕΑ για πώληση, ενοικίαση ή ανακαίνιση.</p>
-</div>
+                <div class="service-card">
+                    <i class="fa-solid fa-hammer service-icon"></i>
+                    <h3>Ανακαινίσεις</h3>
+                    <p>Μελέτη, σχεδιασμός, επίβλεψη και πλήρης διαχείριση έργων ανακαίνισης για κατοικίες και επαγγελματικούς χώρους.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="card">
-<h3>Οικοδομικές Άδειες</h3>
-<p>Μελέτη και έκδοση οικοδομικών αδειών.</p>
-</div>
+    <section class="contact-section" id="contact">
+        <h2>Ας συνεργαστούμε για το επόμενο έργο σας</h2>
+        <p>Επικοινωνήστε σήμερα για να συζητήσουμε τις ανάγκες σας και να βρούμε την καλύτερη λύση.</p>
+        
+        <div class="contact-buttons">
+            <a href="tel:6948675267" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 694 867 5267</a>
+            <a href="mailto:vaioliap93@gmail.com" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> vaioliap93@gmail.com</a>
+        </div>
+    </section>
 
-<div class="card">
-<h3>Ανακαινίσεις</h3>
-<p>Μελέτη, επίβλεψη και διαχείριση έργων ανακαίνισης.</p>
-</div>
-
-</div>
-</section>
-
-<section class="contact" id="contact">
-<h2>Επικοινωνία</h2>
-<p>Τηλέφωνο: 6948675267</p>
-<p>Email: vaioliap93@gmail.com</p>
-<button onclick="call()">Κλήση</button>
-<button onclick="mail()">Email</button>
-</section>
-
-<footer>
-© 2026 Βάϊος Λιάπης | Πολιτικός Μηχανικός
-</footer>
-
-<script>
-function call(){
-window.location.href="tel:6948675267";
-}
-function mail(){
-window.location.href="mailto:vaioliap93@gmail.com";
-}
-function scrollToContact(){
-document.getElementById("contact").scrollIntoView({behavior:"smooth"});
-}
-</script>
+    <footer>
+        © 2026 Βάϊος Λιάπης | Πολιτικός Μηχανικός Αθήνα
+    </footer>
 
 </body>
 </html>
