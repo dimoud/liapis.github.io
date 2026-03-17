@@ -10,15 +10,15 @@
 
     <style>
         :root {
-            --primary: #1e3a8a; /* Σκούρο μπλε εμπιστοσύνης */
-            --primary-hover: #1d4ed8;
-            --secondary: #0f172a;
-            --accent: #3b82f6;
+            --primary: #0f172a; /* Βαθύ μπλε/γκρι του κύρους */
+            --primary-light: #1e293b;
+            --accent: #2563eb; /* Δυναμικό μπλε */
+            --accent-hover: #1d4ed8;
             --light: #f8fafc;
             --text-main: #334155;
             --text-heading: #0f172a;
             --white: #ffffff;
-            --transition: all 0.3s ease;
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
         html {
@@ -33,7 +33,7 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--white);
+            background-color: var(--light);
             color: var(--text-main);
             line-height: 1.7;
             overflow-x: hidden;
@@ -44,38 +44,61 @@
             position: fixed;
             width: 100%;
             top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
-            padding: 18px 5%;
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            padding: 20px 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             z-index: 1000;
+            transition: var(--transition);
         }
 
         .logo {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: 800;
             color: var(--primary);
             text-decoration: none;
             letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo i {
+            color: var(--accent);
         }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-heading);
-            margin-left: 30px;
-            font-weight: 500;
+            color: var(--text-main);
+            margin-left: 35px;
+            font-weight: 600;
             font-size: 15px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
             transition: var(--transition);
         }
 
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--primary);
         }
 
-        /* --- Header / Hero Section --- */
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* --- Hero Section --- */
         header {
             min-height: 100vh;
             display: flex;
@@ -83,32 +106,75 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 0 20px;
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80') center/cover;
+            padding: 120px 20px 60px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             color: var(--white);
-            margin-top: 60px; /* Offset for fixed nav */
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Δυναμικό μοτίβο στο background (προαιρετικό, δίνει βάθος) */
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(circle at 20% 30%, rgba(37, 99, 235, 0.1) 0%, transparent 50%),
+                              radial-gradient(circle at 80% 80%, rgba(37, 99, 235, 0.15) 0%, transparent 50%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            animation: slideUpFade 1s ease-out forwards;
+        }
+
+        /* Η Κυκλική Φωτογραφία */
+        .profile-wrapper {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            padding: 5px;
+            background: linear-gradient(135deg, var(--accent), #60a5fa);
+            margin-bottom: 30px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            animation: scaleIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            background-color: var(--white);
         }
 
         header h1 {
-            font-size: clamp(40px, 5vw, 64px);
+            font-size: clamp(36px, 5vw, 56px);
             font-weight: 800;
-            margin-bottom: 15px;
-            animation: fadeInDown 1s ease;
+            letter-spacing: -1px;
+            margin-bottom: 10px;
         }
 
         header p {
-            font-size: clamp(18px, 2vw, 24px);
-            font-weight: 300;
+            font-size: clamp(18px, 2vw, 22px);
+            font-weight: 400;
+            color: #94a3b8;
+            margin-bottom: 40px;
             max-width: 600px;
-            margin-bottom: 30px;
-            color: #e2e8f0;
-            animation: fadeInUp 1s ease;
         }
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
             padding: 16px 40px;
-            border-radius: 8px;
+            border-radius: 50px;
             font-size: 16px;
             font-weight: 600;
             text-decoration: none;
@@ -120,16 +186,16 @@
         .btn-primary {
             background-color: var(--accent);
             color: var(--white);
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+            box-shadow: 0 10px 25px rgba(37, 99, 235, 0.4);
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(59, 130, 246, 0.5);
+            background-color: var(--accent-hover);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 99, 235, 0.6);
         }
 
-        /* --- Global Section Style --- */
+        /* --- Sections --- */
         .section {
             padding: 100px 5%;
             max-width: 1200px;
@@ -138,124 +204,123 @@
 
         .section-title {
             text-align: center;
-            font-size: 36px;
+            font-size: 38px;
             font-weight: 800;
             color: var(--text-heading);
-            margin-bottom: 60px;
-            position: relative;
+            margin-bottom: 70px;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 60px;
-            height: 4px;
-            background: var(--accent);
-            margin: 15px auto 0;
-            border-radius: 2px;
+        .section-title span {
+            color: var(--accent);
         }
 
         /* --- About Section --- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.2fr;
-            gap: 60px;
-            align-items: center;
+        .about-content {
+            background: var(--white);
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .about-img {
-            width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .about-text h3 {
-            font-size: 28px;
-            color: var(--text-heading);
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-            font-size: 16px;
+        .about-content p {
+            font-size: 18px;
+            margin-bottom: 25px;
+            color: #475569;
         }
 
         .features {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
             list-style: none;
-            margin-top: 25px;
         }
 
         .features li {
-            margin-bottom: 12px;
             display: flex;
             align-items: center;
-            font-weight: 500;
-            color: var(--text-heading);
+            gap: 10px;
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--light);
+            padding: 12px 25px;
+            border-radius: 50px;
         }
 
         .features i {
             color: var(--accent);
-            margin-right: 12px;
-            font-size: 18px;
+            font-size: 20px;
         }
 
         /* --- Services Section --- */
-        .bg-light {
-            background-color: var(--light);
-        }
-
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
         }
 
         .service-card {
             background: var(--white);
-            padding: 40px 30px;
-            border-radius: 12px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.04);
+            padding: 50px 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
             transition: var(--transition);
-            text-align: center;
-            border: 1px solid #e2e8f0;
+            border-top: 4px solid transparent;
+            position: relative;
+            overflow: hidden;
         }
 
         .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            border-color: var(--accent);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--accent);
         }
 
         .service-icon {
-            font-size: 40px;
+            font-size: 45px;
             color: var(--accent);
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            display: inline-block;
         }
 
         .service-card h3 {
-            font-size: 20px;
+            font-size: 22px;
+            font-weight: 700;
             color: var(--text-heading);
             margin-bottom: 15px;
         }
 
         /* --- Contact Section --- */
         .contact-section {
-            background-color: var(--secondary);
-            color: var(--white);
+            background-color: var(--white);
             text-align: center;
-            padding: 80px 5%;
+            padding: 100px 5%;
+            border-top: 1px solid #e2e8f0;
         }
 
-        .contact-section h2 {
+        .contact-box {
+            background: var(--primary);
+            border-radius: 24px;
+            padding: 70px 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            color: var(--white);
+            box-shadow: 0 25px 50px rgba(15, 23, 42, 0.25);
+        }
+
+        .contact-box h2 {
             font-size: 36px;
-            margin-bottom: 20px;
-            font-weight: 700;
+            margin-bottom: 15px;
         }
 
-        .contact-section p {
+        .contact-box p {
             font-size: 18px;
-            margin-bottom: 40px;
             color: #cbd5e1;
+            margin-bottom: 40px;
         }
 
         .contact-buttons {
@@ -267,45 +332,42 @@
 
         .btn-outline {
             background: transparent;
-            border: 2px solid var(--accent);
+            border: 2px solid rgba(255,255,255,0.3);
             color: var(--white);
-            box-shadow: none;
         }
 
         .btn-outline:hover {
-            background: var(--accent);
-            transform: translateY(-3px);
+            border-color: var(--white);
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
         }
 
         /* --- Footer --- */
         footer {
             background: #020617;
-            color: #94a3b8;
+            color: #64748b;
             text-align: center;
-            padding: 25px;
-            font-size: 14px;
+            padding: 30px;
+            font-size: 15px;
         }
 
-        /* --- Animations & Media Queries --- */
-        @keyframes fadeInDown {
-            from { opacity: 0; transform: translateY(-30px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes fadeInUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* --- Animations --- */
+        @keyframes slideUpFade {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
         }
 
+        @keyframes scaleIn {
+            0% { opacity: 0; transform: scale(0.8); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        /* --- Responsive --- */
         @media (max-width: 768px) {
-            .about-grid {
-                grid-template-columns: 1fr;
-            }
-            .nav-links {
-                display: none; /* In a real scenario, you'd add a hamburger menu here */
-            }
-            nav {
-                justify-content: center;
-            }
+            .nav-links { display: none; }
+            nav { justify-content: center; }
+            .about-content { padding: 40px 20px; }
+            .contact-box { padding: 50px 20px; }
         }
     </style>
 </head>
@@ -313,7 +375,7 @@
 <body>
 
     <nav>
-        <a href="#" class="logo">Β. Λιάπης.</a>
+        <a href="#" class="logo"><i class="fa-solid fa-compass-drafting"></i> Β. Λιάπης</a>
         <div class="nav-links">
             <a href="#about">Σχετικά</a>
             <a href="#services">Υπηρεσίες</a>
@@ -322,79 +384,82 @@
     </nav>
 
     <header>
-        <h1>Βάϊος Λιάπης</h1>
-        <p>Ολοκληρωμένες Υπηρεσίες Πολιτικού Μηχανικού στην Αθήνα</p>
-        <a href="#contact" class="btn btn-primary">Επικοινωνήστε Μαζί Μου</a>
+        <div class="hero-content">
+            <div class="profile-wrapper">
+                <img src="photo.jpeg" alt="Βάϊος Λιάπης" class="profile-img">
+            </div>
+            <h1>Βάϊος Λιάπης</h1>
+            <p>Διπλωματούχος Πολιτικός Μηχανικός ΑΠΘ</p>
+            <a href="#contact" class="btn btn-primary">
+                Συζητήστε το Έργο σας <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
     </header>
 
     <section class="section" id="about">
-        <div class="about-grid">
-            <img src="photo.jpg" alt="Βάϊος Λιάπης - Πολιτικός Μηχανικός" class="about-img" onerror="this.src='https://images.unsplash.com/photo-1541888086425-d81bb19240f5?auto=format&fit=crop&q=80'">
+        <h2 class="section-title">Σχετικά με το <span>Γραφείο</span></h2>
+        <div class="about-content">
+            <p>Ως Διπλωματούχος Πολιτικός Μηχανικός με έδρα την Αθήνα, αναλαμβάνω την πλήρη τεχνική υποστήριξη και διεκπεραίωση υποθέσεων που αφορούν ακίνητα και τεχνικά έργα.</p>
+            <p>Η φιλοσοφία μου βασίζεται στην <strong>απόλυτη διαφάνεια</strong>, την <strong>ταχύτητα</strong> και την <strong>τεχνική αρτιότητα</strong>. Στόχος είναι η άμεση εξυπηρέτηση και η αξιόπιστη καθοδήγηση σε κάθε στάδιο της διαδικασίας, προστατεύοντας τα συμφέροντα του πελάτη.</p>
             
-            <div class="about-text">
-                <h3>Προσωπική Παρουσίαση</h3>
-                <p>Ο <strong>Βάϊος Λιάπης</strong> είναι Πολιτικός Μηχανικός, απόφοιτος του Αριστοτελείου Πανεπιστημίου Θεσσαλονίκης (ΑΠΘ), με έδρα την Αθήνα. Διαθέτει εκτενή εμπειρία σε τεχνικές μελέτες, αδειοδοτήσεις και ενεργειακές υπηρεσίες.</p>
-                <p>Στόχος μας είναι η άμεση εξυπηρέτηση, η αξιοπιστία και η πλήρης τεχνική καθοδήγηση σε κάθε στάδιο του έργου σας, από την αρχική μελέτη μέχρι την τελική υλοποίηση.</p>
-                
-                <ul class="features">
-                    <li><i class="fa-solid fa-check-circle"></i> Συνέπεια & Αξιοπιστία</li>
-                    <li><i class="fa-solid fa-check-circle"></i> Πλήρης Τεχνική Υποστήριξη</li>
-                    <li><i class="fa-solid fa-check-circle"></i> Άμεση Εξυπηρέτηση</li>
-                </ul>
-            </div>
+            <ul class="features">
+                <li><i class="fa-solid fa-shield-halved"></i> Αξιοπιστία</li>
+                <li><i class="fa-solid fa-bolt"></i> Ταχύτητα</li>
+                <li><i class="fa-solid fa-scale-balanced"></i> Νομική & Τεχνική Ασφάλεια</li>
+            </ul>
         </div>
     </section>
 
-    <section class="bg-light" id="services">
-        <div class="section">
-            <h2 class="section-title">Οι Υπηρεσίες Μου</h2>
-            
-            <div class="services-grid">
-                <div class="service-card">
-                    <i class="fa-solid fa-file-signature service-icon"></i>
-                    <h3>Ηλεκτρονική Ταυτότητα</h3>
-                    <p>Ολοκληρωμένη διαχείριση φακέλου και καταχώρηση στοιχείων στο σύστημα ΗΤΚ σύμφωνα με την ισχύουσα νομοθεσία.</p>
-                </div>
+    <section class="section" id="services" style="background-color: var(--light);">
+        <h2 class="section-title">Παρεχόμενες <span>Υπηρεσίες</span></h2>
+        
+        <div class="services-grid">
+            <div class="service-card">
+                <i class="fa-solid fa-file-signature service-icon"></i>
+                <h3>Ηλεκτρονική Ταυτότητα (ΗΤΚ)</h3>
+                <p>Άμεση καταγραφή, έλεγχος και πλήρης ενημέρωση του φακέλου ΗΤΚ, απαραίτητο για κάθε μεταβίβαση και συμβόλαιο ακινήτου.</p>
+            </div>
 
-                <div class="service-card">
-                    <i class="fa-solid fa-house-circle-check service-icon"></i>
-                    <h3>Νομιμοποίηση Αυθαιρέτων</h3>
-                    <p>Τακτοποίηση και νομιμοποίηση αυθαιρεσιών γρήγορα και υπεύθυνα, αποφεύγοντας μελλοντικά πρόστιμα.</p>
-                </div>
+            <div class="service-card">
+                <i class="fa-solid fa-house-circle-check service-icon"></i>
+                <h3>Νομιμοποίηση Αυθαιρέτων</h3>
+                <p>Διεκπεραίωση υποθέσεων αυθαιρέτων και τακτοποίηση αδήλωτων τετραγωνικών με την ισχύουσα νομοθεσία, αποφεύγοντας πρόστιμα.</p>
+            </div>
 
-                <div class="service-card">
-                    <i class="fa-solid fa-leaf service-icon"></i>
-                    <h3>Πιστοποιητικά Ενεργειακής Απόδοσης</h3>
-                    <p>Άμεση έκδοση ΠΕΑ, απαραίτητο για κάθε διαδικασία πώλησης, ενοικίασης ή ένταξης σε προγράμματα ανακαίνισης.</p>
-                </div>
+            <div class="service-card">
+                <i class="fa-solid fa-leaf service-icon"></i>
+                <h3>Πιστοποιητικά Ενέργειας (ΠΕΑ)</h3>
+                <p>Έκδοση Πιστοποιητικών Ενεργειακής Απόδοσης μέσα σε λίγες ώρες, με πλήρη αυτοψία στο ακίνητο για πωλήσεις ή ενοικιάσεις.</p>
+            </div>
 
-                <div class="service-card">
-                    <i class="fa-solid fa-pencil-ruler service-icon"></i>
-                    <h3>Οικοδομικές Άδειες</h3>
-                    <p>Αναλαμβάνουμε την πλήρη μελέτη και έκδοση οικοδομικών αδειών, εξασφαλίζοντας την ομαλή έναρξη του έργου σας.</p>
-                </div>
+            <div class="service-card">
+                <i class="fa-solid fa-pencil-ruler service-icon"></i>
+                <h3>Οικοδομικές Άδειες</h3>
+                <p>Αναλαμβάνω τον σχεδιασμό και την ολοκληρωμένη μελέτη αδειοδότησης έργων, από την αίτηση ως την τελική έγκριση της πολεοδομίας.</p>
+            </div>
 
-                <div class="service-card">
-                    <i class="fa-solid fa-hammer service-icon"></i>
-                    <h3>Ανακαινίσεις</h3>
-                    <p>Μελέτη, σχεδιασμός, επίβλεψη και πλήρης διαχείριση έργων ανακαίνισης για κατοικίες και επαγγελματικούς χώρους.</p>
-                </div>
+            <div class="service-card">
+                <i class="fa-solid fa-hammer service-icon"></i>
+                <h3>Ανακαινίσεις Κτιρίων</h3>
+                <p>Σχεδιασμός, τεχνική επίβλεψη και διαχείριση συνεργείων για την πλήρη ή μερική ανακαίνιση κατοικιών και επαγγελματικών χώρων.</p>
             </div>
         </div>
     </section>
 
     <section class="contact-section" id="contact">
-        <h2>Ας συνεργαστούμε για το επόμενο έργο σας</h2>
-        <p>Επικοινωνήστε σήμερα για να συζητήσουμε τις ανάγκες σας και να βρούμε την καλύτερη λύση.</p>
-        
-        <div class="contact-buttons">
-            <a href="tel:6948675267" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 694 867 5267</a>
-            <a href="mailto:vaioliap93@gmail.com" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> vaioliap93@gmail.com</a>
+        <div class="contact-box">
+            <h2>Ας ξεκινήσουμε!</h2>
+            <p>Για άμεση εξυπηρέτηση και τεχνική συμβουλή, επικοινωνήστε μαζί μου σήμερα.</p>
+            
+            <div class="contact-buttons">
+                <a href="tel:6948675267" class="btn btn-primary"><i class="fa-solid fa-phone"></i> 694 867 5267</a>
+                <a href="mailto:vaioliap93@gmail.com" class="btn btn-outline"><i class="fa-solid fa-envelope"></i> vaioliap93@gmail.com</a>
+            </div>
         </div>
     </section>
 
     <footer>
-        © 2026 Βάϊος Λιάπης | Πολιτικός Μηχανικός Αθήνα
+        <p>© 2026 Βάϊος Λιάπης - Πολιτικός Μηχανικός | Αθήνα</p>
     </footer>
 
 </body>
