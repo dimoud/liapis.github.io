@@ -1114,14 +1114,24 @@
             }
             .hamburger { display: flex; }
 
-            /* Hero — centered layout, clean */
-            .hero { min-height: 100svh; }
-            .hero-photo { display: none; }
+            /* Hero — centered layout, photo shown */
+            .hero { min-height: 100svh; flex-direction: column; align-items: center; }
+            .hero-photo {
+                display: block;
+                position: static;
+                right: auto; top: auto;
+                transform: none;
+                width: 120px; height: 120px;
+                margin-top: 72px;
+                flex-shrink: 0;
+            }
             .hero-blueprint { background-size: 36px 36px; }
             .hero-inner {
-                padding: 0 5% 72px;
+                padding: 0 5% 40px;
                 align-items: center;
                 text-align: center;
+                flex: 1;
+                justify-content: center;
             }
             .hero-eyebrow { justify-content: center; margin-top: 16px; margin-bottom: 24px; }
             .hero-eyebrow::before { display: none; }
@@ -1134,14 +1144,19 @@
             .scroll-elev   { display: none; }
             .scroll-ruler  { display: none; }
             .crosshair-wrap{ display: none; }
-            .caliper-wrap  { display: none; }
+            .caliper-wrap  { display: block; }
+            .caliper-svg   { width: 100%; height: auto; }
             .sec-meas      { display: none; }
             .dim-row       { display: none; }
 
             /* About */
             .about-section { padding: 72px 5%; }
-            .feature-row strong { min-width: unset; }
-            .feature-row { gap: 14px; }
+            .feature-row {
+                display: grid;
+                grid-template-columns: 20px 120px 1fr;
+                gap: 12px;
+                align-items: center;
+            }
 
             /* Services */
             .services-header { margin-bottom: 48px; }
@@ -1181,8 +1196,18 @@
 
             /* Footer */
             .footer-top { flex-direction: column; align-items: flex-start; gap: 24px; }
-            .footer-links { gap: 18px; }
+            .footer-links { display: none; }
             footer { padding: 52px 5% 36px; }
+
+            /* Services — description hidden, title only */
+            .service-card p { display: none; }
+
+            /* Gold — slightly more golden on mobile screens */
+            :root { --gold: #c6ab5e; --gold2: #dbbe78; }
+
+            /* Reveal — remove vertical slide on mobile, keep fade + horizontal */
+            [data-reveal] { transform: none; }
+            [data-reveal].visible { transform: none; }
         }
 
         /* — Small phones (≤480px) — */

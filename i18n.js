@@ -136,8 +136,8 @@
         /* CONTACT */
         'contact.eyebrow': { el: 'Επικοινωνία', en: 'Contact' },
         'contact.heading': {
-            el: 'Μιλήστε<br><em>μαζί μας</em>',
-            en: 'Let\'s<br><em>talk</em>',
+            el: 'Μιλήστε <em>μαζί μας</em>',
+            en: 'Let\'s <em>talk</em>',
         },
         'contact.lead': {
             el: 'Είμαστε εδώ για κάθε ερώτηση ή ανάγκη. Επικοινωνήστε μαζί μας σήμερα για δωρεάν αρχική ενημέρωση.',
