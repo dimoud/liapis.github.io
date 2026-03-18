@@ -1,8 +1,10 @@
 /**
- * eng-animations.js  v2
+ * eng-animations.js  v3
  * Civil-engineering themed animations — modular & reusable.
+ * Drop into any page with the matching HTML hooks.
  *
  * Features:
+ *   0. Scroll Progress Bar      — #progress element filled as user scrolls
  *   1. Scroll Elevation Meter   — vertical rule on the right, scroll progress as elevation
  *   2. Dimension Lines          — [data-dim] elements animate in on scroll entry
  *   3. Hero Crosshair           — floats in hero, fades in on load
@@ -10,15 +12,20 @@
  *   5. Scroll Ruler             — fixed bottom /—value—/ ruler, live scroll-driven
  *   6. Caliper Animation        — SVG caliper opens/closes with live measurement
  *   7. Section Measurement Lines — [data-sec-meas] elements animate on scroll entry
+ *   8. Hero Photo Crossfade     — .hero-slide elements crossfade every 10 s
+ *   9. Reveal on Scroll         — [data-reveal] / [data-reveal-r] fade+slide in
  *
  * Required HTML hooks (ids / attrs):
+ *   #progress
  *   #scrollElev, #elevFill, #elevDot
  *   #crosshairWrap
  *   #heroMeas, #heroMeasLabel
  *   #scrollRuler, #srFill, #srValue, #srTicksRow
  *   #caliperWrap, #calJawGroup, #calDimLine, #calDimTickR, #caliperVal, #caliperSvg
- *   [data-dim]     — dimension-line rows
- *   [data-sec-meas] — section measurement lines
+ *   .hero-slide                 — crossfading hero background layers
+ *   [data-dim]                  — dimension-line rows
+ *   [data-sec-meas]             — section measurement lines
+ *   [data-reveal], [data-reveal-r] — scroll-reveal elements
  */
 
 (function () {
@@ -118,10 +125,6 @@
     var CAL_PX_PER_M     = CAL_MAX_OFFSET / 4.235;
     var CAL_MAX_M        = 4.235;
 
-    var _calStartTime = null;
-    var _calRunning   = false;
-    var CAL_CYCLE_MS  = 5200;     /* full open → hold → close cycle */
-
     function easeInOut(t) {
         return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
     }
@@ -149,40 +152,26 @@
         }
     }
 
-    function stepCaliper(ts) {
-        if (!_calRunning) return;
-        if (!_calStartTime) _calStartTime = ts;
-        var elapsed = (ts - _calStartTime) % CAL_CYCLE_MS;
-        var phase   = elapsed / CAL_CYCLE_MS; /* 0 → 1 over cycle */
+    /* Scroll-driven caliper: opens as element scrolls into view */
+    function updateCaliper() {
+        if (!calWrap || !calJaw) return;
+        var rect  = calWrap.getBoundingClientRect();
+        var vh    = window.innerHeight;
+        var visible = rect.top < vh && rect.bottom > 0;
 
-        var offset;
-        if (phase < 0.38) {
-            /* opening: 0 → max */
-            offset = easeInOut(phase / 0.38) * CAL_MAX_OFFSET;
-        } else if (phase < 0.62) {
-            /* hold open */
-            offset = CAL_MAX_OFFSET;
-        } else {
-            /* closing: max → 0 */
-            offset = easeInOut(1 - (phase - 0.62) / 0.38) * CAL_MAX_OFFSET;
-        }
+        calWrap.classList.toggle('vis', visible);
+        if (!visible) return;
+
+        /* pct 0 = just entered bottom, 1 = fully scrolled past */
+        var total = vh + rect.height;
+        var pct   = Math.max(0, Math.min(1, (vh - rect.top) / total));
+
+        /* open during first 50% of scroll through, hold open after */
+        var offset = pct < 0.5
+            ? easeInOut(pct / 0.5) * CAL_MAX_OFFSET
+            : CAL_MAX_OFFSET;
 
         applyCaliperOffset(offset);
-        raf(stepCaliper);
-    }
-
-    /* Start caliper when it enters view */
-    if (calWrap && 'IntersectionObserver' in window) {
-        var calObs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (e) {
-                if (e.isIntersecting && !_calRunning) {
-                    calWrap.classList.add('vis');
-                    _calRunning = true;
-                    raf(stepCaliper);
-                }
-            });
-        }, { threshold: 0.3 });
-        calObs.observe(calWrap);
     }
 
     /* ─── 7. SECTION MEASUREMENT LINES ──────────────────────────────────── */
@@ -202,10 +191,65 @@
         secMeasEls.forEach(function (el) { el.classList.add('ready'); });
     }
 
+    /* ─── 8. HERO PHOTO CROSSFADE ────────────────────────────────────────── */
+    var heroSlides = document.querySelectorAll('.hero-slide');
+    if (heroSlides.length > 1) {
+        var _currentSlide = 0;
+        setInterval(function () {
+            heroSlides[_currentSlide].classList.remove('active');
+            _currentSlide = (_currentSlide + 1) % heroSlides.length;
+            heroSlides[_currentSlide].classList.add('active');
+        }, 10000);
+    }
+
+    /* ─── 9. REVEAL ON SCROLL ────────────────────────────────────────────── */
+    var revealEls = document.querySelectorAll('[data-reveal], [data-reveal-r]');
+    if (revealEls.length && 'IntersectionObserver' in window) {
+        var revealObs = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    var siblings = Array.prototype.filter.call(
+                        entry.target.parentElement.children,
+                        function (el) {
+                            return el.hasAttribute('data-reveal') || el.hasAttribute('data-reveal-r');
+                        }
+                    );
+                    var idx = siblings.indexOf(entry.target);
+                    setTimeout(function () {
+                        entry.target.classList.add('visible');
+                    }, idx * 120);
+                    revealObs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+        revealEls.forEach(function (el) { revealObs.observe(el); });
+    } else {
+        revealEls.forEach(function (el) { el.classList.add('visible'); });
+    }
+
+    /* ─── 0. SCROLL PROGRESS BAR ─────────────────────────────────────────── */
+    var progressBar = $('progress');
+
+    function updateProgress() {
+        if (!progressBar) return;
+        var total = document.documentElement.scrollHeight - window.innerHeight;
+        progressBar.style.width = (total > 0 ? (window.scrollY / total * 100) : 0) + '%';
+    }
+
+    /* ─── NAV SCROLL CLASS ───────────────────────────────────────────────── */
+    var navEl = document.getElementById('nav');
+
+    function updateNav() {
+        if (navEl) navEl.classList.toggle('scrolled', window.scrollY > 60);
+    }
+
     /* ─── COMBINED SCROLL HANDLER ────────────────────────────────────────── */
     function onScroll() {
         updateElevation();
         updateRuler();
+        updateProgress();
+        updateNav();
+        updateCaliper();
     }
 
     window.addEventListener('scroll', onScroll, { passive: true });
