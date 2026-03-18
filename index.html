@@ -925,6 +925,34 @@
         }
         .dim-row.ready .dim-value { opacity: 1; }
 
+        /* Language toggle */
+        .lang-toggle {
+            display: flex; align-items: center; gap: 2px;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(201,168,108,0.18);
+            border-radius: 3px; padding: 4px 5px;
+            z-index: 1001; flex-shrink: 0;
+            transition: border-color 0.3s;
+        }
+        .lang-toggle:hover { border-color: rgba(201,168,108,0.45); }
+        .lang-btn {
+            background: none; border: none;
+            font-size: 16px; line-height: 1;
+            padding: 2px 6px; border-radius: 2px;
+            cursor: pointer; opacity: 0.42;
+            transition: opacity 0.25s, background 0.25s;
+            display: flex; align-items: center; gap: 5px;
+        }
+        .lang-btn .lcode {
+            font-family: 'Inter', sans-serif;
+            font-size: 9px; font-weight: 600;
+            letter-spacing: 1.5px; text-transform: uppercase;
+            color: rgba(255,255,255,0.45);
+        }
+        .lang-btn.active { opacity: 1; background: rgba(201,168,108,0.14); }
+        .lang-btn.active .lcode { color: var(--gold); }
+        .lang-sep { width: 1px; height: 14px; background: rgba(255,255,255,0.1); flex-shrink: 0; }
+
         /* Footer design credit */
         .footer-design {
             font-size: 10px; letter-spacing: 0.5px;
@@ -987,14 +1015,19 @@
             </div>
             <div class="logo-text">
                 <span class="name">Β. ΛΙΑΠΗΣ</span>
-                <span class="title">Πολιτικός Μηχανικός</span>
+                <span class="title" data-i18n="nav.title">Πολιτικός Μηχανικός</span>
             </div>
         </a>
         <div class="nav-links" id="navLinks">
-            <a href="#about">Σχετικά</a>
-            <a href="#services">Υπηρεσίες</a>
-            <a href="#projects">Έργα</a>
-            <a href="#contact" class="nav-cta">Επικοινωνία</a>
+            <a href="#about" data-i18n="nav.about">Σχετικά</a>
+            <a href="#services" data-i18n="nav.services">Υπηρεσίες</a>
+            <a href="#projects" data-i18n="nav.projects">Έργα</a>
+            <a href="#contact" class="nav-cta" data-i18n="nav.contact">Επικοινωνία</a>
+        </div>
+        <div class="lang-toggle" id="langToggle">
+            <button class="lang-btn active" data-lang="el" onclick="setLang('el')">🇬🇷 <span class="lcode">ΕΛ</span></button>
+            <div class="lang-sep"></div>
+            <button class="lang-btn" data-lang="en" onclick="setLang('en')">🇬🇧 <span class="lcode">EN</span></button>
         </div>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()">
             <span></span><span></span><span></span>
@@ -1037,8 +1070,8 @@
                 <span class="line1">ΒΑΪΟΣ</span>
                 <span class="line2">ΛΙΑΠΗΣ</span>
             </h1>
-            <div class="hero-eyebrow"><span>Πολιτικός Μηχανικός ΑΠΘ</span></div>
-            <a href="#contact" class="btn-gold">Επικοινωνία</a>
+            <div class="hero-eyebrow"><span data-i18n="hero.eyebrow">Πολιτικός Μηχανικός ΑΠΘ</span></div>
+            <a href="#contact" class="btn-gold" data-i18n="hero.cta">Επικοινωνία</a>
         </div>
 
         <div class="scroll-hint">
@@ -1050,19 +1083,19 @@
     <!-- ===== MARQUEE ===== -->
     <div class="marquee-wrap">
         <div class="marquee-track">
-            <div class="marquee-item"><span class="marquee-dot"></span>Άμεση Αυτοψία</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Ηλεκτρονική Ταυτότητα Κτιρίου</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Νομιμοποίηση Αυθαιρέτων</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Ενεργειακά Πιστοποιητικά ΠΕΑ</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Οικοδομικές Άδειες</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Διπλωματούχος Μηχανικός ΑΠΘ</div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m1">Άμεση Αυτοψία</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m2">Ηλεκτρονική Ταυτότητα Κτιρίου</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m3">Νομιμοποίηση Αυθαιρέτων</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m4">Ενεργειακά Πιστοποιητικά ΠΕΑ</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m5">Οικοδομικές Άδειες</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m6">Διπλωματούχος Μηχανικός ΑΠΘ</span></div>
             <!-- Duplicate for seamless loop -->
-            <div class="marquee-item"><span class="marquee-dot"></span>Άμεση Αυτοψία</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Ηλεκτρονική Ταυτότητα Κτιρίου</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Νομιμοποίηση Αυθαιρέτων</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Ενεργειακά Πιστοποιητικά ΠΕΑ</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Οικοδομικές Άδειες</div>
-            <div class="marquee-item"><span class="marquee-dot"></span>Διπλωματούχος Μηχανικός ΑΠΘ</div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m1">Άμεση Αυτοψία</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m2">Ηλεκτρονική Ταυτότητα Κτιρίου</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m3">Νομιμοποίηση Αυθαιρέτων</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m4">Ενεργειακά Πιστοποιητικά ΠΕΑ</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m5">Οικοδομικές Άδειες</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m6">Διπλωματούχος Μηχανικός ΑΠΘ</span></div>
         </div>
     </div>
 
@@ -1070,16 +1103,16 @@
     <section class="about-section" id="about">
         <div class="about-grid about-grid--single">
             <div class="about-content" data-reveal>
-                <h2 class="section-heading light">
+                <h2 class="section-heading light" data-i18n-html="about.heading">
                   <em>  Εμπειρία & <em>Εξειδίκευση</em>
                 </h2>
-                <p class="about-lead">
+                <p class="about-lead" data-i18n="about.lead">
                     Διπλωματούχος Πολιτικός Μηχανικός του Αριστοτέλειου Πανεπιστημίου Θεσσαλονίκης, με πολυετή εμπειρία στην αντιμετώπιση πολεοδομικών, κτηματολογικών και κατασκευαστικών θεμάτων για ιδιώτες και επαγγελματίες σε όλη την Αττική.
                 </p>
                 <div class="dim-row" data-dim>
                     <div class="dim-tick"></div>
                     <div class="dim-bar dim-l"></div>
-                    <span class="dim-value">Αθήνα &mdash; Αττική</span>
+                    <span class="dim-value"><span data-i18n="about.dim">Αθήνα &mdash; Αττική</span></span>
                     <div class="dim-bar dim-r"></div>
                     <div class="dim-tick"></div>
                 </div>
@@ -1087,18 +1120,18 @@
 
                     <div class="feature-row" data-reveal>
                         <i class="fa-solid fa-clock"></i>
-                        <strong>Χρονοδιάγραμμα</strong>
-                        Γρήγορη ανταπόκριση &amp; τήρηση προθεσμιών
+                        <strong data-i18n="feature.timeline.label">Χρονοδιάγραμμα</strong>
+                        <span data-i18n="feature.timeline.text">Γρήγορη ανταπόκριση &amp; τήρηση προθεσμιών</span>
                     </div>
                     <div class="feature-row" data-reveal>
                         <i class="fa-solid fa-handshake"></i>
-                        <strong>Διαφάνεια</strong>
-                        Σαφής ενημέρωση σε κάθε στάδιο
+                        <strong data-i18n="feature.transparency.label">Διαφάνεια</strong>
+                        <span data-i18n="feature.transparency.text">Σαφής ενημέρωση σε κάθε στάδιο</span>
                     </div>
                     <div class="feature-row" data-reveal>
                         <i class="fa-solid fa-map-location-dot"></i>
-                        <strong>Αμεση</strong>
-                        Εξυπηρέτηση σε ολόκληρη την Αττική
+                        <strong data-i18n="feature.direct.label">Αμεση</strong>
+                        <span data-i18n="feature.direct.text">Εξυπηρέτηση σε ολόκληρη την Αττική</span>
                     </div>
                 </div>
             </div>
@@ -1109,8 +1142,8 @@
     <section class="services-section" id="services">
         <div class="services-header">
             <div data-reveal>
-                <div class="eyebrow"><span>Τι προσφέρουμε</span></div>
-                <h2 class="section-heading">Οι <em>Υπηρεσίες</em> μας</h2>
+                <div class="eyebrow"><span data-i18n="services.eyebrow">Τι προσφέρουμε</span></div>
+                <h2 class="section-heading" data-i18n-html="services.heading">Οι <em>Υπηρεσίες</em> μας</h2>
             </div>
         </div>
 
@@ -1118,86 +1151,86 @@
             <div class="service-card" data-reveal>
                 <div class="service-num">01</div>
                 <i class="fa-solid fa-map-location-dot service-icon"></i>
-                <h3>Δήλωση στο Κτηματολόγιο</h3>
-                <p>Αναλαμβάνουμε την ηλεκτρονική υποβολή της δήλωσής σας ώστε η διαδικασία να ολοκληρωθεί με ορθότητα και να κατοχυρώσετε την ιδιοκτησία σας.</p>
-                <div class="service-link">Μάθε Περισσότερα</div>
+                <h3 data-i18n="s1.title">Δήλωση στο Κτηματολόγιο</h3>
+                <p data-i18n="s1.text">Αναλαμβάνουμε την ηλεκτρονική υποβολή της δήλωσής σας ώστε η διαδικασία να ολοκληρωθεί με ορθότητα και να κατοχυρώσετε την ιδιοκτησία σας.</p>
+                <div class="service-link" data-i18n="service.more">Μάθε Περισσότερα</div>
             </div>
             <div class="service-card" data-reveal>
                 <div class="service-num">02</div>
                 <i class="fa-solid fa-city service-icon"></i>
-                <h3>Πολεοδομικές Άδειες</h3>
-                <p>Οι πολεοδομικές άδειες εκδίδονται ηλεκτρονικά. Ο μηχανικός, εξουσιοδοτημένος από τον κύριο του έργου, αναλαμβάνει ως πιστοποιημένος χρήστης όλη τη διαδικασία.</p>
-                <div class="service-link">Μάθε Περισσότερα</div>
+                <h3 data-i18n="s2.title">Πολεοδομικές Άδειες</h3>
+                <p data-i18n="s2.text">Οι πολεοδομικές άδειες εκδίδονται ηλεκτρονικά. Ο μηχανικός, εξουσιοδοτημένος από τον κύριο του έργου, αναλαμβάνει ως πιστοποιημένος χρήστης όλη τη διαδικασία.</p>
+                <div class="service-link" data-i18n="service.more">Μάθε Περισσότερα</div>
             </div>
             <div class="service-card" data-reveal>
                 <div class="service-num">03</div>
                 <i class="fa-solid fa-right-left service-icon"></i>
-                <h3>Μεταφορά Αυθαιρέτων στο Ν.4495/17</h3>
-                <p>Σύμφωνα με την ισχύουσα νομοθεσία (άρθρο 88, Ν.4495/2017), αναλαμβάνουμε τη μεταφορά αυθαίρετων κατασκευών που έχουν υπαχθεί σε παλαιότερους νόμους.</p>
-                <div class="service-link">Μάθε Περισσότερα</div>
+                <h3 data-i18n="s3.title">Μεταφορά Αυθαιρέτων στο Ν.4495/17</h3>
+                <p data-i18n="s3.text">Σύμφωνα με την ισχύουσα νομοθεσία (άρθρο 88, Ν.4495/2017), αναλαμβάνουμε τη μεταφορά αυθαίρετων κατασκευών που έχουν υπαχθεί σε παλαιότερους νόμους.</p>
+                <div class="service-link" data-i18n="service.more">Μάθε Περισσότερα</div>
             </div>
             <div class="service-card" data-reveal>
                 <div class="service-num">04</div>
                 <i class="fa-solid fa-certificate service-icon"></i>
-                <h3>Βεβαιώσεις Μηχανικού Ν.4495/2017</h3>
-                <p>Σε συμβολαιογραφικές πράξεις επί ακινήτων όπως αγοραπωλησία, μεταβίβαση, γονική παροχή, απαιτείται η βεβαίωση του μηχανικού που αναλαμβάνουμε άμεσα.</p>
-                <div class="service-link">Μάθε Περισσότερα</div>
+                <h3 data-i18n="s4.title">Βεβαιώσεις Μηχανικού Ν.4495/2017</h3>
+                <p data-i18n="s4.text">Σε συμβολαιογραφικές πράξεις επί ακινήτων όπως αγοραπωλησία, μεταβίβαση, γονική παροχή, απαιτείται η βεβαίωση του μηχανικού που αναλαμβάνουμε άμεσα.</p>
+                <div class="service-link" data-i18n="service.more">Μάθε Περισσότερα</div>
             </div>
             <div class="service-card" data-reveal>
                 <div class="service-num">05</div>
                 <i class="fa-solid fa-helmet-safety service-icon"></i>
-                <h3>Επίβλεψη Κατασκευών &amp; Έργων</h3>
-                <p>Ως φυσικό επακόλουθο μιας οικοδομικής άδειας, αναλαμβάνουμε την επίβλεψη της κατασκευής για την ομαλή λειτουργία του εργοταξίου.</p>
-                <div class="service-link">Μάθε Περισσότερα</div>
+                <h3 data-i18n="s5.title">Επίβλεψη Κατασκευών &amp; Έργων</h3>
+                <p data-i18n="s5.text">Ως φυσικό επακόλουθο μιας οικοδομικής άδειας, αναλαμβάνουμε την επίβλεψη της κατασκευής για την ομαλή λειτουργία του εργοταξίου.</p>
+                <div class="service-link" data-i18n="service.more">Μάθε Περισσότερα</div>
             </div>
             <div class="service-card" data-reveal>
                 <div class="service-num">06</div>
                 <i class="fa-solid fa-house-circle-exclamation service-icon"></i>
-                <h3>Νομιμοποίηση &amp; Τακτοποίηση Αυθαιρέτων</h3>
-                <p>Αναλαμβάνουμε την τακτοποίηση αυθαίρετων κατασκευών και χρήσεων σύμφωνα με τον ισχύοντα νόμο 4495/2017.</p>
-                <div class="service-link">Μάθε Περισσότερα</div>
+                <h3 data-i18n="s6.title">Νομιμοποίηση &amp; Τακτοποίηση Αυθαιρέτων</h3>
+                <p data-i18n="s6.text">Αναλαμβάνουμε την τακτοποίηση αυθαίρετων κατασκευών και χρήσεων σύμφωνα με τον ισχύοντα νόμο 4495/2017.</p>
+                <div class="service-link" data-i18n="service.more">Μάθε Περισσότερα</div>
             </div>
             <div class="service-card" data-reveal>
                 <div class="service-num">07</div>
                 <i class="fa-solid fa-file-signature service-icon"></i>
-                <h3>Ηλεκτρονική Ταυτότητα Κτιρίων</h3>
-                <p>Στόχος της ΗΤΚ είναι η λεπτομερής αποτύπωση της υφιστάμενης κατάστασης κάθε κτιρίου και των οικοδομικών αδειών του για ασφαλείς μεταβιβάσεις.</p>
-                <div class="service-link">Μάθε Περισσότερα</div>
+                <h3 data-i18n="s7.title">Ηλεκτρονική Ταυτότητα Κτιρίων</h3>
+                <p data-i18n="s7.text">Στόχος της ΗΤΚ είναι η λεπτομερής αποτύπωση της υφιστάμενης κατάστασης κάθε κτιρίου και των οικοδομικών αδειών του για ασφαλείς μεταβιβάσεις.</p>
+                <div class="service-link" data-i18n="service.more">Μάθε Περισσότερα</div>
             </div>
             <div class="service-card" data-reveal>
                 <div class="service-num">08</div>
                 <i class="fa-solid fa-handshake service-icon"></i>
-                <h3>Υπηρεσία Μιας Στάσης</h3>
-                <p>Το γραφείο μας και οι συνεργάτες αναλαμβάνουν κάθε υπόθεση από την αρχή μέχρι το τέλος, εξασφαλίζοντας πλήρη συνέπεια και αποτελεσματικότητα.</p>
-                <div class="service-link">Μάθε Περισσότερα</div>
+                <h3 data-i18n="s8.title">Υπηρεσία Μιας Στάσης</h3>
+                <p data-i18n="s8.text">Το γραφείο μας και οι συνεργάτες αναλαμβάνουν κάθε υπόθεση από την αρχή μέχρι το τέλος, εξασφαλίζοντας πλήρη συνέπεια και αποτελεσματικότητα.</p>
+                <div class="service-link" data-i18n="service.more">Μάθε Περισσότερα</div>
             </div>
             <div class="service-card" data-reveal>
                 <div class="service-num">09</div>
                 <i class="fa-solid fa-screwdriver-wrench service-icon"></i>
-                <h3>Ανακαινίσεις &amp; Επισκευές &amp; Μονώσεις</h3>
-                <p>Η ανακαίνιση εξασφαλίζει κάλυψη λειτουργικών αναγκών και εκσυγχρονισμό των υφιστάμενων κατασκευών σύμφωνα με τις σύγχρονες απαιτήσεις.</p>
-                <div class="service-link">Μάθε Περισσότερα</div>
+                <h3 data-i18n="s9.title">Ανακαινίσεις &amp; Επισκευές &amp; Μονώσεις</h3>
+                <p data-i18n="s9.text">Η ανακαίνιση εξασφαλίζει κάλυψη λειτουργικών αναγκών και εκσυγχρονισμό των υφιστάμενων κατασκευών σύμφωνα με τις σύγχρονες απαιτήσεις.</p>
+                <div class="service-link" data-i18n="service.more">Μάθε Περισσότερα</div>
             </div>
             <div class="service-card" data-reveal>
                 <div class="service-num">10</div>
                 <i class="fa-solid fa-bolt-lightning service-icon"></i>
-                <h3>Ενεργειακά Πιστοποιητικά</h3>
-                <p>Αναλαμβάνουμε την ενεργειακή επιθεώρηση σε κτίρια κάθε χρήσης (κατοικίες, καταστήματα, ξενοδοχεία) σύμφωνα με τη νεώτερη νομοθεσία.</p>
-                <div class="service-link">Μάθε Περισσότερα</div>
+                <h3 data-i18n="s10.title">Ενεργειακά Πιστοποιητικά</h3>
+                <p data-i18n="s10.text">Αναλαμβάνουμε την ενεργειακή επιθεώρηση σε κτίρια κάθε χρήσης (κατοικίες, καταστήματα, ξενοδοχεία) σύμφωνα με τη νεώτερη νομοθεσία.</p>
+                <div class="service-link" data-i18n="service.more">Μάθε Περισσότερα</div>
             </div>
             <div class="service-card" data-reveal>
                 <div class="service-num">11</div>
                 <i class="fa-solid fa-store service-icon"></i>
-                <h3>Άδειες Λειτουργίας</h3>
-                <p>Αναλαμβάνουμε όλη τη διαδικασία για την επιτυχή έκδοση της άδειας λειτουργίας της επιχείρησής σας σε κάθε τύπο εμπορικής δραστηριότητας.</p>
-                <div class="service-link">Μάθε Περισσότερα</div>
+                <h3 data-i18n="s11.title">Άδειες Λειτουργίας</h3>
+                <p data-i18n="s11.text">Αναλαμβάνουμε όλη τη διαδικασία για την επιτυχή έκδοση της άδειας λειτουργίας της επιχείρησής σας σε κάθε τύπο εμπορικής δραστηριότητας.</p>
+                <div class="service-link" data-i18n="service.more">Μάθε Περισσότερα</div>
             </div>
             <div class="service-card" data-reveal>
                 <div class="service-num">12</div>
                 <i class="fa-solid fa-map service-icon"></i>
-                <h3>Τοπογραφικά Διαγράμματα</h3>
-                <p>Σχέδιο που αναπαριστά το περίγραμμα του κτιρίου και τα όρια του οικοπέδου με ακριβείς συντεταγμένες στο Ελληνικό Γεωδαιτικό Σύστημα Αναφοράς.</p>
-                <div class="service-link">Μάθε Περισσότερα</div>
+                <h3 data-i18n="s12.title">Τοπογραφικά Διαγράμματα</h3>
+                <p data-i18n="s12.text">Σχέδιο που αναπαριστά το περίγραμμα του κτιρίου και τα όρια του οικοπέδου με ακριβείς συντεταγμένες στο Ελληνικό Γεωδαιτικό Σύστημα Αναφοράς.</p>
+                <div class="service-link" data-i18n="service.more">Μάθε Περισσότερα</div>
             </div>
         </div>
     </section>
@@ -1210,8 +1243,8 @@
     <section class="projects-section section-pad" id="projects">
         <div class="projects-header">
             <div data-reveal>
-                <div class="eyebrow"><span>Το χαρτοφυλάκιό μας</span></div>
-                <h2 class="section-heading light">Επιλεγμένα <em>Έργα</em></h2>
+                <div class="eyebrow"><span data-i18n="projects.eyebrow">Το χαρτοφυλάκιό μας</span></div>
+                <h2 class="section-heading light" data-i18n-html="projects.heading">Επιλεγμένα <em>Έργα</em></h2>
             </div>
         </div>
         <div class="projects-grid">
@@ -1220,9 +1253,9 @@
                      onerror="this.src='https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=800'">
                 <div class="project-card-overlay"></div>
                 <div class="project-card-info">
-                    <div class="project-cat">Ηλεκτρονική Ταυτότητα</div>
-                    <h3>Κατοικία Αθήνα</h3>
-                    <p>Πλήρης ΗΤΚ &amp; βεβαίωση μηχανικού για μεταβίβαση</p>
+                    <div class="project-cat" data-i18n="p1.cat">Ηλεκτρονική Ταυτότητα</div>
+                    <h3 data-i18n="p1.title">Κατοικία Αθήνα</h3>
+                    <p data-i18n="p1.desc">Πλήρης ΗΤΚ &amp; βεβαίωση μηχανικού για μεταβίβαση</p>
                 </div>
             </div>
             <div class="project-card" data-reveal>
@@ -1230,9 +1263,9 @@
                      onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800'">
                 <div class="project-card-overlay"></div>
                 <div class="project-card-info">
-                    <div class="project-cat">Οικοδομική Άδεια</div>
-                    <h3>Νέα Κατασκευή Πειραιάς</h3>
-                    <p>Αρχιτεκτονική μελέτη &amp; αδειοδότηση</p>
+                    <div class="project-cat" data-i18n="p2.cat">Οικοδομική Άδεια</div>
+                    <h3 data-i18n="p2.title">Νέα Κατασκευή Πειραιάς</h3>
+                    <p data-i18n="p2.desc">Αρχιτεκτονική μελέτη &amp; αδειοδότηση</p>
                 </div>
             </div>
             <div class="project-card" data-reveal>
@@ -1240,9 +1273,9 @@
                      onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800'">
                 <div class="project-card-overlay"></div>
                 <div class="project-card-info">
-                    <div class="project-cat">Τακτοποίηση Αυθαίρετου</div>
-                    <h3>Μονοκατοικία Γλυφάδα</h3>
-                    <p>Νομιμοποίηση κατά Ν.4495/2017</p>
+                    <div class="project-cat" data-i18n="p3.cat">Τακτοποίηση Αυθαίρετου</div>
+                    <h3 data-i18n="p3.title">Μονοκατοικία Γλυφάδα</h3>
+                    <p data-i18n="p3.desc">Νομιμοποίηση κατά Ν.4495/2017</p>
                 </div>
             </div>
             <div class="project-card" data-reveal>
@@ -1250,9 +1283,9 @@
                      onerror="this.src='https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&q=80&w=800'">
                 <div class="project-card-overlay"></div>
                 <div class="project-card-info">
-                    <div class="project-cat">Ενεργειακό Πιστοποιητικό</div>
-                    <h3>Εμπορικό Κτίριο Μαρούσι</h3>
-                    <p>ΠΕΑ &amp; ενεργειακή αναβάθμιση</p>
+                    <div class="project-cat" data-i18n="p4.cat">Ενεργειακό Πιστοποιητικό</div>
+                    <h3 data-i18n="p4.title">Εμπορικό Κτίριο Μαρούσι</h3>
+                    <p data-i18n="p4.desc">ΠΕΑ &amp; ενεργειακή αναβάθμιση</p>
                 </div>
             </div>
             <div class="project-card" data-reveal>
@@ -1260,9 +1293,9 @@
                      onerror="this.src='https://images.unsplash.com/photo-1590725121839-892b458a74fe?auto=format&fit=crop&q=80&w=800'">
                 <div class="project-card-overlay"></div>
                 <div class="project-card-info">
-                    <div class="project-cat">Scan to BIM</div>
-                    <h3>Βιομηχανικό Κτίριο Ελαιώνας</h3>
-                    <p>3D Laser Scanning &amp; ψηφιακή αποτύπωση</p>
+                    <div class="project-cat" data-i18n="p5.cat">Scan to BIM</div>
+                    <h3 data-i18n="p5.title">Βιομηχανικό Κτίριο Ελαιώνας</h3>
+                    <p data-i18n="p5.desc">3D Laser Scanning &amp; ψηφιακή αποτύπωση</p>
                 </div>
             </div>
             <div class="project-card" data-reveal>
@@ -1270,9 +1303,9 @@
                      onerror="this.src='https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&q=80&w=800'">
                 <div class="project-card-overlay"></div>
                 <div class="project-card-info">
-                    <div class="project-cat">Ανακαίνιση</div>
-                    <h3>Διαμέρισμα Κολωνάκι</h3>
-                    <p>Πλήρης ανακαίνιση &amp; επίβλεψη</p>
+                    <div class="project-cat" data-i18n="p6.cat">Ανακαίνιση</div>
+                    <h3 data-i18n="p6.title">Διαμέρισμα Κολωνάκι</h3>
+                    <p data-i18n="p6.desc">Πλήρης ανακαίνιση &amp; επίβλεψη</p>
                 </div>
             </div>
         </div>
@@ -1282,9 +1315,9 @@
     <section class="contact-section" id="contact">
         <div class="contact-grid">
             <div class="contact-info" data-reveal>
-                <div class="eyebrow"><span>Επικοινωνία</span></div>
-                <h2 class="section-heading light">Μιλήστε<br><em>μαζί μας</em></h2>
-                <p class="contact-lead">
+                <div class="eyebrow"><span data-i18n="contact.eyebrow">Επικοινωνία</span></div>
+                <h2 class="section-heading light" data-i18n-html="contact.heading">Μιλήστε<br><em>μαζί μας</em></h2>
+                <p class="contact-lead" data-i18n="contact.lead">
                     Είμαστε εδώ για κάθε ερώτηση ή ανάγκη. Επικοινωνήστε μαζί μας σήμερα για δωρεάν αρχική ενημέρωση.
                 </p>
 
@@ -1293,7 +1326,7 @@
                          onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'">
                     <div class="person-details">
                         <h3>Βάϊος Λιάπης</h3>
-                        <p>Πολιτικός Μηχανικός ΑΠΘ</p>
+                        <p data-i18n="contact.role">Πολιτικός Μηχανικός ΑΠΘ</p>
                     </div>
                 </div>
 
@@ -1314,38 +1347,38 @@
             </div>
 
             <div class="contact-form-wrap" data-reveal>
-                <h3>Στείλτε μήνυμα</h3>
+                <h3 data-i18n="form.title">Στείλτε μήνυμα</h3>
                 <form class="form-fields" onsubmit="handleSubmit(event)">
                     <div class="form-row">
                         <div class="field">
-                            <label>Ονοματεπώνυμο</label>
-                            <input type="text" placeholder="Το όνομά σας" required>
+                            <label data-i18n="form.label.name">Ονοματεπώνυμο</label>
+                            <input type="text" placeholder="Το όνομά σας" data-i18n-placeholder="form.ph.name" required>
                         </div>
                         <div class="field">
-                            <label>Τηλέφωνο</label>
+                            <label data-i18n="form.label.phone">Τηλέφωνο</label>
                             <input type="tel" placeholder="" required>
                         </div>
                     </div>
                     <div class="field">
-                        <label>Email</label>
-                        <input type="email" placeholder="email@example.gr" required>
+                        <label data-i18n="form.label.email">Email</label>
+                        <input type="email" placeholder="email@example.gr" data-i18n-placeholder="form.ph.email" required>
                     </div>
                     <div class="field">
-                        <label>Αντικείμενο</label>
+                        <label data-i18n="form.label.subject">Αντικείμενο</label>
                         <select>
-                            <option value="" disabled selected>Επιλέξτε υπηρεσία</option>
-                            <option>Ηλεκτρονική Ταυτότητα Κτιρίου</option>
-                            <option>Νομιμοποίηση Αυθαιρέτων</option>
-                            <option>Ενεργειακό Πιστοποιητικό (ΠΕΑ)</option>
-                            <option>Οικοδομική Άδεια</option>
-                            <option>Άλλο</option>
+                            <option value="" disabled selected data-i18n="form.select.default">Επιλέξτε υπηρεσία</option>
+                            <option data-i18n="form.opt.1">Ηλεκτρονική Ταυτότητα Κτιρίου</option>
+                            <option data-i18n="form.opt.2">Νομιμοποίηση Αυθαιρέτων</option>
+                            <option data-i18n="form.opt.3">Ενεργειακό Πιστοποιητικό (ΠΕΑ)</option>
+                            <option data-i18n="form.opt.4">Οικοδομική Άδεια</option>
+                            <option data-i18n="form.opt.5">Άλλο</option>
                         </select>
                     </div>
                     <div class="field">
-                        <label>Μήνυμα</label>
-                        <textarea placeholder="Περιγράψτε σύντομα το αίτημά σας..."></textarea>
+                        <label data-i18n="form.label.message">Μήνυμα</label>
+                        <textarea placeholder="Περιγράψτε σύντομα το αίτημά σας..." data-i18n-placeholder="form.ph.message"></textarea>
                     </div>
-                    <button type="submit" class="btn-submit">Αποστολή Μηνύματος</button>
+                    <button type="submit" class="btn-submit" data-i18n="form.submit">Αποστολή Μηνύματος</button>
                 </form>
             </div>
         </div>
@@ -1361,19 +1394,19 @@
                 </div>
                 <div class="footer-brand-text">
                     <p class="fname">Βάϊος Λιάπης</p>
-                    <p class="ftitle">Διπλωματούχος Πολιτικός Μηχανικός ΑΠΘ</p>
+                    <p class="ftitle" data-i18n="footer.title">Διπλωματούχος Πολιτικός Μηχανικός ΑΠΘ</p>
                 </div>
             </div>
             <div class="footer-links">
-                <a href="#about">Σχετικά</a>
-                <a href="#services">Υπηρεσίες</a>
-                <a href="#projects">Έργα</a>
-                <a href="#contact">Επικοινωνία</a>
+                <a href="#about" data-i18n="nav.about">Σχετικά</a>
+                <a href="#services" data-i18n="nav.services">Υπηρεσίες</a>
+                <a href="#projects" data-i18n="nav.projects">Έργα</a>
+                <a href="#contact" data-i18n="nav.contact">Επικοινωνία</a>
             </div>
         </div>
         <div class="footer-bottom">
-            <p class="footer-copy">&copy; 2026 Βάϊος Λιάπης &mdash; Πολιτικός Μηχανικός Αθήνα</p>
-            <p class="footer-design">Σχεδιασμός <span class="design-brand">Design Expertease</span></p>
+            <p class="footer-copy" data-i18n-html="footer.copy">&copy; 2026 Βάϊος Λιάπης &mdash; Πολιτικός Μηχανικός Αθήνα</p>
+            <p class="footer-design" data-i18n-html="footer.design">Σχεδιασμός <span class="design-brand">Design Expertease</span></p>
             <div class="footer-socials">
                 <a href="mailto:vaioliap93@gmail.com" class="social-link" title="Email">
                     <i class="fa-solid fa-envelope"></i>
@@ -1445,5 +1478,6 @@
         }
     </script>
     <script src="eng-animations.js"></script>
+    <script src="i18n.js"></script>
 </body>
 </html>
