@@ -264,7 +264,7 @@
 
         /* ===== MARQUEE BAND ===== */
         .marquee-wrap {
-            background: var(--gold);
+            background: #e8c84a;
             overflow: hidden; padding: 0;
             white-space: nowrap;
         }
