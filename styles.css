@@ -1121,8 +1121,8 @@
                 position: static;
                 right: auto; top: auto;
                 transform: none;
-                width: 120px; height: 120px;
-                margin-top: 72px;
+                width: 156px; height: 156px;
+                margin-top: 86px;
                 flex-shrink: 0;
             }
             .hero-blueprint { background-size: 36px 36px; }
@@ -1192,7 +1192,15 @@
             .person-card { padding: 22px 18px; }
             /* Bigger tap targets for phone/email */
             .contact-detail { padding: 18px 0; font-size: 15px; }
-            .btn-submit { width: 100%; padding: 20px; font-size: 11px; }
+            .btn-submit { width: auto; padding: 15px 44px; font-size: 11px; border-radius: 50px; align-self: center; }
+            /* Contact — richer golden palette on mobile */
+            .contact-section { --gold: #d4a030; --gold2: #e8b840; }
+            .contact-form-wrap { border-color: rgba(212,160,48,0.55); }
+            .contact-detail { border-bottom-color: rgba(212,160,48,0.15); color: rgba(255,255,255,0.9); }
+            .contact-detail:first-child { border-top-color: rgba(212,160,48,0.15); }
+            .person-card { border-color: rgba(212,160,48,0.18); }
+            .field label { color: rgba(212,160,48,0.75); }
+            .field input, .field textarea, .field select { border-bottom-color: rgba(212,160,48,0.2); }
 
             /* Footer */
             .footer-top { flex-direction: column; align-items: flex-start; gap: 24px; }
@@ -1205,9 +1213,77 @@
             /* Gold — slightly more golden on mobile screens */
             :root { --gold: #c6ab5e; --gold2: #dbbe78; }
 
-            /* Reveal — remove vertical slide on mobile, keep fade + horizontal */
-            [data-reveal] { transform: none; }
-            [data-reveal].visible { transform: none; }
+            /* ── Mobile Animation Enhancements ──────────────────────────────── */
+
+            /* 1. Restore small slide-up on all reveals (was completely disabled) */
+            [data-reveal] { transform: translateY(20px); }
+
+            /* 2. Service cards: alternate left/right slide in 2-column grid */
+            .services-grid [data-reveal]             { transform: translateX(-22px); }
+            .services-grid [data-reveal]:nth-child(even) { transform: translateX(22px); }
+            .services-grid [data-reveal].visible     { transform: translateX(0); }
+
+            /* 3. Project cards: same alternating treatment */
+            .projects-grid [data-reveal]             { transform: translateX(-22px); }
+            .projects-grid [data-reveal]:nth-child(even) { transform: translateX(22px); }
+            .projects-grid [data-reveal].visible     { transform: translateX(0); }
+
+            /* 4. Hero: photo scale-in + text staggered entrance */
+            @keyframes mobilePhotoIn {
+                from { opacity: 0; transform: scale(0.87) translateY(14px); }
+                to   { opacity: 1; transform: scale(1)    translateY(0); }
+            }
+            @keyframes mobileSlideUp {
+                from { opacity: 0; transform: translateY(18px); }
+                to   { opacity: 1; transform: translateY(0); }
+            }
+            .hero-photo       { animation: mobilePhotoIn 1s   var(--ease) 0.2s  both; }
+            .hero-name .line1 { animation: mobileSlideUp 0.8s var(--ease) 0.48s both; }
+            .hero-name .line2 { animation: mobileSlideUp 0.8s var(--ease) 0.63s both; }
+            .hero-eyebrow     { animation: mobileSlideUp 0.7s var(--ease) 0.78s both; }
+            .btn-gold         { animation: mobileSlideUp 0.7s var(--ease) 0.93s both; }
+
+            /* 5. Mobile nav menu: links drop in staggered */
+            @keyframes navLinkDrop {
+                from { opacity: 0; transform: translateY(-10px); }
+                to   { opacity: 1; transform: translateY(0); }
+            }
+            .nav-links.open a                  { animation: navLinkDrop 0.3s var(--ease) both; }
+            .nav-links.open a:nth-child(1)     { animation-delay: 0.04s; }
+            .nav-links.open a:nth-child(2)     { animation-delay: 0.10s; }
+            .nav-links.open a:nth-child(3)     { animation-delay: 0.16s; }
+            .nav-links.open a:nth-child(4)     { animation-delay: 0.22s; }
+
+            /* 6. Contact details: slide in from left sequentially */
+            .contact-detail-list .contact-detail {
+                opacity: 0; transform: translateX(-16px);
+                transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+            }
+            .contact-info.visible .contact-detail               { opacity: 1; transform: translateX(0); }
+            .contact-info.visible .contact-detail:nth-child(1)  { transition-delay: 0.46s; }
+            .contact-info.visible .contact-detail:nth-child(2)  { transition-delay: 0.59s; }
+            .contact-info.visible .contact-detail:nth-child(3)  { transition-delay: 0.72s; }
+
+            /* 7. Contact form: heading + fields fade in sequentially */
+            .contact-form-wrap h3 {
+                opacity: 0; transform: translateY(10px);
+                transition: opacity 0.5s var(--ease), transform 0.5s var(--ease);
+                transition-delay: 0.1s;
+            }
+            .contact-form-wrap.visible h3 { opacity: 1; transform: translateY(0); }
+            .contact-form-wrap .form-fields > * {
+                opacity: 0; transform: translateY(12px);
+                transition: opacity 0.42s var(--ease), transform 0.42s var(--ease);
+            }
+            .contact-form-wrap.visible .form-fields > *              { opacity: 1; transform: translateY(0); }
+            .contact-form-wrap.visible .form-fields > *:nth-child(1) { transition-delay: 0.22s; }
+            .contact-form-wrap.visible .form-fields > *:nth-child(2) { transition-delay: 0.35s; }
+            .contact-form-wrap.visible .form-fields > *:nth-child(3) { transition-delay: 0.48s; }
+            .contact-form-wrap.visible .form-fields > *:nth-child(4) { transition-delay: 0.61s; }
+            .contact-form-wrap.visible .form-fields > *:nth-child(5) { transition-delay: 0.74s; }
+
+            /* 8. Service card: scale-down on tap for touch feedback */
+            .service-card:active { transform: scale(0.97); transition: transform 0.12s ease; }
         }
 
         /* — Small phones (≤480px) — */
