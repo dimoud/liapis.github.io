@@ -503,11 +503,19 @@
     <script>
         /* Mobile menu */
         function toggleMenu() {
-            document.getElementById('navLinks').classList.toggle('open');
+            const menu = document.getElementById('navLinks');
+            const isOpen = menu.classList.toggle('open');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+        function closeMenu() {
+            document.getElementById('navLinks').classList.remove('open');
+            document.body.style.overflow = '';
         }
         document.querySelectorAll('#navLinks a').forEach(a => {
-            a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+            a.addEventListener('click', closeMenu);
         });
+        /* Close on Escape key */
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
         /* Contact form */
         function handleSubmit(e) {
