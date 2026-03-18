@@ -27,6 +27,8 @@
         'nav.contact':  { el: 'Επικοινωνία',            en: 'Contact' },
 
         /* HERO */
+        'hero.name1':   { el: 'ΒΑΪΟΣ',                   en: 'VAIOS' },
+        'hero.name2':   { el: 'ΛΙΑΠΗΣ',                  en: 'LIAPIS' },
         'hero.eyebrow': { el: 'Πολιτικός Μηχανικός ΑΠΘ', en: 'Civil Engineer — AUTH' },
         'hero.cta':     { el: 'Επικοινωνία',              en: 'Get in Touch' },
 
