@@ -46,8 +46,8 @@
             en: 'Experience &amp; <em>Expertise</em>',
         },
         'about.lead': {
-            el: 'Διπλωματούχος Πολιτικός Μηχανικός του Αριστοτέλειου Πανεπιστημίου Θεσσαλονίκης, με πολυετή εμπειρία στην αντιμετώπιση πολεοδομικών, κτηματολογικών και κατασκευαστικών θεμάτων για ιδιώτες και επαγγελματίες σε όλη την Αττική.',
-            en: 'Licensed Civil Engineer from the Aristotle University of Thessaloniki, with extensive experience in urban planning, cadastral, and construction matters for individuals and professionals throughout Attica.',
+            el: 'Διπλωματούχος Πολιτικός Μηχανικός του Αριστοτέλειου Πανεπιστημίου Θεσσαλονίκης, με <span class="years-exp"></span>+ χρόνια εμπειρία στην αντιμετώπιση πολεοδομικών, κτηματολογικών και κατασκευαστικών θεμάτων για ιδιώτες και επαγγελματίες σε όλη την Αττική.',
+            en: 'Licensed Civil Engineer from the Aristotle University of Thessaloniki, with <span class="years-exp"></span>+ years of experience in urban planning, cadastral, and construction matters for individuals and professionals throughout Attica.',
         },
         'about.dim': { el: 'Αθήνα — Αττική', en: 'Athens — Attica' },
 
@@ -178,6 +178,15 @@
     /* ─── STATE ──────────────────────────────────────────────────────────── */
     let currentLang = localStorage.getItem('lang') || 'el';
 
+    /* ─── YEARS OF EXPERIENCE (dynamic) ─────────────────────────────────── */
+    const EXP_START_YEAR = 2019;
+    function fillYearsExp() {
+        var years = new Date().getFullYear() - EXP_START_YEAR;
+        document.querySelectorAll('.years-exp').forEach(function (el) {
+            el.textContent = years;
+        });
+    }
+
     /* ─── APPLY TRANSLATIONS ─────────────────────────────────────────────── */
     function applyLang(lang) {
         currentLang = lang;
@@ -214,6 +223,9 @@
         document.querySelectorAll('.lang-btn').forEach(function (btn) {
             btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
         });
+
+        /* re-fill dynamic years after innerHTML replacement */
+        fillYearsExp();
     }
 
     /* ─── PUBLIC API ─────────────────────────────────────────────────────── */
