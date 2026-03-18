@@ -82,11 +82,13 @@
             font-family: 'Cormorant Garamond', serif;
             font-weight: 700; font-size: 20px;
             color: var(--white); letter-spacing: 1px;
+            text-shadow: 0 1px 10px rgba(0,0,0,0.8);
         }
         .logo-text .title {
             font-size: 9px; font-weight: 500;
-            color: var(--gold); letter-spacing: 3px;
+            color: var(--gold2); letter-spacing: 3px;
             text-transform: uppercase;
+            text-shadow: 0 1px 8px rgba(0,0,0,0.7);
         }
 
         .nav-links {
@@ -413,7 +415,7 @@
             transform: scaleX(0); transform-origin: left;
             transition: transform 0.5s var(--ease);
         }
-        .service-card:hover { background: var(--ink); }
+        .service-card:hover { background: #38342f; }
         .service-card:hover::after { transform: scaleX(1); }
 
         .service-num {
@@ -770,14 +772,14 @@
             font-size: 20px; font-weight: 600; color: var(--white);
         }
         .footer-brand-text .ftitle {
-            font-size: 9px; color: var(--stone); letter-spacing: 2px;
+            font-size: 9px; color: rgba(255,255,255,0.55); letter-spacing: 2px;
             text-transform: uppercase; margin-top: 3px;
         }
         .footer-links {
             display: flex; gap: 36px; flex-wrap: wrap;
         }
         .footer-links a {
-            color: var(--stone); font-size: 10px; font-weight: 500;
+            color: rgba(255,255,255,0.55); font-size: 10px; font-weight: 500;
             letter-spacing: 2px; text-transform: uppercase;
             transition: color 0.3s;
         }
@@ -787,18 +789,149 @@
             flex-wrap: wrap; gap: 16px;
         }
         .footer-copy {
-            color: rgba(255,255,255,0.6); font-size: 11px; letter-spacing: 0.5px;
+            color: rgba(255,255,255,0.7); font-size: 11px; letter-spacing: 0.5px;
         }
         .footer-socials { display: flex; gap: 12px; }
         .social-link {
             width: 40px; height: 40px;
-            border: 1px solid rgba(255,255,255,0.07);
+            border: 1px solid rgba(255,255,255,0.12);
             display: flex; align-items: center; justify-content: center;
-            color: var(--stone); font-size: 14px;
+            color: rgba(255,255,255,0.5); font-size: 14px;
             transition: all 0.3s;
         }
         .social-link:hover {
             border-color: var(--gold); color: var(--gold);
+        }
+
+        /* ===== ENGINEERING ANIMATIONS ===== */
+
+        /* Scroll Elevation Meter */
+        .scroll-elev {
+            position: fixed; right: 16px; top: 50%;
+            transform: translateY(-50%);
+            z-index: 400; pointer-events: none;
+            display: flex; flex-direction: column; align-items: center; gap: 0;
+            opacity: 0; transition: opacity 0.6s;
+        }
+        .scroll-elev.show { opacity: 1; }
+        .elev-track {
+            position: relative; width: 1px; height: 150px;
+            background: rgba(201,168,108,0.12);
+        }
+        .elev-fill {
+            position: absolute; bottom: 0; left: 0; right: 0;
+            background: rgba(201,168,108,0.35);
+            transition: height 0.12s linear;
+        }
+        .elev-dot {
+            position: absolute; left: 50%; width: 6px; height: 6px;
+            background: var(--gold); border-radius: 50%;
+            transform: translate(-50%, 50%); bottom: 0%;
+            box-shadow: 0 0 10px rgba(201,168,108,0.8);
+            transition: bottom 0.12s linear;
+        }
+        .elev-ticks {
+            position: absolute; inset: 0;
+            display: flex; flex-direction: column; justify-content: space-between;
+        }
+        .elev-tick { width: 5px; height: 1px; background: rgba(201,168,108,0.25); margin-left: 2px; }
+        .elev-tick.major { width: 10px; background: rgba(201,168,108,0.5); position: relative; }
+        .elev-tick.major span {
+            position: absolute; right: calc(100% + 5px); top: 50%;
+            transform: translateY(-50%);
+            font-family: 'Cormorant Garamond', serif; font-size: 7px;
+            color: rgba(201,168,108,0.45); letter-spacing: 0.5px; white-space: nowrap;
+        }
+        .elev-label {
+            font-family: 'Cormorant Garamond', serif; font-size: 7px;
+            color: rgba(201,168,108,0.3); letter-spacing: 1.5px;
+            text-transform: uppercase; writing-mode: vertical-rl;
+            margin-top: 8px;
+        }
+
+        /* Hero blueprint grid */
+        .hero-blueprint {
+            position: absolute; inset: 0; z-index: 1; pointer-events: none;
+            background-image:
+                linear-gradient(rgba(201,168,108,0.032) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(201,168,108,0.032) 1px, transparent 1px);
+            background-size: 70px 70px;
+            animation: bpShift 45s linear infinite;
+        }
+        @keyframes bpShift {
+            from { background-position: 0 0; }
+            to   { background-position: 70px 70px; }
+        }
+
+        /* Hero engineering crosshair */
+        .crosshair-wrap {
+            position: absolute; top: 20%; right: 9%; z-index: 3;
+            pointer-events: none;
+            animation: chFloat 9s ease-in-out infinite;
+            opacity: 0; transition: opacity 2s 0.8s;
+        }
+        .crosshair-wrap.loaded { opacity: 0.38; }
+        @keyframes chFloat {
+            0%,100% { transform: translate(0,0) rotate(0deg); }
+            33%  { transform: translate(5px,-8px) rotate(0.8deg); }
+            66%  { transform: translate(-4px,5px) rotate(-0.5deg); }
+        }
+        .crosshair {
+            width: 52px; height: 52px; position: relative;
+        }
+        .crosshair::before {
+            content: ''; position: absolute;
+            width: 1px; height: 100%; background: var(--gold); left: 50%; top: 0;
+        }
+        .crosshair::after {
+            content: ''; position: absolute;
+            height: 1px; width: 100%; background: var(--gold); top: 50%; left: 0;
+        }
+        .ch-circle {
+            position: absolute; width: 20px; height: 20px;
+            border-radius: 50%; border: 1px solid var(--gold);
+            left: 50%; top: 50%; transform: translate(-50%,-50%);
+        }
+        .ch-label {
+            display: block; font-family: 'Cormorant Garamond', serif;
+            font-size: 7px; color: var(--gold);
+            letter-spacing: 2px; text-align: center; margin-top: 5px;
+        }
+
+        /* Dimension line in about */
+        .dim-row {
+            display: flex; align-items: center; gap: 0;
+            margin: -4px 0 44px; opacity: 0; transition: opacity 0.3s;
+        }
+        .dim-row.ready { opacity: 1; }
+        .dim-tick {
+            width: 1px; height: 18px; flex-shrink: 0;
+            background: rgba(201,168,108,0.45);
+            transform: scaleY(0); transition: transform 0.3s ease 1s;
+        }
+        .dim-row.ready .dim-tick { transform: scaleY(1); }
+        .dim-bar {
+            flex: 1; height: 1px; background: rgba(201,168,108,0.22);
+            transform: scaleX(0); transition: transform 1.1s var(--ease);
+        }
+        .dim-bar.dim-l { transform-origin: right; transition-delay: 0.15s; }
+        .dim-bar.dim-r { transform-origin: left;  transition-delay: 0.15s; }
+        .dim-row.ready .dim-bar { transform: scaleX(1); }
+        .dim-value {
+            font-family: 'Cormorant Garamond', serif; font-size: 9px;
+            color: rgba(201,168,108,0.5); letter-spacing: 2.5px;
+            text-transform: uppercase; padding: 0 18px; white-space: nowrap;
+            opacity: 0; transition: opacity 0.4s 1s;
+        }
+        .dim-row.ready .dim-value { opacity: 1; }
+
+        /* Footer design credit */
+        .footer-design {
+            font-size: 10px; letter-spacing: 0.5px;
+            color: rgba(255,255,255,0.28);
+        }
+        .footer-design .design-brand {
+            color: rgba(201,168,108,0.6); font-style: italic;
         }
 
         /* ===== MOBILE ===== */
@@ -836,6 +969,8 @@
             .footer-top { flex-direction: column; align-items: flex-start; }
             .about-badge { right: 0; bottom: -20px; width: 100px; height: 100px; }
             .about-badge strong { font-size: 28px; }
+            .scroll-elev { display: none; }
+            .crosshair-wrap { display: none; }
         }
     </style>
 </head>
@@ -866,12 +1001,33 @@
         </div>
     </nav>
 
+    <!-- Scroll Elevation Meter -->
+    <div class="scroll-elev" id="scrollElev">
+        <div class="elev-track">
+            <div class="elev-fill" id="elevFill"></div>
+            <div class="elev-dot" id="elevDot"></div>
+            <div class="elev-ticks">
+                <div class="elev-tick major"><span>+12m</span></div>
+                <div class="elev-tick"></div>
+                <div class="elev-tick major"><span>+6m</span></div>
+                <div class="elev-tick"></div>
+                <div class="elev-tick major"><span>±0</span></div>
+            </div>
+        </div>
+        <span class="elev-label">ΥΨ</span>
+    </div>
+
     <!-- ===== HERO ===== -->
     <header class="hero">
         <div class="hero-slide active" id="slide1"></div>
         <div class="hero-slide" id="slide2"></div>
         <div class="hero-overlay"></div>
         <div class="hero-lines"></div>
+        <div class="hero-blueprint" aria-hidden="true"></div>
+        <div class="crosshair-wrap" id="crosshairWrap" aria-hidden="true">
+            <div class="crosshair"><span class="ch-circle"></span></div>
+            <span class="ch-label">ΑΠΘ</span>
+        </div>
 
         <img src="photo.jpeg" alt="Βάϊος Λιάπης" class="hero-photo"
              onerror="this.src='https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600&h=800'">
@@ -920,6 +1076,13 @@
                 <p class="about-lead">
                     Διπλωματούχος Πολιτικός Μηχανικός του Αριστοτέλειου Πανεπιστημίου Θεσσαλονίκης, με πολυετή εμπειρία στην αντιμετώπιση πολεοδομικών, κτηματολογικών και κατασκευαστικών θεμάτων για ιδιώτες και επαγγελματίες σε όλη την Αττική.
                 </p>
+                <div class="dim-row" data-dim>
+                    <div class="dim-tick"></div>
+                    <div class="dim-bar dim-l"></div>
+                    <span class="dim-value">Αθήνα &mdash; Αττική</span>
+                    <div class="dim-bar dim-r"></div>
+                    <div class="dim-tick"></div>
+                </div>
                 <div class="about-features">
 
                     <div class="feature-row" data-reveal>
@@ -1152,7 +1315,6 @@
 
             <div class="contact-form-wrap" data-reveal>
                 <h3>Στείλτε μήνυμα</h3>
-                <p class="sub">Απαντάμε εντός 24 ωρών</p>
                 <form class="form-fields" onsubmit="handleSubmit(event)">
                     <div class="form-row">
                         <div class="field">
@@ -1161,7 +1323,7 @@
                         </div>
                         <div class="field">
                             <label>Τηλέφωνο</label>
-                            <input type="tel" placeholder="69X XXX XXXX" required>
+                            <input type="tel" placeholder="" required>
                         </div>
                     </div>
                     <div class="field">
@@ -1211,6 +1373,7 @@
         </div>
         <div class="footer-bottom">
             <p class="footer-copy">&copy; 2026 Βάϊος Λιάπης &mdash; Πολιτικός Μηχανικός Αθήνα</p>
+            <p class="footer-design">Σχεδιασμός <span class="design-brand">Design Expertease</span></p>
             <div class="footer-socials">
                 <a href="mailto:vaioliap93@gmail.com" class="social-link" title="Email">
                     <i class="fa-solid fa-envelope"></i>
@@ -1281,5 +1444,6 @@
             }, 3000);
         }
     </script>
+    <script src="eng-animations.js"></script>
 </body>
 </html>
