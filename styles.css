@@ -1122,7 +1122,7 @@
                 right: auto; top: auto;
                 transform: none;
                 width: 156px; height: 156px;
-                margin-top: 86px;
+                margin-top: calc(86px + 2.5cm);
                 flex-shrink: 0;
             }
             .hero-blueprint { background-size: 36px 36px; }
@@ -1137,7 +1137,21 @@
             .hero-eyebrow::before { display: none; }
             .hero-name .line1,
             .hero-name .line2 { font-size: clamp(54px, 14vw, 96px); letter-spacing: -1px; }
-            .btn-gold { padding: 16px 48px; margin-top: 8px; }
+            .btn-gold {
+                background: transparent;
+                color: var(--gold);
+                border: 1.5px solid var(--gold);
+                border-radius: 50px;
+                font-weight: 700;
+                padding: 15px 44px;
+                margin-top: 8px;
+                letter-spacing: 2px;
+            }
+            .btn-gold:hover {
+                background: var(--gold);
+                color: var(--ink);
+                box-shadow: 0 6px 28px rgba(201,168,108,0.35);
+            }
             .hero-meas { display: none; }
 
             /* Hide all decorative engineering widgets */
@@ -1194,13 +1208,13 @@
             .contact-detail { padding: 18px 0; font-size: 15px; }
             .btn-submit { width: auto; padding: 15px 44px; font-size: 11px; border-radius: 50px; align-self: center; }
             /* Contact — richer golden palette on mobile */
-            .contact-section { --gold: #d4a030; --gold2: #e8b840; }
-            .contact-form-wrap { border-color: rgba(212,160,48,0.55); }
-            .contact-detail { border-bottom-color: rgba(212,160,48,0.15); color: rgba(255,255,255,0.9); }
-            .contact-detail:first-child { border-top-color: rgba(212,160,48,0.15); }
-            .person-card { border-color: rgba(212,160,48,0.18); }
-            .field label { color: rgba(212,160,48,0.75); }
-            .field input, .field textarea, .field select { border-bottom-color: rgba(212,160,48,0.2); }
+            .contact-section { --gold: #e8c84a; --gold2: #f5d966; }
+            .contact-form-wrap { border-color: rgba(232,200,74,0.55); }
+            .contact-detail { border-bottom-color: rgba(232,200,74,0.15); color: rgba(255,255,255,0.9); }
+            .contact-detail:first-child { border-top-color: rgba(232,200,74,0.15); }
+            .person-card { border-color: rgba(232,200,74,0.18); }
+            .field label { color: rgba(232,200,74,0.80); }
+            .field input, .field textarea, .field select { border-bottom-color: rgba(232,200,74,0.2); }
 
             /* Footer */
             .footer-top { flex-direction: column; align-items: flex-start; gap: 24px; }
@@ -1307,7 +1321,7 @@
             .hero-name .line2 { font-size: clamp(46px, 12.5vw, 64px); letter-spacing: -0.5px; }
             .hero-eyebrow span { font-size: 9px; letter-spacing: 2px; }
             .hero-eyebrow { margin-bottom: 20px; }
-            .btn-gold { width: 100%; text-align: center; padding: 16px 24px; }
+            .btn-gold { width: 80%; text-align: center; padding: 15px 24px; }
             .hero-inner { padding: 0 5% 56px; }
 
             /* Typography */
