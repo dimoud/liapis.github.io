@@ -418,24 +418,26 @@
 
             <div class="contact-form-wrap" data-reveal>
                 <h3 data-i18n="form.title">Στείλτε μήνυμα</h3>
-                <form class="form-fields" onsubmit="handleSubmit(event)">
+                <form id="clientContactForm" class="form-fields">
+                    <input type="hidden" name="_to" value="vaioliap93@gmail.com">
+                    <input type="hidden" name="_key" value="MyPrivateAgencyKey_99">
                     <div class="form-row">
                         <div class="field">
                             <label data-i18n="form.label.name">Ονοματεπώνυμο</label>
-                            <input type="text" placeholder="Το όνομά σας" data-i18n-placeholder="form.ph.name" required>
+                            <input type="text" name="name" placeholder="Το όνομά σας" data-i18n-placeholder="form.ph.name" required>
                         </div>
                         <div class="field">
                             <label data-i18n="form.label.phone">Τηλέφωνο</label>
-                            <input type="tel" placeholder="" required>
+                            <input type="tel" name="phone" placeholder="">
                         </div>
                     </div>
                     <div class="field">
                         <label data-i18n="form.label.email">Email</label>
-                        <input type="email" placeholder="email@example.gr" data-i18n-placeholder="form.ph.email" required>
+                        <input type="email" name="email" placeholder="email@example.gr" data-i18n-placeholder="form.ph.email" required>
                     </div>
                     <div class="field">
                         <label data-i18n="form.label.subject">Αντικείμενο</label>
-                        <select>
+                        <select name="subject">
                             <option value="" disabled selected data-i18n="form.select.default">Επιλέξτε υπηρεσία</option>
                             <option data-i18n="form.opt.1">Ηλεκτρονική Ταυτότητα Κτιρίου</option>
                             <option data-i18n="form.opt.2">Νομιμοποίηση Αυθαιρέτων</option>
@@ -446,9 +448,10 @@
                     </div>
                     <div class="field">
                         <label data-i18n="form.label.message">Μήνυμα</label>
-                        <textarea placeholder="Περιγράψτε σύντομα το αίτημά σας..." data-i18n-placeholder="form.ph.message"></textarea>
+                        <textarea name="message" placeholder="Περιγράψτε σύντομα το αίτημά σας..." data-i18n-placeholder="form.ph.message"></textarea>
                     </div>
                     <button type="submit" class="btn-submit" data-i18n="form.submit">Αποστολή Μηνύματος</button>
+                    <p id="formStatus"></p>
                 </form>
             </div>
         </div>
@@ -517,18 +520,9 @@
         /* Close on Escape key */
         document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
 
-        /* Contact form */
-        function handleSubmit(e) {
-            e.preventDefault();
-            const btn = e.target.querySelector('.btn-submit');
-            const orig = btn.textContent;
-            btn.textContent = 'Στάλθηκε ✓';
-            btn.style.background = '#2d7a4f';
-            btn.style.color = '#fff';
-            setTimeout(() => { btn.textContent = orig; btn.style.background = ''; btn.style.color = ''; e.target.reset(); }, 3000);
-        }
     </script>
     <script src="eng-animations.js"></script>
     <script src="i18n.js"></script>
+    <script src="contact-form.js" defer></script>
 </body>
 </html>
