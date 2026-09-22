@@ -1483,3 +1483,48 @@
     .marquee-track { animation: none; }
     .marquee-wrap  { overflow-x: auto; }
 }
+
+/* ── Υπομενού «Υπηρεσίες» και υπηρεσίες στο υποσέλιδο (σύνδεση σελίδων) ── */
+.nav-drop { position: relative; display: flex; align-items: center; padding: 16px 0; margin: -16px 0; }
+.nav-drop-top::after {
+    content: ''; display: inline-block; width: 5px; height: 5px; margin: -4px 0 0 9px;
+    border-right: 1px solid currentColor; border-bottom: 1px solid currentColor;
+    transform: rotate(45deg); vertical-align: middle; transition: transform .3s;
+}
+.nav-drop:hover .nav-drop-top::after, .nav-drop:focus-within .nav-drop-top::after { transform: rotate(225deg); margin-top: 2px; }
+.nav-sub {
+    position: absolute; top: 100%; left: 50%; min-width: 270px;
+    display: flex; flex-direction: column; padding: 10px 0;
+    background: rgba(14,13,11,0.97); border: 1px solid rgba(201,168,108,0.2); border-top: 2px solid var(--gold);
+    box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    opacity: 0; visibility: hidden; transform: translate(-50%, 10px);
+    transition: opacity .25s, transform .25s var(--ease), visibility 0s .25s;
+}
+.nav-drop:hover .nav-sub, .nav-drop:focus-within .nav-sub {
+    opacity: 1; visibility: visible; transform: translate(-50%, 0);
+    transition: opacity .25s, transform .25s var(--ease), visibility 0s;
+}
+.nav-links .nav-sub a {
+    padding: 13px 24px; white-space: nowrap; font-size: 12px; letter-spacing: .6px;
+    text-transform: none; color: rgba(255,255,255,0.85);
+}
+.nav-links .nav-sub a:hover { background: rgba(201,168,108,0.1); color: var(--gold); }
+.nav-links .nav-sub a[aria-current="page"] { color: var(--gold); }
+.footer-svc { display: flex; flex-direction: column; gap: 10px; }
+.footer-svc-h { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.footer-svc a { color: rgba(255,255,255,0.7); font-size: 13px; transition: color .3s; }
+.footer-svc a:hover, .footer-svc a[aria-current="page"] { color: var(--gold); }
+@media (max-width: 768px) {
+    .nav-links.open { gap: 26px; overflow-y: auto; justify-content: safe center; padding: 84px 0 40px; }
+    .nav-drop { flex-direction: column; padding: 0; margin: 0; }
+    .nav-drop-top::after { display: none; }
+    .nav-sub {
+        position: static; min-width: 0; transform: none; opacity: 1; visibility: visible;
+        background: none; border: 0; box-shadow: none; padding: 12px 0 0; align-items: center; gap: 2px;
+    }
+    .nav-links.open .nav-sub a {
+        font-size: 14px; letter-spacing: .4px; text-transform: none; padding: 9px 0;
+        color: var(--gold2);
+    }
+    .footer-svc a { padding: 6px 0; font-size: 14px; }
+}

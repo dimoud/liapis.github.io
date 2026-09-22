@@ -60,7 +60,14 @@
         </a>
         <div class="nav-links" id="navLinks">
             <a href="../#about" data-i18n="nav.about">Σχετικά</a>
-            <a href="../#services" data-i18n="nav.services">Υπηρεσίες</a>
+            <div class="nav-drop">
+                <a href="../#services" class="nav-drop-top" data-i18n="nav.services">Υπηρεσίες</a>
+                <div class="nav-sub">
+                    <a href="../taktopoiisi-afthaireton/" data-i18n="nav.svc.tak">Τακτοποίηση αυθαιρέτων</a>
+                    <a href="../ilektroniki-taftotita-ktiriou/" aria-current="page" data-i18n="nav.svc.htk">Ταυτότητα κτιρίου &amp; βεβαίωση</a>
+                    <a href="../oikodomiki-adeia/" data-i18n="nav.svc.oik">Οικοδομική άδεια</a>
+                </div>
+            </div>
             <a href="../#projects" data-i18n="nav.projects">Έργα</a>
             <a href="../#contact" class="nav-cta" data-i18n="nav.contact">Επικοινωνία</a>
         </div>
@@ -172,6 +179,12 @@
                     <p class="ftitle" data-i18n="footer.title">Διπλωματούχος Πολιτικός Μηχανικός ΑΠΘ</p>
                 </div>
             </div>
+            <div class="footer-svc">
+                <span class="footer-svc-h" data-i18n="nav.services">Υπηρεσίες</span>
+                <a href="../taktopoiisi-afthaireton/" data-i18n="nav.svc.tak">Τακτοποίηση αυθαιρέτων</a>
+                <a href="../ilektroniki-taftotita-ktiriou/" aria-current="page" data-i18n="nav.svc.htk">Ταυτότητα κτιρίου &amp; βεβαίωση</a>
+                <a href="../oikodomiki-adeia/" data-i18n="nav.svc.oik">Οικοδομική άδεια</a>
+            </div>
             <div class="footer-links">
                 <a href="../#about" data-i18n="nav.about">Σχετικά</a>
                 <a href="../#services" data-i18n="nav.services">Υπηρεσίες</a>
@@ -236,19 +249,6 @@
 
     </script>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('navLinks');
-            const isOpen = menu.classList.toggle('open');
-            document.body.style.overflow = isOpen ? 'hidden' : '';
-        }
-        function closeMenu() {
-            document.getElementById('navLinks').classList.remove('open');
-            document.body.style.overflow = '';
-        }
-        document.querySelectorAll('#navLinks a').forEach(a => a.addEventListener('click', closeMenu));
-        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
-    </script>
     <script src="../eng-animations.js"></script>
     <script src="../i18n.js"></script>
 </body>

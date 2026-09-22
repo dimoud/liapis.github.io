@@ -25,6 +25,9 @@
         'nav.services': { el: 'Υπηρεσίες',              en: 'Services' },
         'nav.projects': { el: 'Έργα',                   en: 'Projects' },
         'nav.contact':  { el: 'Επικοινωνία',            en: 'Contact' },
+        'nav.svc.tak': { el: 'Τακτοποίηση αυθαιρέτων', en: 'Legalising unauthorised works' },
+        'nav.svc.htk': { el: 'Ταυτότητα κτιρίου & βεβαίωση', en: 'Building e-Identity & certificate' },
+        'nav.svc.oik': { el: 'Οικοδομική άδεια', en: 'Building permits' },
 
         /* HERO */
         'hero.name1':   { el: 'ΒΑΪΟΣ',                   en: 'VAIOS' },
