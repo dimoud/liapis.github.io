@@ -31,6 +31,8 @@
         'hero.name2':   { el: 'ΛΙΑΠΗΣ',                  en: 'LIAPIS' },
         'hero.eyebrow': { el: 'Πολιτικός Μηχανικός ΑΠΘ', en: 'Civil Engineer — AUTH' },
         'hero.cta':     { el: 'Επικοινωνία',              en: 'Get in Touch' },
+        'hero.value':   { el: 'Τακτοποίηση αυθαιρέτων, Ηλεκτρονική Ταυτότητα Κτιρίου και οικοδομικές άδειες σε όλη την Αττική.', en: 'Legalising unauthorised works, Building e-Identity and building permits across Attica.' },
+        'hero.call':    { el: 'Κλήση · 694 867 5267', en: 'Call · +30 694 867 5267' },
 
         /* MARQUEE */
         'marquee.m1': { el: 'Άμεση Αυτοψία',                    en: 'Immediate Site Inspection' },
@@ -154,10 +156,10 @@
         'form.ph.email':       { el: 'email@example.gr',       en: 'email@example.com' },
         'form.label.subject':  { el: 'Αντικείμενο',           en: 'Subject' },
         'form.select.default': { el: 'Επιλέξτε υπηρεσία',     en: 'Select a service' },
-        'form.opt.1':          { el: 'Ηλεκτρονική Ταυτότητα Κτιρίου', en: 'Building e-Identity' },
-        'form.opt.2':          { el: 'Νομιμοποίηση Αυθαιρέτων',       en: 'Unauthorized Structure Legalization' },
-        'form.opt.3':          { el: 'Ενεργειακό Πιστοποιητικό (ΠΕΑ)', en: 'Energy Performance Certificate (EPC)' },
-        'form.opt.4':          { el: 'Οικοδομική Άδεια',               en: 'Building Permit' },
+        'form.opt.1':          { el: 'Τακτοποίηση αυθαιρέτων', en: 'Legalising unauthorised works' },
+        'form.opt.2':          { el: 'Ηλεκτρονική Ταυτότητα ή βεβαίωση για μεταβίβαση', en: 'Building e-Identity or transfer certificate' },
+        'form.opt.3':          { el: 'Οικοδομική άδεια ή έγκριση εργασιών', en: 'Building permit or minor-works approval' },
+        'form.opt.4':          { el: 'Ενεργειακό Πιστοποιητικό (ΠΕΑ)', en: 'Energy Performance Certificate (EPC)' },
         'form.opt.5':          { el: 'Άλλο',                           en: 'Other' },
         'form.label.message':  { el: 'Μήνυμα',                en: 'Message' },
         'form.ph.message':     { el: 'Περιγράψτε σύντομα το αίτημά σας...', en: 'Briefly describe your request...' },

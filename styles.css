@@ -1376,3 +1376,21 @@
 .skip-link:focus { top: 16px; }
 :focus-visible { outline: 2px solid #c9a86c; outline-offset: 3px; }
 #main, section[id] { scroll-margin-top: 96px; }
+
+/* ── Πρώτη οθόνη: πρόταση αξίας + κουμπί κλήσης (anavathmisi #10) ── */
+.hero-value {
+    max-width: 34em; margin: -12px 0 30px;
+    font-size: clamp(15px, 1.3vw, 19px); line-height: 1.55; font-weight: 300;
+    color: rgba(255,255,255,0.88);
+}
+.hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 14px; }
+.hero-actions .btn-gold .fa-solid { margin-right: 10px; }
+@media (max-width: 768px) {
+    .hero-value { margin: -6px auto 22px; text-align: center; max-width: 28em; font-size: 15px; }
+    .hero-actions { justify-content: center; flex-direction: column; gap: 12px; }
+    .hero-actions { width: 100%; align-items: center; }
+    .hero-actions .btn-gold, .hero-actions .btn-outline { width: 80%; max-width: 320px; text-align: center; white-space: nowrap; }
+    .hero-actions .btn-gold { letter-spacing: 1.2px; padding: 15px 16px; }
+    .hero-actions .btn-outline { border-radius: 50px; padding: 14px 40px; }
+    .hero-value, .hero-actions { animation: mobileSlideUp 0.7s var(--ease) 0.9s both; }
+}
