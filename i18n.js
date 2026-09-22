@@ -31,6 +31,17 @@
         'hero.tag': { el: 'Αθήνα · Αττική', en: 'Athens · Attica' },
         'hero.photoAlt': { el: 'Βάιος Λιάπης, πολιτικός μηχανικός', en: 'Vaios Liapis, civil engineer' },
         'hero.svcAria': { el: 'Κύριες υπηρεσίες', en: 'Main services' },
+        'meta.home.title': { el: 'Βάιος Λιάπης · Πολιτικός Μηχανικός Αθήνα | Αυθαίρετα, ΗΤΚ', en: 'Vaios Liapis · Civil Engineer in Athens | Unauthorised works, Building e-Identity' },
+        'meta.home.desc': { el: 'Πολιτικός μηχανικός ΑΠΘ στην Αττική: τακτοποίηση αυθαιρέτων, ηλεκτρονική ταυτότητα κτιρίου, βεβαιώσεις για μεταβιβάσεις και οικοδομικές άδειες.', en: 'Civil engineer (AUTh) in Attica: legalising unauthorised works, Building e-Identity, engineer’s certificates for property transfers and building permits.' },
+        'meta.tak.title': { el: 'Τακτοποίηση Αυθαιρέτων στην Αττική · ν.4495/2017 | Β. Λιάπης', en: 'Legalising Unauthorised Works in Attica · Law 4495/2017 | V. Liapis' },
+        'meta.tak.desc': { el: 'Τακτοποίηση αυθαιρέτων κατηγοριών 1-4 κατά τον ν.4495/2017, με υπαγωγή έως 31/3/2028. Αυτοψία, πρόστιμο από την αρχή και φάκελος μέχρι την περαίωση.', en: 'Legalising category 1-4 unauthorised works under Law 4495/2017, with applications open until 31/3/2028. Site survey, the fine known upfront, and the file taken through to completion.' },
+        'meta.htk.title': { el: 'Ηλεκτρονική Ταυτότητα Κτιρίου & Βεβαίωση Μηχανικού | Λιάπης', en: 'Building e-Identity & Engineer’s Certificate | Liapis' },
+        'meta.htk.desc': { el: 'Ηλεκτρονική Ταυτότητα Κτιρίου (άρθρα 52-56 ν.4495/2017) και βεβαίωση μηχανικού για μεταβίβαση (άρθρο 83) στην Αττική: αυτοψία, έλεγχος και πιστοποιητικό.', en: 'Building e-Identity (articles 52-56, Law 4495/2017) and the engineer’s certificate for property transfers (article 83) in Attica: survey, checks and certificate.' },
+        'meta.oik.title': { el: 'Οικοδομική Άδεια & Έγκριση Εργασιών Μικρής Κλίμακας | Λιάπης', en: 'Building Permit & Minor-Works Approval | Liapis' },
+        'meta.oik.desc': { el: 'Άδειες δόμησης και εγκρίσεις εργασιών μικρής κλίμακας μέσω e-Άδειες στην Αττική: έλεγχος αρτιότητας, μελέτες, υποβολή, παρακολούθηση ως την έκδοση και επίβλεψη.', en: 'Building permits and minor-works approvals through e-Adeies in Attica: plot checks, studies, submission, follow-up until issue, and site supervision.' },
+        'img.logo': { el: 'Λογότυπο Β. Λιάπη', en: 'V. Liapis logo' },
+        'pg.crumbAria': { el: 'Διαδρομή', en: 'Breadcrumb' },
+        'social.phone': { el: 'Τηλέφωνο', en: 'Phone' },
 
         /* HERO */
         'hero.name1':   { el: 'ΒΑΪΟΣ',                   en: 'VAIOS' },
@@ -312,7 +323,7 @@
         });
 
         /* alt και aria-label */
-        [['data-i18n-alt', 'alt'], ['data-i18n-aria', 'aria-label']].forEach(function (pair) {
+        [['data-i18n-alt', 'alt'], ['data-i18n-aria', 'aria-label'], ['data-i18n-title', 'title'], ['data-i18n-content', 'content']].forEach(function (pair) {
             document.querySelectorAll('[' + pair[0] + ']').forEach(function (el) {
                 var key = el.getAttribute(pair[0]);
                 if (t[key] && t[key][lang] !== undefined) el.setAttribute(pair[1], t[key][lang]);
