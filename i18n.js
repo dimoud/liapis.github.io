@@ -166,7 +166,7 @@
         /* FOOTER */
         'footer.title': { el: 'Διπλωματούχος Πολιτικός Μηχανικός ΑΠΘ', en: 'Graduate Civil Engineer AUTH' },
         'footer.copy': {
-            el: '&copy; 2026 Βάϊος Λιάπης &mdash; Πολιτικός Μηχανικός Αθήνα',
+            el: '&copy; 2026 Βάιος Λιάπης &mdash; Πολιτικός Μηχανικός Αθήνα',
             en: '&copy; 2026 Vaios Liapis &mdash; Civil Engineer Athens',
         },
         'footer.design': {
