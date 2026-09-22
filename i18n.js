@@ -163,6 +163,17 @@
         'form.ph.message':     { el: 'Περιγράψτε σύντομα το αίτημά σας...', en: 'Briefly describe your request...' },
         'form.submit':         { el: 'Αποστολή Μηνύματος',    en: 'Send Message' },
 
+        /* ΠΡΟΣΒΑΣΙΜΟΤΗΤΑ & ΟΡΓΑΝΑ ΜΕΤΡΗΣΗΣ */
+        'skip':           { el: 'Μετάβαση στο περιεχόμενο', en: 'Skip to content' },
+        'nav.name':       { el: 'Β. ΛΙΑΠΗΣ',              en: 'V. LIAPIS' },
+        'person.name':    { el: 'Βάιος Λιάπης',           en: 'Vaios Liapis' },
+        'contact.area':   { el: 'Αθήνα &amp; Όλη η Αττική', en: 'Athens &amp; all of Attica' },
+        'meas.elev':      { el: 'ΥΨ',                     en: 'ALT' },
+        'meas.auth':      { el: 'ΑΠΘ',                    en: 'AUTH' },
+        'meas.hero':      { el: 'ΠΡΟΣΟΨΗ &mdash; 24.000 m',        en: 'FAÇADE &mdash; 24.000 m' },
+        'meas.services':  { el: '12 ΥΠΗΡΕΣΙΕΣ &mdash; 480.00 m²',  en: '12 SERVICES &mdash; 480.00 m²' },
+        'meas.projects':  { el: '6 ΕΡΓΑ &mdash; 1250.00 m²',       en: '6 PROJECTS &mdash; 1250.00 m²' },
+
         /* FOOTER */
         'footer.title': { el: 'Διπλωματούχος Πολιτικός Μηχανικός ΑΠΘ', en: 'Graduate Civil Engineer AUTH' },
         'footer.copy': {

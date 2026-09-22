@@ -33,6 +33,7 @@
     <link rel="stylesheet" href="expertease-credit.css">
 </head>
 <body>
+    <a class="skip-link" href="#main" data-i18n="skip">Μετάβαση στο περιεχόμενο</a>
 
     <div id="progress"></div>
 
@@ -51,11 +52,11 @@
     <nav id="nav">
         <a href="#" class="nav-logo">
             <div class="logo-circle">
-                <img src="logo.peg.jpg" alt="Λιάπης Λογότυπο"
+                <img src="logo.peg.jpg" alt="Λογότυπο Β. Λιάπη"
                      onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,#1a1410,#2d2010);display:flex;align-items:center;justify-content:center;font-family:serif;font-size:18px;font-weight:700;color:#c9a86c\'>ΒΛ</div>'">
             </div>
             <div class="logo-text">
-                <span class="name">Β. ΛΙΑΠΗΣ</span>
+                <span class="name" data-i18n="nav.name">Β. ΛΙΑΠΗΣ</span>
                 <span class="title" data-i18n="nav.title">Πολιτικός Μηχανικός</span>
             </div>
         </a>
@@ -88,7 +89,7 @@
                 <div class="elev-tick major"><span>±0</span></div>
             </div>
         </div>
-        <span class="elev-label">ΥΨ</span>
+        <span class="elev-label" data-i18n="meas.elev">ΥΨ</span>
     </div>
 
     <!-- ===== HERO ===== -->
@@ -100,7 +101,7 @@
         <div class="hero-blueprint" aria-hidden="true"></div>
         <div class="crosshair-wrap" id="crosshairWrap" aria-hidden="true">
             <div class="crosshair"><span class="ch-circle"></span></div>
-            <span class="ch-label">ΑΠΘ</span>
+            <span class="ch-label" data-i18n="meas.auth">ΑΠΘ</span>
         </div>
 
         <img src="photo.webp" alt="Βάιος Λιάπης" class="hero-photo"
@@ -116,13 +117,15 @@
             <div class="hero-meas" id="heroMeas" aria-hidden="true">
                 <div class="hm-tick"></div>
                 <div class="hm-bar"></div>
-                <span class="hm-label" id="heroMeasLabel">ΠΡΟΣΟΨΗ &mdash; 24.000 m</span>
+                <span class="hm-label" id="heroMeasLabel" data-i18n-html="meas.hero">ΠΡΟΣΟΨΗ &mdash; 24.000 m</span>
                 <div class="hm-bar hm-r"></div>
                 <div class="hm-tick"></div>
             </div>
         </div>
 
     </header>
+
+    <main id="main">
 
     <!-- ===== MARQUEE ===== -->
     <div class="marquee-wrap">
@@ -174,7 +177,7 @@
                     </div>
                     <div class="feature-row" data-reveal>
                         <i class="fa-solid fa-map-location-dot"></i>
-                        <strong data-i18n="feature.direct.label">Αμεση</strong>
+                        <strong data-i18n="feature.direct.label">Άμεση</strong>
                         <span data-i18n="feature.direct.text">Εξυπηρέτηση σε ολόκληρη την Αττική</span>
                     </div>
                 </div>
@@ -239,7 +242,7 @@
         <div class="sec-meas" data-sec-meas aria-hidden="true">
             <div class="sec-meas-tick"></div>
             <div class="sec-meas-bar bar-l"></div>
-            <span class="sec-meas-label" id="servicesMeasLabel">12 ΥΠΗΡΕΣΙΕΣ &mdash; 480.00 m²</span>
+            <span class="sec-meas-label" id="servicesMeasLabel" data-i18n-html="meas.services">12 ΥΠΗΡΕΣΙΕΣ &mdash; 480.00 m²</span>
             <div class="sec-meas-bar bar-r"></div>
             <div class="sec-meas-tick"></div>
         </div>
@@ -334,13 +337,13 @@
         <div class="sec-meas" data-sec-meas aria-hidden="true">
             <div class="sec-meas-tick"></div>
             <div class="sec-meas-bar bar-l"></div>
-            <span class="sec-meas-label" id="projectsMeasLabel">6 ΕΡΓΑ &mdash; 1250.00 m²</span>
+            <span class="sec-meas-label" id="projectsMeasLabel" data-i18n-html="meas.projects">6 ΕΡΓΑ &mdash; 1250.00 m²</span>
             <div class="sec-meas-bar bar-r"></div>
             <div class="sec-meas-tick"></div>
         </div>
         <div class="projects-grid">
             <div class="project-card" data-reveal>
-                <img loading="lazy" decoding="async" src="cover_photo.webp" alt="Έργο 1"
+                <img loading="lazy" decoding="async" src="cover_photo.webp" alt="Κατοικία Αθήνα — Ηλεκτρονική Ταυτότητα"
                      onerror="this.src='https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=800'">
                 <div class="project-card-overlay"></div>
                 <div class="project-card-info">
@@ -350,7 +353,7 @@
                 </div>
             </div>
             <div class="project-card" data-reveal>
-                <img loading="lazy" decoding="async" src="cover_photo_2.webp" alt="Έργο 2"
+                <img loading="lazy" decoding="async" src="cover_photo_2.webp" alt="Νέα Κατασκευή Πειραιάς — Οικοδομική Άδεια"
                      onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800'">
                 <div class="project-card-overlay"></div>
                 <div class="project-card-info">
@@ -360,7 +363,7 @@
                 </div>
             </div>
             <div class="project-card" data-reveal>
-                <img loading="lazy" decoding="async" src="cover_photo.webp" alt="Έργο 3"
+                <img loading="lazy" decoding="async" src="cover_photo.webp" alt="Μονοκατοικία Γλυφάδα — Τακτοποίηση Αυθαίρετου"
                      onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800'">
                 <div class="project-card-overlay"></div>
                 <div class="project-card-info">
@@ -370,7 +373,7 @@
                 </div>
             </div>
             <div class="project-card" data-reveal>
-                <img loading="lazy" decoding="async" src="cover_photo_2.webp" alt="Έργο 4"
+                <img loading="lazy" decoding="async" src="cover_photo_2.webp" alt="Εμπορικό Κτίριο Μαρούσι — Ενεργειακό Πιστοποιητικό"
                      onerror="this.src='https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&q=80&w=800'">
                 <div class="project-card-overlay"></div>
                 <div class="project-card-info">
@@ -380,7 +383,7 @@
                 </div>
             </div>
             <div class="project-card" data-reveal>
-                <img loading="lazy" decoding="async" src="cover_photo.webp" alt="Έργο 5"
+                <img loading="lazy" decoding="async" src="cover_photo.webp" alt="Βιομηχανικό Κτίριο Ελαιώνας — Scan to BIM"
                      onerror="this.src='https://images.unsplash.com/photo-1590725121839-892b458a74fe?auto=format&fit=crop&q=80&w=800'">
                 <div class="project-card-overlay"></div>
                 <div class="project-card-info">
@@ -390,7 +393,7 @@
                 </div>
             </div>
             <div class="project-card" data-reveal>
-                <img loading="lazy" decoding="async" src="cover_photo_2.webp" alt="Έργο 6"
+                <img loading="lazy" decoding="async" src="cover_photo_2.webp" alt="Διαμέρισμα Κολωνάκι — Ανακαίνιση"
                      onerror="this.src='https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&q=80&w=800'">
                 <div class="project-card-overlay"></div>
                 <div class="project-card-info">
@@ -416,13 +419,13 @@
                     <img loading="lazy" decoding="async" src="photo.webp" alt="Βάιος Λιάπης" class="person-photo"
                          onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'">
                     <div class="person-details">
-                        <h3>Βάιος Λιάπης</h3>
+                        <h3 data-i18n="person.name">Βάιος Λιάπης</h3>
                         <p data-i18n="contact.role">Πολιτικός Μηχανικός ΑΠΘ</p>
                     </div>
                 </div>
 
                 <div class="contact-detail-list">
-                    <a href="tel:6948675267" class="contact-detail">
+                    <a href="tel:+306948675267" class="contact-detail">
                         <i class="fa-solid fa-phone"></i>
                         694 867 5267
                     </a>
@@ -431,8 +434,8 @@
                         vaioliap93@gmail.com
                     </a>
                     <div class="contact-detail">
-                        <i class="fa-solid fa-location-dot"></i>
-                        Αθήνα &amp; Όλη η Αττική
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        <span data-i18n="contact.area">Αθήνα &amp; Όλη η Αττική</span>
                     </div>
                 </div>
             </div>
@@ -480,15 +483,17 @@
     </section>
 
     <!-- ===== FOOTER ===== -->
+    </main>
+
     <footer>
         <div class="footer-top">
             <div class="footer-brand">
                 <div class="footer-logo-circle">
-                    <img src="logo.peg.jpg" alt="Logo"
+                    <img src="logo.peg.jpg" alt="Λογότυπο Β. Λιάπη"
                          onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:#1a1410;display:flex;align-items:center;justify-content:center;font-family:serif;font-size:18px;font-weight:700;color:#c9a86c\'>ΒΛ</div>'">
                 </div>
                 <div class="footer-brand-text">
-                    <p class="fname">Βάιος Λιάπης</p>
+                    <p class="fname" data-i18n="person.name">Βάιος Λιάπης</p>
                     <p class="ftitle" data-i18n="footer.title">Διπλωματούχος Πολιτικός Μηχανικός ΑΠΘ</p>
                 </div>
             </div>
@@ -504,7 +509,7 @@
                 <a href="mailto:vaioliap93@gmail.com" class="social-link" title="Email">
                     <i class="fa-solid fa-envelope"></i>
                 </a>
-                <a href="tel:6948675267" class="social-link" title="Τηλέφωνο">
+                <a href="tel:+306948675267" class="social-link" title="Τηλέφωνο">
                     <i class="fa-solid fa-phone"></i>
                 </a>
             </div>
