@@ -1469,3 +1469,17 @@
     .page-section p, .page-steps li, .page-list li, .page-faq summary { font-size: 16px; }
     .page-cta { padding: 32px 22px; text-align: center; }
 }
+
+/* ── Μειωμένη κίνηση (03-kinisi.md· κανόνας 5 της istoselida) ── */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-delay: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+    html { scroll-behavior: auto; }
+    /* η λωρίδα υπηρεσιών σταματά — δίνεται πίσω χειροκίνητη κύλιση */
+    .marquee-track { animation: none; }
+    .marquee-wrap  { overflow-x: auto; }
+}
