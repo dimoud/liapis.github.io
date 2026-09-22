@@ -1563,3 +1563,29 @@
     .hero-actions .btn-gold { background: var(--gold); color: var(--ink); border-color: var(--gold); }
     .hero-actions .btn-gold:hover { background: var(--gold2); }
 }
+
+/* ── Έλεγχος κινητού (kinito): γράμματα ≥12px, στόχοι αφής ≥44px, χωρίς επικαλύψεις ── */
+.lang-btn { white-space: nowrap; }
+@media (max-width: 768px) {
+    .hamburger { padding: 14px 10px; margin: -14px -10px -14px 0; }
+    .lang-toggle { padding: 0 4px; }
+    .lang-btn { min-width: 44px; min-height: 44px; padding: 13px 6px; justify-content: center; }
+    .nav-logo { min-height: 44px; }
+    .logo-text .title, .lang-btn .lcode { font-size: 12px; letter-spacing: 1.5px; }
+    .hero-eyebrow span { font-size: 12px; letter-spacing: 2px; }
+    .hero-portrait figcaption { font-size: 12px; letter-spacing: 2.5px; }
+    .footer-brand-text .ftitle { font-size: 12px; letter-spacing: .5px; line-height: 1.5; text-wrap: balance; }
+    .footer-svc { gap: 0; }
+    .footer-svc-h { font-size: 12px; margin-bottom: 2px; }
+    .footer-svc a { display: block; padding: 14px 0; }
+    .social-link { width: 44px; height: 44px; }
+    .btn-outline, .hero-actions .btn-outline { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+    .page-crumbs { align-items: center; margin: -15px 0 13px; }
+    .page-crumbs a { display: inline-block; padding: 15px 4px; }
+    .feature-row { grid-template-columns: 20px 1fr; row-gap: 4px; }
+    .feature-row span { grid-column: 2; }
+    .contact-grid { grid-template-columns: minmax(0, 1fr); }
+    #services, #projects { overflow-x: clip; }  /* οι κάρτες μπαίνουν από τα πλάγια (translateX) */
+    .expertease-credit .ec-copy, .expertease-credit .ec-label { font-size: 12px; }
+    .expertease-credit .ec-brand { min-height: 44px; }
+}

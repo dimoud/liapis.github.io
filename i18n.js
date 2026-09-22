@@ -50,7 +50,7 @@
 
         /* ABOUT */
         'about.heading': {
-            el: '<em>Εμπειρία &amp; <em>Εξειδίκευση</em>',
+            el: 'Εμπειρία &amp; <em>Εξειδίκευση</em>',
             en: 'Experience &amp; <em>Expertise</em>',
         },
         'about.lead': {
