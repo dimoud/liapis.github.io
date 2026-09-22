@@ -67,41 +67,41 @@
         },
         'service.more': { el: 'Μάθε Περισσότερα', en: 'Learn More' },
 
-        's1.title': { el: 'Δήλωση στο Κτηματολόγιο',              en: 'Land Registry Declaration' },
-        's1.text':  { el: 'Αναλαμβάνουμε την ηλεκτρονική υποβολή της δήλωσής σας ώστε η διαδικασία να ολοκληρωθεί με ορθότητα και να κατοχυρώσετε την ιδιοκτησία σας.', en: 'We handle the electronic submission of your declaration to ensure the process is completed correctly and your property ownership is fully secured.' },
+        's1.title': { el: 'Δήλωση στο Κτηματολόγιο', en: 'Land Registry Declaration' },
+        's1.text':  { el: 'Συγκεντρώνουμε τίτλους και σχέδια και ελέγχουμε εμβαδά και όρια πριν υποβληθεί η δήλωση. Αν χρειαστεί διόρθωση εμβαδού ή ορίων, ετοιμάζουμε το τοπογραφικό που τη στηρίζει.', en: 'We gather deeds and plans and check areas and boundaries before the declaration is filed. If an area or boundary needs correcting, we prepare the topographic plan that supports it.' },
 
-        's2.title': { el: 'Πολεοδομικές Άδειες',                  en: 'Urban Planning Permits' },
-        's2.text':  { el: 'Οι πολεοδομικές άδειες εκδίδονται ηλεκτρονικά. Ο μηχανικός, εξουσιοδοτημένος από τον κύριο του έργου, αναλαμβάνει ως πιστοποιημένος χρήστης όλη τη διαδικασία.', en: 'Urban planning permits are issued electronically. The engineer, authorized by the project owner, manages the entire process as a certified user.' },
+        's2.title': { el: 'Πολεοδομικές Άδειες', en: 'Building Permits' },
+        's2.text':  { el: 'Οικοδομικές άδειες και εγκρίσεις εργασιών μικρής κλίμακας εκδίδονται πλέον μόνο ηλεκτρονικά, μέσω μηχανικού. Ο φάκελος ξεκινά από τον έλεγχο αρτιότητας και όρων δόμησης· από εκεί και πέρα συντάσσουμε τις μελέτες και τον παρακολουθούμε μέχρι την έκδοση.', en: 'Building permits and minor-works approvals are now issued only online, through an engineer. Every file starts with a check of plot eligibility and building terms; from there we prepare the studies and follow the file until the permit is issued.' },
 
-        's3.title': { el: 'Μεταφορά Αυθαιρέτων στο Ν.4495/17',   en: 'Transfer of Unauthorized Structures (Law 4495/17)' },
-        's3.text':  { el: 'Σύμφωνα με την ισχύουσα νομοθεσία (άρθρο 88, Ν.4495/2017), αναλαμβάνουμε τη μεταφορά αυθαίρετων κατασκευών που έχουν υπαχθεί σε παλαιότερους νόμους.', en: 'Under current legislation (Article 88, Law 4495/2017), we handle the transfer of unauthorized constructions previously registered under earlier laws.' },
+        's3.title': { el: 'Μεταφορά Αυθαιρέτων στον ν.4495/2017', en: 'Transfer of Declarations to Law 4495/2017' },
+        's3.text':  { el: 'Αυθαίρετα που είχαν δηλωθεί με παλαιότερους νόμους (ν.3843/2010, ν.4014/2011, ν.4178/2013) συχνά πρέπει να περάσουν στον ν.4495/2017 για να ολοκληρωθεί η δήλωση ή για να γίνει μεταβίβαση. Πριν τη μεταφορά ελέγχουμε τι είχε δηλωθεί τότε και τι έχει αλλάξει στο μεταξύ.', en: 'Unauthorised works declared under earlier laws (3843/2010, 4014/2011, 4178/2013) often have to be moved to Law 4495/2017 before the declaration can be completed or the property sold. Before the transfer we check what was declared back then and what has changed since.' },
 
-        's4.title': { el: 'Βεβαιώσεις Μηχανικού Ν.4495/2017',    en: 'Engineer Certificates (Law 4495/2017)' },
-        's4.text':  { el: 'Σε συμβολαιογραφικές πράξεις επί ακινήτων όπως αγοραπωλησία, μεταβίβαση, γονική παροχή, απαιτείται η βεβαίωση του μηχανικού που αναλαμβάνουμε άμεσα.', en: 'For notarial acts on properties such as sales, transfers, or parental grants, an engineer\'s certificate is required — we handle this promptly.' },
+        's4.title': { el: 'Βεβαιώσεις Μηχανικού για Μεταβίβαση', en: 'Engineer’s Certificate for Property Transfers' },
+        's4.text':  { el: 'Για αγοραπωλησία, γονική παροχή, δωρεά ή σύσταση οριζόντιας ιδιοκτησίας ο συμβολαιογράφος ζητά βεβαίωση μηχανικού (άρθρο 83 ν.4495/2017). Μετά την αυτοψία και τη σύγκριση με την άδεια, αν βρεθεί αυθαιρεσία σας λέμε πριν το συμβόλαιο πώς διορθώνεται.', en: 'For a sale, parental gift, donation or horizontal-property deed, the notary requires an engineer’s certificate (Article 83, Law 4495/2017). After an on-site inspection and a comparison with the permit, if anything unauthorised turns up we tell you how to fix it before the contract.' },
 
-        's5.title': { el: 'Επίβλεψη Κατασκευών & Έργων',         en: 'Construction & Project Supervision' },
-        's5.text':  { el: 'Ως φυσικό επακόλουθο μιας οικοδομικής άδειας, αναλαμβάνουμε την επίβλεψη της κατασκευής για την ομαλή λειτουργία του εργοταξίου.', en: 'As a natural follow-up to a building permit, we take on the supervision of the construction for smooth and efficient site operation.' },
+        's5.title': { el: 'Επίβλεψη Κατασκευών & Έργων', en: 'Construction Supervision' },
+        's5.text':  { el: 'Η οικοδομική άδεια προβλέπει επιβλέποντα μηχανικό. Είμαστε στο εργοτάξιο στις κρίσιμες φάσεις, από την εκσκαφή ως τον έλεγχο του οπλισμού πριν τη σκυροδέτηση.', en: 'A building permit requires a supervising engineer. We are on site at the critical stages, from excavation to checking the reinforcement before the concrete is poured.' },
 
-        's6.title': { el: 'Νομιμοποίηση & Τακτοποίηση Αυθαιρέτων', en: 'Legalization & Regularization of Unauthorized Structures' },
-        's6.text':  { el: 'Αναλαμβάνουμε την τακτοποίηση αυθαίρετων κατασκευών και χρήσεων σύμφωνα με τον ισχύοντα νόμο 4495/2017.', en: 'We handle the regularization of unauthorized constructions and uses in accordance with the current Law 4495/2017.' },
+        's6.title': { el: 'Τακτοποίηση Αυθαιρέτων', en: 'Legalising Unauthorised Works' },
+        's6.text':  { el: 'Υπέρβαση δόμησης, κλειστός ημιυπαίθριος, πατάρι ή αλλαγή χρήσης: καταγράφουμε τι υπάρχει και σας λέμε από την αρχή τι τακτοποιείται και με ποιο πρόστιμο, αλλά και τι δεν τακτοποιείται. Ο φάκελος προχωρά κατά τον ν.4495/2017, όπως ισχύει, μέχρι την περαίωση.', en: 'Extra floor area, an enclosed semi-open space, a mezzanine or a change of use: we record what is there and tell you from the start what can be legalised and at what fine, and also what cannot. The file then proceeds under Law 4495/2017, as in force, until it is closed.' },
 
-        's7.title': { el: 'Ηλεκτρονική Ταυτότητα Κτιρίων',       en: 'Electronic Building Identity' },
-        's7.text':  { el: 'Στόχος της ΗΤΚ είναι η λεπτομερής αποτύπωση της υφιστάμενης κατάστασης κάθε κτιρίου και των οικοδομικών αδειών του για ασφαλείς μεταβιβάσεις.', en: 'The BEI aims to provide a detailed record of each building\'s current status and building permits, ensuring secure property transfers.' },
+        's7.title': { el: 'Ηλεκτρονική Ταυτότητα Κτιρίου', en: 'Building e-Identity' },
+        's7.text':  { el: 'Η Ηλεκτρονική Ταυτότητα Κτιρίου (άρθρα 52-56 ν.4495/2017) συγκεντρώνει άδειες, σχέδια, τακτοποιήσεις και την πραγματική κατάσταση του ακινήτου. Μετά την αποτύπωση, τη συμπληρώνουμε στην πλατφόρμα του ΤΕΕ και εκδίδουμε το πιστοποιητικό πληρότητας που ζητείται στις μεταβιβάσεις.', en: 'The Building e-Identity (Articles 52-56, Law 4495/2017) brings together permits, plans, legalisations and the actual state of the property. After surveying the property we complete it on the Technical Chamber platform and issue the completeness certificate required for transfers.' },
 
-        's8.title': { el: 'Υπηρεσία Μιας Στάσης',                 en: 'One-Stop Service' },
-        's8.text':  { el: 'Το γραφείο μας και οι συνεργάτες αναλαμβάνουν κάθε υπόθεση από την αρχή μέχρι το τέλος, εξασφαλίζοντας πλήρη συνέπεια και αποτελεσματικότητα.', en: 'Our office and partners handle every case from start to finish, ensuring full consistency and effectiveness.' },
+        's8.title': { el: 'Υπηρεσία Μιας Στάσης', en: 'One-Stop Service' },
+        's8.text':  { el: 'Μια υπόθεση ακινήτου συχνά χρειάζεται μηχανικό, τοπογράφο, δικηγόρο και συμβολαιογράφο. Συντονίζουμε εμείς τους συνεργάτες και εσείς έχετε έναν άνθρωπο να ρωτάτε.', en: 'A property case often needs an engineer, a surveyor, a lawyer and a notary. We coordinate the partners, and you have one person to ask.' },
 
-        's9.title': { el: 'Ανακαινίσεις & Επισκευές & Μονώσεις',  en: 'Renovations, Repairs & Insulation' },
-        's9.text':  { el: 'Η ανακαίνιση εξασφαλίζει κάλυψη λειτουργικών αναγκών και εκσυγχρονισμό των υφιστάμενων κατασκευών σύμφωνα με τις σύγχρονες απαιτήσεις.', en: 'Renovation ensures functional coverage and modernization of existing structures in line with contemporary requirements.' },
+        's9.title': { el: 'Ανακαινίσεις, Επισκευές & Μονώσεις', en: 'Renovation, Repairs & Insulation' },
+        's9.text':  { el: 'Από ανακαίνιση κουζίνας και μπάνιου μέχρι θερμομόνωση κελύφους και επισκευή ρωγμών. Όπου απαιτείται έγκριση εργασιών μικρής κλίμακας την εκδίδουμε εμείς, και επιβλέπουμε τα συνεργεία μέχρι την παράδοση.', en: 'From a new kitchen or bathroom to external insulation and crack repair. Where a minor-works approval is needed we obtain it, and we supervise the crews until handover.' },
 
-        's10.title': { el: 'Ενεργειακά Πιστοποιητικά',            en: 'Energy Performance Certificates' },
-        's10.text':  { el: 'Αναλαμβάνουμε την ενεργειακή επιθεώρηση σε κτίρια κάθε χρήσης (κατοικίες, καταστήματα, ξενοδοχεία) σύμφωνα με τη νεώτερη νομοθεσία.', en: 'We carry out energy inspections for buildings of all types (residences, shops, hotels) in accordance with current legislation.' },
+        's10.title': { el: 'Ενεργειακά Πιστοποιητικά', en: 'Energy Performance Certificates' },
+        's10.text':  { el: 'Ενεργειακή επιθεώρηση και Πιστοποιητικό Ενεργειακής Απόδοσης για πώληση, μίσθωση ή πρόγραμμα ενεργειακής αναβάθμισης, σε κατοικίες και επαγγελματικούς χώρους. Αν η κατάταξη βγει χαμηλή, σας δείχνουμε ποιες παρεμβάσεις την ανεβάζουν με λογικό κόστος.', en: 'Energy inspection and Energy Performance Certificate for a sale, a lease or an energy-upgrade programme, for homes and business premises. If the rating comes out low, we show you which improvements raise it at a reasonable cost.' },
 
-        's11.title': { el: 'Άδειες Λειτουργίας',                  en: 'Operating Licences' },
-        's11.text':  { el: 'Αναλαμβάνουμε όλη τη διαδικασία για την επιτυχή έκδοση της άδειας λειτουργίας της επιχείρησής σας σε κάθε τύπο εμπορικής δραστηριότητας.', en: 'We handle the entire process for successfully obtaining the operating licence for your business across all commercial activity types.' },
+        's11.title': { el: 'Άδειες Λειτουργίας', en: 'Operating Licences' },
+        's11.text':  { el: 'Για καταστήματα, καφέ, γραφεία και αποθήκες ετοιμάζουμε τα τεχνικά στοιχεία της αδειοδότησης: κατόψεις, βεβαιώσεις μηχανικού και, όπου χρειάζεται, μελέτη πυροπροστασίας. Πρώτα ελέγχουμε αν ο χώρος επιτρέπει τη χρήση που θέλετε, πριν υπογράψετε μίσθωση.', en: 'For shops, cafés, offices and warehouses we prepare the technical part of the licence: floor plans, engineer’s certificates and, where needed, a fire-safety study. First we check whether the space allows the use you want, before you sign a lease.' },
 
-        's12.title': { el: 'Τοπογραφικά Διαγράμματα',             en: 'Topographic Diagrams' },
-        's12.text':  { el: 'Σχέδιο που αναπαριστά το περίγραμμα του κτιρίου και τα όρια του οικοπέδου με ακριβείς συντεταγμένες στο Ελληνικό Γεωδαιτικό Σύστημα Αναφοράς.', en: 'A plan depicting the building outline and plot boundaries with precise coordinates in the Greek Geodetic Reference System.' },
+        's12.title': { el: 'Τοπογραφικά Διαγράμματα', en: 'Topographic Surveys' },
+        's12.text':  { el: 'Τοπογραφικό διάγραμμα εξαρτημένο στο ΕΓΣΑ ’87, για άδεια, Κτηματολόγιο ή μεταβίβαση, με μέτρηση στο πεδίο και τις προδιαγραφές της υπηρεσίας που το ζητά.', en: 'Topographic plans tied to the Greek reference system EGSA ’87, for permits, the Land Registry or a sale, measured on site and drawn to the specifications of the authority that asks for them.' },
 
         /* PROJECTS */
         'projects.eyebrow': { el: 'Το χαρτοφυλάκιό μας',   en: 'Our Portfolio' },
