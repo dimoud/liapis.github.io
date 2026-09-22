@@ -130,9 +130,9 @@
             animation: kenburns 20s ease-in-out infinite alternate;
         }
         .hero-slide.active { opacity: 1; }
-        .hero-slide:nth-child(1) { background-image: url('cover_photo.jpg'); }
+        .hero-slide:nth-child(1) { background-image: url('cover_photo.webp'); }
         .hero-slide:nth-child(2) {
-            background-image: url('cover_photo_2.jpg');
+            background-image: url('cover_photo_2.webp');
             animation-delay: -10s;
         }
 
@@ -468,7 +468,7 @@
             content: '';
             position: absolute; top: 0; right: 0;
             width: 45%; height: 100%;
-            background: url('cover_photo.jpg') center/cover no-repeat;
+            background: url('cover_photo.webp') center/cover no-repeat;
             opacity: 0.12;
         }
         .coverage-inner {
