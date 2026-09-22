@@ -170,16 +170,6 @@
             display: flex; flex-direction: column;
             align-items: flex-start; gap: 0;
         }
-        .hero-photo {
-            position: absolute; right: calc(6% + 2cm); top: 50%; transform: translateY(-50%);
-            width: clamp(168px, 19.2vw, 312px);
-            aspect-ratio: 1/1;
-            border-radius: 50%;
-            object-fit: cover;
-            filter: grayscale(20%);
-            border: 2px solid rgba(201,168,108,0.5);
-            z-index: 3;
-        }
 
         .hero-eyebrow {
             display: flex; align-items: center; gap: 16px;
@@ -1131,15 +1121,6 @@
 
             /* Hero — centered layout, photo shown */
             .hero { min-height: 100svh; flex-direction: column; align-items: center; }
-            .hero-photo {
-                display: block;
-                position: static;
-                right: auto; top: auto;
-                transform: none;
-                width: 156px; height: 156px;
-                margin-top: calc(86px + 2.5cm);
-                flex-shrink: 0;
-            }
             .hero-blueprint { background-size: 36px 36px; }
             .hero-inner {
                 padding: 0 5% 40px;
@@ -1266,7 +1247,6 @@
                 from { opacity: 0; transform: translateY(18px); }
                 to   { opacity: 1; transform: translateY(0); }
             }
-            .hero-photo       { animation: mobilePhotoIn 1s   var(--ease) 0.2s  both; }
             .hero-name .line1 { animation: mobileSlideUp 0.8s var(--ease) 0.48s both; }
             .hero-name .line2 { animation: mobileSlideUp 0.8s var(--ease) 0.63s both; }
             .hero-eyebrow     { animation: mobileSlideUp 0.7s var(--ease) 0.78s both; }
@@ -1527,4 +1507,59 @@
         color: var(--gold2);
     }
     .footer-svc a { padding: 6px 0; font-size: 14px; }
+}
+
+/* ── Νέα πρώτη οθόνη (επανασχεδιασμός) ── */
+.hero-portrait { margin: 0; }
+.hero-portrait img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.hero-portrait figcaption {
+    font-size: 10px; font-weight: 600; letter-spacing: 3px; text-transform: uppercase;
+}
+.hero-svc { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px; }
+.hero-svc a {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 11px 16px; font-size: 13px; letter-spacing: .3px;
+    color: rgba(255,255,255,0.92); background: rgba(14,13,11,0.45);
+    border: 1px solid rgba(201,168,108,0.35); border-radius: 2px;
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    transition: border-color .3s, background .3s, color .3s;
+}
+.hero-svc a i { color: var(--gold); font-size: 14px; }
+.hero-svc a:hover { border-color: var(--gold); background: rgba(201,168,108,0.14); }
+.hero-meas { margin-top: 36px; }
+@media (max-width: 768px) {
+    .hero { height: auto; min-height: 100svh; }
+    .hero-svc { flex-direction: column; width: 100%; max-width: 340px; margin: 26px auto 0; gap: 8px; }
+    .hero-svc a { width: 100%; padding: 14px 16px; font-size: 14px; text-align: left; }
+    .hero-svc a::after { content: ''; margin-left: auto; width: 7px; height: 7px; border-right: 1.5px solid var(--gold); border-top: 1.5px solid var(--gold); transform: rotate(45deg); }
+    .hero-inner .hero-svc { animation: mobileSlideUp 0.7s var(--ease) 1.05s both; }
+}
+/* Διάταξη: κείμενο αριστερά, πορτρέτο σε όλο το ύψος δεξιά */
+.hero { align-items: stretch; }
+.hero-overlay { background: linear-gradient(90deg, rgba(14,13,11,.97) 0%, rgba(14,13,11,.92) 42%, rgba(14,13,11,.7) 62%, rgba(14,13,11,.5) 100%); }
+.hero-inner { width: 58%; padding: 140px 3% 80px 6%; justify-content: center; }
+.hero-name .line1, .hero-name .line2 { font-size: clamp(64px, 8vw, 128px); }
+.hero-portrait { position: absolute; z-index: 2; top: 0; right: 0; bottom: 0; width: 42%; }
+.hero-portrait img { object-position: 50% 18%; filter: grayscale(12%) contrast(1.04); }
+.hero-portrait::before { content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+    background: linear-gradient(90deg, rgba(14,13,11,1) 0%, rgba(14,13,11,0) 22%), linear-gradient(0deg, rgba(14,13,11,.75) 0%, rgba(14,13,11,0) 30%), linear-gradient(180deg, rgba(14,13,11,.85) 0%, rgba(14,13,11,0) 16%); }
+.hero-portrait::after { content: ''; position: absolute; z-index: 2; inset: 112px 32px 32px 56px; border: 1px solid rgba(201,168,108,.6); pointer-events: none; }
+.hero-portrait figcaption { position: absolute; z-index: 3; left: 80px; bottom: 58px; color: var(--gold); }
+.crosshair-wrap { display: none; }
+@keyframes heroPortraitIn { from { opacity: 0; transform: scale(1.04); } to { opacity: 1; transform: none; } }
+.hero-portrait img { animation: heroPortraitIn 1.4s var(--ease) .1s both; }
+@media (max-width: 768px) {
+    .hero { flex-direction: column; align-items: stretch; }
+    .hero { background: var(--ink); }
+    .hero-slide, .hero-overlay { display: none; }
+    .hero-blueprint { z-index: 0; }
+    .hero-portrait { position: relative; width: 100%; height: 58svh; min-height: 380px; }
+    .hero-portrait img { object-position: 50% 22%; }
+    .hero-portrait::before { background: linear-gradient(0deg, rgba(14,13,11,1) 0%, rgba(14,13,11,.6) 22%, rgba(14,13,11,0) 55%), linear-gradient(180deg, rgba(14,13,11,.6) 0%, rgba(14,13,11,0) 22%); }
+    .hero-portrait::after { inset: 76px 16px 16px 16px; border-bottom: 0; }
+    .hero-portrait figcaption { left: 50%; transform: translateX(-50%); bottom: 18px; white-space: nowrap; }
+    .hero-inner { width: 100%; padding: 8px 5% 48px; margin-top: -8px; flex: 0; }
+    .hero-eyebrow { margin-top: 12px; }
+    .hero-actions .btn-gold { background: var(--gold); color: var(--ink); border-color: var(--gold); }
+    .hero-actions .btn-gold:hover { background: var(--gold2); }
 }

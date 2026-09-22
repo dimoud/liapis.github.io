@@ -28,6 +28,9 @@
         'nav.svc.tak': { el: 'Τακτοποίηση αυθαιρέτων', en: 'Legalising unauthorised works' },
         'nav.svc.htk': { el: 'Ταυτότητα κτιρίου & βεβαίωση', en: 'Building e-Identity & certificate' },
         'nav.svc.oik': { el: 'Οικοδομική άδεια', en: 'Building permits' },
+        'hero.tag': { el: 'Αθήνα · Αττική', en: 'Athens · Attica' },
+        'hero.photoAlt': { el: 'Βάιος Λιάπης, πολιτικός μηχανικός', en: 'Vaios Liapis, civil engineer' },
+        'hero.svcAria': { el: 'Κύριες υπηρεσίες', en: 'Main services' },
 
         /* HERO */
         'hero.name1':   { el: 'ΒΑΪΟΣ',                   en: 'VAIOS' },
@@ -306,6 +309,14 @@
             if (t[key] && t[key][lang] !== undefined) {
                 el.placeholder = t[key][lang];
             }
+        });
+
+        /* alt και aria-label */
+        [['data-i18n-alt', 'alt'], ['data-i18n-aria', 'aria-label']].forEach(function (pair) {
+            document.querySelectorAll('[' + pair[0] + ']').forEach(function (el) {
+                var key = el.getAttribute(pair[0]);
+                if (t[key] && t[key][lang] !== undefined) el.setAttribute(pair[1], t[key][lang]);
+            });
         });
 
         /* update <html lang> attribute */
