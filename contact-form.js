@@ -52,6 +52,7 @@
         .then(function (json) {
           if (json && json.result === 'success') {
             setStatus(status, T.success, 'success');
+            if (window.ccEvent) ccEvent('form_submit', { form_id: 'clientContactForm' });
             form.reset();
           } else {
             throw new Error(json && json.error ? json.error : 'unexpected response');

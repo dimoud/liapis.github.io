@@ -1,0 +1,7 @@
+# Ισχύει όταν ο ιστότοπος σερβίρεται από τη ρίζα δικού του τομέα.
+# Στο expertease.eu/liapis.github.io/ οι μηχανές διαβάζουν μόνο το expertease.eu/robots.txt,
+# οπότε μέχρι τότε ο χάρτης δηλώνεται στο Search Console.
+User-agent: *
+Allow: /
+
+Sitemap: https://expertease.eu/liapis.github.io/sitemap.xml

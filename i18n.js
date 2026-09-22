@@ -329,6 +329,8 @@
 
         /* re-fill dynamic years after innerHTML replacement */
         fillYearsExp();
+
+        document.dispatchEvent(new CustomEvent('langchange', { detail: lang }));
     }
 
     /* ─── PUBLIC API ─────────────────────────────────────────────────────── */
