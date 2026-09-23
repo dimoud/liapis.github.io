@@ -377,78 +377,49 @@
     <section class="projects-section section-pad" id="projects">
         <div class="projects-header">
             <div data-reveal>
-                <div class="eyebrow"><span data-i18n="projects.eyebrow">Το χαρτοφυλάκιό μας</span></div>
-                <h2 class="section-heading light" data-i18n-html="projects.heading">Επιλεγμένα <em>Έργα</em></h2>
+                <div class="eyebrow"><span data-i18n="projects.eyebrow">Από τη δουλειά μας</span></div>
+                <h2 class="section-heading light" data-i18n-html="projects.heading">Δείγματα <em>Έργων</em></h2>
+                <p class="projects-lead" data-i18n="projects.lead">Μερικά από τα έργα που έχουμε αναλάβει. Πατήστε σε ένα έργο για να δείτε όλες τις φωτογραφίες.</p>
             </div>
         </div>
         <div class="sec-meas" data-sec-meas aria-hidden="true">
             <div class="sec-meas-tick"></div>
             <div class="sec-meas-bar bar-l"></div>
-            <span class="sec-meas-label" id="projectsMeasLabel" data-i18n-html="meas.projects">6 ΕΡΓΑ &mdash; 1250.00 m²</span>
+            <span class="sec-meas-label" id="projectsMeasLabel" data-i18n-html="meas.projects">3 ΔΕΙΓΜΑΤΑ ΕΡΓΩΝ</span>
             <div class="sec-meas-bar bar-r"></div>
             <div class="sec-meas-tick"></div>
         </div>
         <div class="projects-grid">
-            <div class="project-card" data-reveal>
-                <img loading="lazy" decoding="async" src="cover_photo.webp" alt=""
-                     onerror="this.src='https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=800'">
+            <button type="button" class="project-card" data-reveal data-gallery='["erga/mykonos-01.webp", "erga/mykonos-02.webp", "erga/mykonos-03.webp", "erga/mykonos-04.webp", "erga/mykonos-05.webp", "erga/mykonos-06.webp", "erga/mykonos-07.webp"]' aria-haspopup="dialog">
+                <img class="pj-img on" loading="lazy" decoding="async" src="erga/mykonos-01-m.webp" alt="" width="900" height="675"><img class="pj-img" decoding="async" alt="" aria-hidden="true">
                 <div class="project-card-overlay"></div>
+                <span class="project-count"><i class="fa-solid fa-city" aria-hidden="true"></i> 7 <span data-i18n="pj.photos">φωτογραφίες</span></span>
                 <div class="project-card-info">
-                    <div class="project-cat" data-i18n="p1.cat">Ηλεκτρονική Ταυτότητα</div>
-                    <h3 data-i18n="p1.title">Κατοικία Αθήνα</h3>
-                    <p data-i18n="p1.desc">Πλήρης ΗΤΚ &amp; βεβαίωση μηχανικού για μεταβίβαση</p>
+                    <div class="project-cat" data-i18n="pj1.cat">Ανακαίνιση</div>
+                    <h3 data-i18n="pj1.title">Κατοικία, Μύκονος</h3>
+                    <p data-i18n="pj1.desc">Ανακαίνιση κατοικίας: εσωτερικοί χώροι και όψεις</p>
                 </div>
-            </div>
-            <div class="project-card" data-reveal>
-                <img loading="lazy" decoding="async" src="cover_photo_2.webp" alt=""
-                     onerror="this.src='https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&q=80&w=800'">
+            </button>
+            <button type="button" class="project-card" data-reveal data-gallery='["erga/petralona-1os-01.webp", "erga/petralona-1os-02.webp", "erga/petralona-1os-03.webp", "erga/petralona-1os-04.webp", "erga/petralona-1os-05.webp", "erga/petralona-1os-06.webp", "erga/petralona-1os-07.webp", "erga/petralona-1os-08.webp"]' aria-haspopup="dialog">
+                <img class="pj-img on" loading="lazy" decoding="async" src="erga/petralona-1os-01-m.webp" alt="" width="900" height="675"><img class="pj-img" decoding="async" alt="" aria-hidden="true">
                 <div class="project-card-overlay"></div>
+                <span class="project-count"><i class="fa-solid fa-city" aria-hidden="true"></i> 8 <span data-i18n="pj.photos">φωτογραφίες</span></span>
                 <div class="project-card-info">
-                    <div class="project-cat" data-i18n="p2.cat">Οικοδομική Άδεια</div>
-                    <h3 data-i18n="p2.title">Νέα Κατασκευή Πειραιάς</h3>
-                    <p data-i18n="p2.desc">Αρχιτεκτονική μελέτη &amp; αδειοδότηση</p>
+                    <div class="project-cat" data-i18n="pj2.cat">Ανακαίνιση</div>
+                    <h3 data-i18n="pj2.title">Διαμέρισμα 1ου ορόφου, Πετράλωνα</h3>
+                    <p data-i18n="pj2.desc">Ανακαίνιση διαμερίσματος: κουζίνα, λουτρό, υπνοδωμάτια</p>
                 </div>
-            </div>
-            <div class="project-card" data-reveal>
-                <img loading="lazy" decoding="async" src="cover_photo.webp" alt=""
-                     onerror="this.src='https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800'">
+            </button>
+            <button type="button" class="project-card" data-reveal data-gallery='["erga/petralona-01.webp", "erga/petralona-02.webp", "erga/petralona-03.webp", "erga/petralona-04.webp", "erga/petralona-05.webp", "erga/petralona-06.webp"]' aria-haspopup="dialog">
+                <img class="pj-img on" loading="lazy" decoding="async" src="erga/petralona-01-m.webp" alt="" width="900" height="675"><img class="pj-img" decoding="async" alt="" aria-hidden="true">
                 <div class="project-card-overlay"></div>
+                <span class="project-count"><i class="fa-solid fa-city" aria-hidden="true"></i> 6 <span data-i18n="pj.photos">φωτογραφίες</span></span>
                 <div class="project-card-info">
-                    <div class="project-cat" data-i18n="p3.cat">Τακτοποίηση Αυθαίρετου</div>
-                    <h3 data-i18n="p3.title">Μονοκατοικία Γλυφάδα</h3>
-                    <p data-i18n="p3.desc">Νομιμοποίηση κατά Ν.4495/2017</p>
+                    <div class="project-cat" data-i18n="pj3.cat">Ανακαίνιση</div>
+                    <h3 data-i18n="pj3.title">Διαμέρισμα, Πετράλωνα</h3>
+                    <p data-i18n="pj3.desc">Ανακαίνιση διαμερίσματος: κουζίνα, λουτρό, δάπεδα, βεράντα</p>
                 </div>
-            </div>
-            <div class="project-card" data-reveal>
-                <img loading="lazy" decoding="async" src="cover_photo_2.webp" alt=""
-                     onerror="this.src='https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&q=80&w=800'">
-                <div class="project-card-overlay"></div>
-                <div class="project-card-info">
-                    <div class="project-cat" data-i18n="p4.cat">Ενεργειακό Πιστοποιητικό</div>
-                    <h3 data-i18n="p4.title">Εμπορικό Κτίριο Μαρούσι</h3>
-                    <p data-i18n="p4.desc">ΠΕΑ &amp; ενεργειακή αναβάθμιση</p>
-                </div>
-            </div>
-            <div class="project-card" data-reveal>
-                <img loading="lazy" decoding="async" src="cover_photo.webp" alt=""
-                     onerror="this.src='https://images.unsplash.com/photo-1590725121839-892b458a74fe?auto=format&fit=crop&q=80&w=800'">
-                <div class="project-card-overlay"></div>
-                <div class="project-card-info">
-                    <div class="project-cat" data-i18n="p5.cat">Scan to BIM</div>
-                    <h3 data-i18n="p5.title">Βιομηχανικό Κτίριο Ελαιώνας</h3>
-                    <p data-i18n="p5.desc">3D Laser Scanning &amp; ψηφιακή αποτύπωση</p>
-                </div>
-            </div>
-            <div class="project-card" data-reveal>
-                <img loading="lazy" decoding="async" src="cover_photo_2.webp" alt=""
-                     onerror="this.src='https://images.unsplash.com/photo-1416331108676-a22ccb276e35?auto=format&fit=crop&q=80&w=800'">
-                <div class="project-card-overlay"></div>
-                <div class="project-card-info">
-                    <div class="project-cat" data-i18n="p6.cat">Ανακαίνιση</div>
-                    <h3 data-i18n="p6.title">Διαμέρισμα Κολωνάκι</h3>
-                    <p data-i18n="p6.desc">Πλήρης ανακαίνιση &amp; επίβλεψη</p>
-                </div>
-            </div>
+            </button>
         </div>
     </section>
 
@@ -651,6 +622,75 @@
                 if (en[0].isIntersecting) { io.disconnect(); run(); }
             }, { threshold: 0.4 });
             io.observe(box);
+        })();
+    </script>
+
+    <dialog class="gallery" id="gallery" aria-label="Φωτογραφίες έργου">
+        <button type="button" class="gal-close" data-i18n-aria="gal.close" aria-label="Κλείσιμο">&times;</button>
+        <button type="button" class="gal-nav gal-prev" data-i18n-aria="gal.prev" aria-label="Προηγούμενη φωτογραφία">&#8249;</button>
+        <figure class="gal-fig"><img id="galImg" alt=""><figcaption id="galCap"></figcaption></figure>
+        <button type="button" class="gal-nav gal-next" data-i18n-aria="gal.next" aria-label="Επόμενη φωτογραφία">&#8250;</button>
+    </dialog>
+    <script>
+        (function () {
+            var dlg = document.getElementById('gallery');
+            if (!dlg || !dlg.showModal) return;
+            var img = document.getElementById('galImg'), cap = document.getElementById('galCap'), list = [], i = 0, title = '';
+            function show(n) {
+                i = (n + list.length) % list.length;
+                img.src = list[i]; img.alt = title + ' (' + (i + 1) + '/' + list.length + ')';
+                cap.textContent = title + ' \u00b7 ' + (i + 1) + ' / ' + list.length;
+            }
+            document.querySelectorAll('.project-card[data-gallery]').forEach(function (card) {
+                card.addEventListener('click', function () {
+                    try { list = JSON.parse(card.getAttribute('data-gallery')); } catch (e) { list = []; }
+                    if (!list.length) return;
+                    var h = card.querySelector('h3'); title = h ? h.textContent : '';
+                    show(0); dlg.showModal();
+                });
+            });
+            dlg.querySelector('.gal-close').addEventListener('click', function () { dlg.close(); });
+            dlg.querySelector('.gal-prev').addEventListener('click', function () { show(i - 1); });
+            dlg.querySelector('.gal-next').addEventListener('click', function () { show(i + 1); });
+            dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+            dlg.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowLeft') show(i - 1);
+                if (e.key === 'ArrowRight') show(i + 1);
+            });
+            var x0 = null;
+            dlg.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+            dlg.addEventListener('touchend', function (e) {
+                if (x0 === null) return;
+                var dx = e.changedTouches[0].clientX - x0; x0 = null;
+                if (Math.abs(dx) > 40) show(dx < 0 ? i + 1 : i - 1);
+            });
+        })();
+    </script>
+
+    <script>
+        (function () {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            document.querySelectorAll('.project-card[data-gallery]').forEach(function (card, idx) {
+                var list;
+                try { list = JSON.parse(card.getAttribute('data-gallery')); } catch (e) { return; }
+                if (list.length < 2) return;
+                list = list.map(function (s) { return s.replace(/\.webp$/, '-m.webp'); });
+                var imgs = card.querySelectorAll('.pj-img'), cur = imgs[0], nxt = imgs[1], k = 0, seen = false, timer = null;
+                function step() {
+                    if (!seen || document.hidden) return;
+                    k = (k + 1) % list.length;
+                    var pre = new Image();
+                    pre.onload = function () {
+                        nxt.src = pre.src; nxt.classList.add('on'); cur.classList.remove('on');
+                        var t = cur; cur = nxt; nxt = t;
+                    };
+                    pre.src = list[k];
+                }
+                if ('IntersectionObserver' in window) {
+                    new IntersectionObserver(function (en) { seen = en[0].isIntersecting; }, { threshold: 0.2 }).observe(card);
+                } else { seen = true; }
+                setTimeout(function () { step(); timer = setInterval(step, 5000); }, 5000 + idx * 1700);
+            });
         })();
     </script>
 

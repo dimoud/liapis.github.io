@@ -286,34 +286,27 @@
         's12.text':  { el: 'Τοπογραφικό διάγραμμα εξαρτημένο στο ΕΓΣΑ ’87, για άδεια, Κτηματολόγιο ή αλλαγή ορίων, με μέτρηση στο πεδίο και τις προδιαγραφές της υπηρεσίας που το ζητά.', en: 'Topographic plans tied to the Greek reference system EGSA ’87, for permits, the Land Registry or boundary changes, measured on site and drawn to the specifications of the authority that asks for them.' },
 
         /* PROJECTS */
-        'projects.eyebrow': { el: 'Το χαρτοφυλάκιό μας',   en: 'Our Portfolio' },
-        'projects.heading': {
-            el: 'Επιλεγμένα <em>Έργα</em>',
-            en: 'Selected <em>Projects</em>',
-        },
-        'p1.cat':   { el: 'Ηλεκτρονική Ταυτότητα',      en: 'Electronic Identity' },
-        'p1.title': { el: 'Κατοικία Αθήνα',              en: 'Residence Athens' },
-        'p1.desc':  { el: 'Πλήρης ΗΤΚ & βεβαίωση μηχανικού για μεταβίβαση', en: 'Full BEI & engineer\'s certificate for property transfer' },
+        'projects.eyebrow': { el: 'Από τη δουλειά μας', en: 'From our work' },
+        'projects.heading': { el: 'Δείγματα <em>Έργων</em>', en: 'Sample <em>Projects</em>' },
+        'projects.lead': { el: 'Μερικά από τα έργα που έχουμε αναλάβει. Πατήστε σε ένα έργο για να δείτε όλες τις φωτογραφίες.', en: 'A few of the projects we have carried out. Tap a project to see all its photos.' },
+        'pj1.cat': { el: 'Ανακαίνιση', en: 'Renovation' },
+        'pj1.title': { el: 'Κατοικία, Μύκονος', en: 'House, Mykonos' },
+        'pj1.desc': { el: 'Ανακαίνιση κατοικίας: εσωτερικοί χώροι και όψεις', en: 'House renovation: interiors and façades' },
+        'pj2.cat': { el: 'Ανακαίνιση', en: 'Renovation' },
+        'pj2.title': { el: 'Διαμέρισμα 1ου ορόφου, Πετράλωνα', en: 'First-floor apartment, Petralona' },
+        'pj2.desc': { el: 'Ανακαίνιση διαμερίσματος: κουζίνα, λουτρό, υπνοδωμάτια', en: 'Apartment renovation: kitchen, bathroom, bedrooms' },
+        'pj3.cat': { el: 'Ανακαίνιση', en: 'Renovation' },
+        'pj3.title': { el: 'Διαμέρισμα, Πετράλωνα', en: 'Apartment, Petralona' },
+        'pj3.desc': { el: 'Ανακαίνιση διαμερίσματος: κουζίνα, λουτρό, δάπεδα, βεράντα', en: 'Apartment renovation: kitchen, bathroom, floors, terrace' },
+        'pj.photos': { el: 'φωτογραφίες', en: 'photos' },
+        'gal.close': { el: 'Κλείσιμο', en: 'Close' },
+        'gal.prev': { el: 'Προηγούμενη φωτογραφία', en: 'Previous photo' },
+        'gal.next': { el: 'Επόμενη φωτογραφία', en: 'Next photo' },
 
-        'p2.cat':   { el: 'Οικοδομική Άδεια',            en: 'Building Permit' },
-        'p2.title': { el: 'Νέα Κατασκευή Πειραιάς',      en: 'New Construction Piraeus' },
-        'p2.desc':  { el: 'Αρχιτεκτονική μελέτη & αδειοδότηση', en: 'Architectural study & permit approval' },
 
-        'p3.cat':   { el: 'Τακτοποίηση Αυθαίρετου',     en: 'Unauthorized Structure Settlement' },
-        'p3.title': { el: 'Μονοκατοικία Γλυφάδα',        en: 'Detached House Glyfada' },
-        'p3.desc':  { el: 'Νομιμοποίηση κατά Ν.4495/2017', en: 'Legalization under Law 4495/2017' },
 
-        'p4.cat':   { el: 'Ενεργειακό Πιστοποιητικό',   en: 'Energy Certificate' },
-        'p4.title': { el: 'Εμπορικό Κτίριο Μαρούσι',    en: 'Commercial Building Maroussi' },
-        'p4.desc':  { el: 'ΠΕΑ & ενεργειακή αναβάθμιση', en: 'EPC & energy upgrade' },
 
-        'p5.cat':   { el: 'Scan to BIM',                 en: 'Scan to BIM' },
-        'p5.title': { el: 'Βιομηχανικό Κτίριο Ελαιώνας', en: 'Industrial Building Eleonas' },
-        'p5.desc':  { el: '3D Laser Scanning & ψηφιακή αποτύπωση', en: '3D Laser Scanning & digital survey' },
 
-        'p6.cat':   { el: 'Ανακαίνιση',                  en: 'Renovation' },
-        'p6.title': { el: 'Διαμέρισμα Κολωνάκι',         en: 'Apartment Kolonaki' },
-        'p6.desc':  { el: 'Πλήρης ανακαίνιση & επίβλεψη', en: 'Full renovation & supervision' },
 
         /* CONTACT */
         'contact.eyebrow': { el: 'Επικοινωνία', en: 'Contact' },
@@ -370,7 +363,7 @@
         'one.s3': { el: 'Υποβολή στις υπηρεσίες', en: 'Submission to the authorities' },
         'one.s4': { el: 'Έγκριση και παράδοση', en: 'Approval and handover' },
         'one.note': { el: 'Σας ενημερώνουμε σε κάθε βήμα, χωρίς να χρειάζεται να ρωτάτε.', en: 'We keep you updated at every step, without you having to ask.' },
-        'meas.projects':  { el: '6 ΕΡΓΑ &mdash; 1250.00 m²',       en: '6 PROJECTS &mdash; 1250.00 m²' },
+        'meas.projects': { el: '3 ΔΕΙΓΜΑΤΑ ΕΡΓΩΝ', en: '3 SAMPLE PROJECTS' },
 
         /* ΣΕΛΙΔΕΣ ΥΠΗΡΕΣΙΩΝ (anavathmisi #9) */
         'pg.crumb.home': { el: 'Αρχική', en: 'Home' },

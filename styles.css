@@ -1808,3 +1808,28 @@ nav:has(.nav-links.open), nav.scrolled:has(.nav-links.open) { backdrop-filter: n
 .contact-map-ph small { font-size: 12px; color: rgba(255,255,255,0.6); }
 .contact-map-dir { display: inline-block; margin-top: 12px; font-size: 13px; color: var(--gold2); padding: 6px 0; }
 .contact-map-dir:hover { color: var(--gold); }
+
+/* ── Δείγματα έργων + προβολή φωτογραφιών ── */
+.projects-lead { margin-top: 14px; max-width: 560px; color: rgba(255,255,255,0.72); font-size: 15px; line-height: 1.7; }
+button.project-card { display: block; width: 100%; padding: 0; border: 0; font: inherit; text-align: left; color: inherit; }
+button.project-card:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.project-count { position: absolute; top: 16px; right: 16px; z-index: 2; font-size: 11px; letter-spacing: 1px; color: #fff; background: rgba(14,13,11,0.72); padding: 6px 10px; display: inline-flex; gap: 6px; align-items: center; }
+.project-count i { color: var(--gold); font-size: 11px; }
+.gallery { width: 100vw; height: 100vh; height: 100dvh; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: var(--ink); color: #fff; }
+.gallery[open] { display: flex; align-items: center; justify-content: center; }
+.gallery::backdrop { background: rgba(0,0,0,0.6); }
+.gal-fig { margin: 0; max-width: min(92vw, 1400px); display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.gal-fig img { max-width: 100%; max-height: 82vh; max-height: 82dvh; object-fit: contain; }
+.gal-fig figcaption { font-size: 13px; letter-spacing: .5px; color: var(--gold2); text-align: center; }
+.gal-close { position: absolute; top: 14px; right: 18px; width: 48px; height: 48px; font-size: 34px; line-height: 1; background: none; border: 0; color: #fff; cursor: pointer; }
+.gal-nav { position: absolute; top: 50%; transform: translateY(-50%); width: 52px; height: 72px; font-size: 44px; line-height: 1; color: #fff; background: rgba(14,13,11,0.5); border: 1px solid rgba(201,168,108,0.35); cursor: pointer; }
+.gal-prev { left: 14px; } .gal-next { right: 14px; }
+.gal-close:hover, .gal-nav:hover { color: var(--gold); }
+@media (max-width: 1024px) and (min-width: 481px) { .projects-grid .project-card:first-child { grid-column: 1 / -1; aspect-ratio: 16/9; } }
+@media (max-width: 600px) { .gal-nav { width: 44px; height: 56px; font-size: 34px; top: auto; bottom: 18px; transform: none; } .gal-prev { left: 18px; } .gal-next { right: 18px; } .gal-fig img { max-height: 74vh; max-height: 74dvh; } }
+
+/* εναλλαγή φωτογραφιών στις κάρτες έργων, κάθε 5″ */
+.project-card .pj-img { position: absolute; inset: 0; opacity: 0; transition: opacity 1.2s ease, transform 0.7s var(--ease), filter 0.5s; }
+.project-card .pj-img.on { opacity: 1; }
+.project-card .pj-img:not([src]) { display: none; }
+.project-card .project-card-overlay, .project-card .project-card-info { z-index: 1; }
