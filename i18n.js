@@ -214,8 +214,15 @@
         'hero.name2':   { el: 'ΛΙΑΠΗΣ',                  en: 'LIAPIS' },
         'hero.eyebrow': { el: 'Πολιτικός Μηχανικός ΑΠΘ', en: 'Civil Engineer — AUTH' },
         'hero.cta':     { el: 'Επικοινωνία',              en: 'Get in Touch' },
-        'hero.value':   { el: 'Τακτοποίηση αυθαιρέτων, Ηλεκτρονική Ταυτότητα Κτιρίου και οικοδομικές άδειες σε όλη την Αττική.', en: 'Legalising unauthorised works, Building e-Identity and building permits across Attica.' },
+        'hero.value':   { el: 'Τακτοποίηση αυθαιρέτων, Ηλεκτρονική Ταυτότητα Κτιρίου και οικοδομικές άδειες στην Αθήνα, σε όλη την Αττική και στη Λάρισα.', en: 'Legalising unauthorised works, Building e-Identity and building permits in Athens, across Attica and in Larissa.' },
         'hero.call':    { el: 'Κλήση · 694 867 5267', en: 'Call · +30 694 867 5267' },
+        'hero.h1role': { el: ' — Πολιτικός Μηχανικός στην Αθήνα και τη Λάρισα', en: ' — Civil Engineer in Athens and Larissa' },
+        'areas.h': { el: 'Πού εξυπηρετούμε', en: 'Where we work' },
+        'areas.ath.t': { el: 'Αθήνα και Αττική', en: 'Athens and Attica' },
+        'areas.ath.p': { el: 'Γραφείο στη Δελβίνου 31, στην Αθήνα. Αυτοψίες σε όλη την Αττική: κέντρο, Πειραιάς, βόρεια, νότια, ανατολικά και δυτικά προάστια.', en: 'Office at 31 Delvinou St, Athens. Site visits across Attica: the centre, Piraeus and the northern, southern, eastern and western suburbs.' },
+        'areas.lar.t': { el: 'Λάρισα', en: 'Larissa' },
+        'areas.lar.p': { el: 'Με καταγωγή από τη Λάρισα και συνεργάτη στην πόλη, αναλαμβάνουμε και εκεί Ηλεκτρονική Ταυτότητα, τακτοποίηση αυθαιρέτων και άδειες.', en: 'With roots in Larissa and a partner in the city, we also take on Building e-Identity, legalisation of unauthorised works and permits there.' },
+        'areas.lar.more': { el: 'Πώς δουλεύουμε στη Λάρισα', en: 'How we work in Larissa' },
 
         /* MARQUEE */
         'marquee.m1': { el: 'Άμεση Αυτοψία',                    en: 'Immediate Site Inspection' },
