@@ -1,4 +1,4 @@
-/* consent.js — GDPR Cookie Consent for expertease.eu
+/* consent.js — GDPR Cookie Consent for vaiosliapis.gr
  * - Fires gtag consent signals (analytics_storage, ad_storage)
  * - Stores choice in localStorage (no cookie needed)
  * - Supports Greek / English via html[lang]
@@ -7,7 +7,7 @@
 
 (function () {
     var STORAGE_KEY = 'liapis_consent';
-    var GA_ID       = '';                  /* ← βάλε εδώ το G-XXXXXXXXXX από το Google Analytics */
+    var GA_ID       = 'G-C707V9N08V';      /* Google Analytics 4 — ροή δεδομένων vaiosliapis.gr */
 
     /* Χωρίς αναγνωριστικό μέτρησης δεν υπάρχει τίποτα να συναινέσει κανείς: καμία μπάρα. */
     if (!GA_ID) return;
