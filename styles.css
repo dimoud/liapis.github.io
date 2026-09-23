@@ -1893,3 +1893,56 @@ button.project-card:focus-visible { outline: 2px solid var(--gold); outline-offs
 .contact-map-band iframe { display: block; width: 100%; height: 100%; border: 0; filter: grayscale(35%) contrast(1.05); }
 @media (max-width: 768px) { .contact-map-band { height: 260px; } }
 .service-card .service-more { display: inline-flex; align-items: center; min-height: 44px; min-width: 44px; }
+
+/* ── Πρώτη οθόνη: περισσότερη κίνηση ── */
+/* όνομα: γράμμα-γράμμα από μάσκα */
+.hero-name .line1, .hero-name .line2 { animation: none !important; }
+.hero-anim:not(.hero-anim-done) .hero-name .line1, .hero-anim:not(.hero-anim-done) .hero-name .line2 { overflow: hidden; padding-top: .12em; margin-top: -.12em; }
+.hero-anim .hero-name .ch { display: inline-block; transform: translateY(110%) rotate(6deg); opacity: 0;
+    animation: heroCh .9s cubic-bezier(.2,.8,.2,1) calc(.25s + var(--i) * 45ms) forwards; }
+@keyframes heroCh { to { transform: none; opacity: 1; } }
+/* ΛΙΑΠΗΣ: χρυσή λάμψη που περνά κάθε λίγα δευτερόλεπτα */
+.hero-anim-done .hero-name .line2 {
+    background: linear-gradient(100deg, var(--gold) 0%, var(--gold) 42%, #f6e3b4 50%, var(--gold) 58%, var(--gold) 100%);
+    background-size: 260% 100%; background-position: 100% 0;
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    animation: heroShine 7s ease-in-out 0.4s infinite !important; }
+@keyframes heroShine { 0% { background-position: 100% 0; } 30%, 100% { background-position: 0% 0; } }
+/* υπότιτλος: η γραμμή σχεδιάζεται */
+.hero-anim .hero-eyebrow::before { transform-origin: left; animation: heroRule 1s var(--ease) 1.1s both; }
+.hero-anim .hero-eyebrow span { animation: heroUp .8s var(--ease) 1.25s both; }
+@keyframes heroRule { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@keyframes heroUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+.hero-anim .hero-inner .hero-value { animation: heroUp .8s var(--ease) 1.4s both; }
+.hero-anim .hero-inner .hero-actions { animation: heroUp .8s var(--ease) 1.55s both; }
+.hero-anim .hero-inner .hero-svc { animation: none; }
+.hero-anim .hero-svc a { animation: heroUp .7s var(--ease) both; }
+.hero-anim .hero-svc a:nth-child(1) { animation-delay: 1.75s; }
+.hero-anim .hero-svc a:nth-child(2) { animation-delay: 1.87s; }
+.hero-anim .hero-svc a:nth-child(3) { animation-delay: 1.99s; }
+/* κουμπί κλήσης: απαλός παλμός */
+.hero-anim .hero-actions .btn-gold { position: relative; }
+.hero-anim .hero-actions .btn-gold::after { content: ''; position: absolute; inset: 0; border: 1px solid var(--gold); pointer-events: none; animation: heroRing 3.2s ease-out 3s infinite; opacity: 0; border-radius: inherit; }
+@keyframes heroRing { 0% { opacity: .8; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(1.12, 1.4); } }
+/* πορτρέτο: το χρυσό πλαίσιο σχεδιάζεται, αργό ζουμ */
+.hero-anim .hero-portrait::after { animation: heroFrame 1.6s cubic-bezier(.65,0,.35,1) .9s both; }
+@keyframes heroFrame { from { clip-path: inset(0 100% 100% 0); } 50% { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+.hero-anim .hero-portrait img { animation: heroPortraitIn 1.4s var(--ease) .1s both, heroKB 22s ease-in-out 1.5s infinite alternate; transition: translate .6s cubic-bezier(.2,.8,.2,1); }
+@keyframes heroKB { from { transform: scale(1); } to { transform: scale(1.07); } }
+.hero-anim .hero-portrait figcaption { animation: heroUp .8s var(--ease) 2.2s both; }
+@media (max-width: 900px) { .hero-anim .hero-portrait figcaption { animation-name: heroFade; } }
+@keyframes heroFade { from { opacity: 0; } to { opacity: 1; } }
+/* αλφάδι λέιζερ: γραμμή που σαρώνει τον χώρο κάθε λίγα δευτερόλεπτα */
+.hero-scan { position: absolute; inset: 0; z-index: 1; pointer-events: none; overflow: hidden; }
+.hero-scan span { position: absolute; left: 0; right: 0; top: 0; height: 1px; opacity: 0;
+    background: linear-gradient(90deg, transparent, rgba(201,168,108,.0) 5%, rgba(232,201,138,.85) 50%, rgba(201,168,108,0) 95%, transparent);
+    box-shadow: 0 0 12px 2px rgba(232,201,138,.35); }
+.hero-anim .hero-scan span { animation: heroScan 9s cubic-bezier(.45,0,.55,1) 2.4s infinite; }
+@keyframes heroScan { 0% { top: 8%; opacity: 0; } 6% { opacity: .9; } 44% { top: 92%; opacity: .9; } 50%, 100% { top: 92%; opacity: 0; } }
+@media (min-width: 901px) { .hero-scan { right: calc(42% + 4px); } }
+@media (prefers-reduced-motion: reduce) {
+    .hero-scan { display: none; }
+    .hero-anim-done .hero-name .line2 { animation: none !important; }
+}
+.hero-pre .hero-name { opacity: 0; animation: heroFade .01s 2.5s forwards; }
+.hero-portrait { overflow: hidden; }

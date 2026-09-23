@@ -42,6 +42,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="fa-subset.css">
     <link rel="stylesheet" href="styles.css">
+    <script>if(!matchMedia('(prefers-reduced-motion: reduce)').matches)document.documentElement.classList.add('hero-pre');</script>
     <link rel="stylesheet" href="expertease-credit.css">
 </head>
 <body>
@@ -125,6 +126,7 @@
         <div class="hero-overlay"></div>
         <div class="hero-lines"></div>
         <div class="hero-blueprint" aria-hidden="true"></div>
+        <div class="hero-scan" aria-hidden="true"><span></span></div>
         <div class="crosshair-wrap" id="crosshairWrap" aria-hidden="true">
             <div class="crosshair"><span class="ch-circle"></span></div>
             <span class="ch-label" data-i18n="meas.auth">ΑΠΘ</span>
@@ -709,6 +711,47 @@
             window.addEventListener('resize', layout);
             window.addEventListener('load', layout);
             layout();
+        })();
+    </script>
+
+    <script>
+        (function () {
+          function go() {
+            var hero = document.querySelector('.hero');
+            document.documentElement.classList.remove('hero-pre');
+            if (!hero) return;
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduce) { hero.classList.add('hero-still'); return; }
+            var lines = hero.querySelectorAll('.hero-name .line1, .hero-name .line2'), k = 0, total = 0;
+            lines.forEach(function (ln) {
+                var txt = ln.textContent; ln.textContent = ''; ln.setAttribute('aria-label', txt);
+                txt.split('').forEach(function (ch) {
+                    var s = document.createElement('span');
+                    s.className = 'ch'; s.setAttribute('aria-hidden', 'true');
+                    s.style.setProperty('--i', k++); s.textContent = ch;
+                    ln.appendChild(s);
+                });
+            });
+            total = k;
+            hero.classList.add('hero-anim');
+            setTimeout(function () {
+                lines.forEach(function (ln) { if (ln.querySelector('.ch')) ln.textContent = ln.textContent; ln.removeAttribute('aria-label'); });
+                hero.classList.add('hero-anim-done');
+            }, 900 + total * 45 + 400);
+            var img = hero.querySelector('.hero-portrait img');
+            if (img && window.matchMedia('(hover: hover) and (min-width: 901px)').matches) {
+                var tx = 0, ty = 0, raf = null;
+                hero.addEventListener('pointermove', function (e) {
+                    var r = hero.getBoundingClientRect();
+                    tx = ((e.clientX - r.left) / r.width - 0.5) * -14;
+                    ty = ((e.clientY - r.top) / r.height - 0.5) * -10;
+                    if (!raf) raf = requestAnimationFrame(function () { raf = null; img.style.translate = tx.toFixed(1) + 'px ' + ty.toFixed(1) + 'px'; });
+                });
+                hero.addEventListener('pointerleave', function () { img.style.translate = '0 0'; });
+            }
+          }
+          if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { setTimeout(go, 0); });
+          else setTimeout(go, 0);
         })();
     </script>
 
