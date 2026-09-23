@@ -231,7 +231,7 @@
         'about.eyebrow': { el: 'Ο μηχανικός', en: 'The engineer' },
         'about.drawCap': { el: 'Τομή · Φέρων οργανισμός από οπλισμένο σκυρόδεμα', en: 'Section · Reinforced-concrete structural frame' },
         'news.eyebrow': { el: 'Νέα του κλάδου', en: 'Industry news' },
-        'news.heading': { el: 'Τι <em>αλλάζει</em> στη νομοθεσία', en: 'What is <em>changing</em> in the law' },
+        'news.heading': { el: 'Τι <em>αλλάζει</em> στη νομοθεσία', en: 'News <em>feed</em>' },
 
         /* FEATURES */
         'feature.timeline.label':     { el: 'Χρονοδιάγραμμα', en: 'Timeline' },
