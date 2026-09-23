@@ -1696,3 +1696,5 @@
     .news-track { animation: none; }
     .news-band { overflow-x: auto; }
 }
+@media (max-width: 900px) { .page-related ul { grid-template-columns: 1fr; } }
+.page-related li:last-child:nth-child(odd):not(:first-child) { grid-column: 1 / -1; }
