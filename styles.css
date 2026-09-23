@@ -1698,3 +1698,24 @@
 }
 @media (max-width: 900px) { .page-related ul { grid-template-columns: 1fr; } }
 .page-related li:last-child:nth-child(odd):not(:first-child) { grid-column: 1 / -1; }
+
+/* ── Σελίδα «Υπηρεσίες» ── */
+.page-main--wide { max-width: 1180px; }
+.hub-grid { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.hub-card {
+    display: flex; flex-direction: column; gap: 10px; height: 100%; padding: 28px 26px 24px;
+    background: var(--white); border: 1px solid rgba(14,13,11,0.08); border-top: 3px solid var(--gold);
+    color: var(--ink); text-decoration: none; transition: transform .3s var(--ease), box-shadow .3s;
+}
+a.hub-card:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(14,13,11,0.1); }
+.hub-card .fa-solid { color: var(--gold); font-size: 22px; }
+.page-main .hub-card h2 { font-family: 'Inter', sans-serif; font-size: 18px; font-weight: 600; margin: 4px 0 0; line-height: 1.35; }
+.hub-card p { font-size: 14.5px; line-height: 1.65; color: #3d3935; margin: 0; }
+.hub-more { margin-top: auto; padding-top: 8px; font-size: 12px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #8a6d3b; }
+.hub-card--plain { border-top-color: rgba(201,168,108,0.45); }
+.nav-links .nav-sub a.nav-sub-all { border-top: 1px solid rgba(201,168,108,0.2); margin-top: 6px; color: var(--gold); }
+@media (max-width: 768px) {
+    .hub-grid { grid-template-columns: 1fr; }
+    a.hub-card p { display: -webkit-box; -webkit-line-clamp: 5; line-clamp: 5; -webkit-box-orient: vertical; overflow: hidden; }  /* το πλήρες κείμενο είναι στη σελίδα της υπηρεσίας */
+    .nav-links.open .nav-sub a.nav-sub-all { border-top: 0; margin-top: 0; }
+}
