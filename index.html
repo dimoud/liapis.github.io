@@ -178,85 +178,73 @@
 
     <!-- ===== ABOUT ===== -->
     <section class="about-section" id="about">
-        <div class="about-grid about-grid--single">
-            <div class="about-content" data-reveal>
-                <h2 class="section-heading light" data-i18n-html="about.heading">
-                  Εμπειρία &amp; <em>Εξειδίκευση</em>
-                </h2>
-                <p class="about-lead" data-i18n-html="about.lead">
-                    Διπλωματούχος Πολιτικός Μηχανικός του Αριστοτέλειου Πανεπιστημίου Θεσσαλονίκης, με πολυετή εμπειρία στην αντιμετώπιση πολεοδομικών, κτηματολογικών και κατασκευαστικών θεμάτων για ιδιώτες και επαγγελματίες σε όλη την Αττική.
-                </p>
-                <div class="dim-row" data-dim>
-                    <div class="dim-tick"></div>
-                    <div class="dim-bar dim-l"></div>
-                    <span class="dim-value"><span data-i18n="about.dim">Αθήνα &mdash; Αττική</span></span>
-                    <div class="dim-bar dim-r"></div>
-                    <div class="dim-tick"></div>
-                </div>
-                <div class="about-features">
-
-                    <div class="feature-row" data-reveal>
-                        <i class="fa-solid fa-clock"></i>
+        <div class="about2">
+            <div class="about2-text" data-reveal>
+                <div class="eyebrow"><span data-i18n="about.eyebrow">Ο μηχανικός</span></div>
+                <h2 class="section-heading light" data-i18n-html="about.heading">Εμπειρία &amp; <em>Εξειδίκευση</em></h2>
+                <p class="about-lead" data-i18n-html="about.lead">Διπλωματούχος Πολιτικός Μηχανικός του Αριστοτέλειου Πανεπιστημίου Θεσσαλονίκης, με <span class="years-exp"></span>+ χρόνια εμπειρία στην αντιμετώπιση πολεοδομικών, κτηματολογικών και κατασκευαστικών θεμάτων για ιδιώτες και επαγγελματίες σε όλη την Αττική.</p>
+                <ul class="about-feat">
+                    <li>
+                        <i class="fa-solid fa-clock" aria-hidden="true"></i>
                         <strong data-i18n="feature.timeline.label">Χρονοδιάγραμμα</strong>
                         <span data-i18n="feature.timeline.text">Γρήγορη ανταπόκριση &amp; τήρηση προθεσμιών</span>
-                    </div>
-                    <div class="feature-row" data-reveal>
-                        <i class="fa-solid fa-handshake"></i>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-handshake" aria-hidden="true"></i>
                         <strong data-i18n="feature.transparency.label">Διαφάνεια</strong>
                         <span data-i18n="feature.transparency.text">Σαφής ενημέρωση σε κάθε στάδιο</span>
-                    </div>
-                    <div class="feature-row" data-reveal>
-                        <i class="fa-solid fa-map-location-dot"></i>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
                         <strong data-i18n="feature.direct.label">Άμεση</strong>
                         <span data-i18n="feature.direct.text">Εξυπηρέτηση σε ολόκληρη την Αττική</span>
-                    </div>
-                </div>
-
-                <!-- Caliper animation -->
-                <div class="caliper-wrap" id="caliperWrap" aria-hidden="true">
-                    <svg class="caliper-svg" id="caliperSvg" viewBox="0 0 480 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <!-- Scale beam -->
-                        <rect x="88" y="38" width="310" height="4" rx="1" stroke="currentColor" stroke-width="1" fill="rgba(201,168,108,0.07)"/>
-                        <!-- Scale ticks: major every 62px ≈ 1m, minor every 15.5px ≈ 0.25m -->
-                        <g stroke="currentColor" opacity="0.45">
-                            <line x1="103" y1="38" x2="103" y2="44" stroke-width="0.8"/>
-                            <line x1="118" y1="38" x2="118" y2="44" stroke-width="0.8"/>
-                            <line x1="134" y1="38" x2="134" y2="44" stroke-width="0.8"/>
-                            <line x1="150" y1="36" x2="150" y2="46" stroke-width="1.1"/><!-- 1m -->
-                            <line x1="165" y1="38" x2="165" y2="44" stroke-width="0.8"/>
-                            <line x1="181" y1="38" x2="181" y2="44" stroke-width="0.8"/>
-                            <line x1="196" y1="38" x2="196" y2="44" stroke-width="0.8"/>
-                            <line x1="212" y1="36" x2="212" y2="46" stroke-width="1.1"/><!-- 2m -->
-                            <line x1="227" y1="38" x2="227" y2="44" stroke-width="0.8"/>
-                            <line x1="243" y1="38" x2="243" y2="44" stroke-width="0.8"/>
-                            <line x1="258" y1="38" x2="258" y2="44" stroke-width="0.8"/>
-                            <line x1="274" y1="36" x2="274" y2="46" stroke-width="1.1"/><!-- 3m -->
-                            <line x1="289" y1="38" x2="289" y2="44" stroke-width="0.8"/>
-                            <line x1="305" y1="38" x2="305" y2="44" stroke-width="0.8"/>
-                            <line x1="320" y1="38" x2="320" y2="44" stroke-width="0.8"/>
-                            <line x1="336" y1="36" x2="336" y2="46" stroke-width="1.1"/><!-- 4m -->
-                            <line x1="352" y1="38" x2="352" y2="44" stroke-width="0.8"/>
-                            <line x1="367" y1="38" x2="367" y2="44" stroke-width="0.8"/>
-                            <line x1="383" y1="38" x2="383" y2="44" stroke-width="0.8"/>
-                        </g>
-                        <!-- Fixed left jaw -->
-                        <path d="M88 18 L88 60 L70 60 L70 42" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="rgba(201,168,108,0.06)"/>
-                        <!-- Sliding right jaw (JS animates translateX on this group, starts at -262px = closed) -->
-                        <g id="calJawGroup" style="transform:translateX(-262px)">
-                            <path d="M350 18 L350 60 L368 60 L368 42" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="rgba(201,168,108,0.06)"/>
-                            <line x1="350" y1="36" x2="350" y2="54" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
-                        </g>
-                        <!-- Dimension line above -->
-                        <line x1="86" y1="13" x2="90" y2="20" stroke="currentColor" stroke-width="1.5" opacity="0.7"/><!-- left diagonal tick -->
-                        <line id="calDimLine" x1="88" y1="16" x2="88" y2="16" stroke="currentColor" stroke-width="1" opacity="0.55"/>
-                        <line id="calDimTickR" x1="86" y1="13" x2="90" y2="20" stroke="currentColor" stroke-width="1.5" opacity="0.7"/><!-- right tick (mirrors left, x updates) -->
-                        <!-- Value label -->
-                        <text id="caliperVal" x="88" y="10" text-anchor="middle"
-                              font-family="Cormorant Garamond, serif" font-size="12"
-                              letter-spacing="2.5" fill="currentColor" opacity="0.85">0.000 m</text>
-                    </svg>
-                </div>
+                    </li>
+                </ul>
             </div>
+
+            <!-- Τομή κτιρίου από οπλισμένο σκυρόδεμα: σχεδιάζεται γραμμή-γραμμή όταν μπει στην οθόνη -->
+            <figure class="about-draw" id="aboutDraw" aria-hidden="true">
+                <svg viewBox="0 0 420 470" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g class="axis">
+                        <path class="ln" style="--d:0s" pathLength="1" d="M110 48V440M210 48V440M310 48V440"/>
+                        <circle class="ln" style="--d:.1s" pathLength="1" cx="110" cy="30" r="13"/>
+                        <circle class="ln" style="--d:.15s" pathLength="1" cx="210" cy="30" r="13"/>
+                        <circle class="ln" style="--d:.2s" pathLength="1" cx="310" cy="30" r="13"/>
+                        <text class="tx" style="--d:.5s" x="110" y="35">1</text>
+                        <text class="tx" style="--d:.55s" x="210" y="35">2</text>
+                        <text class="tx" style="--d:.6s" x="310" y="35">3</text>
+                    </g>
+                    <g class="ground">
+                        <path class="ln" style="--d:.2s" pathLength="1" d="M20 400H400"/>
+                        <path class="ln thin" style="--d:.5s" pathLength="1" d="M30 412l12-12M60 412l12-12M150 412l12-12M180 412l12-12M250 412l12-12M280 412l12-12M350 412l12-12M380 412l12-12"/>
+                    </g>
+                    <g class="struct">
+                        <path class="ln" style="--d:.4s" pathLength="1" d="M86 400V426H134V400M186 400V426H234V400M286 400V426H334V400"/>
+                        <path class="ln" style="--d:.7s" pathLength="1" d="M104 400V100M116 400V100M204 400V100M216 400V100M304 400V100M316 400V100"/>
+                        <path class="ln" style="--d:1.1s" pathLength="1" d="M92 300H328M92 312H328"/>
+                        <path class="ln" style="--d:1.35s" pathLength="1" d="M92 200H328M92 212H328"/>
+                        <path class="ln" style="--d:1.6s" pathLength="1" d="M92 100H328M92 112H328M92 100V86M328 100V86"/>
+                        <path class="ln dash" style="--d:1.9s" pathLength="1" d="M116 312V330H204V312M216 312V330H304V312M116 212V230H204V212M216 212V230H304V212M116 112V130H204V112M216 112V130H304V112"/>
+                    </g>
+                    <g class="fill">
+                        <path class="ln thin" style="--d:2.2s" pathLength="1" d="M140 350h40v34h-40zM140 250h40v34h-40zM140 150h40v34h-40zM240 250h40v34h-40zM240 150h40v34h-40z"/>
+                        <path class="ln thin" style="--d:2.4s" pathLength="1" d="M224 400v-12h10v-12h10v-12h10v-12h10v-12h10v-12h10v-12h10v-12h10"/>
+                    </g>
+                    <g class="elev">
+                        <path class="ln thin" style="--d:2.1s" pathLength="1" d="M336 400H392M336 300H392M336 200H392M336 100H392"/>
+                        <path class="ln" style="--d:2.3s" pathLength="1" d="M352 400l-6-9h12zM352 300l-6-9h12zM352 200l-6-9h12zM352 100l-6-9h12z"/>
+                        <text class="tx lv" style="--d:2.5s" x="364" y="393">±0.00</text>
+                        <text class="tx lv" style="--d:2.6s" x="364" y="293">+3.20</text>
+                        <text class="tx lv" style="--d:2.7s" x="364" y="193">+6.40</text>
+                        <text class="tx lv" style="--d:2.8s" x="364" y="93">+9.60</text>
+                    </g>
+                    <g class="dim">
+                        <path class="ln" style="--d:2.6s" pathLength="1" d="M56 100V400M50 106l12-12M50 406l12-12M48 100H92M48 400H86"/>
+                        <text class="tx dm" style="--d:3s" x="44" y="250" transform="rotate(-90 44 250)">9.60 m</text>
+                    </g>
+                </svg>
+                <figcaption data-i18n="about.drawCap">Τομή · Φέρων οργανισμός από οπλισμένο σκυρόδεμα</figcaption>
+            </figure>
         </div>
     </section>
 
@@ -441,6 +429,17 @@
     </section>
 
     <!-- ===== CONTACT ===== -->
+    <!-- Νέα του κλάδου: διαβάζονται από το news.json· η ενότητα εμφανίζεται μόνο αν φορτώσει -->
+    <section class="news-section" id="newsSection" data-src="news.json" hidden aria-labelledby="newsHeading">
+        <div class="news-head" data-reveal>
+            <div class="eyebrow"><span data-i18n="news.eyebrow">Νέα του κλάδου</span></div>
+            <h2 class="section-heading" id="newsHeading" data-i18n-html="news.heading">Τι <em>αλλάζει</em> στη νομοθεσία</h2>
+        </div>
+        <div class="news-band" id="newsBand">
+            <div class="news-track" id="newsTrack"></div>
+        </div>
+    </section>
+
     <section class="contact-section" id="contact">
         <div class="contact-grid">
             <div class="contact-info" data-reveal>
@@ -604,6 +603,19 @@
     <script src="eng-animations.js"></script>
     <script src="i18n.js"></script>
     <script src="consent.js"></script>
+    <script src="news-carousel.js" defer></script>
+    <script>
+        (function () {
+            var fig = document.getElementById('aboutDraw');
+            if (!fig) return;
+            function go() { fig.classList.add('in'); setTimeout(function () { fig.classList.add('done'); }, 4200); }
+            if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) { go(); return; }
+            var io = new IntersectionObserver(function (es) {
+                if (es[0].isIntersecting) { go(); io.disconnect(); }
+            }, { threshold: 0.35 });
+            io.observe(fig);
+        })();
+    </script>
     <script src="contact-form.js" defer></script>
 </body>
 </html>

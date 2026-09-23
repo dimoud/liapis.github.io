@@ -1,0 +1,114 @@
+{
+  "_comment": "Πηγή για το καρουζέλ «Νέα του κλάδου» της αρχικής. Πεδία: id, date (ISO, ημερομηνία ΦΕΚ ή ανακοίνωσης), category/title/summary (el/en), source (κείμενο), url (σελίδα του ιστότοπου ή κενό). Νεότερα πρώτα — η ταξινόμηση γίνεται και αυτόματα.",
+  "updated": "2026-09-23",
+  "items": [
+    {
+      "id": "n5317-2026-ektos-sxediou",
+      "date": "2026-07-10",
+      "category": {
+        "el": "Οικοδομικές άδειες",
+        "en": "Building permits"
+      },
+      "title": {
+        "el": "Έως 30/6/2027 οι αιτήσεις με τις μεταβατικές διατάξεις",
+        "en": "Transitional-rule applications extended to 30/6/2027"
+      },
+      "summary": {
+        "el": "Ο ν.5317/2026 μετέθεσε από 30/6/2026 σε 30/6/2027 την προθεσμία για άδειες και προεγκρίσεις σε ακίνητα που πληρούσαν τις προϋποθέσεις πριν από τις 9/12/2020.",
+        "en": "Law 5317/2026 moved the deadline from 30/6/2026 to 30/6/2027 for permits and pre-approvals on properties that met the requirements before 9/12/2020."
+      },
+      "source": "ν.5317/2026, ΦΕΚ Α΄ 108/10.7.2026",
+      "url": "oikodomiki-adeia/"
+    },
+    {
+      "id": "n5317-2026-katedafiseis",
+      "date": "2026-07-10",
+      "category": {
+        "el": "Αυθαίρετα",
+        "en": "Unauthorised works"
+      },
+      "title": {
+        "el": "Κατεδαφίσεις: προτεραιότητα στα πρωτόκολλα ως 30/6/2027",
+        "en": "Demolitions: priority for orders issued by 30/6/2027"
+      },
+      "summary": {
+        "el": "Οι οριστικές εκθέσεις αυτοψίας και τα πρωτόκολλα κατεδάφισης που έχουν εκδοθεί μέχρι τις 30/6/2027 εκτελούνται κατά προτεραιότητα. Όποιος έχει αυθαίρετο που τακτοποιείται, καλό είναι να μην περιμένει.",
+        "en": "Final inspection reports and demolition orders issued by 30/6/2027 are executed first. If your unauthorised work can be legalised, it is better not to wait."
+      },
+      "source": "ν.5317/2026, ΦΕΚ Α΄ 108/10.7.2026",
+      "url": "taktopoiisi-afthaireton/"
+    },
+    {
+      "id": "eadeies-epanekdosi-art68",
+      "date": "2026-03-23",
+      "category": {
+        "el": "e-Άδειες",
+        "en": "e-Adeies"
+      },
+      "title": {
+        "el": "Επανέκδοση οικοδομικής άδειας μέσα από το e-Άδειες",
+        "en": "Building-permit reissue now available on e-Adeies"
+      },
+      "summary": {
+        "el": "Το σύστημα δέχεται πλέον την πράξη «Επανέκδοση Ο.Α.» του άρθρου 68 ν.5197/2025, για άδειες που ακυρώθηκαν ή εκκρεμεί η ακύρωσή τους, εφόσον οι εργασίες είχαν ξεκινήσει ως τις 11/12/2024.",
+        "en": "The platform now accepts the permit-reissue act of article 68, law 5197/2025, for permits annulled or under challenge, provided works had started by 11/12/2024."
+      },
+      "source": "ΤΕΕ, ανακοίνωση e-Άδειες 23/3/2026",
+      "url": "oikodomiki-adeia/"
+    },
+    {
+      "id": "n5270-2026-afthaireta",
+      "date": "2026-01-23",
+      "category": {
+        "el": "Αυθαίρετα",
+        "en": "Unauthorised works"
+      },
+      "title": {
+        "el": "Τακτοποίηση αυθαιρέτων κατηγοριών 1-4 έως 31/3/2028",
+        "en": "Legalising category 1-4 works until 31/3/2028"
+      },
+      "summary": {
+        "el": "Το άρθρο 43 του ν.5270/2026 παρατείνει την υπαγωγή στον ν.4495/2017 για τις κατηγορίες 1 έως 4. Το πρόστιμο υπολογίζεται στην αρχή, μετά την αυτοψία.",
+        "en": "Article 43 of law 5270/2026 extends applications under law 4495/2017 for categories 1 to 4. The fine is calculated at the start, after the site survey."
+      },
+      "source": "ν.5270/2026 άρθρο 43, ΦΕΚ Α΄ 9/23.1.2026",
+      "url": "taktopoiisi-afthaireton/"
+    },
+    {
+      "id": "n5270-2026-itk",
+      "date": "2026-01-23",
+      "category": {
+        "el": "Ταυτότητα κτιρίου",
+        "en": "Building e-Identity"
+      },
+      "title": {
+        "el": "Ηλεκτρονική Ταυτότητα: παράταση έως 1/2/2028 για κτίρια ειδικής χρήσης",
+        "en": "Building e-Identity: special-use buildings extended to 1/2/2028"
+      },
+      "summary": {
+        "el": "Ο ίδιος νόμος δίνει προθεσμία ως την 1η Φεβρουαρίου 2028 για ορισμένες κατηγορίες κτιρίων ειδικής χρήσης, καθώς και για ακίνητα του Δημοσίου και των δήμων.",
+        "en": "The same law sets 1 February 2028 as the deadline for certain categories of special-use buildings and for state and municipal property."
+      },
+      "source": "ν.5270/2026 άρθρο 43, ΦΕΚ Α΄ 9/23.1.2026",
+      "url": "ilektroniki-taftotita-ktiriou/"
+    },
+    {
+      "id": "n5270-2026-nok",
+      "date": "2026-01-23",
+      "category": {
+        "el": "ΝΟΚ",
+        "en": "Building code"
+      },
+      "title": {
+        "el": "Άδειες με κίνητρα ΝΟΚ: επανέκδοση το αργότερο ως 31/12/2026",
+        "en": "Permits with building-code bonuses: reissue by 31/12/2026"
+      },
+      "summary": {
+        "el": "Για τις άδειες που θίγονται από τις αποφάσεις του ΣτΕ για τα κίνητρα του ΝΟΚ, η επανέκδοση μέσω e-Άδειες γίνεται το αργότερο ως τις 31/12/2026.",
+        "en": "For permits affected by the Council of State rulings on building-code bonuses, reissue through e-Adeies must happen by 31/12/2026 at the latest."
+      },
+      "source": "ν.5270/2026 άρθρο 43, ΦΕΚ Α΄ 9/23.1.2026",
+      "url": "oikodomiki-adeia/"
+    }
+  ]
+}

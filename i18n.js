@@ -69,6 +69,10 @@
             en: 'Licensed Civil Engineer from the Aristotle University of Thessaloniki, with <span class="years-exp"></span>+ years of experience in urban planning, cadastral, and construction matters for individuals and professionals throughout Attica.',
         },
         'about.dim': { el: 'Αθήνα — Αττική', en: 'Athens — Attica' },
+        'about.eyebrow': { el: 'Ο μηχανικός', en: 'The engineer' },
+        'about.drawCap': { el: 'Τομή · Φέρων οργανισμός από οπλισμένο σκυρόδεμα', en: 'Section · Reinforced-concrete structural frame' },
+        'news.eyebrow': { el: 'Νέα του κλάδου', en: 'Industry news' },
+        'news.heading': { el: 'Τι <em>αλλάζει</em> στη νομοθεσία', en: 'What is <em>changing</em> in the law' },
 
         /* FEATURES */
         'feature.timeline.label':     { el: 'Χρονοδιάγραμμα', en: 'Timeline' },
@@ -186,7 +190,7 @@
         'skip':           { el: 'Μετάβαση στο περιεχόμενο', en: 'Skip to content' },
         'nav.name':       { el: 'Β. ΛΙΑΠΗΣ',              en: 'V. LIAPIS' },
         'person.name':    { el: 'Βάιος Λιάπης',           en: 'Vaios Liapis' },
-        'contact.area':   { el: 'Αθήνα &amp; Όλη η Αττική', en: 'Athens &amp; all of Attica' },
+        'contact.area':   { el: 'Αθήνα & Όλη η Αττική', en: 'Athens & all of Attica' },
         'meas.elev':      { el: 'ΥΨ',                     en: 'ALT' },
         'meas.auth':      { el: 'ΑΠΘ',                    en: 'AUTH' },
         'meas.hero':      { el: 'ΠΡΟΣΟΨΗ &mdash; 24.000 m',        en: 'FAÇADE &mdash; 24.000 m' },
@@ -293,6 +297,12 @@
         });
     }
 
+    /* Κείμενο (όχι HTML): οι οντότητες γράφονται ως χαρακτήρες, αλλιώς βγαίνει «&amp;» στην οθόνη */
+    function decodeEnt(s) {
+        return String(s).replace(/&amp;/g, '&').replace(/&mdash;/g, '\u2014').replace(/&ndash;/g, '\u2013')
+            .replace(/&nbsp;/g, '\u00a0').replace(/&middot;/g, '\u00b7').replace(/&quot;/g, '"').replace(/&#39;/g, "'");
+    }
+
     /* ─── APPLY TRANSLATIONS ─────────────────────────────────────────────── */
     function applyLang(lang) {
         currentLang = lang;
@@ -302,7 +312,7 @@
         document.querySelectorAll('[data-i18n]').forEach(function (el) {
             var key = el.getAttribute('data-i18n');
             if (t[key] && t[key][lang] !== undefined) {
-                el.textContent = t[key][lang];
+                el.textContent = decodeEnt(t[key][lang]);
             }
         });
 
