@@ -754,17 +754,6 @@
                 lines.forEach(function (ln) { if (ln.querySelector('.ch')) ln.textContent = ln.textContent; ln.removeAttribute('aria-label'); });
                 hero.classList.add('hero-anim-done');
             }, 900 + total * 45 + 400);
-            var img = hero.querySelector('.hero-portrait img');
-            if (img && window.matchMedia('(hover: hover) and (min-width: 901px)').matches) {
-                var tx = 0, ty = 0, raf = null;
-                hero.addEventListener('pointermove', function (e) {
-                    var r = hero.getBoundingClientRect();
-                    tx = ((e.clientX - r.left) / r.width - 0.5) * -14;
-                    ty = ((e.clientY - r.top) / r.height - 0.5) * -10;
-                    if (!raf) raf = requestAnimationFrame(function () { raf = null; img.style.translate = tx.toFixed(1) + 'px ' + ty.toFixed(1) + 'px'; });
-                });
-                hero.addEventListener('pointerleave', function () { img.style.translate = '0 0'; });
-            }
           }
           if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { setTimeout(go, 0); });
           else setTimeout(go, 0);
