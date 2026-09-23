@@ -47,16 +47,21 @@
       })
         .then(function (res) {
           if (!res.ok) throw new Error('HTTP ' + res.status);
-          return res.json();
+          return res.text();
         })
-        .then(function (json) {
-          if (json && json.result === 'success') {
-            setStatus(status, T.success, 'success');
-            if (window.ccEvent) ccEvent('form_submit', { form_id: 'clientContactForm' });
-            form.reset();
-          } else {
+        .then(function (txt) {
+          /* Το Apps Script δεν απαντά πάντα σε JSON: δεχόμαστε {"result":"success"} ή απλό κείμενο επιτυχίας */
+          var json = null;
+          try { json = JSON.parse(txt); } catch (_) { json = null; /* όχι JSON: ελέγχεται ως κείμενο */ }
+          var ok = json ? (json.result === 'success' || json.status === 'success' || json.success === true || json.ok === true)
+                        : /^\s*("?)(ok|success|sent|done)\b/i.test(txt);
+          if (!ok) {
+            if (window.console) console.warn('contact-form: απάντηση διακομιστή:', String(txt).slice(0, 200));
             throw new Error(json && json.error ? json.error : 'unexpected response');
           }
+          setStatus(status, T.success, 'success');
+          if (window.ccEvent) ccEvent('form_submit', { form_id: 'clientContactForm' });
+          form.reset();
           if (btn) { btn.textContent = originalLabel; btn.disabled = false; }
         })
         .catch(function (err) {
