@@ -471,12 +471,8 @@
                         <span data-i18n="contact.area">Αθήνα &amp; Όλη η Αττική</span>
                     </div>
                 </div>
-                <div class="contact-map" id="contactMap" data-embed="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.9624508273423!2d23.747500799999997!3d38.0013363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a2ba450b5513%3A0xb4fa06fd66a7ef6b!2zzpTOtc67zrLOr869zr_PhSAzMSwgzpHOuM6uzr3OsSAxMTMgNjM!5e0!3m2!1sel!2sgr!4v1790160450576!5m2!1sel!2sgr">
-                    <div class="contact-map-ph">
-                        <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
-                        <button type="button" class="contact-map-btn" id="contactMapBtn" data-i18n="map.load" data-i18n-title="map.title" title="Χάρτης: γραφείο Β. Λιάπη, Δελβίνου 31, Αθήνα">Εμφάνιση χάρτη</button>
-                        <small data-i18n="map.note">Ο χάρτης φορτώνεται από τη Google μόνο αν τον ζητήσετε.</small>
-                    </div>
+                <div class="contact-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.9624508273423!2d23.747500799999997!3d38.0013363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a2ba450b5513%3A0xb4fa06fd66a7ef6b!2zzpTOtc67zrLOr869zr_PhSAzMSwgzpHOuM6uzr3OsSAxMTMgNjM!5e0!3m2!1sel!2sgr!4v1790160450576!5m2!1sel!2sgr" title="Χάρτης: γραφείο Β. Λιάπη, Δελβίνου 31, Αθήνα" data-i18n-title="map.title" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                 </div>
                 <a class="contact-map-dir" href="https://maps.app.goo.gl/ewBcNYcT9Bi9uqiJ7" target="_blank" rel="noopener"><span data-i18n="map.dir">Οδηγίες στους Χάρτες Google</span> <span aria-hidden="true">→</span></a>
             </div>
@@ -583,20 +579,6 @@
         </div>
     </footer>
 
-    <script>
-        (function () {
-            var box = document.getElementById('contactMap'), btn = document.getElementById('contactMapBtn');
-            if (!box || !btn) return;
-            btn.addEventListener('click', function () {
-                var f = document.createElement('iframe');
-                f.src = box.getAttribute('data-embed');
-                f.loading = 'lazy'; f.referrerPolicy = 'strict-origin-when-cross-origin';
-                f.title = btn.title || 'Map';
-                f.setAttribute('allowfullscreen', '');
-                box.innerHTML = ''; box.appendChild(f); box.classList.add('loaded');
-            });
-        })();
-    </script>
 
     <script>
         (function () {

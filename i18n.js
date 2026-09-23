@@ -344,8 +344,6 @@
         'person.name':    { el: 'Βάιος Λιάπης',           en: 'Vaios Liapis' },
         'contact.area':   { el: 'Αθήνα & Όλη η Αττική', en: 'Athens & all of Attica' },
         'contact.addr': { el: 'Δελβίνου 31, 113 63 Αθήνα', en: 'Delvinou 31, 113 63 Athens' },
-        'map.load': { el: 'Εμφάνιση χάρτη', en: 'Show map' },
-        'map.note': { el: 'Ο χάρτης φορτώνεται από τη Google μόνο αν τον ζητήσετε.', en: 'The map loads from Google only if you ask for it.' },
         'map.dir': { el: 'Οδηγίες στους Χάρτες Google', en: 'Directions in Google Maps' },
         'map.title': { el: 'Χάρτης: γραφείο Β. Λιάπη, Δελβίνου 31, Αθήνα', en: 'Map: V. Liapis office, Delvinou 31, Athens' },
         'stat.years': { el: 'χρόνια εμπειρίας', en: 'years of experience' },

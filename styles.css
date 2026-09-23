@@ -1798,7 +1798,7 @@ nav:has(.nav-links.open), nav.scrolled:has(.nav-links.open) { backdrop-filter: n
 }
 
 /* ── Χάρτης γραφείου (φορτώνει με κλικ) ── */
-.contact-map { margin-top: 26px; border: 1px solid rgba(201,168,108,0.3); height: 240px; position: relative; overflow: hidden; background: var(--ink2); }
+.contact-map { margin-top: 26px; border: 1px solid rgba(201,168,108,0.3); height: 340px; position: relative; overflow: hidden; background: var(--ink2); }
 .contact-map iframe { display: block; width: 100%; height: 100%; border: 0; filter: grayscale(35%) contrast(1.05); }
 .contact-map-ph { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center; padding: 16px;
     background-image: linear-gradient(rgba(201,168,108,0.07) 1px, transparent 1px), linear-gradient(90deg, rgba(201,168,108,0.07) 1px, transparent 1px); background-size: 28px 28px; }
@@ -1833,3 +1833,4 @@ button.project-card:focus-visible { outline: 2px solid var(--gold); outline-offs
 .project-card .pj-img.on { opacity: 1; }
 .project-card .pj-img:not([src]) { display: none; }
 .project-card .project-card-overlay, .project-card .project-card-info { z-index: 1; }
+@media (max-width: 480px) { .contact-map { height: 280px; } }
