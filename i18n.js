@@ -26,7 +26,7 @@
         'nav.projects': { el: 'Έργα',                   en: 'Projects' },
         'nav.contact':  { el: 'Επικοινωνία',            en: 'Contact' },
         'nav.svc.tak': { el: 'Τακτοποίηση αυθαιρέτων', en: 'Legalising unauthorised works' },
-        'nav.svc.htk': { el: 'Ταυτότητα κτιρίου & βεβαίωση', en: 'Building e-Identity & certificate' },
+        'nav.svc.htk': { el: 'Ηλεκτρονική Ταυτότητα Κτιρίου', en: 'Building e-Identity' },
         'nav.svc.oik': { el: 'Οικοδομική άδεια', en: 'Building permits' },
         'hero.tag': { el: 'Αθήνα · Αττική', en: 'Athens · Attica' },
         'hero.photoAlt': { el: 'Βάιος Λιάπης, πολιτικός μηχανικός', en: 'Vaios Liapis, civil engineer' },
@@ -112,18 +112,18 @@
         'pg.adl.q3': { el: 'Χρειάζεται μελέτη πυροπροστασίας;', en: 'Is a fire-safety study needed?' },
         'pg.adl.a3': { el: 'Εξαρτάται από τη χρήση και το μέγεθος του χώρου. Σε μικρά καταστήματα αρκούν συνήθως τα προβλεπόμενα μέτρα· σε μεγαλύτερα χρειάζεται μελέτη. Το ξεκαθαρίζουμε στον αρχικό έλεγχο.', en: 'It depends on the use and the size of the space. Small shops usually need only the prescribed measures; larger ones need a study. We clarify it at the initial check.' },
         'meta.ktim.title': { el: 'Κτηματολόγιο: Διόρθωση Εμβαδού και Ορίων στην Αττική | Β. Λιάπης', en: 'Land Registry: Correcting Area and Boundaries in Attica | V. Liapis' },
-        'meta.ktim.desc': { el: 'Έλεγχος εγγραφών στο Κτηματολόγιο, διόρθωση εμβαδού και ορίων με τοπογραφικό μεταβολών και συντονισμός με δικηγόρο όπου χρειάζεται, στην Αττική.', en: 'Checking Land Registry entries, correcting area and boundaries with a survey of the change, and working with a lawyer where needed, across Attica.' },
+        'meta.ktim.desc': { el: 'Έλεγχος εγγραφών στο Κτηματολόγιο και τοπογραφικό μεταβολών για διόρθωση εμβαδού και ορίων· η αίτηση υποβάλλεται μέσω συνεργαζόμενου συμβολαιογράφου, στην Αττική.', en: 'Checking Land Registry entries and preparing the survey for area and boundary corrections; the application is filed through a partner notary, across Attica.' },
         'nav.svc.ktim': { el: 'Κτηματολόγιο', en: 'Land Registry' },
         'pg.ktim.h1': { el: 'Κτηματολόγιο: έλεγχος και διορθώσεις', en: 'Land Registry: checks and corrections' },
         'pg.ktim.lead': { el: 'Λάθος εμβαδόν, μετατοπισμένα όρια ή ακίνητο που φαίνεται «αγνώστου ιδιοκτήτη». Ελέγχουμε τι γράφει το Κτηματολόγιο, τι ισχύει στην πραγματικότητα και ποιος είναι ο δρόμος για τη διόρθωση.', en: 'A wrong area, shifted boundaries or a property shown as “unknown owner”. We check what the Land Registry says, what is true on the ground and which route leads to the correction.' },
         'pg.ktim.now.t': { el: 'Τι μπορεί να διορθωθεί', en: 'What can be corrected' },
-        'pg.ktim.now.p1': { el: 'Τα <strong>γεωμετρικά στοιχεία</strong>, όπως εμβαδόν και όρια, διορθώνονται με αίτηση στο Κτηματολογικό Γραφείο, με τοπογραφικό διάγραμμα μεταβολών και τη σύμφωνη γνώμη των ομόρων που θίγονται (άρθρο 19 §2 ν.2664/1998).', en: '<strong>Geometric details</strong> such as area and boundaries are corrected by application to the Land Registry office, with a survey of the change and the consent of any affected neighbours (Article 19 §2, Law 2664/1998).' },
+        'pg.ktim.now.p1': { el: 'Τα <strong>γεωμετρικά στοιχεία</strong>, όπως εμβαδόν και όρια, διορθώνονται με αίτηση στο Κτηματολόγιο, με τοπογραφικό διάγραμμα μεταβολών και τη σύμφωνη γνώμη των ομόρων που θίγονται (άρθρο 19 §2 ν.2664/1998). Την αίτηση δεν την υποβάλλει ο μηχανικός· την υποβάλλει ο συνεργαζόμενος συμβολαιογράφος μας, με το τοπογραφικό που ετοιμάζουμε εμείς.', en: '<strong>Geometric details</strong> such as area and boundaries are corrected by application to the Land Registry, with a survey of the change and the consent of any affected neighbours (Article 19(2), Law 2664/1998). The engineer does not file the application: our partner notary does, with the survey we prepare.' },
         'pg.ktim.now.p2': { el: 'Όταν η διαφορά αφορά την ίδια την κυριότητα, για παράδειγμα λάθος δικαιούχος ή ένδειξη «αγνώστου ιδιοκτήτη», ο δρόμος είναι νομικός και η υπόθεση προχωρά μαζί με δικηγόρο. Η προθεσμία για τη διόρθωση ανακριβών πρώτων εγγραφών έχει παραταθεί πολλές φορές, γι’ αυτό την ελέγχουμε σε κάθε υπόθεση.', en: 'When the issue is ownership itself, for example the wrong owner or an “unknown owner” entry, the route is legal and the case proceeds with a lawyer. The deadline for correcting inaccurate first entries has been extended many times, so we check it for every case.' },
         'pg.ktim.now.p3': { el: 'Και στις δύο περιπτώσεις η βάση είναι μια σωστή μέτρηση· γι’ αυτό ξεκινάμε από το <a href="../topografika-diagrammata/">τοπογραφικό</a>.', en: 'Either way, the starting point is an accurate measurement, which is why we begin with the <a href="../topografika-diagrammata/">topographic survey</a>.' },
         'pg.ktim.step1': { el: 'Έλεγχος του αποσπάσματος και του διαγράμματος του Κτηματολογίου, σε σύγκριση με τους τίτλους.', en: 'We check the Land Registry extract and plan against your deeds.' },
         'pg.ktim.step2': { el: 'Μέτρηση στο πεδίο, για να φανεί πού βρίσκεται η απόκλιση.', en: 'On-site measurement to show where the difference lies.' },
         'pg.ktim.step3': { el: 'Σας λέμε αν η διόρθωση γίνεται με αίτηση ή χρειάζεται δικαστικό δρόμο.', en: 'We tell you whether it can be corrected by application or needs a court.' },
-        'pg.ktim.step4': { el: 'Τοπογραφικό μεταβολών, συγκατάθεση ομόρων και υποβολή της αίτησης.', en: 'Survey of the change, neighbours’ consent and filing of the application.' },
+        'pg.ktim.step4': { el: 'Τοπογραφικό μεταβολών και συγκατάθεση ομόρων· ο συνεργαζόμενος συμβολαιογράφος υποβάλλει την αίτηση.', en: 'Survey of the change and neighbours’ consent; our partner notary files the application.' },
         'pg.ktim.step5': { el: 'Παρακολούθηση μέχρι να ενημερωθεί η εγγραφή.', en: 'Follow-up until the entry is updated.' },
         'pg.ktim.need1': { el: 'Τους τίτλους ιδιοκτησίας και τα τοπογραφικά που τους συνοδεύουν', en: 'The title deeds and the surveys attached to them' },
         'pg.ktim.need2': { el: 'Τον ΚΑΕΚ του ακινήτου', en: 'The property’s Land Registry number (KAEK)' },
@@ -131,11 +131,11 @@
         'pg.ktim.need4': { el: 'Όποια αλληλογραφία υπάρχει με το Κτηματολόγιο', en: 'Any correspondence with the Land Registry' },
         'pg.ktim.needNote': { el: 'Αποσπάσματα και διαγράμματα που λείπουν τα ζητάμε εμείς από το Κτηματολόγιο.', en: 'We request any missing extracts and plans from the Land Registry ourselves.' },
         'pg.ktim.q1': { el: 'Το Κτηματολόγιο γράφει μικρότερο εμβαδόν από το συμβόλαιό μου. Χάνω μέτρα;', en: 'The Land Registry shows a smaller area than my deed. Am I losing land?' },
-        'pg.ktim.a1': { el: 'Όχι απαραίτητα. Συχνά η διαφορά οφείλεται στη χάραξη των ορίων κατά την κτηματογράφηση. Μετράμε και σας λέμε αν η διόρθωση στηρίζεται· αν ναι, γίνεται με αίτηση και τοπογραφικό.', en: 'Not necessarily. The difference often comes from how boundaries were drawn during the survey. We measure and tell you whether a correction is supported; if so, it is done by application with a survey.' },
+        'pg.ktim.a1': { el: 'Όχι απαραίτητα. Συχνά η διαφορά οφείλεται στη χάραξη των ορίων κατά την κτηματογράφηση. Μετράμε και σας λέμε αν η διόρθωση στηρίζεται· αν ναι, ετοιμάζουμε το τοπογραφικό και η αίτηση υποβάλλεται μέσω του συνεργαζόμενου συμβολαιογράφου.', en: 'Not necessarily. The difference often comes from how boundaries were drawn during the survey. We measure and tell you whether a correction is supported; if so, we prepare the survey and the application is filed through our partner notary.' },
         'pg.ktim.q2': { el: 'Χρειάζεται η υπογραφή του γείτονα;', en: 'Do I need my neighbour’s signature?' },
         'pg.ktim.a2': { el: 'Για διόρθωση ορίων που θίγει όμορο ακίνητο, ναι: ο όμορος συνυπογράφει την αίτηση ή δίνει δήλωση συναίνεσης. Αν αρνείται, η διόρθωση δεν γίνεται με απλή αίτηση.', en: 'For a boundary correction that affects a neighbouring property, yes: the neighbour co-signs the application or gives a declaration of consent. If they refuse, it cannot be done by simple application.' },
-        'pg.ktim.q3': { el: 'Χρειάζομαι δικηγόρο;', en: 'Do I need a lawyer?' },
-        'pg.ktim.a3': { el: 'Για γεωμετρικές διορθώσεις συνήθως όχι. Όταν αμφισβητείται η κυριότητα, ναι· σε αυτές τις υποθέσεις δουλεύουμε μαζί με δικηγόρο.', en: 'For geometric corrections usually not. When ownership is disputed, yes; in those cases we work together with a lawyer.' },
+        'pg.ktim.q3': { el: 'Ποιος υποβάλλει την αίτηση διόρθωσης;', en: 'Who files the correction application?' },
+        'pg.ktim.a3': { el: 'Ο συνεργαζόμενος συμβολαιογράφος μας, οπότε δεν χρειάζεται να βρείτε εσείς κάποιον. Εμείς ετοιμάζουμε το τεχνικό μέρος και συντονίζουμε τη διαδικασία. Όταν αμφισβητείται η ίδια η κυριότητα, η υπόθεση προχωρά και με δικηγόρο.', en: 'Our partner notary, so you do not need to find one yourself. We prepare the technical part and coordinate the process. When ownership itself is disputed, a lawyer is also involved.' },
         'meta.topo.title': { el: 'Τοπογραφικό Διάγραμμα σε ΕΓΣΑ ’87 στην Αττική | Β. Λιάπης', en: 'Topographic Survey in EGSA ’87 in Attica | V. Liapis' },
         'meta.topo.desc': { el: 'Τοπογραφικά διαγράμματα εξαρτημένα στο ΕΓΣΑ ’87 για οικοδομική άδεια, Κτηματολόγιο και αλλαγή ορίων, με μέτρηση στο πεδίο, στην Αττική.', en: 'Topographic surveys tied to EGSA ’87 for building permits, the Land Registry and boundary changes, measured on site, across Attica.' },
         'nav.svc.topo': { el: 'Τοπογραφικά διαγράμματα', en: 'Topographic surveys' },
@@ -250,7 +250,7 @@
         'service.more': { el: 'Μάθε Περισσότερα', en: 'Learn More' },
 
         's1.title': { el: 'Κτηματολόγιο: Διορθώσεις', en: 'Land Registry Corrections' },
-        's1.text': { el: 'Ελέγχουμε τι γράφει το Κτηματολόγιο για το ακίνητό σας σε σχέση με τους τίτλους. Αν χρειαστεί διόρθωση εμβαδού ή ορίων, ετοιμάζουμε το τοπογραφικό που τη στηρίζει και την αίτηση.', en: 'We check what the Land Registry says about your property against your deeds. If an area or boundary needs correcting, we prepare the survey that supports it and the application.' },
+        's1.text': { el: 'Ελέγχουμε τι γράφει το Κτηματολόγιο για το ακίνητό σας σε σχέση με τους τίτλους. Αν χρειαστεί διόρθωση εμβαδού ή ορίων, ετοιμάζουμε το τοπογραφικό που τη στηρίζει και η αίτηση υποβάλλεται μέσω του συνεργαζόμενου συμβολαιογράφου μας.', en: 'We check what the Land Registry says about your property against your deeds. If an area or boundary needs correcting, we prepare the survey that supports it and the application is filed through our partner notary.' },
 
         's2.title': { el: 'Πολεοδομικές Άδειες', en: 'Building Permits' },
         's2.text':  { el: 'Οικοδομικές άδειες και εγκρίσεις εργασιών μικρής κλίμακας εκδίδονται πλέον μόνο ηλεκτρονικά, μέσω μηχανικού. Ο φάκελος ξεκινά από τον έλεγχο αρτιότητας και όρων δόμησης· από εκεί και πέρα συντάσσουμε τις μελέτες και τον παρακολουθούμε μέχρι την έκδοση.', en: 'Building permits and minor-works approvals are now issued only online, through an engineer. Every file starts with a check of plot eligibility and building terms; from there we prepare the studies and follow the file until the permit is issued.' },
@@ -268,7 +268,7 @@
         's6.text':  { el: 'Υπέρβαση δόμησης, κλειστός ημιυπαίθριος, πατάρι ή αλλαγή χρήσης: καταγράφουμε τι υπάρχει και σας λέμε από την αρχή τι τακτοποιείται και με ποιο πρόστιμο, αλλά και τι δεν τακτοποιείται. Ο φάκελος προχωρά κατά τον ν.4495/2017, όπως ισχύει, μέχρι την περαίωση.', en: 'Extra floor area, an enclosed semi-open space, a mezzanine or a change of use: we record what is there and tell you from the start what can be legalised and at what fine, and also what cannot. The file then proceeds under Law 4495/2017, as in force, until it is closed.' },
 
         's7.title': { el: 'Ηλεκτρονική Ταυτότητα Κτιρίου', en: 'Building e-Identity' },
-        's7.text':  { el: 'Η Ηλεκτρονική Ταυτότητα Κτιρίου (άρθρα 52-56 ν.4495/2017) συγκεντρώνει άδειες, σχέδια, τακτοποιήσεις και την πραγματική κατάσταση του ακινήτου. Μετά την αποτύπωση, τη συμπληρώνουμε στην πλατφόρμα του ΤΕΕ και εκδίδουμε το πιστοποιητικό πληρότητας που ζητείται στις μεταβιβάσεις.', en: 'The Building e-Identity (Articles 52-56, Law 4495/2017) brings together permits, plans, legalisations and the actual state of the property. After surveying the property we complete it on the Technical Chamber platform and issue the completeness certificate required for transfers.' },
+        's7.text': { el: 'Η Ηλεκτρονική Ταυτότητα Κτιρίου (άρθρα 52-56 ν.4495/2017) συγκεντρώνει άδειες, σχέδια, τακτοποιήσεις και την πραγματική κατάσταση του ακινήτου. Μετά την αυτοψία τη συμπληρώνουμε στην πλατφόρμα του ΤΕΕ και εκδίδουμε το πιστοποιητικό πληρότητας που ζητά ο συμβολαιογράφος σε πώληση, γονική παροχή ή δωρεά, τη λεγόμενη «βεβαίωση μηχανικού».', en: 'The Building e-Identity (Articles 52-56, Law 4495/2017) brings together permits, drawings, legalisations and the actual state of the property. After the site visit we complete it on the TEE platform and issue the certificate of completeness the notary asks for in a sale, parental transfer or gift, the so-called “engineer’s certificate”.' },
 
         's8.title': { el: 'Υπηρεσία Μιας Στάσης', en: 'One-Stop Service' },
         's8.text':  { el: 'Μια υπόθεση ακινήτου συχνά χρειάζεται μηχανικό, τοπογράφο, δικηγόρο και συμβολαιογράφο. Συντονίζουμε εμείς τους συνεργάτες και εσείς έχετε έναν άνθρωπο να ρωτάτε.', en: 'A property case often needs an engineer, a surveyor, a lawyer and a notary. We coordinate the partners, and you have one person to ask.' },
@@ -337,7 +337,7 @@
         'form.label.subject':  { el: 'Αντικείμενο',           en: 'Subject' },
         'form.select.default': { el: 'Επιλέξτε υπηρεσία',     en: 'Select a service' },
         'form.opt.1':          { el: 'Τακτοποίηση αυθαιρέτων', en: 'Legalising unauthorised works' },
-        'form.opt.2':          { el: 'Ηλεκτρονική Ταυτότητα ή βεβαίωση για μεταβίβαση', en: 'Building e-Identity or transfer certificate' },
+        'form.opt.2': { el: 'Ηλεκτρονική Ταυτότητα Κτιρίου', en: 'Building e-Identity' },
         'form.opt.3':          { el: 'Οικοδομική άδεια ή έγκριση εργασιών', en: 'Building permit or minor-works approval' },
         'form.opt.4':          { el: 'Ενεργειακό Πιστοποιητικό (ΠΕΑ)', en: 'Energy Performance Certificate (EPC)' },
         'form.opt.5':          { el: 'Άλλο',                           en: 'Other' },
@@ -350,10 +350,26 @@
         'nav.name':       { el: 'Β. ΛΙΑΠΗΣ',              en: 'V. LIAPIS' },
         'person.name':    { el: 'Βάιος Λιάπης',           en: 'Vaios Liapis' },
         'contact.area':   { el: 'Αθήνα & Όλη η Αττική', en: 'Athens & all of Attica' },
+        'contact.addr': { el: 'Δελβίνου 31, 113 63 Αθήνα', en: 'Delvinou 31, 113 63 Athens' },
+        'map.load': { el: 'Εμφάνιση χάρτη', en: 'Show map' },
+        'map.note': { el: 'Ο χάρτης φορτώνεται από τη Google μόνο αν τον ζητήσετε.', en: 'The map loads from Google only if you ask for it.' },
+        'map.dir': { el: 'Οδηγίες στους Χάρτες Google', en: 'Directions in Google Maps' },
+        'map.title': { el: 'Χάρτης: γραφείο Β. Λιάπη, Δελβίνου 31, Αθήνα', en: 'Map: V. Liapis office, Delvinou 31, Athens' },
+        'stat.years': { el: 'χρόνια εμπειρίας', en: 'years of experience' },
+        'stat.htk': { el: 'Ηλεκτρονικές Ταυτότητες Κτιρίου', en: 'Building e-Identities' },
+        'stat.tak': { el: 'περαιωμένες τακτοποιήσεις αυθαιρέτων', en: 'completed legalisations' },
         'meas.elev':      { el: 'ΥΨ',                     en: 'ALT' },
         'meas.auth':      { el: 'ΑΠΘ',                    en: 'AUTH' },
         'meas.hero':      { el: 'ΠΡΟΣΟΨΗ &mdash; 24.000 m',        en: 'FAÇADE &mdash; 24.000 m' },
-        'meas.services':  { el: '12 ΥΠΗΡΕΣΙΕΣ &mdash; 480.00 m²',  en: '12 SERVICES &mdash; 480.00 m²' },
+        'meas.services': { el: '10 ΥΠΗΡΕΣΙΕΣ &mdash; 400.00 m²', en: '10 SERVICES &mdash; 400.00 m²' },
+        'one.eyebrow': { el: 'Από την αρχή ως το τέλος', en: 'From start to finish' },
+        'one.heading': { el: 'Αναλαμβάνουμε <em>όλη</em> τη διαδρομή', en: 'We handle <em>the whole</em> journey' },
+        'one.lead': { el: 'Δεν χρειάζεται να τρέχετε εσείς από υπηρεσία σε υπηρεσία. Από την πρώτη αυτοψία ως την τελική έγκριση, την υπόθεσή σας τη χειρίζεται ένας άνθρωπος, που συντονίζει και τοπογράφο, δικηγόρο ή συμβολαιογράφο όπου χρειάζονται.', en: 'You do not have to run from office to office. From the first site visit to the final approval, one person handles your case and coordinates the surveyor, lawyer or notary where they are needed.' },
+        'one.s1': { el: 'Αυτοψία και καταγραφή', en: 'Site visit and survey' },
+        'one.s2': { el: 'Μελέτη και φάκελος', en: 'Study and file' },
+        'one.s3': { el: 'Υποβολή στις υπηρεσίες', en: 'Submission to the authorities' },
+        'one.s4': { el: 'Έγκριση και παράδοση', en: 'Approval and handover' },
+        'one.note': { el: 'Σας ενημερώνουμε σε κάθε βήμα, χωρίς να χρειάζεται να ρωτάτε.', en: 'We keep you updated at every step, without you having to ask.' },
         'meas.projects':  { el: '6 ΕΡΓΑ &mdash; 1250.00 m²',       en: '6 PROJECTS &mdash; 1250.00 m²' },
 
         /* ΣΕΛΙΔΕΣ ΥΠΗΡΕΣΙΩΝ (anavathmisi #9) */
@@ -448,7 +464,7 @@
     let currentLang = localStorage.getItem('lang') || 'el';
 
     /* ─── YEARS OF EXPERIENCE (dynamic) ─────────────────────────────────── */
-    const EXP_START_YEAR = 2019;
+    const EXP_START_YEAR = 2016;
     function fillYearsExp() {
         var years = new Date().getFullYear() - EXP_START_YEAR;
         document.querySelectorAll('.years-exp').forEach(function (el) {
