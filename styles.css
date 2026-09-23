@@ -1966,3 +1966,18 @@ button.project-card:focus-visible { outline: 2px solid var(--gold); outline-offs
     .hero-portrait img, .hero-anim .hero-portrait img { animation: heroSlideL 1.3s cubic-bezier(.2,.8,.2,1) .15s both; transform: none; translate: none; transition: none; }
 }
 @keyframes heroSlideL { from { opacity: 0; transform: translateX(48px); } to { opacity: 1; transform: none; } }
+
+/* Ορατότητα AI: σύντομη απάντηση, στοιχεία προφίλ, νέα */
+.page-answer { border-left: 3px solid var(--gold); background: rgba(201,168,108,0.08); padding: 18px 22px; margin: 0 0 40px; }
+.page-answer p { margin: 0 0 8px; font-size: 16px; line-height: 1.65; }
+.page-answer .page-answer-label { font-size: 11px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.page-answer .page-updated { font-size: 12px; opacity: .7; margin: 6px 0 0; }
+.bio-facts { display: grid; grid-template-columns: minmax(0,1fr); gap: 0; margin: 0; }
+.bio-facts > div { display: grid; grid-template-columns: 170px minmax(0,1fr); gap: 16px; padding: 12px 0; border-bottom: 1px solid rgba(14,13,11,0.1); }
+.bio-facts dt { font-size: 12px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; opacity: .7; }
+.bio-facts dd { margin: 0; }
+.bio-facts a { color: inherit; }
+.nea-meta { font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase; opacity: .7; margin-bottom: 6px; }
+.nea-src { font-size: 13px; opacity: .8; }
+.fname a { color: inherit; text-decoration: none; }
+@media (max-width: 480px) { .bio-facts > div { grid-template-columns: minmax(0,1fr); gap: 4px; } }
