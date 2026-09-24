@@ -2006,3 +2006,20 @@ button.project-card:focus-visible { outline: 2px solid var(--gold); outline-offs
     .nav-scrim { position: fixed; inset: 0; z-index: 998; background: rgba(0,0,0,0.45); opacity: 0; transition: opacity .3s; pointer-events: none; }
     .nav-scrim.on { opacity: 1; pointer-events: auto; }
 }
+
+/* ── Υπηρεσίες στο μενού: αλφαβητική σειρά· «Όλες οι υπηρεσίες» τελευταίο ── */
+.nav-sub a[data-i18n="nav.svc.adl"] { order: 1; }
+.nav-sub a[data-i18n="nav.svc.anak"] { order: 2; }
+.nav-sub a[data-i18n="nav.svc.pea"] { order: 3; }
+.nav-sub a[data-i18n="nav.svc.epiv"] { order: 4; }
+.nav-sub a[data-i18n="nav.svc.htk"] { order: 5; }
+.nav-sub a[data-i18n="nav.svc.ktim"] { order: 6; }
+.nav-sub a[data-i18n="nav.svc.oik"] { order: 7; }
+.nav-sub a[data-i18n="nav.svc.tak"] { order: 8; }
+.nav-sub a[data-i18n="nav.svc.topo"] { order: 9; }
+.nav-sub a[data-i18n="nav.svc.lar"] { order: 20; }
+.nav-sub a.nav-sub-all { order: 30; }
+/* κινητό: χωρίς «Σχετικά», «Λάρισα» και τον τίτλο «Υπηρεσίες» (διπλός με το «Όλες οι υπηρεσίες») */
+@media (max-width: 768px) {
+    nav .nav-links a[data-i18n="nav.about"], nav .nav-links a[data-i18n="nav.svc.lar"], nav .nav-links .nav-drop-top { display: none !important; }
+}
