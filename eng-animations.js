@@ -261,3 +261,36 @@
     };
 
 })();
+
+/* Μενού κινητού: κλείνει με κύλιση, με σύρσιμο δεξιά/αριστερά και με πάτημα έξω από αυτό */
+(function () {
+    var menu = document.getElementById('navLinks');
+    if (!menu || !window.MutationObserver) return;
+    var scrim = document.createElement('div');
+    scrim.className = 'nav-scrim';
+    document.body.appendChild(scrim);
+    var y0 = 0, tx = null, ty = null;
+    function close() {
+        if (typeof window.closeMenu === 'function') window.closeMenu();
+        else { menu.classList.remove('open'); document.body.style.overflow = ''; }
+    }
+    new MutationObserver(function () {
+        var open = menu.classList.contains('open');
+        scrim.classList.toggle('on', open);
+        if (open) { document.body.style.overflow = ''; y0 = window.scrollY; }
+    }).observe(menu, { attributes: true, attributeFilter: ['class'] });
+    scrim.addEventListener('click', close);
+    window.addEventListener('scroll', function () {
+        if (menu.classList.contains('open') && Math.abs(window.scrollY - y0) > 40) close();
+    }, { passive: true });
+    document.addEventListener('touchstart', function (e) {
+        if (!menu.classList.contains('open')) return;
+        tx = e.touches[0].clientX; ty = e.touches[0].clientY;
+    }, { passive: true });
+    document.addEventListener('touchend', function (e) {
+        if (tx === null) return;
+        var dx = e.changedTouches[0].clientX - tx, dy = e.changedTouches[0].clientY - ty;
+        tx = ty = null;
+        if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.2) close();
+    }, { passive: true });
+})();
