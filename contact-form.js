@@ -12,7 +12,7 @@
  * ────────────────────────────────────────────────────────────────────────── */
 (function () {
   var GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxkcbb2Iqh3LPOPoNXXYIoj1VZuG_iH96DcqC8-7EPTm0UsUPV7PfGATWJDUpT-0IbxMw/exec';
-  var TIMEOUT_MS = 15000;
+  var TIMEOUT_MS = 60000;   // το Apps Script στέλνει δύο email (γραφείο + αντίγραφο)· στην πρώτη κλήση μπορεί να θέλει 15–30″
 
   var MSG = {
     el: { sending: 'Αποστολή…', success: 'Το μήνυμά σας στάλθηκε. Θα επικοινωνήσουμε σύντομα.',
