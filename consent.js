@@ -7,7 +7,7 @@
 
 (function () {
     var STORAGE_KEY = 'liapis_consent';
-    var GA_ID       = 'G-C707V9N08V';      /* Google Analytics 4 — ροή δεδομένων vaiosliapis.gr */
+    var GA_ID       = 'G-NJY2TERWEN';      /* Google Analytics 4 — ροή δεδομένων vaiosliapis.gr */
 
     /* Χωρίς αναγνωριστικό μέτρησης δεν υπάρχει τίποτα να συναινέσει κανείς: καμία μπάρα. */
     if (!GA_ID) return;
