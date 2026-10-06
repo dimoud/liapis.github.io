@@ -2082,3 +2082,4 @@ html.motion-paused .motion-toggle .mt-pause { display: none; }
 }
 .footer-links .motion-toggle.mt-footer:hover, .footer-links .motion-toggle.mt-footer:focus-visible { color: var(--gold); background: none; }
 .footer-links .motion-toggle.mt-footer .mt-i { width: 9px; height: 9px; }
+.footer-links { align-items: center; }
