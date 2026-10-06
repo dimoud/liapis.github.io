@@ -575,6 +575,7 @@
         'pg.answer': { el: 'Με λίγα λόγια', en: 'In short' },
         'pg.updated': { el: 'Ενημερώθηκε: 23/9/2026', en: 'Updated: 23/9/2026' },
         'nav.news': { el: 'Νέα', en: 'News' },
+        'cc.settings': { el: 'Ρυθμίσεις cookies', en: 'Cookie settings' },
         'nav.bio': { el: 'Βάιος Λιάπης', en: 'Vaios Liapis' },
         'about.more': { el: 'Περισσότερα για τον Βάιο Λιάπη', en: 'More about Vaios Liapis' },
         'pg.tak.answer': { el: 'Αυθαιρεσίες που είχαν ολοκληρωθεί έως τον Ιούλιο του 2011 και ανήκουν στις κατηγορίες 1-4 τακτοποιούνται με πρόστιμο κατά τον ν.4495/2017, με υπαγωγή έως τις 31 Μαρτίου 2028. Ξεκινάμε με αυτοψία και μαθαίνετε το πρόστιμο πριν αποφασίσετε.', en: 'Unauthorised works completed by July 2011 and falling into categories 1-4 can be legalised against a fine under Law 4495/2017, with applications open until 31 March 2028. We start with a site visit and you know the fine before you decide.' },

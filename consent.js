@@ -1,5 +1,7 @@
 /* consent.js — GDPR Cookie Consent for vaiosliapis.gr
- * - Fires gtag consent signals (analytics_storage, ad_storage)
+ * - Fires gtag consent signals: «Αποδοχή» = ΜΟΝΟ analytics_storage· τα διαφημιστικά
+ *   (ad_storage, ad_user_data, ad_personalization) μένουν πάντα denied
+ * - «Ρυθμίσεις cookies» στο υποσέλιδο ([data-cc-open]) ξανανοίγει τη μπάρα
  * - Stores choice in localStorage (no cookie needed)
  * - Supports Greek / English via html[lang]
  * - GA4 script is loaded only after consent is granted
@@ -88,17 +90,30 @@
     function gtagDeny() {
         if (typeof gtag === 'function') {
             gtag('consent', 'update', {
-                analytics_storage: 'denied',
-                ad_storage:        'denied',
+                analytics_storage:  'denied',
+                ad_storage:         'denied',
+                ad_user_data:       'denied',
+                ad_personalization: 'denied',
             });
         }
+        /* ανάκληση: σβήνουμε και τα cookies που είχε ήδη γράψει το GA */
+        document.cookie.split(';').forEach(function (c) {
+            var n = c.split('=')[0].trim();
+            if (/^_ga/.test(n)) {
+                ['', '; domain=' + location.hostname, '; domain=.' + location.hostname.replace(/^www\./, '')].forEach(function (d) {
+                    document.cookie = n + '=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/' + d;
+                });
+            }
+        });
     }
 
     function gtagGrant() {
         if (typeof gtag === 'function') {
             gtag('consent', 'update', {
-                analytics_storage: 'granted',
-                ad_storage:        'granted',
+                analytics_storage:  'granted',
+                ad_storage:         'denied',
+                ad_user_data:       'denied',
+                ad_personalization: 'denied',
             });
         }
         /* load GA4 script now if not already present */
@@ -113,7 +128,7 @@
                 function gtag() { dataLayer.push(arguments); }
                 window.gtag = gtag;
                 gtag('js', new Date());
-                gtag('config', GA_ID, { anonymize_ip: true });
+                gtag('config', GA_ID, { anonymize_ip: true, allow_google_signals: false, allow_ad_personalization_signals: false });
                 fireQueuedEvents();
             };
         }
@@ -160,20 +175,29 @@
     }
 
     /* ── check existing choice ── */
-    var stored = localStorage.getItem(STORAGE_KEY);
+    var stored = null;
+    try { stored = localStorage.getItem(STORAGE_KEY); } catch (e) {}
 
-    if (stored === 'granted') {
-        gtagGrant();
-        return;
+    if (stored === 'granted') gtagGrant();
+    else if (stored === 'denied') gtagDeny();
+
+    /* ── εμφάνιση μπάρας: πρώτη επίσκεψη, ή «Ρυθμίσεις cookies» για αλλαγή γνώμης ── */
+    function openBanner() {
+        banner.classList.remove('cc-hidden');
+        padForBanner();
+        var b0 = document.getElementById('cc-reject');
+        if (b0) b0.focus();
     }
+    window.ccOpen = openBanner;
+    document.addEventListener('click', function (e) {
+        var el = e.target.closest && e.target.closest('[data-cc-open]');
+        if (!el) return;
+        e.preventDefault();
+        openBanner();
+    });
 
-    if (stored === 'denied') {
-        gtagDeny();
-        return;
-    }
-
-    /* ── first visit: show banner ── */
     document.body.appendChild(banner);
+    if (stored === 'granted' || stored === 'denied') banner.classList.add('cc-hidden');
 
     /* Η μπάρα είναι position:fixed — χωρίς αυτό σκεπάζει το υποσέλιδο στο κινητό. */
     function padForBanner() {
