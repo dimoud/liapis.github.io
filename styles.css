@@ -2040,3 +2040,43 @@ button.project-card:focus-visible { outline: 2px solid var(--gold); outline-offs
     .footer-links { display: flex !important; }
     .footer-links > a { display: none; }
 }
+
+/* ── Παύση κινήσεων (eng-animations.js, WCAG 2.2.2): οι συνεχείς κινήσεις σταματούν ── */
+html.motion-paused .hero-slide,
+html.motion-paused .scroll-hint,
+html.motion-paused .hero-blueprint,
+html.motion-paused .crosshair-wrap,
+html.motion-paused .hero-anim .hero-scan span,
+html.motion-paused .hero-anim .hero-actions .btn-gold::after,
+html.motion-paused .hero-anim .hero-portrait img,
+html.motion-paused .hero-anim-done .hero-name .line2,
+html.motion-paused .onestop-inner.visible .os-fill,
+html.motion-paused .onestop-inner.visible .os-runner,
+html.motion-paused .onestop-inner.visible .onestop-path li .os-node,
+html.motion-paused .ec-layer--credit,
+html.motion-paused .ec-layer--ad,
+html.motion-paused .ec-ad-ring::after,
+html.motion-paused .expertease-credit::before { animation: none !important; }
+html.motion-paused .marquee-track,
+html.motion-paused .news-track { animation-play-state: paused !important; }
+html.motion-paused .onestop-inner.visible .os-fill { transform: none !important; }
+html.motion-paused .onestop-inner.visible .os-runner { opacity: 0 !important; }
+.motion-toggle {
+    display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+    width: 36px; height: 36px; padding: 0; border-radius: 50%; cursor: pointer;
+    background: rgba(14,13,11,0.55); color: var(--gold); border: 1px solid rgba(201,168,108,0.55);
+    transition: background .25s, color .25s;
+}
+.motion-toggle:hover { background: var(--gold); color: var(--ink); }
+.motion-toggle:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+.motion-toggle .mt-play { display: none; }
+html.motion-paused .motion-toggle .mt-play { display: block; }
+html.motion-paused .motion-toggle .mt-pause { display: none; }
+.motion-toggle.mt-hero { position: absolute; left: 16px; bottom: 16px; z-index: 6; }
+.motion-toggle.mt-onestop { position: absolute; right: 16px; top: 16px; z-index: 3; }
+.footer-links .motion-toggle.mt-footer {
+    width: auto; height: auto; min-height: 24px; border: 0; border-radius: 0; background: none; padding: 0;
+    color: rgba(255,255,255,0.55); font-family: inherit; font-size: 10px; font-weight: 500; letter-spacing: 2px; text-transform: uppercase;
+}
+.footer-links .motion-toggle.mt-footer:hover, .footer-links .motion-toggle.mt-footer:focus-visible { color: var(--gold); background: none; }
+.footer-links .motion-toggle.mt-footer .mt-i { width: 9px; height: 9px; }

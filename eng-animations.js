@@ -196,6 +196,7 @@
     if (heroSlides.length > 1) {
         var _currentSlide = 0;
         setInterval(function () {
+            if (document.documentElement.classList.contains('motion-paused')) return;
             heroSlides[_currentSlide].classList.remove('active');
             _currentSlide = (_currentSlide + 1) % heroSlides.length;
             heroSlides[_currentSlide].classList.add('active');
@@ -293,4 +294,45 @@
         tx = ty = null;
         if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.2) close();
     }, { passive: true });
+})();
+
+/* ─── ΠΑΥΣΗ ΚΙΝΗΣΕΩΝ (WCAG 2.2.2) ─────────────────────────────────────────
+ * Ό,τι κινείται συνεχώς (σάρωση, παλμός κουμπιού, διαδρομή βημάτων, λωρίδες,
+ * εναλλαγή φωτογραφιών) σταματά με ένα κουμπί: στην αρχική (επάνω εικόνα,
+ * «Από την αρχή ως το τέλος») και στο υποσέλιδο κάθε σελίδας. Η επιλογή
+ * θυμάται (localStorage) και ισχύει σε όλες τις σελίδες. */
+(function () {
+    var KEY = 'liapis_motion', root = document.documentElement, btns = [], paused = false;
+    var T = { el: { p: 'Παύση κινήσεων', r: 'Συνέχιση κινήσεων' }, en: { p: 'Pause animations', r: 'Resume animations' } };
+    try { paused = localStorage.getItem(KEY) === 'paused'; } catch (e) {}
+    function t() { return (root.lang || 'el').slice(0, 2) === 'en' ? T.en : T.el; }
+    var ICON = '<svg class="mt-i mt-pause" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><rect x="2" y="1.5" width="2.6" height="9" rx=".6" fill="currentColor"/><rect x="7.4" y="1.5" width="2.6" height="9" rx=".6" fill="currentColor"/></svg>' +
+               '<svg class="mt-i mt-play" viewBox="0 0 12 12" width="12" height="12" aria-hidden="true" focusable="false"><path d="M3 1.6v8.8L10.4 6z" fill="currentColor"/></svg>';
+    function render() {
+        root.classList.toggle('motion-paused', paused);
+        var s = paused ? t().r : t().p;
+        btns.forEach(function (b) {
+            b.setAttribute('aria-pressed', paused ? 'true' : 'false');
+            b.title = s;
+            var x = b.querySelector('.mt-txt');
+            if (x) x.textContent = s; else b.setAttribute('aria-label', s);
+        });
+    }
+    function make(where, cls, text) {
+        if (!where) return;
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'motion-toggle ' + cls;
+        b.innerHTML = ICON + (text ? '<span class="mt-txt"></span>' : '');
+        b.addEventListener('click', function () {
+            paused = !paused;
+            try { localStorage.setItem(KEY, paused ? 'paused' : 'running'); } catch (e) {}
+            render();
+        });
+        where.appendChild(b); btns.push(b);
+    }
+    make(document.querySelector('header.hero'), 'mt-hero', false);
+    make(document.querySelector('.onestop'), 'mt-onestop', false);
+    make(document.querySelector('footer .footer-links'), 'mt-footer', true);
+    render();
+    document.addEventListener('langchange', render);
 })();

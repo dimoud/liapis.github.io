@@ -684,7 +684,7 @@
                 list = list.map(function (s) { return s.replace(/\.webp$/, '-m.webp'); });
                 var imgs = card.querySelectorAll('.pj-img'), cur = imgs[0], nxt = imgs[1], k = 0, seen = false, timer = null;
                 function step() {
-                    if (!seen || document.hidden) return;
+                    if (!seen || document.hidden || document.documentElement.classList.contains('motion-paused')) return;
                     k = (k + 1) % list.length;
                     var pre = new Image();
                     pre.onload = function () {
