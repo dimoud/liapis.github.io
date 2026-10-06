@@ -2023,3 +2023,7 @@ button.project-card:focus-visible { outline: 2px solid var(--gold); outline-offs
 @media (max-width: 768px) {
     nav .nav-links a[data-i18n="nav.about"], nav .nav-links a[data-i18n="nav.svc.lar"], nav .nav-links .nav-drop-top { display: none !important; }
 }
+
+/* Λάρισα στην αρχική: σύνδεσμοι προς τις δύο σελίδες υπηρεσιών της πόλης */
+.svc-area p a { color: #8a6a2f; text-decoration: underline; text-underline-offset: 2px; }
+.svc-area p a:hover { color: var(--ink); }

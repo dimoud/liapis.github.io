@@ -221,7 +221,7 @@
         'areas.ath.t': { el: 'Αθήνα και Αττική', en: 'Athens and Attica' },
         'areas.ath.p': { el: 'Γραφείο στη Δελβίνου 31, στην Αθήνα. Αυτοψίες σε όλη την Αττική: κέντρο, Πειραιάς, βόρεια, νότια, ανατολικά και δυτικά προάστια.', en: 'Office at 31 Delvinou St, Athens. Site visits across Attica: the centre, Piraeus and the northern, southern, eastern and western suburbs.' },
         'areas.lar.t': { el: 'Λάρισα', en: 'Larissa' },
-        'areas.lar.p': { el: 'Με καταγωγή από τη Λάρισα και συνεργάτη στην πόλη, αναλαμβάνουμε και εκεί Ηλεκτρονική Ταυτότητα, τακτοποίηση αυθαιρέτων και άδειες.', en: 'With roots in Larissa and a partner in the city, we also take on Building e-Identity, legalisation of unauthorised works and permits there.' },
+        'areas.lar.p': { el: 'Με καταγωγή από τη Λάρισα και συνεργάτη στην πόλη, αναλαμβάνουμε και εκεί <a href="ilektroniki-taftotita-ktiriou-larisa/">Ηλεκτρονική Ταυτότητα</a>, <a href="taktopoiisi-afthaireton-larisa/">τακτοποίηση αυθαιρέτων</a> και άδειες.', en: 'With roots in Larissa and a partner in the city, we also take on <a href="ilektroniki-taftotita-ktiriou-larisa/">Building e-Identity</a>, <a href="taktopoiisi-afthaireton-larisa/">legalisation of unauthorised works</a> and permits there.' },
         'areas.lar.more': { el: 'Πώς δουλεύουμε στη Λάρισα', en: 'How we work in Larissa' },
 
         /* MARQUEE */
