@@ -313,6 +313,7 @@
         'pj3.title': { el: 'Διαμέρισμα, Πετράλωνα', en: 'Apartment, Petralona' },
         'pj3.desc': { el: 'Ανακαίνιση διαμερίσματος: κουζίνα, λουτρό, δάπεδα, βεράντα', en: 'Apartment renovation: kitchen, bathroom, floors, terrace' },
         'pj.photos': { el: 'φωτογραφίες', en: 'photos' },
+        'pj.open': { el: 'Φωτογραφίες του έργου:', en: 'Project photos:' },
         'gal.close': { el: 'Κλείσιμο', en: 'Close' },
         'gal.prev': { el: 'Προηγούμενη φωτογραφία', en: 'Previous photo' },
         'gal.next': { el: 'Επόμενη φωτογραφία', en: 'Next photo' },
