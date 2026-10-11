@@ -1,6 +1,6 @@
 {
   "_comment": "Πηγή για το καρουζέλ «Νέα του κλάδου» της αρχικής. Πεδία: id, date (ISO, ημερομηνία ΦΕΚ ή ανακοίνωσης), category/title/summary (el/en), source (κείμενο), url (σελίδα του ιστότοπου ή κενό). Νεότερα πρώτα — η ταξινόμηση γίνεται και αυτόματα.",
-  "updated": "2026-09-23",
+  "updated": "2026-10-11",
   "items": [
     {
       "id": "n5317-2026-ektos-sxediou",
@@ -36,6 +36,24 @@
         "en": "Final inspection reports and demolition orders issued by 30/6/2027 are executed first. If your unauthorised work can be legalised, it is better not to wait."
       },
       "source": "ν.5317/2026, ΦΕΚ Α΄ 108/10.7.2026",
+      "url": "taktopoiisi-afthaireton/"
+    },
+    {
+      "id": "n5306-2026-kodikas",
+      "date": "2026-06-08",
+      "category": {
+        "el": "Νομοθεσία",
+        "en": "Legislation"
+      },
+      "title": {
+        "el": "Σε ισχύ ο Κώδικας Χωροταξίας-Πολεοδομίας: πού πήγαν ο ν.4495/2017 και η Ταυτότητα Κτιρίου",
+        "en": "Spatial and Urban Planning Code in force: where Law 4495/2017 and the Building e-Identity went"
+      },
+      "summary": {
+        "el": "Από τις 8/6/2026 οι διατάξεις του ν.4495/2017 για τα αυθαίρετα, τις άδειες και την Ηλεκτρονική Ταυτότητα Κτιρίου βρίσκονται στον Κώδικα Χωροταξίας-Πολεοδομίας (ν.5306/2026). Τα αυθαίρετα είναι στα άρθρα 366 επ. και η Ταυτότητα Κτιρίου στα άρθρα 341 επ. Η ουσία κατά βάση μένει ίδια· αλλάζουν οι παραπομπές σε συμβόλαια, βεβαιώσεις και φακέλους.",
+        "en": "Since 8/6/2026 the provisions of Law 4495/2017 on unauthorised works, permits and the Building e-Identity sit in the Spatial and Urban Planning Code (Law 5306/2026). Unauthorised works are in Articles 366 ff. and the Building e-Identity in Articles 341 ff. The substance stays largely the same; what changes are the references in contracts, certificates and files."
+      },
+      "source": "ν.5306/2026, ΦΕΚ Α΄ 88/8.6.2026",
       "url": "taktopoiisi-afthaireton/"
     },
     {
