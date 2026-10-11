@@ -2021,10 +2021,12 @@ nav:has(.nav-links.open), nav.scrolled:has(.nav-links.open) { backdrop-filter: n
 .nav-sub a[data-i18n="nav.svc.tak"] { order: 8; }
 .nav-sub a[data-i18n="nav.svc.topo"] { order: 9; }
 .nav-sub a[data-i18n="nav.svc.lar"] { order: 20; }
+.nav-sub a[data-i18n="nav.svc.takl"] { order: 21; }
+.nav-sub a[data-i18n="nav.svc.htkl"] { order: 22; }
 .nav-sub a.nav-sub-all { order: 30; }
-/* κινητό: χωρίς «Σχετικά», «Λάρισα» και τον τίτλο «Υπηρεσίες» (διπλός με το «Όλες οι υπηρεσίες») */
+/* κινητό: χωρίς «Σχετικά», «Λάρισα» (και τις δύο σελίδες της) και τον τίτλο «Υπηρεσίες» (διπλός με το «Όλες οι υπηρεσίες») */
 @media (max-width: 768px) {
-    nav .nav-links a[data-i18n="nav.about"], nav .nav-links a[data-i18n="nav.svc.lar"], nav .nav-links .nav-drop-top { display: none !important; }
+    nav .nav-links a[data-i18n="nav.about"], nav .nav-links a[data-i18n="nav.svc.lar"], nav .nav-links a[data-i18n="nav.svc.takl"], nav .nav-links a[data-i18n="nav.svc.htkl"], nav .nav-links .nav-drop-top { display: none !important; }
 }
 
 /* Λάρισα στην αρχική: σύνδεσμοι προς τις δύο σελίδες υπηρεσιών της πόλης */
@@ -2125,4 +2127,14 @@ html.motion-paused .motion-toggle .mt-pause { display: none; }
 /* ── Κουμπί παύσης στο κινητό: επάνω δεξιά στο πορτρέτο, όχι πάνω στους συνδέσμους υπηρεσιών (K4) ── */
 @media (max-width: 768px) {
     .motion-toggle.mt-hero { left: auto; bottom: auto; top: 76px; right: 22px; }
+}
+
+/* Μενού υπολογιστή σε στενές οθόνες (769–1100px): πιο σφιχτά, για να χωρά και το «Νέα» χωρίς να ακουμπά τη γλώσσα */
+@media (min-width: 769px) and (max-width: 1100px) {
+    .nav-links { gap: 22px; }
+    .nav-links a { letter-spacing: 1.5px; }
+    .nav-links .nav-cta { padding: 10px 16px; }
+}
+@media (min-width: 769px) and (max-width: 900px) {
+    nav .logo-text { display: none; }
 }

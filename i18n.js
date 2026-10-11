@@ -535,6 +535,8 @@
         'pg.takl.a3': { el: 'Συχνά ναι, αλλά οι όροι δεν είναι ίδιοι με τα κτίρια εντός σχεδίου. Πρώτα ελέγχουμε την αρτιότητα και τη θέση του γηπέδου, και μετά σας δίνουμε εκτίμηση.', en: 'Often yes, but the terms differ from buildings inside the town plan. We first check the plot’s eligibility and location, then give you an estimate.' },
         'pg.crumb.lar': { el: 'Λάρισα', en: 'Larissa' },
         'nav.svc.lar': { el: 'Λάρισα', en: 'Larissa' },
+        'nav.svc.takl': { el: 'Τακτοποίηση αυθαιρέτων Λάρισα', en: 'Legalisation in Larissa' },
+        'nav.svc.htkl': { el: 'Ταυτότητα Κτιρίου Λάρισα', en: 'Building e-Identity in Larissa' },
 
         /* ΟΡΑΤΟΤΗΤΑ AI (ai #Α1 #Α2 #Α4) */
         'pg.bio.name': { el: 'Βάιος Λιάπης, πολιτικός μηχανικός', en: 'Vaios Liapis, civil engineer' },
