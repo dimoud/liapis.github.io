@@ -38,6 +38,8 @@
         'pg.hub.lead': { el: 'Ένας μηχανικός για όλη την υπόθεση του ακινήτου σας, από τον πρώτο έλεγχο ως το συμβόλαιο ή την παράδοση του έργου. Διαλέξτε την υπηρεσία για να δείτε πώς δουλεύουμε και τι χρειάζεται.', en: 'One engineer for your whole property case, from the first check to the contract or the finished works. Choose a service to see how we work and what is needed.' },
         'nav.svc.all': { el: 'Όλες οι υπηρεσίες →', en: 'All services →' },
         'nav.close': { el: 'Κλείσιμο μενού', en: 'Close menu' },
+        'gallery.aria': { el: 'Φωτογραφίες έργου', en: 'Project photos' },
+        'credit.rights': { el: '© 2026 · Με επιφύλαξη παντός δικαιώματος', en: '© 2026 · All Rights Reserved' },
         'marquee.aria': { el: 'Υπηρεσίες με μια ματιά', en: 'Services at a glance' },
         'nav.menu': { el: 'Μενού', en: 'Menu' },
         'meta.epiv.title': { el: 'Επίβλεψη Οικοδομής και Κατασκευών Αθήνα & Αττική | Β. Λιάπης', en: 'Construction Supervision in Athens & Attica | V. Liapis' },
@@ -663,6 +665,11 @@
                 if (t[key] && t[key][lang] !== undefined) el.setAttribute(pair[1], t[key][lang]);
             });
         });
+
+        /* og:locale ακολουθεί τη γλώσσα (G3 / ΜΗ-16) */
+        var ogL = document.querySelector('meta[property="og:locale"]'), ogA = document.querySelector('meta[property="og:locale:alternate"]');
+        if (ogL) ogL.setAttribute('content', lang === 'en' ? 'en_US' : 'el_GR');
+        if (ogA) ogA.setAttribute('content', lang === 'en' ? 'el_GR' : 'en_US');
 
         /* update <html lang> attribute */
         document.documentElement.lang = lang;

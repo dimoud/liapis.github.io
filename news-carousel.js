@@ -57,7 +57,7 @@
       '</span>' +
       '<span class="news-card-title">' + title + '</span>' +
       '<span class="news-card-sum">' + esc(pick(it.summary)) + '</span>' +
-      (it.source ? '<span class="news-card-src">' + esc(it.source) + '</span>' : '');
+      (it.source ? '<span class="news-card-src" lang="el">' + esc(it.source) + '</span>' : '');
 
     if (!url) return '<div class="news-card">' + body + '</div>';
     /* Η αγγλική έκδοση σε ξεχωριστό /en/ μόνο όπου υπάρχει (data-en-prefix στην ενότητα) */
