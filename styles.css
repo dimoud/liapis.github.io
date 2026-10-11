@@ -2101,3 +2101,15 @@ html.motion-paused .motion-toggle .mt-pause { display: none; }
     nav .nav-links .nav-close:hover, nav .nav-links .nav-close:focus-visible { background: var(--gold); color: var(--ink); outline: none; }
     nav .nav-links, nav .nav-links.open { padding-top: 128px; }
 }
+/* ── Αντίθεση ≥ 4,5:1 σε ανοιχτό φόντο (ΜΗ-18) και σύνδεσμοι κειμένου με υπογράμμιση (ΜΗ-17) ──
+   Ο χρυσός (#c9a86c) μένει για σκούρο φόντο· σε κρεμ/ανοιχτό φόντο το «μελάνι χρυσού» (5,2:1). */
+:root { --gold-ink: #7d5f27; }
+.services-section .eyebrow span, .news-section .eyebrow span, .svc-area .service-more,
+.page-answer .page-answer-label, .news-card-cat, .hub-more { color: var(--gold-ink); }
+.page-section a, .svc-area p a { color: var(--gold-ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.page-section a:hover, .svc-area p a:hover { color: var(--ink); }
+.page-section .service-more, .page-section .btn-gold, .page-section .btn-outline { text-decoration: none; }
+.service-num { color: #8a847b; }                       /* 60 px — μεγάλο κείμενο, 3,3:1 */
+.lang-btn { opacity: .75; }                          /* ανενεργή γλώσσα: λιγότερο σβηστή ώστε το ΕΝ/ΕΛ να διαβάζεται */
+.lang-btn .lcode { color: #b3b0aa; }                  /* με αδιαφάνεια .75 σε σκούρο φόντο ≈ 4,9:1 */
+.lang-btn.active .lcode { color: var(--gold); }

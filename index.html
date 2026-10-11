@@ -171,7 +171,7 @@
     <main id="main">
 
     <!-- ===== MARQUEE ===== -->
-    <div class="marquee-wrap">
+    <div class="marquee-wrap" tabindex="0" role="region" aria-label="Υπηρεσίες με μια ματιά" data-i18n-aria="marquee.aria">
         <div class="marquee-track">
             <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m1">Άμεση Αυτοψία</span></div>
             <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m2">Ηλεκτρονική Ταυτότητα Κτιρίου</span></div>
@@ -747,7 +747,8 @@
             if (reduce) { hero.classList.add('hero-still'); return; }
             var lines = hero.querySelectorAll('.hero-name .line1, .hero-name .line2'), k = 0, total = 0;
             lines.forEach(function (ln) {
-                var txt = ln.textContent; ln.textContent = ''; ln.setAttribute('aria-label', txt);
+                var txt = ln.textContent; ln.textContent = ''; ln.setAttribute('data-txt', txt);
+                var sr = document.createElement('span'); sr.className = 'sr-only'; sr.textContent = txt; ln.appendChild(sr);
                 txt.split('').forEach(function (ch) {
                     var s = document.createElement('span');
                     s.className = 'ch'; s.setAttribute('aria-hidden', 'true');
@@ -758,7 +759,7 @@
             total = k;
             hero.classList.add('hero-anim');
             setTimeout(function () {
-                lines.forEach(function (ln) { if (ln.querySelector('.ch')) ln.textContent = ln.textContent; ln.removeAttribute('aria-label'); });
+                lines.forEach(function (ln) { if (ln.querySelector('.ch')) ln.textContent = ln.getAttribute('data-txt'); ln.removeAttribute('data-txt'); });
                 hero.classList.add('hero-anim-done');
             }, 900 + total * 45 + 400);
           }
