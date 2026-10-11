@@ -2108,7 +2108,8 @@ html.motion-paused .motion-toggle .mt-pause { display: none; }
    Ο χρυσός (#c9a86c) μένει για σκούρο φόντο· σε κρεμ/ανοιχτό φόντο το «μελάνι χρυσού» (5,2:1). */
 :root { --gold-ink: #7d5f27; }
 .services-section .eyebrow span, .news-section .eyebrow span, .svc-area .service-more,
-.page-answer .page-answer-label, .news-card-cat, .hub-more { color: var(--gold-ink); }
+.services-section .service-more, .page-answer .page-answer-label, .news-card-cat, .hub-more { color: var(--gold-ink); }
+.services-section .service-card:hover .service-more { color: var(--gold2); }
 .page-section a, .svc-area p a { color: var(--gold-ink); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; }
 .page-section a:hover, .svc-area p a:hover { color: var(--ink); }
 .page-section .service-more, .page-section .btn-gold, .page-section .btn-outline { text-decoration: none; }
