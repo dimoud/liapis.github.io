@@ -69,6 +69,7 @@
             </div>
         </a>
         <div class="nav-links" id="navLinks">
+            <button type="button" class="nav-close" aria-label="Κλείσιμο μενού" data-i18n-aria="nav.close"><svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true" focusable="false"><path d="M1.5 1.5l11 11M12.5 1.5l-11 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
             <a href="../#about" data-i18n="nav.about">Σχετικά</a>
             <div class="nav-drop">
                 <a href="../#services" class="nav-drop-top" data-i18n="nav.services">Υπηρεσίες</a>
@@ -94,7 +95,7 @@
             <div class="lang-sep"></div>
             <button class="lang-btn" data-lang="en" onclick="setLang('en')">🇬🇧 <span class="lcode">EN</span></button>
         </div>
-        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()" role="button" tabindex="0" aria-controls="navLinks" aria-expanded="false" aria-label="Μενού" data-i18n-aria="nav.menu">
             <span></span><span></span><span></span>
         </div>
     </nav>

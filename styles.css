@@ -2089,3 +2089,15 @@ html.motion-paused .motion-toggle .mt-pause { display: none; }
     .hero-portrait { height: 42svh; min-height: 290px; }
     .hero-portrait img { object-position: 50% 8%; }
 }
+/* ── Μενού κινητού: κουμπί Χ μέσα στο συρτάρι (K11 / ΜΗ-05) ── */
+.nav-close { display: none; }
+@media (max-width: 768px) {
+    nav .nav-links .nav-close {
+        display: flex; align-items: center; justify-content: center; position: absolute; top: 72px; right: 18px;
+        width: 44px; height: 44px; padding: 0; border-radius: 50%; cursor: pointer;
+        background: none; color: var(--gold); border: 1px solid rgba(201,168,108,0.35);
+        transition: background-color .2s, color .2s;
+    }
+    nav .nav-links .nav-close:hover, nav .nav-links .nav-close:focus-visible { background: var(--gold); color: var(--ink); outline: none; }
+    nav .nav-links, nav .nav-links.open { padding-top: 128px; }
+}

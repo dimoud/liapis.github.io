@@ -281,6 +281,17 @@
         if (open) { document.body.style.overflow = ''; y0 = window.scrollY; }
     }).observe(menu, { attributes: true, attributeFilter: ['class'] });
     scrim.addEventListener('click', close);
+    /* Χ μέσα στο μενού (K11) + κατάσταση για αναγνώστες οθόνης στο κουμπί του μενού */
+    var xb = menu.querySelector('.nav-close'), hb = document.getElementById('hamburger');
+    if (xb) xb.addEventListener('click', function () { close(); if (hb) hb.focus(); });
+    if (hb) hb.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); hb.click(); }
+    });
+    new MutationObserver(function () {
+        var open = menu.classList.contains('open');
+        if (hb) hb.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (open && xb) setTimeout(function () { xb.focus({ preventScroll: true }); }, 50);
+    }).observe(menu, { attributes: true, attributeFilter: ['class'] });
     window.addEventListener('scroll', function () {
         if (menu.classList.contains('open') && Math.abs(window.scrollY - y0) > 40) close();
     }, { passive: true });

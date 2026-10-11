@@ -37,6 +37,8 @@
         'pg.hub.h1a': { el: 'Υπηρεσίες πολιτικού μηχανικού', en: 'Civil engineering services' },
         'pg.hub.lead': { el: 'Ένας μηχανικός για όλη την υπόθεση του ακινήτου σας, από τον πρώτο έλεγχο ως το συμβόλαιο ή την παράδοση του έργου. Διαλέξτε την υπηρεσία για να δείτε πώς δουλεύουμε και τι χρειάζεται.', en: 'One engineer for your whole property case, from the first check to the contract or the finished works. Choose a service to see how we work and what is needed.' },
         'nav.svc.all': { el: 'Όλες οι υπηρεσίες →', en: 'All services →' },
+        'nav.close': { el: 'Κλείσιμο μενού', en: 'Close menu' },
+        'nav.menu': { el: 'Μενού', en: 'Menu' },
         'meta.epiv.title': { el: 'Επίβλεψη Οικοδομής και Κατασκευών Αθήνα & Αττική | Β. Λιάπης', en: 'Construction Supervision in Athens & Attica | V. Liapis' },
         'meta.epiv.desc': { el: 'Επιβλέπων μηχανικός για νέες οικοδομές, προσθήκες και ανακαινίσεις στην Αθήνα και την Αττική: έλεγχος σε κάθε κρίσιμη φάση, από την εκσκαφή ως την παραλαβή.', en: 'Supervising engineer for new buildings, extensions and renovations in Athens and Attica: checks at every critical stage, from excavation to handover.' },
         'nav.svc.epiv': { el: 'Επίβλεψη κατασκευών', en: 'Construction supervision' },
