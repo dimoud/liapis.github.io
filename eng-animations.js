@@ -203,6 +203,7 @@
         }, 10000);
     }
 
+    window.__engAnim = true;
     /* ─── 9. REVEAL ON SCROLL ────────────────────────────────────────────── */
     var revealEls = document.querySelectorAll('[data-reveal], [data-reveal-r]');
     if (revealEls.length && 'IntersectionObserver' in window) {

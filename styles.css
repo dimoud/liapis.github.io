@@ -309,16 +309,16 @@
         .section-heading.light { color: var(--white); }
         .section-heading.light em { color: var(--gold); }
 
-        [data-reveal] {
+        html.anim-ready [data-reveal] {
             opacity: 0; transform: translateY(36px);
             transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
         }
-        [data-reveal].visible { opacity: 1; transform: translateY(0); }
-        [data-reveal-r] {
+        html.anim-ready [data-reveal].visible { opacity: 1; transform: translateY(0); }
+        html.anim-ready [data-reveal-r] {
             opacity: 0; transform: translateX(36px);
             transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
         }
-        [data-reveal-r].visible { opacity: 1; transform: translateX(0); }
+        html.anim-ready [data-reveal-r].visible { opacity: 1; transform: translateX(0); }
 
         /* ===== ABOUT ===== */
         .about-section { background: var(--ink); }
@@ -1226,17 +1226,17 @@
             /* ── Mobile Animation Enhancements ──────────────────────────────── */
 
             /* 1. Restore small slide-up on all reveals (was completely disabled) */
-            [data-reveal] { transform: translateY(20px); }
+            html.anim-ready [data-reveal] { transform: translateY(20px); }
 
             /* 2. Service cards: alternate left/right slide in 2-column grid */
-            .services-grid [data-reveal]             { transform: translateX(-22px); }
-            .services-grid [data-reveal]:nth-child(even) { transform: translateX(22px); }
-            .services-grid [data-reveal].visible     { transform: translateX(0); }
+            html.anim-ready .services-grid [data-reveal]             { transform: translateX(-22px); }
+            html.anim-ready .services-grid [data-reveal]:nth-child(even) { transform: translateX(22px); }
+            html.anim-ready .services-grid [data-reveal].visible     { transform: translateX(0); }
 
             /* 3. Project cards: same alternating treatment */
-            .projects-grid [data-reveal]             { transform: translateX(-22px); }
-            .projects-grid [data-reveal]:nth-child(even) { transform: translateX(22px); }
-            .projects-grid [data-reveal].visible     { transform: translateX(0); }
+            html.anim-ready .projects-grid [data-reveal]             { transform: translateX(-22px); }
+            html.anim-ready .projects-grid [data-reveal]:nth-child(even) { transform: translateX(22px); }
+            html.anim-ready .projects-grid [data-reveal].visible     { transform: translateX(0); }
 
             /* 4. Hero: photo scale-in + text staggered entrance */
             @keyframes mobilePhotoIn {
