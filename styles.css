@@ -2083,3 +2083,9 @@ html.motion-paused .motion-toggle .mt-pause { display: none; }
 .footer-links .motion-toggle.mt-footer:hover, .footer-links .motion-toggle.mt-footer:focus-visible { color: var(--gold); background: none; }
 .footer-links .motion-toggle.mt-footer .mt-i { width: 9px; height: 9px; }
 .footer-links { align-items: center; }
+/* ── Πρώτο κάδρο κινητού (K12 / ΜΗ-22): πορτρέτο χαμηλότερο ώστε η πρόταση αξίας και το κουμπί
+   κλήσης να φαίνονται πάνω από τη μπάρα cookies σε 360–414 × 800 ── */
+@media (max-width: 768px) {
+    .hero-portrait { height: 42svh; min-height: 290px; }
+    .hero-portrait img { object-position: 50% 8%; }
+}

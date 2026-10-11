@@ -59,9 +59,11 @@
         '  #cc-text strong{font-size:14px}',
         '}',
         '@media(max-width:480px){',
-        '  #cc-banner{flex-direction:column;align-items:flex-start}',
+        /* συμπαγής στο κινητό (ΜΗ-23): τίτλος στην ίδια γραμμή με το κείμενο, κουμπιά δίπλα-δίπλα */
+        '  #cc-banner{flex-direction:column;align-items:stretch;padding:10px 14px;gap:8px;font-size:12.5px;line-height:1.4}',
+        '  #cc-text strong{display:inline;font-size:13px;margin:0 6px 0 0}',
         '  #cc-btns{width:100%}',
-        '  #cc-accept,#cc-reject{flex:1;text-align:center}',
+        '  #cc-accept,#cc-reject{flex:1;text-align:center;padding:10px 12px}',
         '}',
     ].join('');
 
