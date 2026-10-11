@@ -49,8 +49,8 @@
         _lastPct = pct;
 
         elevMeter.classList.toggle('show', window.scrollY > 120);
-        if (elevFill) elevFill.style.height = pct + '%';
-        if (elevDot)  elevDot.style.bottom  = pct + '%';
+        /* ΜΗ-04: μόνο transform μέσω --p (scaleY / translateY στο CSS) */
+        elevMeter.style.setProperty('--p', (pct / 100).toFixed(4));
     }
 
     /* ─── 2. DIMENSION LINES ─────────────────────────────────────────────── */
@@ -100,7 +100,7 @@
         var pct   = total > 0 ? window.scrollY / total : 0;
 
         scrollRuler.classList.toggle('show', window.scrollY > 120);
-        if (srFill)  srFill.style.width = (pct * 100) + '%';
+        if (srFill)  srFill.style.setProperty('--p', pct.toFixed(4));
         if (srValue) srValue.textContent = (pct * RULER_MAX_M).toFixed(3) + ' m';
     }
 
@@ -235,7 +235,7 @@
     function updateProgress() {
         if (!progressBar) return;
         var total = document.documentElement.scrollHeight - window.innerHeight;
-        progressBar.style.width = (total > 0 ? (window.scrollY / total * 100) : 0) + '%';
+        progressBar.style.transform = 'scaleX(' + (total > 0 ? Math.min(1, window.scrollY / total) : 0).toFixed(4) + ')';
     }
 
     /* ─── NAV SCROLL CLASS ───────────────────────────────────────────────── */

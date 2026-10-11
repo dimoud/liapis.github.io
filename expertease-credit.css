@@ -57,13 +57,13 @@ hr.ec-rule {
 
 /* Layer A: credit — visible first */
 .ec-layer--credit {
-  animation: ec-fade-credit 9s ease-in-out infinite;
+  animation: ec-fade-credit 9s ease-in-out infinite; /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
 }
 
 /* Layer B: ad — offset by 4.5s (half cycle) */
 .ec-layer--ad {
   opacity: 0;
-  animation: ec-fade-ad 9s ease-in-out infinite;
+  animation: ec-fade-ad 9s ease-in-out infinite; /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
 }
 
 @keyframes ec-fade-credit {
@@ -164,7 +164,7 @@ hr.ec-rule {
 }
 
 .ec-ad-ring::after {
-  animation: ec-ring-pulse 2.4s ease-out infinite;
+  animation: ec-ring-pulse 2.4s ease-out infinite; /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
 }
 
 @keyframes ec-ring-pulse {
@@ -248,7 +248,7 @@ hr.ec-rule {
     transparent 100%
   );
   transform: skewX(-12deg);
-  animation: ec-sweep 7s ease-in-out infinite;
+  animation: ec-sweep 7s ease-in-out infinite; /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
   pointer-events: none;
   z-index: 0;
 }

@@ -31,7 +31,7 @@
         #progress {
             position: fixed; top: 0; left: 0; height: 2px;
             background: linear-gradient(90deg, var(--gold), var(--gold2));
-            width: 0%; z-index: 9999; transition: width 0.1s linear;
+            width: 100%; transform: scaleX(0); transform-origin: 0 50%; z-index: 9999; transition: transform 0.1s linear;
         }
 
         /* ===== NAVIGATION ===== */
@@ -40,7 +40,7 @@
             padding: 0 5%;
             height: 88px;
             display: flex; align-items: center; justify-content: space-between;
-            transition: all 0.5s var(--ease);
+            transition: color 0.5s var(--ease), background-color 0.5s var(--ease), border-color 0.5s var(--ease), opacity 0.5s var(--ease), transform 0.5s var(--ease), box-shadow 0.5s var(--ease);
         }
         nav.scrolled {
             height: 72px;
@@ -108,7 +108,7 @@
         }
         .hamburger span {
             width: 28px; height: 1.5px; background: var(--white);
-            transition: all 0.3s;
+            transition: color 0.3s, background-color 0.3s, border-color 0.3s, opacity 0.3s, transform 0.3s, box-shadow 0.3s;
         }
 
         /* ===== HERO ===== */
@@ -127,7 +127,7 @@
             opacity: 0;
             transition: opacity 1.5s ease-in-out;
             transform: scale(1.06);
-            animation: kenburns 20s ease-in-out infinite alternate;
+            animation: kenburns 20s ease-in-out infinite alternate; /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
         }
         .hero-slide.active { opacity: 1; }
         .hero-slide:nth-child(1) { background-image: url('cover_photo.webp'); }
@@ -207,7 +207,7 @@
             padding: 16px 40px; border-radius: 2px;
             font-size: 11px; font-weight: 600; letter-spacing: 2.5px;
             text-transform: uppercase;
-            transition: all 0.3s var(--ease);
+            transition: color 0.3s var(--ease), background-color 0.3s var(--ease), border-color 0.3s var(--ease), opacity 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
             -webkit-tap-highlight-color: transparent;
             display: inline-block;
         }
@@ -222,7 +222,7 @@
             padding: 16px 36px; border-radius: 2px;
             font-size: 11px; font-weight: 500; letter-spacing: 2px;
             text-transform: uppercase;
-            transition: all 0.3s;
+            transition: color 0.3s, background-color 0.3s, border-color 0.3s, opacity 0.3s, transform 0.3s, box-shadow 0.3s;
         }
         .btn-outline:hover {
             border-color: var(--gold);
@@ -236,7 +236,7 @@
             transform: translateX(-50%);
             display: flex; flex-direction: column; align-items: center; gap: 10px;
             z-index: 2;
-            animation: bounce 2.5s ease-in-out infinite;
+            animation: bounce 2.5s ease-in-out infinite; /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
         }
         .scroll-hint span {
             font-size: 8px; letter-spacing: 3px; text-transform: uppercase;
@@ -260,7 +260,7 @@
         }
         .marquee-track {
             display: inline-flex; gap: 0;
-            animation: marquee 28s linear infinite;
+            animation: marquee 28s linear infinite; /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
         }
         .marquee-item {
             display: inline-flex; align-items: center; gap: 20px;
@@ -437,12 +437,11 @@
             font-size: 10px; font-weight: 600; letter-spacing: 2px;
             text-transform: uppercase; color: var(--gold);
             opacity: 0; transform: translateY(8px);
-            transition: all 0.4s var(--ease);
+            transition: color 0.4s var(--ease), background-color 0.4s var(--ease), border-color 0.4s var(--ease), opacity 0.4s var(--ease), transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
         }
         .service-link::after {
             content: '';
             width: 24px; height: 1px; background: var(--gold);
-            transition: width 0.3s;
         }
         .service-card:hover .service-link {
             opacity: 1; transform: translateY(0);
@@ -523,7 +522,7 @@
             border: 1px solid rgba(201,168,108,0.2);
             color: rgba(201,168,108,0.7); font-size: 10px; font-weight: 500;
             padding: 7px 16px; letter-spacing: 1.5px; text-transform: uppercase;
-            transition: all 0.3s;
+            transition: color 0.3s, background-color 0.3s, border-color 0.3s, opacity 0.3s, transform 0.3s, box-shadow 0.3s;
         }
         .region-tag:hover {
             background: rgba(201,168,108,0.1); color: var(--gold);
@@ -556,7 +555,7 @@
             margin: 0 auto 32px;
             font-family: 'Cormorant Garamond', serif;
             font-size: 20px; font-weight: 600; color: var(--ink);
-            transition: all 0.4s;
+            transition: color 0.4s, background-color 0.4s, border-color 0.4s, opacity 0.4s, transform 0.4s, box-shadow 0.4s;
         }
         .step:hover .step-num {
             background: var(--gold); border-color: var(--gold);
@@ -621,7 +620,7 @@
             font-size: 12px; color: rgba(255,255,255,0.75);
             margin-top: 6px; line-height: 1.5;
             opacity: 0; transform: translateY(6px);
-            transition: all 0.4s var(--ease);
+            transition: color 0.4s var(--ease), background-color 0.4s var(--ease), border-color 0.4s var(--ease), opacity 0.4s var(--ease), transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
         }
         .project-card:hover .project-card-info p {
             opacity: 1; transform: translateY(0);
@@ -725,7 +724,7 @@
             font-size: 10px; font-weight: 600;
             letter-spacing: 2.5px; text-transform: uppercase;
             cursor: pointer; margin-top: 16px;
-            transition: all 0.3s var(--ease);
+            transition: color 0.3s var(--ease), background-color 0.3s var(--ease), border-color 0.3s var(--ease), opacity 0.3s var(--ease), transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
         }
         .btn-submit:hover {
             background: var(--gold2);
@@ -796,7 +795,7 @@
             border: 1px solid rgba(255,255,255,0.12);
             display: flex; align-items: center; justify-content: center;
             color: rgba(255,255,255,0.5); font-size: 14px;
-            transition: all 0.3s;
+            transition: color 0.3s, background-color 0.3s, border-color 0.3s, opacity 0.3s, transform 0.3s, box-shadow 0.3s;
         }
         .social-link:hover {
             border-color: var(--gold); color: var(--gold);
@@ -819,15 +818,16 @@
         }
         .elev-fill {
             position: absolute; bottom: 0; left: 0; right: 0;
-            background: rgba(201,168,108,0.55);
-            transition: height 0.12s linear;
+            background: rgba(201,168,108,0.55); height: 100%;
+            transform: scaleY(var(--p, 0)); transform-origin: 50% 100%;   /* ΜΗ-04: μόνο transform */
+            transition: transform 0.12s linear;
         }
         .elev-dot {
             position: absolute; left: 50%; width: 9px; height: 9px;
             background: var(--gold); border-radius: 50%;
-            transform: translate(-50%, 50%); bottom: 0%;
+            transform: translate(-50%, calc(50% - var(--p, 0) * 200px)); bottom: 0;   /* 200px = ύψος .elev-track */
             box-shadow: 0 0 14px rgba(201,168,108,0.9);
-            transition: bottom 0.12s linear;
+            transition: transform 0.12s linear;
         }
         .elev-ticks {
             position: absolute; inset: 0;
@@ -855,7 +855,7 @@
                 linear-gradient(rgba(201,168,108,0.065) 1px, transparent 1px),
                 linear-gradient(90deg, rgba(201,168,108,0.065) 1px, transparent 1px);
             background-size: 54px 54px;
-            animation: bpShift 45s linear infinite;
+            animation: bpShift 45s linear infinite; /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
         }
         @keyframes bpShift {
             from { background-position: 0 0; }
@@ -866,7 +866,7 @@
         .crosshair-wrap {
             position: absolute; top: 20%; right: 9%; z-index: 3;
             pointer-events: none;
-            animation: chFloat 9s ease-in-out infinite;
+            animation: chFloat 9s ease-in-out infinite; /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
             opacity: 0; transition: opacity 2s 0.8s;
         }
         .crosshair-wrap.loaded { opacity: 0.60; }
@@ -979,7 +979,8 @@
         }
         .sr-fill {
             position: absolute; left: 0; top: 0; height: 100%;
-            background: rgba(201,168,108,0.6); transition: width 0.1s linear;
+            background: rgba(201,168,108,0.6); width: 100%;
+            transform: scaleX(var(--p, 0)); transform-origin: 0 50%; transition: transform 0.1s linear;
         }
         .sr-ticks {
             position: absolute; top: -10px; left: 0; right: 0;
@@ -1672,7 +1673,7 @@
     -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
             mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent);
 }
-.news-track { display: inline-flex; gap: 22px; will-change: transform; animation: newsDrift 90s linear infinite; }
+.news-track { display: inline-flex; gap: 22px; will-change: transform; animation: newsDrift 90s linear infinite; } /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
 @keyframes newsDrift { from { transform: translateX(-50%); } to { transform: translateX(0); } }
 .news-card {
     position: relative; display: flex; flex-direction: column; gap: 10px;
@@ -1773,7 +1774,7 @@ nav:has(.nav-links.open), nav.scrolled:has(.nav-links.open) { backdrop-filter: n
 .onestop-inner.visible li:nth-child(4) .os-node { transition-delay: 2.4s; background: rgba(201,168,108,0.14); }
 .onestop-inner.visible .os-fill { transform: scaleX(1); }
 .onestop-inner.visible .os-runner { animation: osRun 2.2s cubic-bezier(.45,.05,.25,1) .3s forwards; }
-.onestop-inner.visible li:nth-child(4) .os-node { animation: osPulse 2.4s ease-in-out 2.7s infinite; }
+.onestop-inner.visible li:nth-child(4) .os-node { animation: osPulse 2.4s ease-in-out 2.7s infinite; } /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
 .onestop-inner.visible .onestop-note { opacity: 1; }
 @keyframes osRun { 0% { left: 0; opacity: 0; } 8% { opacity: 1; } 90% { opacity: 1; } 100% { left: 100%; opacity: 0; } }
 @keyframes osPulse { 0%, 100% { box-shadow: 0 0 0 6px rgba(201,168,108,0.18); } 50% { box-shadow: 0 0 0 12px rgba(201,168,108,0.06); } }
@@ -1843,9 +1844,9 @@ nav:has(.nav-links.open), nav.scrolled:has(.nav-links.open) { backdrop-filter: n
 .onestop-lead { max-width: 680px; }
 @media (min-width: 900px) { #onestopHeading { white-space: nowrap; } }
 .os-fill { transition: none; transform: scaleX(0); }
-.onestop-inner.visible .os-fill { transform: scaleX(0); animation: osFillLoop 6s linear 0.6s infinite; }
-.onestop-inner.visible .os-runner { animation: osRunLoop 6s linear 0.6s infinite; }
-.onestop-inner.visible .onestop-path li .os-node { animation: osHit 6s linear infinite; }
+.onestop-inner.visible .os-fill { transform: scaleX(0); animation: osFillLoop 6s linear 0.6s infinite; } /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
+.onestop-inner.visible .os-runner { animation: osRunLoop 6s linear 0.6s infinite; } /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
+.onestop-inner.visible .onestop-path li .os-node { animation: osHit 6s linear infinite; } /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
 .onestop-inner.visible .onestop-path li:nth-child(1) .os-node { animation-delay: 0.6s; }
 .onestop-inner.visible .onestop-path li:nth-child(2) .os-node { animation-delay: 2.3s; }
 .onestop-inner.visible .onestop-path li:nth-child(3) .os-node { animation-delay: 4s; }
@@ -1909,7 +1910,7 @@ nav:has(.nav-links.open), nav.scrolled:has(.nav-links.open) { backdrop-filter: n
     background: linear-gradient(100deg, var(--gold) 0%, var(--gold) 42%, #f6e3b4 50%, var(--gold) 58%, var(--gold) 100%);
     background-size: 260% 100%; background-position: 100% 0;
     -webkit-background-clip: text; background-clip: text; color: transparent;
-    animation: heroShine 7s ease-in-out 0.4s infinite !important; }
+    animation: heroShine 7s ease-in-out 0.4s infinite !important; } /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
 @keyframes heroShine { 0% { background-position: 100% 0; } 30%, 100% { background-position: 0% 0; } }
 /* υπότιτλος: η γραμμή σχεδιάζεται */
 .hero-anim .hero-eyebrow::before { transform-origin: left; animation: heroRule 1s var(--ease) 1.1s both; }
@@ -1925,12 +1926,12 @@ nav:has(.nav-links.open), nav.scrolled:has(.nav-links.open) { backdrop-filter: n
 .hero-anim .hero-svc a:nth-child(3) { animation-delay: 1.99s; }
 /* κουμπί κλήσης: απαλός παλμός */
 .hero-anim .hero-actions .btn-gold { position: relative; }
-.hero-anim .hero-actions .btn-gold::after { content: ''; position: absolute; inset: 0; border: 1px solid var(--gold); pointer-events: none; animation: heroRing 3.2s ease-out 3s infinite; opacity: 0; border-radius: inherit; }
+.hero-anim .hero-actions .btn-gold::after { content: ''; position: absolute; inset: 0; border: 1px solid var(--gold); pointer-events: none; animation: heroRing 3.2s ease-out 3s infinite; opacity: 0; border-radius: inherit; } /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
 @keyframes heroRing { 0% { opacity: .8; transform: scale(1); } 70%, 100% { opacity: 0; transform: scale(1.12, 1.4); } }
 /* πορτρέτο: το χρυσό πλαίσιο σχεδιάζεται, αργό ζουμ */
 .hero-anim .hero-portrait::after { animation: heroFrame 1.6s cubic-bezier(.65,0,.35,1) .9s both; }
 @keyframes heroFrame { from { clip-path: inset(0 100% 100% 0); } 50% { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
-.hero-anim .hero-portrait img { animation: heroPortraitIn 1.4s var(--ease) .1s both, heroKB 22s ease-in-out 1.5s infinite alternate; transition: translate .6s cubic-bezier(.2,.8,.2,1); }
+.hero-anim .hero-portrait img { animation: heroPortraitIn 1.4s var(--ease) .1s both, heroKB 22s ease-in-out 1.5s infinite alternate; transition: translate .6s cubic-bezier(.2,.8,.2,1); } /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
 @keyframes heroKB { from { transform: scale(1); } to { transform: scale(1.07); } }
 .hero-anim .hero-portrait figcaption { animation: heroUp .8s var(--ease) 2.2s both; }
 @media (max-width: 900px) { .hero-anim .hero-portrait figcaption { animation-name: heroFade; } }
@@ -1940,7 +1941,7 @@ nav:has(.nav-links.open), nav.scrolled:has(.nav-links.open) { backdrop-filter: n
 .hero-scan span { position: absolute; left: 0; right: 0; top: 0; height: 1px; opacity: 0;
     background: linear-gradient(90deg, transparent, rgba(201,168,108,.0) 5%, rgba(232,201,138,.85) 50%, rgba(201,168,108,0) 95%, transparent);
     box-shadow: 0 0 12px 2px rgba(232,201,138,.35); }
-.hero-anim .hero-scan span { animation: heroScan 9s cubic-bezier(.45,0,.55,1) 2.4s infinite; }
+.hero-anim .hero-scan span { animation: heroScan 9s cubic-bezier(.45,0,.55,1) 2.4s infinite; } /* ΜΗ-02: παύση με .motion-toggle (html.motion-paused) */
 @keyframes heroScan { 0% { top: 8%; opacity: 0; } 6% { opacity: .9; } 44% { top: 92%; opacity: .9; } 50%, 100% { top: 92%; opacity: 0; } }
 @media (min-width: 901px) { .hero-scan { right: calc(42% + 4px); } }
 @media (prefers-reduced-motion: reduce) {
@@ -2120,3 +2121,8 @@ html.motion-paused .motion-toggle .mt-pause { display: none; }
 .contact-map-band .contact-map-addr { font-size: 15px; letter-spacing: .5px; color: rgba(255,255,255,0.9); }
 .contact-map-band .map-click-btn:hover .contact-map-btn, .contact-map-band .map-click-btn:focus-visible .contact-map-btn { background: var(--gold); color: var(--ink); }
 .contact-map-band .map-click-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: -4px; }
+
+/* ── Κουμπί παύσης στο κινητό: επάνω δεξιά στο πορτρέτο, όχι πάνω στους συνδέσμους υπηρεσιών (K4) ── */
+@media (max-width: 768px) {
+    .motion-toggle.mt-hero { left: auto; bottom: auto; top: 76px; right: 22px; }
+}
