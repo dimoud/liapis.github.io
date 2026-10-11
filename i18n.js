@@ -630,7 +630,9 @@
         document.querySelectorAll('[data-i18n]').forEach(function (el) {
             var key = el.getAttribute('data-i18n');
             if (t[key] && t[key][lang] !== undefined) {
-                el.textContent = decodeEnt(t[key][lang]);
+                /* ίδιο κείμενο → δεν ξαναγράφεται (αλλιώς ξαναζωγραφίζεται και το LCP μετριέται μετά το σενάριο) */
+                var v = decodeEnt(t[key][lang]);
+                if (el.textContent !== v) el.textContent = v;
             }
         });
 
@@ -638,7 +640,8 @@
         document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
             var key = el.getAttribute('data-i18n-html');
             if (t[key] && t[key][lang] !== undefined) {
-                el.innerHTML = t[key][lang];
+                var tmp = document.createElement('div'); tmp.innerHTML = t[key][lang];
+                if (el.innerHTML !== tmp.innerHTML) el.innerHTML = t[key][lang];
             }
         });
 
