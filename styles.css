@@ -2113,3 +2113,10 @@ html.motion-paused .motion-toggle .mt-pause { display: none; }
 .lang-btn { opacity: .75; }                          /* ανενεργή γλώσσα: λιγότερο σβηστή ώστε το ΕΝ/ΕΛ να διαβάζεται */
 .lang-btn .lcode { color: #b3b0aa; }                  /* με αδιαφάνεια .75 σε σκούρο φόντο ≈ 4,9:1 */
 .lang-btn.active .lcode { color: var(--gold); }
+/* ── Χάρτης μόνο με πάτημα (βιβλιοθήκη map-click): κανένα αίτημα/cookie Google πριν από την επιλογή ── */
+.contact-map-band.map-click { position: relative; }
+.contact-map-band .map-click-btn { width: 100%; height: 100%; border: 0; cursor: pointer; font: inherit; color: #fff;
+    background: radial-gradient(ellipse at center, rgba(201,168,108,0.10), transparent 70%), var(--ink); }
+.contact-map-band .contact-map-addr { font-size: 15px; letter-spacing: .5px; color: rgba(255,255,255,0.9); }
+.contact-map-band .map-click-btn:hover .contact-map-btn, .contact-map-band .map-click-btn:focus-visible .contact-map-btn { background: var(--gold); color: var(--ink); }
+.contact-map-band .map-click-btn:focus-visible { outline: 2px solid var(--gold); outline-offset: -4px; }

@@ -543,8 +543,13 @@
             </div>
         </div>
     </section>
-    <div class="contact-map-band">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.9624508273423!2d23.747500799999997!3d38.0013363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a2ba450b5513%3A0xb4fa06fd66a7ef6b!2zzpTOtc67zrLOr869zr_PhSAzMSwgzpHOuM6uzr3OsSAxMTMgNjM!5e0!3m2!1sel!2sgr!4v1790160450576!5m2!1sel!2sgr" title="Χάρτης: γραφείο Β. Λιάπη, Δελβίνου 31, Αθήνα" data-i18n-title="map.title" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="contact-map-band map-click" data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.9624508273423!2d23.747500799999997!3d38.0013363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a2ba450b5513%3A0xb4fa06fd66a7ef6b!2zzpTOtc67zrLOr869zr_PhSAzMSwgzpHOuM6uzr3OsSAxMTMgNjM!5e0!3m2!1sel!2sgr!4v1790160450576!5m2!1sel!2sgr" data-map-title="Χάρτης: γραφείο Β. Λιάπη, Δελβίνου 31, Αθήνα">
+        <button type="button" class="map-click-btn contact-map-ph">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <span class="contact-map-addr" data-i18n="contact.addr">Δελβίνου 31, 113 63 Αθήνα</span>
+            <span class="contact-map-btn" data-i18n="map.show">Εμφάνιση χάρτη</span>
+            <small data-i18n="map.note">Ο χάρτης φορτώνει από τη Google μόνο αν τον ανοίξετε.</small>
+        </button>
     </div>
 
     <!-- ===== FOOTER ===== -->
@@ -790,6 +795,14 @@
     <script src="i18n.js"></script>
     <script src="consent.js"></script>
     <script src="news-carousel.js" defer></script>
+    <script src="map-click.js" defer></script>
+    <script>
+        /* τίτλος του iframe στη γλώσσα της σελίδας (το map-click.js τον διαβάζει τη στιγμή του πατήματος) */
+        document.addEventListener('langchange', function () {
+            var b = document.querySelector('.contact-map-band[data-map-src]'), T = window.I18n && I18n.translations['map.title'];
+            if (b && T) b.setAttribute('data-map-title', T[I18n.getLang()] || T.el);
+        });
+    </script>
     <script>
         (function () {
             var fig = document.getElementById('aboutDraw');
