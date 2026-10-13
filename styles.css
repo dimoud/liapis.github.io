@@ -2139,3 +2139,8 @@ html.motion-paused .motion-toggle .mt-pause { display: none; }
 @media (min-width: 769px) and (max-width: 900px) {
     nav .logo-text { display: none; }
 }
+
+/* GEO: πηγή με σύνδεσμο στο ΦΕΚ μέσα στο «Με λίγα λόγια», ημερομηνία στους κόμβους */
+.page-answer .page-src { font-size: 13px; margin: 4px 0 0; opacity: 1; }
+.page-answer .page-src a { color: var(--gold-ink); text-decoration: underline; text-underline-offset: 3px; }
+.page-updated--hub { font-size: 12px; opacity: .7; margin: 0 0 24px; }
