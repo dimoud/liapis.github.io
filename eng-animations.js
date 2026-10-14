@@ -192,36 +192,20 @@
     }
 
     /* ─── 8. HERO PHOTO CROSSFADE ────────────────────────────────────────── */
-    var heroSlides = document.querySelectorAll('.hero-slide');
-    if (heroSlides.length > 1) {
-        var _currentSlide = 0;
-        setInterval(function () {
-            if (document.documentElement.classList.contains('motion-paused')) return;
-            heroSlides[_currentSlide].classList.remove('active');
-            _currentSlide = (_currentSlide + 1) % heroSlides.length;
-            heroSlides[_currentSlide].classList.add('active');
-        }, 10000);
-    }
+    /* 14/10/2026: καμία ατέρμονη εναλλαγή στην πρώτη οθόνη (ΜΗ-37). Μένει η πρώτη φωτογραφία,
+       που «κάθεται» μία φορά (kbSettle στο styles.css). */
 
     window.__engAnim = true;
     /* ─── 9. REVEAL ON SCROLL ────────────────────────────────────────────── */
     var revealEls = document.querySelectorAll('[data-reveal], [data-reveal-r]');
     if (revealEls.length && 'IntersectionObserver' in window) {
         var revealObs = new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-                if (entry.isIntersecting) {
-                    var siblings = Array.prototype.filter.call(
-                        entry.target.parentElement.children,
-                        function (el) {
-                            return el.hasAttribute('data-reveal') || el.hasAttribute('data-reveal-r');
-                        }
-                    );
-                    var idx = siblings.indexOf(entry.target);
-                    setTimeout(function () {
-                        entry.target.classList.add('visible');
-                    }, idx * 120);
-                    revealObs.unobserve(entry.target);
-                }
+            /* 14/10/2026 (ΜΗ-34): κλιμάκωση μόνο ανάμεσα σε όσα μπαίνουν μαζί στο κάδρο, 80 ms, έως 4 βήματα */
+            var batch = entries.filter(function (e) { return e.isIntersecting; });
+            batch.forEach(function (entry, j) {
+                entry.target.style.setProperty('--rv-d', Math.min(j, 4) * 80 + 'ms');
+                entry.target.classList.add('visible');
+                revealObs.unobserve(entry.target);
             });
         }, { threshold: 0.1 });
         revealEls.forEach(function (el) { revealObs.observe(el); });
@@ -347,4 +331,28 @@
     make(document.querySelector('footer .footer-links'), 'mt-footer', true);
     render();
     document.addEventListener('langchange', render);
+})();
+
+/* ─── ΚΙΝΗΣΗ v2.16 (14/10/2026) ───────────────────────────────────────────
+   1. Παύση εκτός οθόνης για ό,τι συνεχές μένει (KN6): ταινία, ειδήσεις, υπογραφή.
+   2. Μήκος διαδρομής του δρομέα στο «Αναλαμβάνουμε όλη τη διαδικασία»
+      (μετριέται μία φορά, η κίνηση γίνεται με transform). */
+(function () {
+    'use strict';
+    if ('IntersectionObserver' in window) {
+        var off = new IntersectionObserver(function (es) {
+            es.forEach(function (e) { e.target.classList.toggle('anim-off', !e.isIntersecting); });
+        }, { threshold: 0 });
+        document.querySelectorAll('.marquee-wrap, .news-section, .expertease-credit').forEach(function (el) {
+            el.classList.add('anim-off'); off.observe(el);
+        });
+    }
+    var track = document.querySelector('.os-track');
+    function size() {
+        if (!track) return;
+        track.style.setProperty('--os-w', track.clientWidth + 'px');
+        track.style.setProperty('--os-h', track.clientHeight + 'px');
+    }
+    size();
+    window.addEventListener('resize', size);
 })();

@@ -473,7 +473,7 @@
 
                 <div class="person-card">
                     <img loading="lazy" decoding="async" src="founder-sm.webp" width="240" height="240" alt="Βάιος Λιάπης" data-i18n-alt="person.name" class="person-photo"
-                         onerror="this.src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png'">
+                         onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='logo-mark.webp';}">
                     <div class="person-details">
                         <h3 data-i18n="person.name">Βάιος Λιάπης</h3>
                         <p data-i18n="contact.role">Πολιτικός Μηχανικός ΑΠΘ</p>
@@ -716,34 +716,32 @@
     </script>
 
     <script>
+        /* Κάρτες υπηρεσιών: οι κάρτες κάθε σειράς «κλείνουν» στη θέση τους μία φορά όταν η σειρά μπει στο κάδρο.
+           14/10/2026: πριν ήταν δεμένες στη θέση κύλισης και στο κινητό (ΜΗ-35), με getBoundingClientRect σε κάθε καρέ. */
         (function () {
             var grid = document.querySelector('.services-grid');
-            if (!grid || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-            var cards = [].slice.call(grid.querySelectorAll('.service-card')), rows = [], ticking = false;
-            function layout() {
-                rows = []; var byTop = {};
-                cards.forEach(function (el) { el.style.transform = ''; var k = el.offsetTop; (byTop[k] = byTop[k] || []).push(el); });
-                Object.keys(byTop).forEach(function (k) { rows.push(byTop[k]); });
-                update();
-            }
-            function update() {
-                ticking = false;
-                var vh = window.innerHeight, spread = window.innerWidth < 700 ? 14 : 26, lift = window.innerWidth < 700 ? 10 : 18;
-                rows.forEach(function (row) {
-                    var top = row[0].getBoundingClientRect().top;
-                    var p = Math.min(1, Math.max(0, (vh - top) / (vh * 0.6)));
-                    var open = 1 - p, n = row.length;
-                    row.forEach(function (el, c) {
-                        var d = c - (n - 1) / 2;
-                        el.style.transform = 'translate(' + (d * spread * open).toFixed(1) + 'px,' + ((c % 2 ? 1 : -1) * lift * open).toFixed(1) + 'px)';
-                        el.style.opacity = (0.45 + 0.55 * p).toFixed(3);
-                    });
+            if (!grid || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            var cards = [].slice.call(grid.querySelectorAll('.service-card')), byTop = {};
+            cards.forEach(function (el) { var k = el.offsetTop; (byTop[k] = byTop[k] || []).push(el); });
+            var spread = window.innerWidth < 700 ? 14 : 26, lift = window.innerWidth < 700 ? 10 : 18;
+            Object.keys(byTop).forEach(function (k) {
+                var row = byTop[k], n = row.length;
+                row.forEach(function (el, c) {
+                    var d = c - (n - 1) / 2;
+                    el.style.transform = 'translate(' + (d * spread).toFixed(1) + 'px,' + ((c % 2 ? 1 : -1) * lift).toFixed(1) + 'px)';
+                    el.style.opacity = '0.45';
                 });
-            }
-            window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
-            window.addEventListener('resize', layout);
-            window.addEventListener('load', layout);
-            layout();
+                var io = new IntersectionObserver(function (es) {
+                    if (!es[0].isIntersecting) return;
+                    io.disconnect();
+                    row.forEach(function (el) {
+                        el.style.transition = 'transform .9s cubic-bezier(.2,.7,.2,1), opacity .9s ease';
+                        el.style.transform = ''; el.style.opacity = '';
+                        el.addEventListener('transitionend', function f() { el.style.transition = ''; el.removeEventListener('transitionend', f); });
+                    });
+                }, { threshold: 0.2 });
+                io.observe(row[0]);
+            });
         })();
     </script>
 
@@ -822,3 +820,4 @@
     <script src="contact-form.js" defer></script>
 </body>
 </html>
+

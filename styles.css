@@ -309,16 +309,13 @@
         .section-heading.light { color: var(--white); }
         .section-heading.light em { color: var(--gold); }
 
-        html.anim-ready [data-reveal] {
-            opacity: 0; transform: translateY(36px);
-            transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
-        }
-        html.anim-ready [data-reveal].visible { opacity: 1; transform: translateY(0); }
-        html.anim-ready [data-reveal-r] {
-            opacity: 0; transform: translateX(36px);
-            transition: opacity 0.9s var(--ease), transform 0.9s var(--ease);
-        }
-        html.anim-ready [data-reveal-r].visible { opacity: 1; transform: translateX(0); }
+        /* Εμφάνιση κατά την κύλιση (14/10/2026): CSS animation στην ιδιότητα translate, όχι transition σε transform,
+           ώστε η μετάβαση hover μιας κάρτας να μην την ακυρώνει (ΜΗ-34, references/15 §Α2) */
+        html.anim-ready [data-reveal], html.anim-ready [data-reveal-r] { opacity: 0; }
+        html.anim-ready [data-reveal].visible { opacity: 1; animation: rvUp .7s cubic-bezier(.2,.7,.2,1) var(--rv-d, 0ms) both; }
+        html.anim-ready [data-reveal-r].visible { opacity: 1; animation: rvSide .7s cubic-bezier(.2,.7,.2,1) var(--rv-d, 0ms) both; }
+        @keyframes rvUp { from { opacity: 0; translate: 0 20px; } to { opacity: 1; translate: 0 0; } }
+        @keyframes rvSide { from { opacity: 0; translate: 20px 0; } to { opacity: 1; translate: 0 0; } }
 
         /* ===== ABOUT ===== */
         .about-section { background: var(--ink); }
@@ -1227,17 +1224,10 @@
             /* ── Mobile Animation Enhancements ──────────────────────────────── */
 
             /* 1. Restore small slide-up on all reveals (was completely disabled) */
-            html.anim-ready [data-reveal] { transform: translateY(20px); }
 
             /* 2. Service cards: alternate left/right slide in 2-column grid */
-            html.anim-ready .services-grid [data-reveal]             { transform: translateX(-22px); }
-            html.anim-ready .services-grid [data-reveal]:nth-child(even) { transform: translateX(22px); }
-            html.anim-ready .services-grid [data-reveal].visible     { transform: translateX(0); }
 
             /* 3. Project cards: same alternating treatment */
-            html.anim-ready .projects-grid [data-reveal]             { transform: translateX(-22px); }
-            html.anim-ready .projects-grid [data-reveal]:nth-child(even) { transform: translateX(22px); }
-            html.anim-ready .projects-grid [data-reveal].visible     { transform: translateX(0); }
 
             /* 4. Hero: photo scale-in + text staggered entrance */
             @keyframes mobilePhotoIn {
@@ -1350,12 +1340,12 @@
 
 /* ── Προσβασιμότητα ── */
 .skip-link {
-    position: absolute; left: 16px; top: -60px; z-index: 10000;
+    position: absolute; left: 16px; top: 0; z-index: 10000; transform: translateY(-60px);
     padding: 10px 18px; background: #c9a86c; color: #1a1410;
     font-weight: 600; text-decoration: none; border-radius: 2px;
-    transition: top 0.2s;
+    transition: transform 0.2s;
 }
-.skip-link:focus { top: 16px; }
+.skip-link:focus { transform: translateY(16px); }
 :focus-visible { outline: 2px solid #c9a86c; outline-offset: 3px; }
 #main, section[id] { scroll-margin-top: 96px; }
 
@@ -2144,3 +2134,62 @@ html.motion-paused .motion-toggle .mt-pause { display: none; }
 .page-answer .page-src { font-size: 13px; margin: 4px 0 0; opacity: 1; }
 .page-answer .page-src a { color: var(--gold-ink); text-decoration: underline; text-underline-offset: 3px; }
 .page-updated--hub { font-size: 12px; opacity: .7; margin: 0 0 24px; }
+
+/* ══════════════════════════════════════════════════════════════════
+   ΚΙΝΗΣΗ v2.16 (14/10/2026): μία φορά, με μηχανισμό, σταματά εκτός οθόνης
+   Πηγή κανόνων: πρόσθετο istoselides, δεξιότητα kinisi (ΜΗ-04, ΜΗ-35, ΜΗ-37, KN1–KN7).
+   Υπερισχύει των παραπάνω κανόνων επειδή είναι τελευταίο στο αρχείο.
+   ══════════════════════════════════════════════════════════════════ */
+
+/* 1. Εξώφυλλο: χωρίς ατέρμονο ζουμ· η φωτογραφία «κάθεται» μία φορά (1,06 → 1, 2,4 s) */
+.hero-slide { animation: kbSettle 2.4s cubic-bezier(.2,.7,.2,1) both; }
+.hero-slide:nth-child(2) { animation-delay: 0s; }
+@keyframes kbSettle { from { transform: scale(1.06); } to { transform: none; } }
+
+/* 2. Κάνναβος σχεδίου: στατικός (η μετατόπιση background-position ξανασχεδίαζε όλο το hero σε κάθε καρέ) */
+.hero-blueprint { animation: none; }
+
+/* 3. «ΛΙΑΠΗΣ»: η χρυσή λάμψη περνά μία φορά, όταν ολοκληρωθεί η γραφή του ονόματος */
+.hero-anim-done .hero-name .line2 { animation: heroShine 2.4s ease-in-out .3s 1 both !important; }
+
+/* 4. Κουμπί κλήσης: τρεις παλμοί και στάση (όχι ατέρμονα) */
+.hero-anim .hero-actions .btn-gold::after { animation-iteration-count: 3; }
+
+/* 5. Πορτρέτο: μόνο η είσοδος, χωρίς ατέρμονο ζουμ */
+.hero-anim .hero-portrait img { animation: heroPortraitIn 1.4s var(--ease) .1s both; }
+
+/* 6. Αλφάδι λέιζερ: μία σάρωση από πάνω προς τα κάτω με transform (όχι top) και σβήνει */
+.hero-scan span { top: 0; bottom: 0; height: auto; background: none; box-shadow: none; opacity: 0; }
+.hero-scan span::before { content: ''; position: absolute; left: 0; right: 0; top: 0; height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(201,168,108,0) 5%, rgba(232,201,138,.85) 50%, rgba(201,168,108,0) 95%, transparent);
+    box-shadow: 0 0 12px 2px rgba(232,201,138,.35); }
+.hero-anim .hero-scan span { animation: heroScanOnce 3.2s cubic-bezier(.45,0,.55,1) 2.2s 1 both; }
+@keyframes heroScanOnce { 0% { transform: translateY(8%); opacity: 0; } 10% { opacity: .9; } 85% { transform: translateY(92%); opacity: .9; } 100% { transform: translateY(92%); opacity: 0; } }
+
+/* 7. «Αναλαμβάνουμε όλη τη διαδικασία»: μία διαδρομή 01 → 04 και στάση στην «Έγκριση και παράδοση».
+      Ο δρομέας κινείται με transform σε όλο το πλάτος της γραμμής (--os-w από το eng-animations.js). */
+.os-fill { transition: transform 3.2s cubic-bezier(.45,.05,.25,1) .4s; }
+.onestop-inner.visible .os-fill { animation: none; transform: scaleX(1); }
+.onestop-inner.visible .os-runner { animation: osRunOnce 3.2s cubic-bezier(.45,.05,.25,1) .4s 1 both; }
+.onestop-inner.visible .onestop-path li .os-node { animation: none; }
+.onestop-inner.visible li:nth-child(1) .os-node { transition-delay: .4s; }
+.onestop-inner.visible li:nth-child(2) .os-node { transition-delay: 1.45s; }
+.onestop-inner.visible li:nth-child(3) .os-node { transition-delay: 2.5s; }
+.onestop-inner.visible li:nth-child(4) .os-node { transition-delay: 3.55s; animation: osPulse 2.4s ease-in-out 3.7s 3; }
+@keyframes osRunOnce { 0% { transform: translateX(0); opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { transform: translateX(var(--os-w, 0px)); opacity: 0; } }
+@media (max-width: 768px) {
+    .onestop-inner.visible .os-fill { animation: none; transform: scaleY(1); }
+    .onestop-inner.visible .os-runner { animation-name: osRunOnceV; }
+}
+@keyframes osRunOnceV { 0% { transform: translateY(0); opacity: 0; } 8% { opacity: 1; } 92% { opacity: 1; } 100% { transform: translateY(var(--os-h, 0px)); opacity: 0; } }
+
+/* 8. Ό,τι συνεχές μένει (ταινία, ειδήσεις, υπογραφή) σταματά όταν δεν φαίνεται */
+.anim-off, .anim-off::before, .anim-off::after, .anim-off *, .anim-off *::before, .anim-off *::after { animation-play-state: paused !important; }
+
+@media (prefers-reduced-motion: reduce) {
+    .hero-slide, .hero-scan span, .hero-anim .hero-portrait img { animation: none !important; transform: none; }
+    html.anim-ready [data-reveal], html.anim-ready [data-reveal-r] { opacity: 1; animation: none !important; }
+    .hero-anim-done .hero-name .line2 { animation: none !important; background-position: 0 0; }
+    .onestop-inner.visible .os-runner, .onestop-inner.visible li:nth-child(4) .os-node { animation: none !important; }
+    .onestop-inner.visible .os-fill { transform: none !important; transition: none; }
+}

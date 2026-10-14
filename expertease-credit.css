@@ -253,11 +253,12 @@ hr.ec-rule {
   z-index: 0;
 }
 
+/* 14/10/2026: transform αντί για left (ΜΗ-04)· ίδια διαδρομή: -70% → 160% του γονέα = 230% / 35% = 657% του πλάτους της λωρίδας */
 @keyframes ec-sweep {
-  0%   { left: -70%; opacity: 0; }
+  0%   { transform: translateX(0) skewX(-12deg); opacity: 0; }
   10%  { opacity: 1; }
   90%  { opacity: 1; }
-  100% { left: 160%; opacity: 0; }
+  100% { transform: translateX(657%) skewX(-12deg); opacity: 0; }
 }
 
 /* ── responsive ── */
