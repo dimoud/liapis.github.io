@@ -682,6 +682,8 @@
         'rev.r18': { el: 'Αρίστος επαγγελματίας.', en: 'An excellent professional.' },
         'rev.srcpair.rev.r18': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
 
+        'rev.pause': { el: 'Παύση', en: 'Pause' },
+
         /* FOOTER */
         'footer.title': { el: 'Διπλωματούχος Πολιτικός Μηχανικός ΑΠΘ', en: 'Graduate Civil Engineer AUTH' },
         'footer.copy': {

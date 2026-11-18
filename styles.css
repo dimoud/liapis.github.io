@@ -2321,3 +2321,14 @@ html.motion-paused .motion-toggle .mt-pause { display: none; }
 .reviews-more > summary::-webkit-details-marker { display: none; }
 .reviews-more[open] > summary { margin-bottom: 22px; }
 .reviews-starsonly { margin-top: 22px; font-size: 14px; color: var(--stone); }
+
+/* ── Αξιολογήσεις ως λωρίδα (18/11/2026) ── */
+.rev-band { overflow-x: scroll; scrollbar-width: none; -ms-overflow-style: none; margin: 0 -6%; padding: 4px 6% 8px; cursor: grab; }
+.rev-band::-webkit-scrollbar { display: none; }
+.rev-band:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
+.rev-track { display: flex; gap: 22px; width: max-content; align-items: stretch; }
+.rev-track .rev-card { flex: 0 0 340px; user-select: none; -webkit-user-select: none; }
+.rev-controls { margin-top: 18px; }
+.rev-toggle { min-height: 44px; padding: 0 20px; background: none; border: 1px solid var(--gold); color: var(--gold-ink); font: inherit; font-size: 14px; font-weight: 500; cursor: pointer; }
+.rev-toggle:hover { background: rgba(201,168,108,0.1); }
+@media (max-width: 600px) { .rev-track .rev-card { flex-basis: 82vw; } .rev-band { margin: 0 -6%; } }
