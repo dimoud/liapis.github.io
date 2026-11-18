@@ -2286,22 +2286,6 @@ html.motion-paused .motion-toggle .mt-pause { display: none; }
     .ph-v2 .hero-actions .btn-outline { width: auto; padding: 4px 0; }
 }
 
-/* ── Αξιολογήσεις (18/11/2026) ── */
-.reviews-section { background: var(--cream); padding: 100px 6%; }
-.reviews-inner { max-width: 1100px; margin: 0 auto; }
-.reviews-head { max-width: 680px; margin-bottom: 44px; }
-.reviews-lead { margin-top: 16px; color: var(--stone); font-size: 16px; line-height: 1.75; }
-.reviews-score { margin-top: 14px; font-weight: 500; color: var(--ink); }
-.rev-stars { color: var(--gold-ink); letter-spacing: 2px; }
-.reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
-.rev-card { margin: 0; background: #fff; border: 1px solid var(--cream2); padding: 26px 26px 22px; display: flex; flex-direction: column; gap: 12px; }
-.rev-card blockquote { margin: 0; flex: 1; }
-.rev-card blockquote p { font-size: 15.5px; line-height: 1.7; color: var(--ink2); }
-.rev-tag { font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold-ink); }
-.rev-card figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; font-size: 13px; color: var(--stone); border-top: 1px solid var(--cream2); padding-top: 12px; }
-.rev-name { font-weight: 600; color: var(--ink); }
-.reviews-all { margin-top: 30px; }
-.reviews-all a { color: var(--gold-ink); font-weight: 500; text-underline-offset: 4px; }
 .page-review { margin: 40px 0; padding: 26px 28px; border-left: 3px solid var(--gold); background: var(--cream); }
 .page-review-label { font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold-ink); margin-bottom: 10px; }
 .page-review blockquote { margin: 0 0 12px; }
@@ -2313,22 +2297,17 @@ html.motion-paused .motion-toggle .mt-pause { display: none; }
 .page-table th, .page-table td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--cream2); }
 .page-table thead th { font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold-ink); border-bottom: 2px solid var(--gold); }
 .page-table tbody th { font-weight: 600; width: 34%; }
-@media (max-width: 600px) { .reviews-section { padding: 72px 6%; } .rev-card { padding: 22px 20px 18px; } .page-table tbody th { width: auto; } }
 .page-review figcaption a { display: inline-block; padding: 14px 0; margin: -14px 0; }
 
-.reviews-more { margin-top: 22px; }
-.reviews-more > summary { cursor: pointer; display: inline-block; min-height: 44px; line-height: 44px; padding: 0 22px; border: 1px solid var(--gold); color: var(--gold-ink); font-weight: 500; list-style: none; }
-.reviews-more > summary::-webkit-details-marker { display: none; }
-.reviews-more[open] > summary { margin-bottom: 22px; }
-.reviews-starsonly { margin-top: 22px; font-size: 14px; color: var(--stone); }
-
-/* ── Αξιολογήσεις ως λωρίδα (18/11/2026) ── */
-.rev-band { overflow-x: scroll; scrollbar-width: none; -ms-overflow-style: none; margin: 0 -6%; padding: 4px 6% 8px; cursor: grab; }
-.rev-band::-webkit-scrollbar { display: none; }
-.rev-band:focus-visible { outline: 2px solid var(--gold); outline-offset: 4px; }
-.rev-track { display: flex; gap: 22px; width: max-content; align-items: stretch; }
-.rev-track .rev-card { flex: 0 0 340px; user-select: none; -webkit-user-select: none; }
-.rev-controls { margin-top: 18px; }
-.rev-toggle { min-height: 44px; padding: 0 20px; background: none; border: 1px solid var(--gold); color: var(--gold-ink); font: inherit; font-size: 14px; font-weight: 500; cursor: pointer; }
-.rev-toggle:hover { background: rgba(201,168,108,0.1); }
-@media (max-width: 600px) { .rev-track .rev-card { flex-basis: 82vw; } .rev-band { margin: 0 -6%; } }
+/* ── Αξιολογήσεις: ίδιο καρουζέλ με τα «Νέα» (18/11/2026) ── */
+.reviews-section { background: var(--cream); }
+.reviews-score { margin-top: 16px; font-size: 15px; color: var(--ink); }
+.reviews-score a { color: var(--gold-ink); font-weight: 500; text-underline-offset: 4px; display: inline-block; padding: 12px 0; margin: -12px 0; }
+.rev-stars { color: var(--gold-ink); letter-spacing: 2px; }
+.rev-card .news-card-cat { letter-spacing: 2px; }
+.rev-card .news-card-sum { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+.rev-card { width: 300px; padding: 20px 20px 18px; }
+.news-band:hover #revTrack { animation-play-state: paused; }
+.reviews-starsonly { padding: 0 6%; margin-top: 26px; font-size: 13px; color: var(--stone); }
+@media (max-width: 600px) { .page-table tbody th { width: auto; } }
+@media (max-width: 768px) { .rev-card { width: 270px; } .reviews-score { text-align: center; } .reviews-starsonly { padding: 0 5%; text-align: center; } }
