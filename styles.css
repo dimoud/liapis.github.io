@@ -2285,3 +2285,39 @@ html.motion-paused .motion-toggle .mt-pause { display: none; }
     .ph-v2 .hero-actions .btn-gold { width: 100%; justify-content: center; }
     .ph-v2 .hero-actions .btn-outline { width: auto; padding: 4px 0; }
 }
+
+/* ── Αξιολογήσεις (18/11/2026) ── */
+.reviews-section { background: var(--cream); padding: 100px 6%; }
+.reviews-inner { max-width: 1100px; margin: 0 auto; }
+.reviews-head { max-width: 680px; margin-bottom: 44px; }
+.reviews-lead { margin-top: 16px; color: var(--stone); font-size: 16px; line-height: 1.75; }
+.reviews-score { margin-top: 14px; font-weight: 500; color: var(--ink); }
+.rev-stars { color: var(--gold-ink); letter-spacing: 2px; }
+.reviews-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
+.rev-card { margin: 0; background: #fff; border: 1px solid var(--cream2); padding: 26px 26px 22px; display: flex; flex-direction: column; gap: 12px; }
+.rev-card blockquote { margin: 0; flex: 1; }
+.rev-card blockquote p { font-size: 15.5px; line-height: 1.7; color: var(--ink2); }
+.rev-tag { font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold-ink); }
+.rev-card figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 6px; font-size: 13px; color: var(--stone); border-top: 1px solid var(--cream2); padding-top: 12px; }
+.rev-name { font-weight: 600; color: var(--ink); }
+.reviews-all { margin-top: 30px; }
+.reviews-all a { color: var(--gold-ink); font-weight: 500; text-underline-offset: 4px; }
+.page-review { margin: 40px 0; padding: 26px 28px; border-left: 3px solid var(--gold); background: var(--cream); }
+.page-review-label { font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold-ink); margin-bottom: 10px; }
+.page-review blockquote { margin: 0 0 12px; }
+.page-review blockquote p { font-size: 16px; line-height: 1.75; }
+.page-review figcaption { font-size: 13px; color: var(--stone); }
+.page-review figcaption a { color: var(--gold-ink); }
+.page-table-wrap { overflow-x: auto; margin: 18px 0; }
+.page-table { width: 100%; border-collapse: collapse; font-size: 15px; line-height: 1.6; }
+.page-table th, .page-table td { text-align: left; vertical-align: top; padding: 12px 14px; border-bottom: 1px solid var(--cream2); }
+.page-table thead th { font-size: 12px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--gold-ink); border-bottom: 2px solid var(--gold); }
+.page-table tbody th { font-weight: 600; width: 34%; }
+@media (max-width: 600px) { .reviews-section { padding: 72px 6%; } .rev-card { padding: 22px 20px 18px; } .page-table tbody th { width: auto; } }
+.page-review figcaption a { display: inline-block; padding: 14px 0; margin: -14px 0; }
+
+.reviews-more { margin-top: 22px; }
+.reviews-more > summary { cursor: pointer; display: inline-block; min-height: 44px; line-height: 44px; padding: 0 22px; border: 1px solid var(--gold); color: var(--gold-ink); font-weight: 500; list-style: none; }
+.reviews-more > summary::-webkit-details-marker { display: none; }
+.reviews-more[open] > summary { margin-bottom: 22px; }
+.reviews-starsonly { margin-top: 22px; font-size: 14px; color: var(--stone); }

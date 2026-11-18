@@ -608,6 +608,80 @@
         'pg.anak.answer': { el: 'Οι περισσότερες ανακαινίσεις δεν θέλουν οικοδομική άδεια· για εσωτερικές εργασίες που δεν αγγίζουν τον φέροντα οργανισμό αρκεί ηλεκτρονική ενημέρωση στο e-Άδειες πριν ξεκινήσουν (άρθρο 316 του Κώδικα Χωροταξίας-Πολεοδομίας, ν.5306/2026). Αν αγγίζουν όψεις, φέροντα οργανισμό ή χρήση, χρειάζεται έγκριση ή άδεια.', en: 'Most renovations need no building permit; for interior works that do not touch the structure, an online notification on e-Adeies before work starts is enough (Article 316, Spatial and Urban Planning Code, Law 5306/2026). If the works affect façades, structure or use, an approval or permit is needed.' },
         'pg.epiv.answer': { el: 'Ο επιβλέπων μηχανικός ελέγχει ότι η κατασκευή γίνεται σύμφωνα με την άδεια και τις μελέτες, με κρισιμότερο σημείο τον οπλισμό πριν από κάθε σκυροδέτηση. Για τον ιδιοκτήτη ελέγχει και υλικά, επιμετρήσεις και λογαριασμούς του εργολάβου πριν πληρωθούν.', en: 'The supervising engineer checks that construction follows the permit and the studies, the most critical point being the reinforcement before every concrete pour. For the owner, he also checks materials, measurements and the contractor’s bills before they are paid.' },
 
+        /* ΑΞΙΟΛΟΓΗΣΕΙΣ, ΚΟΣΤΟΣ ΗΤΚ, ΛΑΡΙΣΑ (18/11/2026) */
+        'rev.eyebrow': { el: 'Αξιολογήσεις πελατών', en: 'Client reviews' },
+        'rev.heading_h': { el: 'Τι λένε <em>οι πελάτες</em>', en: 'What <em>clients</em> say' },
+        'rev.lead': { el: 'Αξιολογήσεις από το Προφίλ μας στο Google, όπως τις έγραψαν οι ίδιοι οι πελάτες.', en: 'Reviews from our Google Business Profile, as the clients wrote them.' },
+        'rev.score': { el: '5,0 στο Google · 23 αξιολογήσεις (Νοέμβριος 2026)', en: '5.0 on Google · 23 reviews (November 2026)' },
+        'rev.all': { el: 'Όλες οι αξιολογήσεις στο Google', en: 'All reviews on Google' },
+        'rev.src': { el: 'Αξιολόγηση Google', en: 'Google review' },
+        'rev.tr': { el: 'Αξιολόγηση Google · μετάφραση από τα ελληνικά', en: 'Google review · translated from Greek' },
+        'rev.tr.en': { el: 'Αξιολόγηση Google · μετάφραση από τα αγγλικά', en: 'Google review' },
+        'rev.t.htk': { el: 'Ηλεκτρονική Ταυτότητα · μεταβίβαση στην Αθήνα', en: 'Building e-Identity · property sale in Athens' },
+        'rev.t.buy': { el: 'Αγορά κατοικίας', en: 'Buying a home' },
+        'rev.r1': { el: 'Συνεργάστηκα με τον Βαγιο για την ηλεκτρονική ταυτότητα κτιρίου και τη βεβαίωση για μεταβίβαση διαμερίσματος στην Αθήνα. Εντόπισε μια μικρή αυθαίρετη κατασκευή, έκανε την τακτοποίηση γρήγορα και ετοίμασε όλα όσα χρειαζόταν πριν το συμβόλαιο. Εξαιρετική επικοινωνία και ξεκάθαρο κόστος από την αρχή. Τον προτείνω ανεπιφύλακτα σε όποιον ψάχνει αξιόπιστο πολιτικό μηχανικό.', en: 'I worked with Vagios on the Building e-Identity and the certificate for the transfer of a flat in Athens. He found a small unauthorised construction, legalised it quickly and prepared everything needed before the contract. Excellent communication and clear costs from the start. I recommend him without reservation to anyone looking for a reliable civil engineer.' },
+        'rev.r2': { el: 'Ο Βάγιος είναι εξαιρετικός επαγγελματίας! Ήθελα να αγοράσω σπίτι στην Ελλάδα και χειρίστηκε την υπόθεσή μου άψογα. Μου εξήγησε επίσης πολύ καλά όλα τα βήματα που έπρεπε να γίνουν και τα έγγραφα που έπρεπε να κατατεθούν.', en: 'Vagios is an excellent professional! I wanted to buy a house in Greece and he handled my case perfectly. He also explained very well all the steps that needed to be done and the paperwork that needed to be delivered.' },
+        'rev.r3': { el: 'Εξαίρετος επαγγελματίας! Ευγενής, κατατοπιστικός, ειλικρινής και αποτελεσματικός. Κατέχει σε βάθος το επιστημονικό του πεδίο, πράγμα που του δίνει την ευελιξία να αντιμετωπίζει με επιτυχία ποικίλες προκλήσεις που μπορούν να προκύψουν. Ευχαριστώ για την άψογη συνεργασία! Συστήνω τον Βάιο Λιάπη ανεπιφύλακτα!', en: 'An outstanding professional! Courteous, informative, honest and effective. He knows his field in depth, which gives him the flexibility to handle successfully the various challenges that may come up. Thank you for the excellent cooperation! I recommend Vaios Liapis without reservation!' },
+        'rev.r4': { el: 'Άψογος συνεργάτης κυριολεκτικά. Προτείνεται με κλειστά μάτια. Άμεσες και έγκυρες πληροφορίες, σωστή καθοδήγηση και επικοινωνία.', en: 'Literally a flawless partner. Recommended with eyes closed. Prompt and reliable information, sound guidance and communication.' },
+        'rev.r5': { el: 'Άψογος επαγγελματίας με βαθιά γνώση στο αντικείμενο, άμεση επικοινωνία και ανταπόκριση για ο,τι λεπτομέρεια χρειάστηκα. Τον προτείνω ανεπιφύλακτα!', en: 'A flawless professional with deep knowledge of the subject, quick communication and response to every detail I needed. I recommend him without reservation!' },
+        'rev.r6': { el: 'Εξαιρετικός επαγγελματίας, συνεπής και με βαθιά γνώση του αντικειμένου. Άψογη συνεργασία με άμεση επικοινωνία και λύσεις σε κάθε ζήτημα.', en: 'An excellent professional, consistent and with deep knowledge of the subject. Flawless cooperation, quick communication and solutions to every issue.' },
+        'pg.rev.t': { el: 'Από αξιολόγηση πελάτη', en: 'From a client review' },
+        'pg.htk.cost.t': { el: 'Πόσο κοστίζει η Ηλεκτρονική Ταυτότητα', en: 'How much the Building e-Identity costs' },
+        'pg.htk.cost.p1': { el: 'Σταθερή τιμή δεν υπάρχει, γιατί η δουλειά δεν είναι ίδια σε κάθε ακίνητο. Πριν από οποιαδήποτε δέσμευση ξέρετε τι χρειάζεται η δική σας περίπτωση, πόσο κοστίζει και πόσο διαρκεί.', en: 'There is no fixed price, because the work is not the same for every property. Before you commit to anything, you know what your case needs, what it costs and how long it takes.' },
+        'pg.htk.cost.th1': { el: 'Τι μετράει', en: 'What matters' },
+        'pg.htk.cost.th2': { el: 'Τι σημαίνει για εσάς', en: 'What it means for you' },
+        'pg.htk.cost.f1': { el: 'Είδος και μέγεθος ακινήτου', en: 'Type and size of the property' },
+        'pg.htk.cost.d1': { el: 'Ένα διαμέρισμα σε πολυκατοικία με άδεια θέλει λιγότερη δουλειά από μια μονοκατοικία με βοηθητικά κτίσματα.', en: 'A flat in a building with a permit needs less work than a detached house with outbuildings.' },
+        'pg.htk.cost.f2': { el: 'Άδεια και σχέδια', en: 'Permit and drawings' },
+        'pg.htk.cost.d2': { el: 'Αν τα έχετε, κερδίζουμε χρόνο. Αν λείπουν, τα αναζητούμε εμείς στην Υπηρεσία Δόμησης.', en: 'If you have them, we save time. If they are missing, we retrieve them from the Building Service.' },
+        'pg.htk.cost.f3': { el: 'Διαφορές από τα σχέδια', en: 'Differences from the drawings' },
+        'pg.htk.cost.d3': { el: 'Αν βρεθεί αυθαιρεσία, η τακτοποίηση είναι χωριστή εργασία και έχει δικό της πρόστιμο προς το Δημόσιο. Το μαθαίνετε πριν από το συμβόλαιο.', en: 'If an unauthorised change is found, legalising it is separate work with its own fine payable to the State. You find out before the contract.' },
+        'pg.htk.cost.f4': { el: 'Πιστοποιητικό Ενεργειακής Απόδοσης', en: 'Energy Performance Certificate' },
+        'pg.htk.cost.d4': { el: 'Για πώληση χρειάζεται και ΠΕΑ σε ισχύ. Αν δεν υπάρχει, εκδίδεται χωριστά.', en: 'A sale also needs a valid EPC. If there is none, it is issued separately.' },
+        'pg.htk.cost.p2': { el: 'Για προσφορά στείλτε μας τον ΚΑΕΚ, το εμβαδόν και αν υπάρχει οικοδομική άδεια.', en: 'For a quote, send us the property’s KAEK (Land Registry code), its area and whether there is a building permit.' },
+        'pg.htk.q4': { el: 'Πόσο κοστίζει η Ηλεκτρονική Ταυτότητα για ένα διαμέρισμα;', en: 'How much does the Building e-Identity cost for a flat?' },
+        'pg.htk.a4': { el: 'Εξαρτάται από το αν υπάρχουν άδεια και σχέδια και αν το διαμέρισμα είναι όπως τα σχέδια. Μας στέλνετε ΚΑΕΚ, εμβαδόν και ό,τι έγγραφα έχετε, και ξέρετε το κόστος πριν από οποιαδήποτε δέσμευση. Αν χρειαστεί τακτοποίηση ή ΠΕΑ, φαίνονται χωριστά από την αρχή.', en: 'It depends on whether there is a permit with drawings and whether the flat matches them. You send us the KAEK, the area and any documents you have, and you know the cost before you commit. If a legalisation or an EPC is needed, they are shown separately from the start.' },
+        'pg.lar.q4': { el: 'Πουλάω σπίτι στη Λάρισα και μένω στην Αθήνα. Τι χρειάζομαι από μηχανικό;', en: 'I am selling a house in Larissa but live in Athens. What do I need from an engineer?' },
+        'pg.lar.a4': { el: 'Για το συμβόλαιο χρειάζεστε Ηλεκτρονική Ταυτότητα Κτιρίου με πιστοποιητικό πληρότητας και Πιστοποιητικό Ενεργειακής Απόδοσης. Τα έγγραφα τα ανταλλάσσουμε ηλεκτρονικά· στη Λάρισα γίνεται μόνο η αυτοψία, αρκεί κάποιος να μας ανοίξει το ακίνητο. Το πιστοποιητικό πληρότητας ισχύει δύο μήνες από την αυτοψία, γι’ αυτό την κλείνουμε με βάση την ημερομηνία του συμβολαίου.', en: 'For the contract you need a Building e-Identity with a certificate of completeness and an Energy Performance Certificate. We exchange documents online; in Larissa only the site visit takes place, as long as someone can let us into the property. The certificate of completeness is valid for two months from the site visit, so we schedule it around the contract date.' },
+        'pg.updated.1811': { el: 'Ενημερώθηκε: 18/11/2026', en: 'Updated: 18/11/2026' },
+
+        'rev.srcpair.rev.r1': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.srcpair.rev.r2': { el: 'Αξιολόγηση Google · μετάφραση από τα αγγλικά', en: 'Google review' },
+        'rev.srcpair.rev.r3': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.srcpair.rev.r4': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.srcpair.rev.r5': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.srcpair.rev.r6': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.stars': { el: '5 στα 5', en: '5 out of 5' },
+
+        /* ΟΛΕΣ ΟΙ ΑΞΙΟΛΟΓΗΣΕΙΣ (18/11/2026) */
+        'rev.t.tak': { el: 'Τακτοποίηση αυθαιρέτων · Θεσσαλονίκη', en: 'Legalisation of unauthorised works · Thessaloniki' },
+        'rev.more': { el: 'Δείτε όλες τις αξιολογήσεις (18)', en: 'See all reviews (18)' },
+        'rev.starsonly': { el: 'Αξιολόγησαν επίσης με 5 στα 5, χωρίς σχόλιο: Chrys T., Andreas P., Achilleas K., Kostas P., Giorgos V.', en: 'Also rated 5 out of 5, without a comment: Chrys T., Andreas P., Achilleas K., Kostas P., Giorgos V.' },
+        'rev.r7': { el: 'Ο Βαϊος είναι ένας πολύ καταρτισμένος και άψογος πολιτικός μηχανικός. Συνεργάστηκαμε για την τακτοποίηση του σπιτιού μου στην Θεσσαλονίκη. Έκανε άψογα τον έλεγχο απαιτήσεων, την σωστή αποτύπωση της κάτοψης του ορόφου, αλλα και τον πλήρη φάκελο για την τακτοποίηση των αυθαιρέτων χώρων. Εξαιρετική ταχύτητα, ήθος και επαγγελματισμος, ο Βαϊος εχει γινει πλέον μόνιμος συνεργάτης μου.', en: 'Vaios is a highly qualified and flawless civil engineer. We worked together on legalising my home in Thessaloniki. He carried out the requirements check, the accurate survey of the floor plan and the complete file for legalising the unauthorised spaces flawlessly. Excellent speed, integrity and professionalism; Vaios has now become a permanent partner of mine.' },
+        'rev.srcpair.rev.r7': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.r8': { el: 'Ο κος Λιάπης ειναι εξαιρετικος επαγγελματιας . Διεκπεραιωνει αψογα όλες του τις υποθέσεις και ανταποκρίνεται άμεσα στον Πελάτη. Η συνεργασία μου μαζι του ηταν τελεια. Τον συνιστω ανεπιφύλακτα.', en: 'Mr Liapis is an excellent professional. He handles all his cases flawlessly and responds to the client immediately. Working with him was perfect. I recommend him without reservation.' },
+        'rev.srcpair.rev.r8': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.r9': { el: 'Εξαιρετικός επαγγελματίας! Πολύ εξυπηρετικός, συνεπής και γνώστης του αντικειμένου.Τον συστήνω ανεπιφύλακτα!', en: 'An excellent professional! Very helpful, consistent and knowledgeable. I recommend him without reservation!' },
+        'rev.srcpair.rev.r9': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.r10': { el: 'Σοβαρός επαγγελματίας, με εξυπηρέτησε άμεσα και πρόσφερε λύσεις για κατι επείγον. Τον συστήνω ανεπιφύλακτα!', en: 'A serious professional; he helped me immediately and offered solutions for something urgent. I recommend him without reservation!' },
+        'rev.srcpair.rev.r10': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.r11': { el: 'Ο σχεδιασμός αυτού του μηχανικού είναι άκρως επαγγελματικός και αποτελεσματικός. Θα τους συνιστούσα.', en: 'This engineer’s design work is highly professional and effective. I would recommend them.' },
+        'rev.srcpair.rev.r11': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.r12': { el: 'Ο καλυτερος στην δουλεια του!Επαγγελματιας, οικονομικος και αξιοπιστος !', en: 'The best at his job! Professional, affordable and reliable!' },
+        'rev.srcpair.rev.r12': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.r13': { el: 'Επαγγελματισμός, αποτελεσματικότητα και πάρα πολύ καλή συμπεριφορά.', en: 'Professionalism, effectiveness and very good manners.' },
+        'rev.srcpair.rev.r13': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.r14': { el: 'Άριστος επαγγελματίας , έντιμος, ευγενικός και άμεσος!', en: 'An excellent professional: honest, courteous and prompt!' },
+        'rev.srcpair.rev.r14': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.r15': { el: 'Εξαιρετικός συνεργάτης, άψογος επαγγελματίας.', en: 'An excellent partner, a flawless professional.' },
+        'rev.srcpair.rev.r15': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.r16': { el: 'Εξαιρετικός άνθρωπος και επαγγελματίας!', en: 'An excellent person and professional!' },
+        'rev.srcpair.rev.r16': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.r17': { el: '\'Αριστη επικοινωνία και επαγγελματισμός.', en: 'Excellent communication and professionalism.' },
+        'rev.srcpair.rev.r17': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+        'rev.r18': { el: 'Αρίστος επαγγελματίας.', en: 'An excellent professional.' },
+        'rev.srcpair.rev.r18': { el: 'Αξιολόγηση Google', en: 'Google review · translated from Greek' },
+
         /* FOOTER */
         'footer.title': { el: 'Διπλωματούχος Πολιτικός Μηχανικός ΑΠΘ', en: 'Graduate Civil Engineer AUTH' },
         'footer.copy': {
@@ -621,7 +695,8 @@
     };
 
     /* ─── STATE ──────────────────────────────────────────────────────────── */
-    let currentLang = localStorage.getItem('lang') || 'el';
+    /* Η γλώσσα ορίζεται από τη διεύθυνση (/en/ = αγγλικά), όχι από αποθηκευμένη προτίμηση (G4) */
+    let currentLang = /^\/en(\/|$)/.test(location.pathname) ? 'en' : 'el';
 
     /* ─── YEARS OF EXPERIENCE (dynamic) ─────────────────────────────────── */
     const EXP_START_YEAR = 2016;
@@ -641,7 +716,6 @@
     /* ─── APPLY TRANSLATIONS ─────────────────────────────────────────────── */
     function applyLang(lang) {
         currentLang = lang;
-        localStorage.setItem('lang', lang);
 
         /* text content */
         document.querySelectorAll('[data-i18n]').forEach(function (el) {
@@ -705,7 +779,11 @@
     };
 
     /* Global shorthand used by onclick="setLang('en')" buttons */
-    window.setLang = applyLang;
+    window.setLang = function (lang) {
+        if (lang === currentLang) return;
+        var alt = document.querySelector('link[rel="alternate"][hreflang="' + lang + '"]');
+        if (alt) { location.href = alt.getAttribute('href') + location.hash; } else { applyLang(lang); }
+    };
 
     /* ─── INIT ───────────────────────────────────────────────────────────── */
     /* Apply on DOM ready — handles page reload with saved preference */

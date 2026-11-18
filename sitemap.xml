@@ -1,67 +1,227 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://vaiosliapis.gr/</loc>
-    <lastmod>2026-10-11</lastmod>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/"/>
   </url>
   <url>
     <loc>https://vaiosliapis.gr/taktopoiisi-afthaireton/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/taktopoiisi-afthaireton/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/taktopoiisi-afthaireton/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/taktopoiisi-afthaireton/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/taktopoiisi-afthaireton/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/taktopoiisi-afthaireton/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/taktopoiisi-afthaireton/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/taktopoiisi-afthaireton/"/>
   </url>
   <url>
     <loc>https://vaiosliapis.gr/ilektroniki-taftotita-ktiriou/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/ilektroniki-taftotita-ktiriou/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/ilektroniki-taftotita-ktiriou/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/ilektroniki-taftotita-ktiriou/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/ilektroniki-taftotita-ktiriou/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/ilektroniki-taftotita-ktiriou/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/ilektroniki-taftotita-ktiriou/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/ilektroniki-taftotita-ktiriou/"/>
   </url>
   <url>
     <loc>https://vaiosliapis.gr/oikodomiki-adeia/</loc>
     <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/oikodomiki-adeia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/oikodomiki-adeia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/oikodomiki-adeia/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/oikodomiki-adeia/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/oikodomiki-adeia/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/oikodomiki-adeia/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/oikodomiki-adeia/"/>
   </url>
   <url>
     <loc>https://vaiosliapis.gr/energeiako-pistopoiitiko-pea/</loc>
     <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/energeiako-pistopoiitiko-pea/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/energeiako-pistopoiitiko-pea/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/energeiako-pistopoiitiko-pea/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/energeiako-pistopoiitiko-pea/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/energeiako-pistopoiitiko-pea/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/energeiako-pistopoiitiko-pea/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/energeiako-pistopoiitiko-pea/"/>
   </url>
   <url>
     <loc>https://vaiosliapis.gr/topografika-diagrammata/</loc>
     <lastmod>2026-09-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/topografika-diagrammata/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/topografika-diagrammata/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/topografika-diagrammata/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/topografika-diagrammata/</loc>
+    <lastmod>2026-09-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/topografika-diagrammata/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/topografika-diagrammata/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/topografika-diagrammata/"/>
   </url>
   <url>
     <loc>https://vaiosliapis.gr/ktimatologio/</loc>
     <lastmod>2026-09-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/ktimatologio/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/ktimatologio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/ktimatologio/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/ktimatologio/</loc>
+    <lastmod>2026-09-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/ktimatologio/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/ktimatologio/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/ktimatologio/"/>
   </url>
   <url>
     <loc>https://vaiosliapis.gr/adeies-leitourgias/</loc>
     <lastmod>2026-09-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/adeies-leitourgias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/adeies-leitourgias/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/adeies-leitourgias/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/adeies-leitourgias/</loc>
+    <lastmod>2026-09-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/adeies-leitourgias/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/adeies-leitourgias/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/adeies-leitourgias/"/>
   </url>
   <url>
     <loc>https://vaiosliapis.gr/anakainiseis-monoseis/</loc>
     <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/anakainiseis-monoseis/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/anakainiseis-monoseis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/anakainiseis-monoseis/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/anakainiseis-monoseis/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/anakainiseis-monoseis/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/anakainiseis-monoseis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/anakainiseis-monoseis/"/>
   </url>
   <url>
     <loc>https://vaiosliapis.gr/epivlepsi-kataskevon/</loc>
     <lastmod>2026-09-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/epivlepsi-kataskevon/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/epivlepsi-kataskevon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/epivlepsi-kataskevon/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/epivlepsi-kataskevon/</loc>
+    <lastmod>2026-09-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/epivlepsi-kataskevon/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/epivlepsi-kataskevon/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/epivlepsi-kataskevon/"/>
   </url>
   <url>
     <loc>https://vaiosliapis.gr/ypiresies/</loc>
     <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/ypiresies/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/ypiresies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/ypiresies/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/ypiresies/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/ypiresies/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/ypiresies/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/ypiresies/"/>
   </url>
   <url>
     <loc>https://vaiosliapis.gr/larisa/</loc>
-    <lastmod>2026-09-23</lastmod>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/larisa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/larisa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/larisa/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/larisa/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/larisa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/larisa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/larisa/"/>
   </url>
   <url>
     <loc>https://vaiosliapis.gr/ilektroniki-taftotita-ktiriou-larisa/</loc>
-    <lastmod>2026-10-13</lastmod>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/ilektroniki-taftotita-ktiriou-larisa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/ilektroniki-taftotita-ktiriou-larisa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/ilektroniki-taftotita-ktiriou-larisa/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/ilektroniki-taftotita-ktiriou-larisa/</loc>
+    <lastmod>2026-11-18</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/ilektroniki-taftotita-ktiriou-larisa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/ilektroniki-taftotita-ktiriou-larisa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/ilektroniki-taftotita-ktiriou-larisa/"/>
   </url>
   <url>
     <loc>https://vaiosliapis.gr/taktopoiisi-afthaireton-larisa/</loc>
     <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/taktopoiisi-afthaireton-larisa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/taktopoiisi-afthaireton-larisa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/taktopoiisi-afthaireton-larisa/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/taktopoiisi-afthaireton-larisa/</loc>
+    <lastmod>2026-10-13</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/taktopoiisi-afthaireton-larisa/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/taktopoiisi-afthaireton-larisa/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/taktopoiisi-afthaireton-larisa/"/>
   </url>
   <url>
     <loc>https://vaiosliapis.gr/vaios-liapis/</loc>
     <lastmod>2026-09-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/vaios-liapis/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/vaios-liapis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/vaios-liapis/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/vaios-liapis/</loc>
+    <lastmod>2026-09-23</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/vaios-liapis/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/vaios-liapis/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/vaios-liapis/"/>
   </url>
   <url>
     <loc>https://vaiosliapis.gr/nea/</loc>
     <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/nea/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/nea/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/nea/"/>
+  </url>
+  <url>
+    <loc>https://vaiosliapis.gr/en/nea/</loc>
+    <lastmod>2026-10-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/nea/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/nea/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/nea/"/>
   </url>
 </urlset>

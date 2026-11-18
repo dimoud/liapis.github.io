@@ -17,6 +17,9 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
     <meta name="description" data-i18n-content="meta.home.desc" content="Πολιτικός μηχανικός ΑΠΘ με γραφείο στην Αθήνα, για την Αττική και τη Λάρισα: τακτοποίηση αυθαιρέτων, ηλεκτρονική ταυτότητα κτιρίου, οικοδομικές άδειες και ΠΕΑ.">
     <link rel="canonical" href="https://vaiosliapis.gr/">
+    <link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/">
+    <link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/">
+    <link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/">
     <link rel="sitemap" type="application/xml" href="https://vaiosliapis.gr/sitemap.xml">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://vaiosliapis.gr/">
@@ -100,9 +103,9 @@
             <a href="#contact" class="nav-cta" data-i18n="nav.contact">Επικοινωνία</a>
         </div>
         <div class="lang-toggle" id="langToggle">
-            <button class="lang-btn active" data-lang="el" onclick="setLang('el')">🇬🇷 <span class="lcode">ΕΛ</span></button>
+            <a class="lang-btn active" data-lang="el" href="./" hreflang="el" lang="el" aria-current="true">🇬🇷 <span class="lcode">ΕΛ</span></a>
             <div class="lang-sep"></div>
-            <button class="lang-btn" data-lang="en" onclick="setLang('en')">🇬🇧 <span class="lcode">EN</span></button>
+            <a class="lang-btn" data-lang="en" href="en/" hreflang="en" lang="en">🇬🇧 <span class="lcode">EN</span></a>
         </div>
         <div class="hamburger" id="hamburger" onclick="toggleMenu()" role="button" tabindex="0" aria-controls="navLinks" aria-expanded="false" aria-label="Μενού" data-i18n-aria="nav.menu">
             <span></span><span></span><span></span>
@@ -393,9 +396,119 @@
         </div>
     </section>
 
-
-
-
+    <!-- ===== ΑΞΙΟΛΟΓΗΣΕΙΣ (Google, 18/11/2026) ===== -->
+    <section class="reviews-section section-pad" id="reviews" aria-labelledby="reviewsHeading">
+        <div class="reviews-inner">
+            <div class="reviews-head" data-reveal>
+                <div class="eyebrow"><span data-i18n="rev.eyebrow">Αξιολογήσεις πελατών</span></div>
+                <h2 class="section-heading" id="reviewsHeading" data-i18n-html="rev.heading_h">Τι λένε <em>οι πελάτες</em></h2>
+                <p class="reviews-lead" data-i18n="rev.lead">Αξιολογήσεις από το Προφίλ μας στο Google, όπως τις έγραψαν οι ίδιοι οι πελάτες.</p>
+                <p class="reviews-score"><span class="rev-stars" aria-hidden="true">★★★★★</span> <span data-i18n="rev.score">5,0 στο Google · 23 αξιολογήσεις (Νοέμβριος 2026)</span></p>
+            </div>
+            <div class="reviews-grid">
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <p class="rev-tag" data-i18n="rev.t.htk">Ηλεκτρονική Ταυτότητα · μεταβίβαση στην Αθήνα</p>
+                <blockquote><p data-i18n="rev.r1">Συνεργάστηκα με τον Βαγιο για την ηλεκτρονική ταυτότητα κτιρίου και τη βεβαίωση για μεταβίβαση διαμερίσματος στην Αθήνα. Εντόπισε μια μικρή αυθαίρετη κατασκευή, έκανε την τακτοποίηση γρήγορα και ετοίμασε όλα όσα χρειαζόταν πριν το συμβόλαιο. Εξαιρετική επικοινωνία και ξεκάθαρο κόστος από την αρχή. Τον προτείνω ανεπιφύλακτα σε όποιον ψάχνει αξιόπιστο πολιτικό μηχανικό.</p></blockquote>
+                <figcaption><span class="rev-name">Stavros M.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r1">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <p class="rev-tag" data-i18n="rev.t.tak">Τακτοποίηση αυθαιρέτων · Θεσσαλονίκη</p>
+                <blockquote><p data-i18n="rev.r7">Ο Βαϊος είναι ένας πολύ καταρτισμένος και άψογος πολιτικός μηχανικός. Συνεργάστηκαμε για την τακτοποίηση του σπιτιού μου στην Θεσσαλονίκη. Έκανε άψογα τον έλεγχο απαιτήσεων, την σωστή αποτύπωση της κάτοψης του ορόφου, αλλα και τον πλήρη φάκελο για την τακτοποίηση των αυθαιρέτων χώρων. Εξαιρετική ταχύτητα, ήθος και επαγγελματισμος, ο Βαϊος εχει γινει πλέον μόνιμος συνεργάτης μου.</p></blockquote>
+                <figcaption><span class="rev-name">Dimitrios M.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r7">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <p class="rev-tag" data-i18n="rev.t.buy">Αγορά κατοικίας</p>
+                <blockquote><p data-i18n="rev.r2">Ο Βάγιος είναι εξαιρετικός επαγγελματίας! Ήθελα να αγοράσω σπίτι στην Ελλάδα και χειρίστηκε την υπόθεσή μου άψογα. Μου εξήγησε επίσης πολύ καλά όλα τα βήματα που έπρεπε να γίνουν και τα έγγραφα που έπρεπε να κατατεθούν.</p></blockquote>
+                <figcaption><span class="rev-name">Jacco P.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r2">Αξιολόγηση Google · μετάφραση από τα αγγλικά</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r3">Εξαίρετος επαγγελματίας! Ευγενής, κατατοπιστικός, ειλικρινής και αποτελεσματικός. Κατέχει σε βάθος το επιστημονικό του πεδίο, πράγμα που του δίνει την ευελιξία να αντιμετωπίζει με επιτυχία ποικίλες προκλήσεις που μπορούν να προκύψουν. Ευχαριστώ για την άψογη συνεργασία! Συστήνω τον Βάιο Λιάπη ανεπιφύλακτα!</p></blockquote>
+                <figcaption><span class="rev-name">Maria B.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r3">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r4">Άψογος συνεργάτης κυριολεκτικά. Προτείνεται με κλειστά μάτια. Άμεσες και έγκυρες πληροφορίες, σωστή καθοδήγηση και επικοινωνία.</p></blockquote>
+                <figcaption><span class="rev-name" lang="el">Άγγελος Σ.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r4">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r5">Άψογος επαγγελματίας με βαθιά γνώση στο αντικείμενο, άμεση επικοινωνία και ανταπόκριση για ο,τι λεπτομέρεια χρειάστηκα. Τον προτείνω ανεπιφύλακτα!</p></blockquote>
+                <figcaption><span class="rev-name">Labros K.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r5">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            </div>
+            <details class="reviews-more">
+                <summary data-i18n="rev.more">Δείτε όλες τις αξιολογήσεις (18)</summary>
+                <div class="reviews-grid">
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r6">Εξαιρετικός επαγγελματίας, συνεπής και με βαθιά γνώση του αντικειμένου. Άψογη συνεργασία με άμεση επικοινωνία και λύσεις σε κάθε ζήτημα.</p></blockquote>
+                <figcaption><span class="rev-name">Despina K.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r6">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r8">Ο κος Λιάπης ειναι εξαιρετικος επαγγελματιας . Διεκπεραιωνει αψογα όλες του τις υποθέσεις και ανταποκρίνεται άμεσα στον Πελάτη. Η συνεργασία μου μαζι του ηταν τελεια. Τον συνιστω ανεπιφύλακτα.</p></blockquote>
+                <figcaption><span class="rev-name">PUNISHER GR</span><span class="rev-src" data-i18n="rev.srcpair.rev.r8">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r9">Εξαιρετικός επαγγελματίας! Πολύ εξυπηρετικός, συνεπής και γνώστης του αντικειμένου.Τον συστήνω ανεπιφύλακτα!</p></blockquote>
+                <figcaption><span class="rev-name">Nikos B.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r9">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r10">Σοβαρός επαγγελματίας, με εξυπηρέτησε άμεσα και πρόσφερε λύσεις για κατι επείγον. Τον συστήνω ανεπιφύλακτα!</p></blockquote>
+                <figcaption><span class="rev-name" lang="el">Γιώργος Σ.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r10">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r11">Ο σχεδιασμός αυτού του μηχανικού είναι άκρως επαγγελματικός και αποτελεσματικός. Θα τους συνιστούσα.</p></blockquote>
+                <figcaption><span class="rev-name">SECLAND DEVELOPMENT</span><span class="rev-src" data-i18n="rev.srcpair.rev.r11">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r12">Ο καλυτερος στην δουλεια του!Επαγγελματιας, οικονομικος και αξιοπιστος !</p></blockquote>
+                <figcaption><span class="rev-name" lang="el">Βασίλης Γ.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r12">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r13">Επαγγελματισμός, αποτελεσματικότητα και πάρα πολύ καλή συμπεριφορά.</p></blockquote>
+                <figcaption><span class="rev-name">Fragkiskos P.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r13">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r14">Άριστος επαγγελματίας , έντιμος, ευγενικός και άμεσος!</p></blockquote>
+                <figcaption><span class="rev-name">Konstantinos P.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r14">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r15">Εξαιρετικός συνεργάτης, άψογος επαγγελματίας.</p></blockquote>
+                <figcaption><span class="rev-name">Christos K.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r15">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r16">Εξαιρετικός άνθρωπος και επαγγελματίας!</p></blockquote>
+                <figcaption><span class="rev-name">Anna S.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r16">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r17">'Αριστη επικοινωνία και επαγγελματισμός.</p></blockquote>
+                <figcaption><span class="rev-name">Nikos M.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r17">Αξιολόγηση Google</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 στα 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r18">Αρίστος επαγγελματίας.</p></blockquote>
+                <figcaption><span class="rev-name">Patritsia S.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r18">Αξιολόγηση Google</span></figcaption>
+            </figure>
+                </div>
+            </details>
+            <p class="reviews-starsonly" data-i18n="rev.starsonly">Αξιολόγησαν επίσης με 5 στα 5, χωρίς σχόλιο: Chrys T., Andreas P., Achilleas K., Kostas P., Giorgos V.</p>
+            <p class="reviews-all"><a href="https://www.google.com/maps?cid=4804519417881909030" rel="noopener" target="_blank" data-i18n="rev.all">Όλες οι αξιολογήσεις στο Google</a></p>
+        </div>
+    </section>
 
     <!-- ===== PROJECTS ===== -->
     <section class="projects-section section-pad" id="projects">
@@ -820,4 +933,4 @@
     <script src="contact-form.js" defer></script>
 </body>
 </html>
-
+

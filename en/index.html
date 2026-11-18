@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script>/* ΜΗ-01: κρυφή αρχική κατάσταση μόνο με JS· αν δεν τρέξει το eng-animations.js σε 3″, όλα φαίνονται */document.documentElement.classList.add('anim-ready');setTimeout(function(){if(!window.__engAnim)document.documentElement.classList.remove('anim-ready')},3000);</script>
+    <!-- Προεπιλογές συγκατάθεσης — ΠΡΙΝ φορτώσει οτιδήποτε gtag -->
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('consent','default',{analytics_storage:'denied',ad_storage:'denied',ad_user_data:'denied',ad_personalization:'denied',wait_for_update:500});
+    </script>
+    <!-- Search Console: εδώ μπαίνει το <meta name="google-site-verification" content="…"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-i18n="meta.home.title">Vaios Liapis · Civil Engineer in Athens &amp; Larissa</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../icon-192.png">
+    <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+    <meta name="description" data-i18n-content="meta.home.desc" content="Civil engineer (AUTh) based in Athens, serving Attica and Larissa: legalising unauthorised works, Building e-Identity, building permits and energy certificates.">
+    <link rel="canonical" href="https://vaiosliapis.gr/en/">
+    <link rel="alternate" hreflang="el" href="https://vaiosliapis.gr/">
+    <link rel="alternate" hreflang="en" href="https://vaiosliapis.gr/en/">
+    <link rel="alternate" hreflang="x-default" href="https://vaiosliapis.gr/">
+    <link rel="sitemap" type="application/xml" href="https://vaiosliapis.gr/sitemap.xml">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vaiosliapis.gr/en/">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="el_GR">
+    <meta property="og:site_name" content="Vaios Liapis — Civil Engineer">
+    <meta property="og:title" data-i18n-content="meta.home.title" content="Vaios Liapis · Civil Engineer in Athens &amp; Larissa">
+    <meta property="og:description" data-i18n-content="meta.home.desc" content="Civil engineer (AUTh) based in Athens, serving Attica and Larissa: legalising unauthorised works, Building e-Identity, building permits and energy certificates.">
+    <meta property="og:image" content="https://vaiosliapis.gr/og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Σύγχρονη πολυκατοικία στην Αττική">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1a1410">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebSite", "@id": "https://vaiosliapis.gr/#website", "url": "https://vaiosliapis.gr/", "name": "Βάιος Λιάπης — Πολιτικός Μηχανικός", "inLanguage": ["el", "en"], "publisher": {"@id": "https://vaiosliapis.gr/#business"}}</script>
+    <script type="application/ld+json">{"@context": "https://schema.org", "@graph": [{"@type": "ProfessionalService", "@id": "https://vaiosliapis.gr/#business", "logo": "https://vaiosliapis.gr/logo.webp", "name": "Βάιος Λιάπης — Πολιτικός Μηχανικός", "url": "https://vaiosliapis.gr/", "telephone": "+30 694 867 5267", "email": "vaioliap93@gmail.com", "image": "https://vaiosliapis.gr/og.jpg", "founder": {"@id": "https://vaiosliapis.gr/#founder"}, "areaServed": [{"@type": "City", "name": "Αθήνα"}, {"@type": "AdministrativeArea", "name": "Αττική"}, {"@type": "City", "name": "Larissa"}], "hasOfferCatalog": {"@type": "OfferCatalog", "name": "Services", "itemListElement": [{"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://vaiosliapis.gr/#service-1", "name": "Land Registry Corrections", "url": "https://vaiosliapis.gr/ktimatologio/", "provider": {"@id": "https://vaiosliapis.gr/#business"}, "areaServed": "Αττική"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://vaiosliapis.gr/#service-2", "name": "Building Permits", "provider": {"@id": "https://vaiosliapis.gr/#business"}, "areaServed": "Αττική", "url": "https://vaiosliapis.gr/oikodomiki-adeia/"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://vaiosliapis.gr/#service-3", "name": "Transfer of Declarations to Law 4495/2017", "provider": {"@id": "https://vaiosliapis.gr/#business"}, "areaServed": "Αττική", "url": "https://vaiosliapis.gr/taktopoiisi-afthaireton/"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://vaiosliapis.gr/#service-5", "name": "Construction Supervision", "url": "https://vaiosliapis.gr/epivlepsi-kataskevon/", "provider": {"@id": "https://vaiosliapis.gr/#business"}, "areaServed": "Αττική"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://vaiosliapis.gr/#service-6", "name": "Legalising Unauthorised Works", "provider": {"@id": "https://vaiosliapis.gr/#business"}, "areaServed": "Αττική", "url": "https://vaiosliapis.gr/taktopoiisi-afthaireton/"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://vaiosliapis.gr/#service-7", "name": "Building e-Identity", "provider": {"@id": "https://vaiosliapis.gr/#business"}, "areaServed": "Αττική", "url": "https://vaiosliapis.gr/ilektroniki-taftotita-ktiriou/"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://vaiosliapis.gr/#service-9", "name": "Renovation, Repairs & Insulation", "url": "https://vaiosliapis.gr/anakainiseis-monoseis/", "provider": {"@id": "https://vaiosliapis.gr/#business"}, "areaServed": "Αττική"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://vaiosliapis.gr/#service-10", "name": "Energy Performance Certificates", "url": "https://vaiosliapis.gr/energeiako-pistopoiitiko-pea/", "provider": {"@id": "https://vaiosliapis.gr/#business"}, "areaServed": "Αττική"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://vaiosliapis.gr/#service-11", "name": "Operating Licences", "url": "https://vaiosliapis.gr/adeies-leitourgias/", "provider": {"@id": "https://vaiosliapis.gr/#business"}, "areaServed": "Αττική"}}, {"@type": "Offer", "itemOffered": {"@type": "Service", "@id": "https://vaiosliapis.gr/#service-12", "name": "Topographic Surveys", "url": "https://vaiosliapis.gr/topografika-diagrammata/", "provider": {"@id": "https://vaiosliapis.gr/#business"}, "areaServed": "Αττική"}}]}, "address": {"@type": "PostalAddress", "streetAddress": "Δελβίνου 31", "addressLocality": "Αθήνα", "postalCode": "113 63", "addressRegion": "Αττική", "addressCountry": "GR"}, "geo": {"@type": "GeoCoordinates", "latitude": 38.0013363, "longitude": 23.7475008}, "hasMap": "https://maps.app.goo.gl/ewBcNYcT9Bi9uqiJ7"}, {"@type": "Person", "@id": "https://vaiosliapis.gr/#founder", "name": "Vaios Liapis", "alternateName": "Vaios Liapis", "url": "https://vaiosliapis.gr/vaios-liapis/", "sameAs": ["https://www.linkedin.com/in/vaios-liapis"], "image": "https://vaiosliapis.gr/founder.webp", "jobTitle": "Πολιτικός Μηχανικός", "alumniOf": {"@type": "CollegeOrUniversity", "name": "Αριστοτέλειο Πανεπιστήμιο Θεσσαλονίκης"}, "worksFor": {"@id": "https://vaiosliapis.gr/#business"}}]}</script>
+
+    <link rel="preload" as="image" href="../cover_photo.webp" fetchpriority="high" media="(min-width: 769px)">
+
+    <link rel="preload" as="image" href="../founder.webp" imagesrcset="founder-800.webp 800w, founder.webp 1254w" imagesizes="(max-width: 900px) 130vw, 64vw">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"></noscript>
+    <link rel="stylesheet" href="../fa-subset.css">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../expertease-credit.css">
+</head>
+<body>
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+    <div id="progress"></div>
+
+    <!-- Scroll measurement ruler -->
+    <div class="scroll-ruler" id="scrollRuler" aria-hidden="true">
+        <div class="sr-tick"></div>
+        <div class="sr-track" id="srTrack">
+            <div class="sr-fill" id="srFill"></div>
+            <div class="sr-ticks" id="srTicksRow"></div>
+        </div>
+        <span class="sr-value" id="srValue">0.000 m</span>
+        <div class="sr-tick"></div>
+    </div>
+
+    <!-- ===== NAVIGATION ===== -->
+    <nav id="nav">
+        <a href="#" class="nav-logo">
+            <div class="logo-circle">
+                <img src="../logo-nav.webp" width="65" height="65" alt="V. Liapis logo" data-i18n-alt="img.logo"
+                     onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:linear-gradient(135deg,#1a1410,#2d2010);display:flex;align-items:center;justify-content:center;font-family:serif;font-size:18px;font-weight:700;color:#c9a86c\'>ΒΛ</div>'">
+            </div>
+            <div class="logo-text">
+                <span class="name" data-i18n="nav.name">V. LIAPIS</span>
+                <span class="title" data-i18n="nav.title">Civil Engineer</span>
+            </div>
+        </a>
+        <div class="nav-links" id="navLinks">
+            <button type="button" class="nav-close" aria-label="Close menu" data-i18n-aria="nav.close"><svg viewBox="0 0 14 14" width="14" height="14" aria-hidden="true" focusable="false"><path d="M1.5 1.5l11 11M12.5 1.5l-11 11" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></button>
+            <a href="vaios-liapis/" data-i18n="nav.about">About</a>
+            <div class="nav-drop">
+                <a href="#services" class="nav-drop-top" data-i18n="nav.services">Services</a>
+                <div class="nav-sub">
+                    <a href="taktopoiisi-afthaireton/" data-i18n="nav.svc.tak">Legalising unauthorised works</a>
+                    <a href="ilektroniki-taftotita-ktiriou/" data-i18n="nav.svc.htk">Building e-Identity</a>
+                    <a href="oikodomiki-adeia/" data-i18n="nav.svc.oik">Building permits</a>
+                    <a href="energeiako-pistopoiitiko-pea/" data-i18n="nav.svc.pea">Energy certificate (EPC)</a>
+                    <a href="topografika-diagrammata/" data-i18n="nav.svc.topo">Topographic surveys</a>
+                    <a href="ktimatologio/" data-i18n="nav.svc.ktim">Land Registry</a>
+                    <a href="adeies-leitourgias/" data-i18n="nav.svc.adl">Business premises</a>
+                    <a href="anakainiseis-monoseis/" data-i18n="nav.svc.anak">Renovation and insulation</a>
+                    <a href="epivlepsi-kataskevon/" data-i18n="nav.svc.epiv">Construction supervision</a>
+                    <a href="larisa/" data-i18n="nav.svc.lar">Larissa</a>
+                    <a href="taktopoiisi-afthaireton-larisa/" data-i18n="nav.svc.takl">Legalisation in Larissa</a>
+                    <a href="ilektroniki-taftotita-ktiriou-larisa/" data-i18n="nav.svc.htkl">Building e-Identity in Larissa</a>
+                    <a href="ypiresies/" class="nav-sub-all" data-i18n="nav.svc.all">All services →</a>
+                </div>
+            </div>
+            <a href="#projects" data-i18n="nav.projects">Projects</a>
+            <a href="nea/" data-i18n="nav.news">News</a>
+            <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="lang-toggle" id="langToggle">
+            <a class="lang-btn" data-lang="el" href="../" hreflang="el" lang="el">🇬🇷 <span class="lcode">ΕΛ</span></a>
+            <div class="lang-sep"></div>
+            <a class="lang-btn active" data-lang="en" href="./" hreflang="en" lang="en" aria-current="true">🇬🇧 <span class="lcode">EN</span></a>
+        </div>
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()" role="button" tabindex="0" aria-controls="navLinks" aria-expanded="false" aria-label="Menu" data-i18n-aria="nav.menu">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <!-- Scroll Elevation Meter -->
+    <div class="scroll-elev" id="scrollElev">
+        <div class="elev-track">
+            <div class="elev-fill" id="elevFill"></div>
+            <div class="elev-dot" id="elevDot"></div>
+            <div class="elev-ticks">
+                <div class="elev-tick major"><span>+12m</span></div>
+                <div class="elev-tick"></div>
+                <div class="elev-tick major"><span>+6m</span></div>
+                <div class="elev-tick"></div>
+                <div class="elev-tick major"><span>±0</span></div>
+            </div>
+        </div>
+        <span class="elev-label" data-i18n="meas.elev">ALT</span>
+    </div>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+        <div class="hero-slide active" id="slide1"></div>
+        <div class="hero-slide" id="slide2"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-lines"></div>
+        <div class="hero-blueprint" aria-hidden="true"></div>
+        <div class="hero-scan" aria-hidden="true"><span></span></div>
+        <div class="crosshair-wrap" id="crosshairWrap" aria-hidden="true">
+            <div class="crosshair"><span class="ch-circle"></span></div>
+            <span class="ch-label" data-i18n="meas.auth">AUTH</span>
+        </div>
+
+        <figure class="hero-portrait">
+            <img src="../founder.webp" srcset="../founder-800.webp 800w, ../founder.webp 1254w" sizes="(max-width: 900px) 130vw, 64vw" alt="Vaios Liapis, civil engineer" data-i18n-alt="hero.photoAlt" width="1254" height="1254" fetchpriority="high">
+            <figcaption data-i18n="hero.tag">Athens · Attica</figcaption>
+        </figure>
+
+        <div class="hero-inner">
+            <h1 class="hero-name">
+                <span class="line1" data-i18n="hero.name1">VAIOS</span>
+                <span class="line2" data-i18n="hero.name2">LIAPIS</span>
+                <span class="sr-only" data-i18n="hero.h1role"> — Civil Engineer in Athens and Larissa</span>
+            </h1>
+            <div class="hero-eyebrow"><span data-i18n="hero.eyebrow">Civil Engineer — AUTH</span></div>
+            <p class="hero-value" data-i18n="hero.value">Legalising unauthorised works, Building e-Identity and building permits in Athens, across Attica and in Larissa.</p>
+            <div class="hero-actions">
+                <a href="tel:+306948675267" class="btn-gold"><i class="fa-solid fa-phone" aria-hidden="true"></i><span data-i18n="hero.call">Call · +30 694 867 5267</span></a>
+                <a href="#contact" class="btn-outline" data-i18n="hero.cta">Get in Touch</a>
+            </div>
+            <div class="hero-svc" role="navigation" aria-label="Main services" data-i18n-aria="hero.svcAria">
+                <a href="taktopoiisi-afthaireton/"><i class="fa-solid fa-house-circle-exclamation" aria-hidden="true"></i><span data-i18n="nav.svc.tak">Legalising unauthorised works</span></a>
+                <a href="ilektroniki-taftotita-ktiriou/"><i class="fa-solid fa-file-signature" aria-hidden="true"></i><span data-i18n="nav.svc.htk">Building e-Identity</span></a>
+                <a href="oikodomiki-adeia/"><i class="fa-solid fa-helmet-safety" aria-hidden="true"></i><span data-i18n="nav.svc.oik">Building permits</span></a>
+            </div>
+            <div class="hero-meas" id="heroMeas" aria-hidden="true">
+                <div class="hm-tick"></div>
+                <div class="hm-bar"></div>
+                <span class="hm-label" id="heroMeasLabel" data-i18n-html="meas.hero">FAÇADE &mdash; 24.000 m</span>
+                <div class="hm-bar hm-r"></div>
+                <div class="hm-tick"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <main id="main">
+
+    <!-- ===== MARQUEE ===== -->
+    <div class="marquee-wrap" tabindex="0" role="region" aria-label="Services at a glance" data-i18n-aria="marquee.aria">
+        <div class="marquee-track">
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m1">Immediate Site Inspection</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m2">Building e-Identity</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m3">Unauthorized Structure Legalization</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m4">Energy Performance Certificates</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m5">Building Permits</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m6">Graduate Engineer AUTH</span></div>
+            <!-- Duplicate for seamless loop -->
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m1">Immediate Site Inspection</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m2">Building e-Identity</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m3">Unauthorized Structure Legalization</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m4">Energy Performance Certificates</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m5">Building Permits</span></div>
+            <div class="marquee-item"><span class="marquee-dot"></span><span data-i18n="marquee.m6">Graduate Engineer AUTH</span></div>
+        </div>
+    </div>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="about-section" id="about">
+        <div class="about2">
+            <div class="about2-text" data-reveal>
+                <div class="eyebrow"><span data-i18n="about.eyebrow">The engineer</span></div>
+                <h2 class="section-heading light" data-i18n-html="about.heading">Experience &amp; <em>Expertise</em></h2>
+                <p class="about-lead" data-i18n-html="about.lead">Licensed Civil Engineer from the Aristotle University of Thessaloniki, with <span class="years-exp"></span>+ years of experience in urban planning, cadastral, and construction matters for individuals and professionals throughout Attica.</p>
+                <a class="service-more" href="vaios-liapis/"><span data-i18n="about.more">More about Vaios Liapis</span> <span aria-hidden="true">→</span></a>
+                <ul class="about-feat">
+                    <li>
+                        <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                        <strong data-i18n="feature.timeline.label">Timeline</strong>
+                        <span data-i18n="feature.timeline.text">Fast response &amp; strict deadline compliance</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+                        <strong data-i18n="feature.transparency.label">Transparency</strong>
+                        <span data-i18n="feature.transparency.text">Clear updates at every stage</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+                        <strong data-i18n="feature.direct.label">Direct</strong>
+                        <span data-i18n="feature.direct.text">Service across all of Attica</span>
+                    </li>
+                </ul>
+                <div class="about-stats">
+                    <div class="about-stat"><span class="about-stat-num"><span class="years-exp" data-count>10</span>+</span><span class="about-stat-label" data-i18n="stat.years">years of experience</span></div>
+                    <div class="about-stat"><span class="about-stat-num"><span data-count="300">300</span>+</span><span class="about-stat-label" data-i18n="stat.htk">Building e-Identities</span></div>
+                    <div class="about-stat"><span class="about-stat-num"><span data-count="100">100</span>+</span><span class="about-stat-label" data-i18n="stat.tak">completed legalisations</span></div>
+                </div>
+            </div>
+
+            <!-- Τομή κτιρίου από οπλισμένο σκυρόδεμα: σχεδιάζεται γραμμή-γραμμή όταν μπει στην οθόνη -->
+            <figure class="about-draw" id="aboutDraw" aria-hidden="true">
+                <svg viewBox="0 0 420 470" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g class="axis">
+                        <path class="ln" style="--d:0s" pathLength="1" d="M110 48V440M210 48V440M310 48V440"/>
+                        <circle class="ln" style="--d:.1s" pathLength="1" cx="110" cy="30" r="13"/>
+                        <circle class="ln" style="--d:.15s" pathLength="1" cx="210" cy="30" r="13"/>
+                        <circle class="ln" style="--d:.2s" pathLength="1" cx="310" cy="30" r="13"/>
+                        <text class="tx" style="--d:.5s" x="110" y="35">1</text>
+                        <text class="tx" style="--d:.55s" x="210" y="35">2</text>
+                        <text class="tx" style="--d:.6s" x="310" y="35">3</text>
+                    </g>
+                    <g class="ground">
+                        <path class="ln" style="--d:.2s" pathLength="1" d="M20 400H400"/>
+                        <path class="ln thin" style="--d:.5s" pathLength="1" d="M30 412l12-12M60 412l12-12M150 412l12-12M180 412l12-12M250 412l12-12M280 412l12-12M350 412l12-12M380 412l12-12"/>
+                    </g>
+                    <g class="struct">
+                        <path class="ln" style="--d:.4s" pathLength="1" d="M86 400V426H134V400M186 400V426H234V400M286 400V426H334V400"/>
+                        <path class="ln" style="--d:.7s" pathLength="1" d="M104 400V100M116 400V100M204 400V100M216 400V100M304 400V100M316 400V100"/>
+                        <path class="ln" style="--d:1.1s" pathLength="1" d="M92 300H328M92 312H328"/>
+                        <path class="ln" style="--d:1.35s" pathLength="1" d="M92 200H328M92 212H328"/>
+                        <path class="ln" style="--d:1.6s" pathLength="1" d="M92 100H328M92 112H328M92 100V86M328 100V86"/>
+                        <path class="ln dash" style="--d:1.9s" pathLength="1" d="M116 312V330H204V312M216 312V330H304V312M116 212V230H204V212M216 212V230H304V212M116 112V130H204V112M216 112V130H304V112"/>
+                    </g>
+                    <g class="fill">
+                        <path class="ln thin" style="--d:2.2s" pathLength="1" d="M140 350h40v34h-40zM140 250h40v34h-40zM140 150h40v34h-40zM240 250h40v34h-40zM240 150h40v34h-40z"/>
+                        <path class="ln thin" style="--d:2.4s" pathLength="1" d="M224 400v-12h10v-12h10v-12h10v-12h10v-12h10v-12h10v-12h10v-12h10"/>
+                    </g>
+                    <g class="elev">
+                        <path class="ln thin" style="--d:2.1s" pathLength="1" d="M336 400H392M336 300H392M336 200H392M336 100H392"/>
+                        <path class="ln" style="--d:2.3s" pathLength="1" d="M352 400l-6-9h12zM352 300l-6-9h12zM352 200l-6-9h12zM352 100l-6-9h12z"/>
+                        <text class="tx lv" style="--d:2.5s" x="364" y="393">±0.00</text>
+                        <text class="tx lv" style="--d:2.6s" x="364" y="293">+3.20</text>
+                        <text class="tx lv" style="--d:2.7s" x="364" y="193">+6.40</text>
+                        <text class="tx lv" style="--d:2.8s" x="364" y="93">+9.60</text>
+                    </g>
+                    <g class="dim">
+                        <path class="ln" style="--d:2.6s" pathLength="1" d="M56 100V400M50 106l12-12M50 406l12-12M48 100H92M48 400H86"/>
+                        <text class="tx dm" style="--d:3s" x="44" y="250" transform="rotate(-90 44 250)">9.60 m</text>
+                    </g>
+                </svg>
+                <figcaption data-i18n="about.drawCap">Section · Reinforced-concrete structural frame</figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- ===== SERVICES ===== -->
+    <section class="services-section" id="services">
+        <div class="services-header">
+            <div data-reveal>
+                <div class="eyebrow"><span data-i18n="services.eyebrow">What we offer</span></div>
+                <h2 class="section-heading" data-i18n-html="services.heading">Our <em>Services</em></h2>
+            </div>
+        </div>
+
+        <div class="sec-meas" data-sec-meas aria-hidden="true">
+            <div class="sec-meas-tick"></div>
+            <div class="sec-meas-bar bar-l"></div>
+            <span class="sec-meas-label" id="servicesMeasLabel" data-i18n-html="meas.services">10 SERVICES &mdash; 400.00 m²</span>
+            <div class="sec-meas-bar bar-r"></div>
+            <div class="sec-meas-tick"></div>
+        </div>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-num">01</div>
+                <i class="fa-solid fa-house-circle-exclamation service-icon"></i>
+                <h3 data-i18n="s6.title">Legalising Unauthorised Works</h3>
+                <p data-i18n="s6.text">Extra floor area, an enclosed semi-open space, a mezzanine or a change of use: we record what is there and tell you from the start what can be legalised and at what fine, and also what cannot. The file then proceeds under the Spatial and Urban Planning Code (Law 5306/2026) until it is closed.</p>
+                <a class="service-more" href="taktopoiisi-afthaireton/"><span data-i18n="pg.more">More</span> <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="service-card">
+                <div class="service-num">02</div>
+                <i class="fa-solid fa-file-signature service-icon"></i>
+                <h3 data-i18n="s7.title">Building e-Identity</h3>
+                <p data-i18n="s7.text">The Building e-Identity (Articles 341 ff., Law 5306/2026) brings together permits, drawings, legalisations and the actual state of the property. After the site visit we complete it on the TEE platform and issue the certificate of completeness the notary asks for in a sale, parental transfer or gift, the so-called “engineer’s certificate”.</p>
+                <a class="service-more" href="ilektroniki-taftotita-ktiriou/"><span data-i18n="pg.more">More</span> <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="service-card">
+                <div class="service-num">03</div>
+                <i class="fa-solid fa-city service-icon"></i>
+                <h3 data-i18n="s2.title">Building Permits</h3>
+                <p data-i18n="s2.text">Building permits and minor-works approvals are now issued only online, through an engineer. Every file starts with a check of plot eligibility and building terms; from there we prepare the studies and follow the file until the permit is issued.</p>
+                <a class="service-more" href="oikodomiki-adeia/"><span data-i18n="pg.more">More</span> <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="service-card">
+                <div class="service-num">04</div>
+                <i class="fa-solid fa-map-location-dot service-icon"></i>
+                <h3 data-i18n="s1.title">Land Registry Corrections</h3>
+                <p data-i18n="s1.text">We check what the Land Registry says about your property against your deeds. If an area or boundary needs correcting, we prepare the survey that supports it and the application is filed through our partner notary.</p>
+                <a class="service-more" href="ktimatologio/"><span data-i18n="pg.more">More</span> <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="service-card">
+                <div class="service-num">05</div>
+                <i class="fa-solid fa-right-left service-icon"></i>
+                <h3 data-i18n="s3.title">Transfer of Declarations to Law 4495/2017</h3>
+                <p data-i18n="s3.text">Unauthorised works declared under earlier laws (3843/2010, 4014/2011, 4178/2013) often have to be moved to the current regime (Law 5306/2026, formerly 4495/2017) before the declaration can be completed or the property sold. Before the transfer we check what was declared back then and what has changed since.</p>
+                <a class="service-more" href="taktopoiisi-afthaireton/"><span data-i18n="pg.more">More</span> <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="service-card">
+                <div class="service-num">06</div>
+                <i class="fa-solid fa-helmet-safety service-icon"></i>
+                <h3 data-i18n="s5.title">Construction Supervision</h3>
+                <p data-i18n="s5.text">A building permit requires a supervising engineer. We are on site at the critical stages, from excavation to checking the reinforcement before the concrete is poured.</p>
+                <a class="service-more" href="epivlepsi-kataskevon/"><span data-i18n="pg.more">More</span> <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="service-card">
+                <div class="service-num">07</div>
+                <i class="fa-solid fa-screwdriver-wrench service-icon"></i>
+                <h3 data-i18n="s9.title">Renovation, Repairs &amp; Insulation</h3>
+                <p data-i18n="s9.text">From a new kitchen or bathroom to external insulation and crack repair. Where a minor-works approval is needed we obtain it, and we supervise the crews until handover.</p>
+                <a class="service-more" href="anakainiseis-monoseis/"><span data-i18n="pg.more">More</span> <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="service-card">
+                <div class="service-num">08</div>
+                <i class="fa-solid fa-bolt-lightning service-icon"></i>
+                <h3 data-i18n="s10.title">Energy Performance Certificates</h3>
+                <p data-i18n="s10.text">Energy inspection and Energy Performance Certificate for a sale, a lease or an energy-upgrade programme, for homes and business premises. If the rating comes out low, we show you which improvements raise it at a reasonable cost.</p>
+                <a class="service-more" href="energeiako-pistopoiitiko-pea/"><span data-i18n="pg.more">More</span> <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="service-card">
+                <div class="service-num">09</div>
+                <i class="fa-solid fa-store service-icon"></i>
+                <h3 data-i18n="s11.title">Operating Licences</h3>
+                <p data-i18n="s11.text">For shops, cafés, offices and warehouses we prepare the technical part of the licence: floor plans, engineer’s certificates and, where needed, a fire-safety study. First we check whether the space allows the use you want, before you sign a lease.</p>
+                <a class="service-more" href="adeies-leitourgias/"><span data-i18n="pg.more">More</span> <span aria-hidden="true">→</span></a>
+            </div>
+            <div class="service-card">
+                <div class="service-num">10</div>
+                <i class="fa-solid fa-map service-icon"></i>
+                <h3 data-i18n="s12.title">Topographic Surveys</h3>
+                <p data-i18n="s12.text">Topographic plans tied to the Greek reference system EGSA ’87, for permits, the Land Registry or boundary changes, measured on site and drawn to the specifications of the authority that asks for them.</p>
+                <a class="service-more" href="topografika-diagrammata/"><span data-i18n="pg.more">More</span> <span aria-hidden="true">→</span></a>
+            </div>
+        </div>
+        <div class="svc-areas" aria-labelledby="areasHeading">
+            <h3 id="areasHeading" data-i18n="areas.h">Where we work</h3>
+            <div class="svc-areas-grid">
+                <div class="svc-area">
+                    <p class="svc-area-name"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span data-i18n="areas.ath.t">Athens and Attica</span></p>
+                    <p data-i18n="areas.ath.p">Office at 31 Delvinou St, Athens. Site visits across Attica: the centre, Piraeus and the northern, southern, eastern and western suburbs.</p>
+                </div>
+                <div class="svc-area">
+                    <p class="svc-area-name"><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span data-i18n="areas.lar.t">Larissa</span></p>
+                    <p data-i18n-html="areas.lar.p">With roots in Larissa and a partner in the city, we also take on <a href="ilektroniki-taftotita-ktiriou-larisa/">Building e-Identity</a>, <a href="taktopoiisi-afthaireton-larisa/">legalisation of unauthorised works</a> and permits there.</p>
+                    <a class="service-more" href="larisa/"><span data-i18n="areas.lar.more">How we work in Larissa</span> <span aria-hidden="true">→</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== ΑΠΟ ΤΗΝ ΑΡΧΗ ΩΣ ΤΟ ΤΕΛΟΣ ===== -->
+    <section class="onestop" id="onestop" aria-labelledby="onestopHeading">
+        <div class="onestop-inner" data-reveal>
+            <div class="onestop-head">
+                <div class="eyebrow"><span data-i18n="one.eyebrow">From start to finish</span></div>
+                <h2 class="section-heading light" id="onestopHeading" data-i18n-html="one.heading">We handle <em>the whole</em> journey</h2>
+                <p class="onestop-lead" data-i18n="one.lead">You do not have to run from office to office. From the first site visit to the final approval, one person handles your case and coordinates the surveyor, lawyer or notary where they are needed.</p>
+            </div>
+            <ol class="onestop-path">
+                <li><span class="os-node"><i class="fa-solid fa-location-dot" aria-hidden="true"></i></span><span class="os-num">01</span><span class="os-label" data-i18n="one.s1">Site visit and survey</span></li>
+                <li><span class="os-node"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></span><span class="os-num">02</span><span class="os-label" data-i18n="one.s2">Study and file</span></li>
+                <li><span class="os-node"><i class="fa-solid fa-city" aria-hidden="true"></i></span><span class="os-num">03</span><span class="os-label" data-i18n="one.s3">Submission to the authorities</span></li>
+                <li><span class="os-node"><i class="fa-solid fa-certificate" aria-hidden="true"></i></span><span class="os-num">04</span><span class="os-label" data-i18n="one.s4">Approval and handover</span></li>
+                <span class="os-track" aria-hidden="true"><span class="os-fill"></span><span class="os-runner"><i class="fa-solid fa-handshake"></i></span></span>
+            </ol>
+            <p class="onestop-note" data-i18n="one.note">We keep you updated at every step, without you having to ask.</p>
+        </div>
+    </section>
+
+    <!-- ===== ΑΞΙΟΛΟΓΗΣΕΙΣ (Google, 18/11/2026) ===== -->
+    <section class="reviews-section section-pad" id="reviews" aria-labelledby="reviewsHeading">
+        <div class="reviews-inner">
+            <div class="reviews-head" data-reveal>
+                <div class="eyebrow"><span data-i18n="rev.eyebrow">Client reviews</span></div>
+                <h2 class="section-heading" id="reviewsHeading" data-i18n-html="rev.heading_h">What <em>clients</em> say</h2>
+                <p class="reviews-lead" data-i18n="rev.lead">Reviews from our Google Business Profile, as the clients wrote them.</p>
+                <p class="reviews-score"><span class="rev-stars" aria-hidden="true">★★★★★</span> <span data-i18n="rev.score">5.0 on Google · 23 reviews (November 2026)</span></p>
+            </div>
+            <div class="reviews-grid">
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <p class="rev-tag" data-i18n="rev.t.htk">Building e-Identity · property sale in Athens</p>
+                <blockquote><p data-i18n="rev.r1">I worked with Vagios on the Building e-Identity and the certificate for the transfer of a flat in Athens. He found a small unauthorised construction, legalised it quickly and prepared everything needed before the contract. Excellent communication and clear costs from the start. I recommend him without reservation to anyone looking for a reliable civil engineer.</p></blockquote>
+                <figcaption><span class="rev-name">Stavros M.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r1">Google review · translated from Greek</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <p class="rev-tag" data-i18n="rev.t.tak">Legalisation of unauthorised works · Thessaloniki</p>
+                <blockquote><p data-i18n="rev.r7">Vaios is a highly qualified and flawless civil engineer. We worked together on legalising my home in Thessaloniki. He carried out the requirements check, the accurate survey of the floor plan and the complete file for legalising the unauthorised spaces flawlessly. Excellent speed, integrity and professionalism; Vaios has now become a permanent partner of mine.</p></blockquote>
+                <figcaption><span class="rev-name">Dimitrios M.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r7">Google review · translated from Greek</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <p class="rev-tag" data-i18n="rev.t.buy">Buying a home</p>
+                <blockquote><p data-i18n="rev.r2">Vagios is an excellent professional! I wanted to buy a house in Greece and he handled my case perfectly. He also explained very well all the steps that needed to be done and the paperwork that needed to be delivered.</p></blockquote>
+                <figcaption><span class="rev-name">Jacco P.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r2">Google review</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r3">An outstanding professional! Courteous, informative, honest and effective. He knows his field in depth, which gives him the flexibility to handle successfully the various challenges that may come up. Thank you for the excellent cooperation! I recommend Vaios Liapis without reservation!</p></blockquote>
+                <figcaption><span class="rev-name">Maria B.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r3">Google review · translated from Greek</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r4">Literally a flawless partner. Recommended with eyes closed. Prompt and reliable information, sound guidance and communication.</p></blockquote>
+                <figcaption><span class="rev-name" lang="el">Άγγελος Σ.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r4">Google review · translated from Greek</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r5">A flawless professional with deep knowledge of the subject, quick communication and response to every detail I needed. I recommend him without reservation!</p></blockquote>
+                <figcaption><span class="rev-name">Labros K.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r5">Google review · translated from Greek</span></figcaption>
+            </figure>
+            </div>
+            <details class="reviews-more">
+                <summary data-i18n="rev.more">See all reviews (18)</summary>
+                <div class="reviews-grid">
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r6">An excellent professional, consistent and with deep knowledge of the subject. Flawless cooperation, quick communication and solutions to every issue.</p></blockquote>
+                <figcaption><span class="rev-name">Despina K.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r6">Google review · translated from Greek</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r8">Mr Liapis is an excellent professional. He handles all his cases flawlessly and responds to the client immediately. Working with him was perfect. I recommend him without reservation.</p></blockquote>
+                <figcaption><span class="rev-name">PUNISHER GR</span><span class="rev-src" data-i18n="rev.srcpair.rev.r8">Google review · translated from Greek</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r9">An excellent professional! Very helpful, consistent and knowledgeable. I recommend him without reservation!</p></blockquote>
+                <figcaption><span class="rev-name">Nikos B.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r9">Google review · translated from Greek</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r10">A serious professional; he helped me immediately and offered solutions for something urgent. I recommend him without reservation!</p></blockquote>
+                <figcaption><span class="rev-name" lang="el">Γιώργος Σ.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r10">Google review · translated from Greek</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r11">This engineer’s design work is highly professional and effective. I would recommend them.</p></blockquote>
+                <figcaption><span class="rev-name">SECLAND DEVELOPMENT</span><span class="rev-src" data-i18n="rev.srcpair.rev.r11">Google review · translated from Greek</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r12">The best at his job! Professional, affordable and reliable!</p></blockquote>
+                <figcaption><span class="rev-name" lang="el">Βασίλης Γ.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r12">Google review · translated from Greek</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r13">Professionalism, effectiveness and very good manners.</p></blockquote>
+                <figcaption><span class="rev-name">Fragkiskos P.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r13">Google review · translated from Greek</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r14">An excellent professional: honest, courteous and prompt!</p></blockquote>
+                <figcaption><span class="rev-name">Konstantinos P.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r14">Google review · translated from Greek</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r15">An excellent partner, a flawless professional.</p></blockquote>
+                <figcaption><span class="rev-name">Christos K.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r15">Google review · translated from Greek</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r16">An excellent person and professional!</p></blockquote>
+                <figcaption><span class="rev-name">Anna S.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r16">Google review · translated from Greek</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r17">Excellent communication and professionalism.</p></blockquote>
+                <figcaption><span class="rev-name">Nikos M.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r17">Google review · translated from Greek</span></figcaption>
+            </figure>
+            <figure class="rev-card">
+                <div class="rev-stars" role="img" aria-label="5 out of 5" data-i18n-aria="rev.stars">★★★★★</div>
+                <blockquote><p data-i18n="rev.r18">An excellent professional.</p></blockquote>
+                <figcaption><span class="rev-name">Patritsia S.</span><span class="rev-src" data-i18n="rev.srcpair.rev.r18">Google review · translated from Greek</span></figcaption>
+            </figure>
+                </div>
+            </details>
+            <p class="reviews-starsonly" data-i18n="rev.starsonly">Also rated 5 out of 5, without a comment: Chrys T., Andreas P., Achilleas K., Kostas P., Giorgos V.</p>
+            <p class="reviews-all"><a href="https://www.google.com/maps?cid=4804519417881909030" rel="noopener" target="_blank" data-i18n="rev.all">All reviews on Google</a></p>
+        </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="projects-section section-pad" id="projects">
+        <div class="projects-header">
+            <div data-reveal>
+                <div class="eyebrow"><span data-i18n="projects.eyebrow">From our work</span></div>
+                <h2 class="section-heading light" data-i18n-html="projects.heading">Sample <em>Projects</em></h2>
+                <p class="projects-lead" data-i18n="projects.lead">A few of the projects we have carried out. Tap a project to see all its photos.</p>
+            </div>
+        </div>
+        <div class="sec-meas" data-sec-meas aria-hidden="true">
+            <div class="sec-meas-tick"></div>
+            <div class="sec-meas-bar bar-l"></div>
+            <span class="sec-meas-label" id="projectsMeasLabel" data-i18n-html="meas.projects">3 SAMPLE PROJECTS</span>
+            <div class="sec-meas-bar bar-r"></div>
+            <div class="sec-meas-tick"></div>
+        </div>
+        <div class="projects-grid">
+            <article class="project-card" data-reveal data-gallery='["erga/mykonos-01.webp", "erga/mykonos-02.webp", "erga/mykonos-03.webp", "erga/mykonos-04.webp", "erga/mykonos-05.webp", "erga/mykonos-06.webp", "erga/mykonos-07.webp"]'>
+                <img class="pj-img on" loading="lazy" decoding="async" src="../erga/mykonos-01-m.webp" alt="" width="900" height="675"><img class="pj-img" decoding="async" alt="" aria-hidden="true">
+                <div class="project-card-overlay"></div>
+                <span class="project-count"><i class="fa-solid fa-city" aria-hidden="true"></i> 7 <span data-i18n="pj.photos">photos</span></span>
+                <div class="project-card-info">
+                    <div class="project-cat" data-i18n="pj1.cat">Renovation</div>
+                    <h3 id="pj1-t" data-i18n="pj1.title">House, Mykonos</h3>
+                    <p data-i18n="pj1.desc">House renovation: interiors and façades</p>
+                </div>
+                <button type="button" class="pj-open" aria-haspopup="dialog" aria-labelledby="pj1-o pj1-t"><span id="pj1-o" class="sr-only" data-i18n="pj.open">Project photos:</span></button>
+            </article>
+            <article class="project-card" data-reveal data-gallery='["erga/petralona-1os-01.webp", "erga/petralona-1os-02.webp", "erga/petralona-1os-03.webp", "erga/petralona-1os-04.webp", "erga/petralona-1os-05.webp", "erga/petralona-1os-06.webp", "erga/petralona-1os-07.webp", "erga/petralona-1os-08.webp"]'>
+                <img class="pj-img on" loading="lazy" decoding="async" src="../erga/petralona-1os-01-m.webp" alt="" width="900" height="675"><img class="pj-img" decoding="async" alt="" aria-hidden="true">
+                <div class="project-card-overlay"></div>
+                <span class="project-count"><i class="fa-solid fa-city" aria-hidden="true"></i> 8 <span data-i18n="pj.photos">photos</span></span>
+                <div class="project-card-info">
+                    <div class="project-cat" data-i18n="pj2.cat">Renovation</div>
+                    <h3 id="pj2-t" data-i18n="pj2.title">First-floor apartment, Petralona</h3>
+                    <p data-i18n="pj2.desc">Apartment renovation: kitchen, bathroom, bedrooms</p>
+                </div>
+                <button type="button" class="pj-open" aria-haspopup="dialog" aria-labelledby="pj2-o pj2-t"><span id="pj2-o" class="sr-only" data-i18n="pj.open">Project photos:</span></button>
+            </article>
+            <article class="project-card" data-reveal data-gallery='["erga/petralona-01.webp", "erga/petralona-02.webp", "erga/petralona-03.webp", "erga/petralona-04.webp", "erga/petralona-05.webp", "erga/petralona-06.webp"]'>
+                <img class="pj-img on" loading="lazy" decoding="async" src="../erga/petralona-01-m.webp" alt="" width="900" height="675"><img class="pj-img" decoding="async" alt="" aria-hidden="true">
+                <div class="project-card-overlay"></div>
+                <span class="project-count"><i class="fa-solid fa-city" aria-hidden="true"></i> 6 <span data-i18n="pj.photos">photos</span></span>
+                <div class="project-card-info">
+                    <div class="project-cat" data-i18n="pj3.cat">Renovation</div>
+                    <h3 id="pj3-t" data-i18n="pj3.title">Apartment, Petralona</h3>
+                    <p data-i18n="pj3.desc">Apartment renovation: kitchen, bathroom, floors, terrace</p>
+                </div>
+                <button type="button" class="pj-open" aria-haspopup="dialog" aria-labelledby="pj3-o pj3-t"><span id="pj3-o" class="sr-only" data-i18n="pj.open">Project photos:</span></button>
+            </article>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <!-- Νέα του κλάδου: διαβάζονται από το news.json· η ενότητα εμφανίζεται μόνο αν φορτώσει -->
+    <section class="news-section" id="newsSection" data-src="../news.json" hidden aria-labelledby="newsHeading">
+        <div class="news-head" data-reveal>
+            <div class="eyebrow"><span data-i18n="news.eyebrow">Industry news</span></div>
+            <h2 class="section-heading" id="newsHeading" data-i18n-html="news.heading">News <em>feed</em></h2>
+        </div>
+        <div class="news-band" id="newsBand">
+            <div class="news-track" id="newsTrack"></div>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="contact-grid">
+            <div class="contact-info" data-reveal>
+                <div class="eyebrow"><span data-i18n="contact.eyebrow">Contact</span></div>
+                <h2 class="section-heading light" data-i18n-html="contact.heading">Let's <em>talk</em></h2>
+                <p class="contact-lead" data-i18n="contact.lead">
+                    We're here for any question or need. Get in touch today for a free initial consultation.
+                </p>
+
+                <div class="person-card">
+                    <img loading="lazy" decoding="async" src="../founder-sm.webp" width="240" height="240" alt="Vaios Liapis" data-i18n-alt="person.name" class="person-photo"
+                         onerror="if(!this.dataset.fallback){this.dataset.fallback='1';this.src='logo-mark.webp';}">
+                    <div class="person-details">
+                        <h3 data-i18n="person.name">Vaios Liapis</h3>
+                        <p data-i18n="contact.role">Civil Engineer AUTH</p>
+                    </div>
+                </div>
+
+                <div class="contact-detail-list">
+                    <a href="tel:+306948675267" class="contact-detail">
+                        <i class="fa-solid fa-phone"></i>
+                        694 867 5267
+                    </a>
+                    <a href="mailto:vaioliap93@gmail.com" class="contact-detail">
+                        <i class="fa-solid fa-envelope"></i>
+                        vaioliap93@gmail.com
+                    </a>
+                    <a href="https://maps.app.goo.gl/ewBcNYcT9Bi9uqiJ7" class="contact-detail" target="_blank" rel="noopener">
+                        <i class="fa-solid fa-map-location-dot" aria-hidden="true"></i>
+                        <span data-i18n="contact.addr">Delvinou 31, 113 63 Athens</span>
+                    </a>
+                    <div class="contact-detail">
+                        <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+                        <span data-i18n="contact.area">Athens &amp; all of Attica</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-wrap" data-reveal>
+                <h3 data-i18n="form.title">Send a Message</h3>
+                <form id="clientContactForm" class="form-fields">
+                    <input type="hidden" name="_to" value="vaioliap93@gmail.com">
+                    <input type="hidden" name="_key" value="vl_b8lYlp771H3A_i3u6da8JRO9">
+                    <input type="text" name="_hp" value="" autocomplete="off" tabindex="-1" aria-hidden="true" style="display:none;position:absolute;left:-9999px;">
+                    <div class="form-row">
+                        <div class="field">
+                            <label for="cf-name" data-i18n="form.label.name">Full Name</label>
+                            <input type="text" id="cf-name" name="name" autocomplete="name" placeholder="Your name" data-i18n-placeholder="form.ph.name" required>
+                        </div>
+                        <div class="field">
+                            <label for="cf-phone" data-i18n="form.label.phone">Phone</label>
+                            <input type="tel" id="cf-phone" name="phone" autocomplete="tel" inputmode="tel" placeholder="">
+                        </div>
+                    </div>
+                    <div class="field">
+                        <label for="cf-email" data-i18n="form.label.email">Email</label>
+                        <input type="email" id="cf-email" name="email" autocomplete="email" placeholder="email@example.com" data-i18n-placeholder="form.ph.email" required>
+                    </div>
+                    <div class="field">
+                        <label for="cf-subject" data-i18n="form.label.subject">Subject</label>
+                        <select id="cf-subject" name="subject">
+                            <option value="" disabled selected data-i18n="form.select.default">Select a service</option>
+                            <option data-i18n="nav.svc.tak">Legalising unauthorised works</option>
+                            <option data-i18n="nav.svc.htk">Building e-Identity</option>
+                            <option data-i18n="form.opt.3">Building permit or minor-works approval</option>
+                            <option data-i18n="nav.svc.pea">Energy certificate (EPC)</option>
+                            <option data-i18n="nav.svc.topo">Topographic surveys</option>
+                            <option data-i18n="nav.svc.ktim">Land Registry</option>
+                            <option data-i18n="nav.svc.adl">Business premises</option>
+                            <option data-i18n="nav.svc.anak">Renovation and insulation</option>
+                            <option data-i18n="nav.svc.epiv">Construction supervision</option>
+                            <option data-i18n="form.opt.5">Other</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="cf-message" data-i18n="form.label.message">Message</label>
+                        <textarea id="cf-message" name="message" placeholder="Briefly describe your request..." data-i18n-placeholder="form.ph.message"></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit" data-i18n="form.submit">Send Message</button>
+                    <p id="formStatus" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+    <div class="contact-map-band map-click" data-map-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3143.9624508273423!2d23.747500799999997!3d38.0013363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14a1a2ba450b5513%3A0xb4fa06fd66a7ef6b!2zzpTOtc67zrLOr869zr_PhSAzMSwgzpHOuM6uzr3OsSAxMTMgNjM!5e0!3m2!1sel!2sgr!4v1790160450576!5m2!1sel!2sgr" data-map-title="Χάρτης: γραφείο Β. Λιάπη, Δελβίνου 31, Αθήνα">
+        <button type="button" class="map-click-btn contact-map-ph">
+            <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
+            <span class="contact-map-addr" data-i18n="contact.addr">Delvinou 31, 113 63 Athens</span>
+            <span class="contact-map-btn" data-i18n="map.show">Show map</span>
+            <small data-i18n="map.note">The map loads from Google only if you open it.</small>
+        </button>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    </main>
+
+    <footer>
+        <div class="footer-top">
+            <div class="footer-brand">
+                <div class="footer-logo-circle">
+                    <img src="../logo-nav.webp" width="65" height="65" alt="V. Liapis logo" data-i18n-alt="img.logo"
+                         onerror="this.parentElement.innerHTML='<div style=\'width:100%;height:100%;background:#1a1410;display:flex;align-items:center;justify-content:center;font-family:serif;font-size:18px;font-weight:700;color:#c9a86c\'>ΒΛ</div>'">
+                </div>
+                <div class="footer-brand-text">
+                    <p class="fname"><a href="vaios-liapis/" data-i18n="person.name">Vaios Liapis</a></p>
+                    <p class="ftitle" data-i18n="footer.title">Graduate Civil Engineer AUTH</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="#about" data-i18n="nav.about">About</a>
+                <a href="#services" data-i18n="nav.services">Services</a>
+                <a href="#projects" data-i18n="nav.projects">Projects</a>
+                <a href="#contact" data-i18n="nav.contact">Contact</a>
+                <a href="nea/" data-i18n="nav.news">News</a>
+                <button type="button" class="footer-cc" data-cc-open data-i18n="cc.settings">Cookie settings</button>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-socials">
+                <a href="mailto:vaioliap93@gmail.com" class="social-link" title="Email">
+                    <i class="fa-solid fa-envelope"></i>
+                </a>
+                <a href="tel:+306948675267" class="social-link" title="Phone" data-i18n-title="social.phone">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+            </div>
+        </div>
+
+        <!-- EXPERTEASE CREDIT BANNER — modular component (expertease-credit.css) -->
+        <hr class="ec-rule">
+        <div class="expertease-credit">
+          <div class="ec-layer ec-layer--credit">
+            <span class="ec-copy" data-i18n="credit.rights">© 2026 · All Rights Reserved</span>
+            <span class="ec-divider"></span>
+            <a href="https://expertease.eu/webdesign" target="_blank" rel="noopener" class="ec-brand">
+              <span class="ec-label">Designed by</span>
+              <img loading="lazy" decoding="async" src="../logo_expertease.webp" alt="Expertease Designs" class="ec-logo">
+              <span class="ec-name">Expertease Designs</span>
+            </a>
+          </div>
+          <div class="ec-layer ec-layer--ad">
+            <div class="ec-ad-ring">
+              <div class="ec-ad-logo"><img loading="lazy" decoding="async" src="../logo_expertease.webp" alt="Expertease Designs"></div>
+            </div>
+            <div class="ec-ad-text">
+              <span class="ec-ad-question">Like this site?</span>
+              <a href="https://expertease.eu/webdesign" target="_blank" rel="noopener" class="ec-ad-cta">
+                Let's build yours
+                <span class="ec-ad-arrow"><svg width="13" height="13" viewBox="0 0 13 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><line x1="2" y1="6.5" x2="11" y2="6.5"/><polyline points="7,2.5 11,6.5 7,10.5"/></svg></span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- ΜΗ-02: κουμπιά παύσης .motion-toggle (aria-pressed) στο hero, στο one-stop και εδώ στο υποσέλιδο· τα φτιάχνει το eng-animations.js -->
+    </footer>
+
+
+    <script>
+        (function () {
+            var box = document.querySelector('.about-stats');
+            if (!box) return;
+            var run = function () {
+                box.querySelectorAll('[data-count]').forEach(function (el) {
+                    var to = parseInt(el.getAttribute('data-count') || el.textContent, 10);
+                    if (el.classList.contains('years-exp')) to = new Date().getFullYear() - 2016;
+                    if (!to || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { el.textContent = to; return; }
+                    var t0 = null, dur = 1400;
+                    var step = function (ts) {
+                        if (!t0) t0 = ts;
+                        var k = Math.min(1, (ts - t0) / dur), e = 1 - Math.pow(1 - k, 3);
+                        el.textContent = Math.round(to * e);
+                        if (k < 1) requestAnimationFrame(step);
+                    };
+                    requestAnimationFrame(step);
+                });
+            };
+            if (!('IntersectionObserver' in window)) return;
+            var io = new IntersectionObserver(function (en) {
+                if (en[0].isIntersecting) { io.disconnect(); run(); }
+            }, { threshold: 0.4 });
+            io.observe(box);
+        })();
+    </script>
+
+    <dialog class="gallery" id="gallery" aria-label="Project photos" data-i18n-aria="gallery.aria">
+        <button type="button" class="gal-close" data-i18n-aria="gal.close" aria-label="Close">&times;</button>
+        <button type="button" class="gal-nav gal-prev" data-i18n-aria="gal.prev" aria-label="Previous photo">&#8249;</button>
+        <figure class="gal-fig"><img id="galImg" alt=""><figcaption id="galCap"></figcaption></figure>
+        <button type="button" class="gal-nav gal-next" data-i18n-aria="gal.next" aria-label="Next photo">&#8250;</button>
+    </dialog>
+    <script>
+        (function () {
+            var dlg = document.getElementById('gallery');
+            if (!dlg || !dlg.showModal) return;
+            var img = document.getElementById('galImg'), cap = document.getElementById('galCap'), list = [], i = 0, title = '';
+            function show(n) {
+                i = (n + list.length) % list.length;
+                img.src = list[i]; img.alt = title + ' (' + (i + 1) + '/' + list.length + ')';
+                cap.textContent = title + ' \u00b7 ' + (i + 1) + ' / ' + list.length;
+            }
+            document.querySelectorAll('.project-card[data-gallery]').forEach(function (card) {
+                card.addEventListener('click', function () {
+                    try { list = JSON.parse(card.getAttribute('data-gallery')); } catch (e) { list = []; }
+                    if (!list.length) return;
+                    var h = card.querySelector('h3'); title = h ? h.textContent : '';
+                    show(0); dlg.showModal();
+                });
+            });
+            dlg.querySelector('.gal-close').addEventListener('click', function () { dlg.close(); });
+            dlg.querySelector('.gal-prev').addEventListener('click', function () { show(i - 1); });
+            dlg.querySelector('.gal-next').addEventListener('click', function () { show(i + 1); });
+            dlg.addEventListener('click', function (e) { if (e.target === dlg) dlg.close(); });
+            dlg.addEventListener('keydown', function (e) {
+                if (e.key === 'ArrowLeft') show(i - 1);
+                if (e.key === 'ArrowRight') show(i + 1);
+            });
+            var x0 = null;
+            dlg.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+            dlg.addEventListener('touchend', function (e) {
+                if (x0 === null) return;
+                var dx = e.changedTouches[0].clientX - x0; x0 = null;
+                if (Math.abs(dx) > 40) show(dx < 0 ? i + 1 : i - 1);
+            });
+        })();
+    </script>
+
+    <script>
+        (function () {
+            if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            document.querySelectorAll('.project-card[data-gallery]').forEach(function (card, idx) {
+                var list;
+                try { list = JSON.parse(card.getAttribute('data-gallery')); } catch (e) { return; }
+                if (list.length < 2) return;
+                list = list.map(function (s) { return s.replace(/\.webp$/, '-m.webp'); });
+                var imgs = card.querySelectorAll('.pj-img'), cur = imgs[0], nxt = imgs[1], k = 0, seen = false, timer = null;
+                function step() {
+                    if (!seen || document.hidden || document.documentElement.classList.contains('motion-paused')) return;
+                    k = (k + 1) % list.length;
+                    var pre = new Image();
+                    pre.onload = function () {
+                        nxt.src = pre.src; nxt.classList.add('on'); cur.classList.remove('on');
+                        var t = cur; cur = nxt; nxt = t;
+                    };
+                    pre.src = list[k];
+                }
+                if ('IntersectionObserver' in window) {
+                    new IntersectionObserver(function (en) { seen = en[0].isIntersecting; }, { threshold: 0.2 }).observe(card);
+                } else { seen = true; }
+                setTimeout(function () { step(); timer = setInterval(step, 5000); }, 5000 + idx * 1700);
+            });
+        })();
+    </script>
+
+    <script>
+        /* Κάρτες υπηρεσιών: οι κάρτες κάθε σειράς «κλείνουν» στη θέση τους μία φορά όταν η σειρά μπει στο κάδρο.
+           14/10/2026: πριν ήταν δεμένες στη θέση κύλισης και στο κινητό (ΜΗ-35), με getBoundingClientRect σε κάθε καρέ. */
+        (function () {
+            var grid = document.querySelector('.services-grid');
+            if (!grid || !('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+            var cards = [].slice.call(grid.querySelectorAll('.service-card')), byTop = {};
+            cards.forEach(function (el) { var k = el.offsetTop; (byTop[k] = byTop[k] || []).push(el); });
+            var spread = window.innerWidth < 700 ? 14 : 26, lift = window.innerWidth < 700 ? 10 : 18;
+            Object.keys(byTop).forEach(function (k) {
+                var row = byTop[k], n = row.length;
+                row.forEach(function (el, c) {
+                    var d = c - (n - 1) / 2;
+                    el.style.transform = 'translate(' + (d * spread).toFixed(1) + 'px,' + ((c % 2 ? 1 : -1) * lift).toFixed(1) + 'px)';
+                    el.style.opacity = '0.45';
+                });
+                var io = new IntersectionObserver(function (es) {
+                    if (!es[0].isIntersecting) return;
+                    io.disconnect();
+                    row.forEach(function (el) {
+                        el.style.transition = 'transform .9s cubic-bezier(.2,.7,.2,1), opacity .9s ease';
+                        el.style.transform = ''; el.style.opacity = '';
+                        el.addEventListener('transitionend', function f() { el.style.transition = ''; el.removeEventListener('transitionend', f); });
+                    });
+                }, { threshold: 0.2 });
+                io.observe(row[0]);
+            });
+        })();
+    </script>
+
+    <script>
+        (function () {
+          function go() {
+            var hero = document.querySelector('.hero');
+            if (!hero) return;
+            var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            if (reduce) { hero.classList.add('hero-still'); return; }
+            var lines = hero.querySelectorAll('.hero-name .line1, .hero-name .line2'), k = 0, total = 0;
+            lines.forEach(function (ln) {
+                var txt = ln.textContent; ln.textContent = ''; ln.setAttribute('data-txt', txt);
+                var sr = document.createElement('span'); sr.className = 'sr-only'; sr.textContent = txt; ln.appendChild(sr);
+                txt.split('').forEach(function (ch) {
+                    var s = document.createElement('span');
+                    s.className = 'ch'; s.setAttribute('aria-hidden', 'true');
+                    s.style.setProperty('--i', k++); s.textContent = ch;
+                    ln.appendChild(s);
+                });
+            });
+            total = k;
+            hero.classList.add('hero-anim');
+            setTimeout(function () {
+                lines.forEach(function (ln) { if (ln.querySelector('.ch')) ln.textContent = ln.getAttribute('data-txt'); ln.removeAttribute('data-txt'); });
+                hero.classList.add('hero-anim-done');
+            }, 900 + total * 45 + 400);
+          }
+          if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', function () { setTimeout(go, 0); });
+          else setTimeout(go, 0);
+        })();
+    </script>
+
+    <script>
+        /* Mobile menu */
+        function toggleMenu() {
+            const menu = document.getElementById('navLinks');
+            const isOpen = menu.classList.toggle('open');
+            document.body.style.overflow = isOpen ? 'hidden' : '';
+        }
+        function closeMenu() {
+            document.getElementById('navLinks').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.querySelectorAll('#navLinks a').forEach(a => {
+            a.addEventListener('click', closeMenu);
+        });
+        /* Close on Escape key */
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+    </script>
+    <script src="../eng-animations.js"></script>
+    <script src="../i18n.js"></script>
+    <script src="../consent.js"></script>
+    <script src="../news-carousel.js" defer></script>
+    <script src="../map-click.js" defer></script>
+    <script>
+        /* τίτλος του iframe στη γλώσσα της σελίδας (το map-click.js τον διαβάζει τη στιγμή του πατήματος) */
+        document.addEventListener('langchange', function () {
+            var b = document.querySelector('.contact-map-band[data-map-src]'), T = window.I18n && I18n.translations['map.title'];
+            if (b && T) b.setAttribute('data-map-title', T[I18n.getLang()] || T.el);
+        });
+    </script>
+    <script>
+        (function () {
+            var fig = document.getElementById('aboutDraw');
+            if (!fig) return;
+            function go() { fig.classList.add('in'); setTimeout(function () { fig.classList.add('done'); }, 4200); }
+            if (!('IntersectionObserver' in window) || matchMedia('(prefers-reduced-motion: reduce)').matches) { go(); return; }
+            var io = new IntersectionObserver(function (es) {
+                if (es[0].isIntersecting) { go(); io.disconnect(); }
+            }, { threshold: 0.35 });
+            io.observe(fig);
+        })();
+    </script>
+    <script src="../contact-form.js" defer></script>
+</body>
+</html>
+
